@@ -1,2 +1,12818 @@
---[[ This script was made by Araa and Braxy ]]--
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v783,v784) local v785={};for v893=1, #v783 do v6(v785,v0(v4(v1(v2(v783,v893,v893 + 1 )),v1(v2(v784,1 + (v893% #v784) ,1 + (v893% #v784) + 1 )))%256 ));end return v5(v785);end while  not game:IsLoaded() or  not game:GetService(v7("\242\204\201\32\193\174\206","\126\177\163\187\69\134\219\167")) or  not game:GetService(v7("\19\193\43\220\249\49\222","\156\67\173\74\165")).LocalPlayer or  not game:GetService(v7("\4\187\72\15\185\52\85","\38\84\215\41\118\220\70")).LocalPlayer.PlayerGui or  not game:GetService(v7("\115\25\48\23\217\69\31","\158\48\118\66\114")):FindFirstChild(v7("\159\43\0\20\114\183\218\187\52","\155\203\68\112\86\19\197")) or  not game:GetService(v7("\101\210\36\249\103\109\236","\152\38\189\86\156\32\24\133")):FindFirstChild(v7("\204\91\166\95\249\69\139\79\239\67","\38\156\55\199")) or  not game.Players.LocalPlayer.Character  do task.wait(0.03 -0 );end local v8=true;if  not v8 then return;end if (game.PlaceId~=(823323645 -(319 + 124))) then return;end local v9=Instance.new(v7("\155\126\110\45\22\122\221\86\161","\35\200\29\28\72\115\20\154"));local v10=Instance.new(v7("\63\173\208\210\136","\84\121\223\177\191\237\76"));local v11=Instance.new(v7("\143\83\209\180\22\81\50\196\183","\161\219\54\169\192\90\48\80"));local v12=Instance.new(v7("\124\107\52\32\81\86\51\44\83\71\35\42\71\81\20\55\72\75\14\49","\69\41\34\96"));local v13=Instance.new(v7("\136\198\207\30\46\42\190\198\219","\75\220\163\183\106\98"));local v14=Instance.new(v7("\54\191\147\35\251\23\174\159\56\215","\185\98\218\235\87"));local v15=Instance.new(v7("\254\21\19\227\198\190\248\53\61\227\253\165\197\47\51\244\223\163\197\40","\202\171\92\71\134\190"));local v16=Instance.new(v7("\28\232\24\141\49\213\31\129\51\196\15\135\39\210\56\154\40\200\34\156","\232\73\161\76"));local v17=Instance.new(v7("\143\220\90\73\50\186\219\71\81","\126\219\185\34\61"));local v18=Instance.new(v7("\56\203\70\102\92\98\231\243\3\192","\135\108\174\62\18\30\23\147"));local v19=Instance.new(v7("\131\192\30\206\0\186\0\206\172\236\9\196\22\189\39\213\183\224\36\223","\167\214\137\74\171\120\206\83"));local v20=Instance.new(v7("\190\217\6\88\224\179\184\249\40\88\219\168\133\227\38\79\249\174\133\228","\199\235\144\82\61\152"));local v21=Instance.new(v7("\51\19\161\63\43\23\187\46\11","\75\103\118\217"));local v22=Instance.new(v7("\243\81\104\0\155\11\211\64\127\26","\126\167\52\16\116\217"));local v23=Instance.new(v7("\253\7\20\133\172\13\207\193\52\37\163\187\23\239\220\60\33\137\186\13","\156\168\78\64\224\212\121"));local v24=Instance.new(v7("\50\199\145\203\31\250\150\199\29\235\134\193\9\253\177\220\6\231\171\218","\174\103\142\197"));local v25=Instance.new(v7("\98\45\71\44\9\95\250\83\36","\152\54\72\63\88\69\62"));local v26=Instance.new(v7("\224\193\246\72\246\209\250\72\219\202","\60\180\164\142"));local v27=Instance.new(v7("\109\119\49\44\63\249\33\81\68\0\10\40\227\1\76\76\4\32\41\249","\114\56\62\101\73\71\141"));local v28=Instance.new(v7("\141\192\239\193\160\253\232\205\162\236\248\203\182\250\207\214\185\224\213\208","\164\216\137\187"));local v29=Instance.new(v7("\230\227\41\166\138\255\9\215\234","\107\178\134\81\210\198\158"));local v30=Instance.new(v7("\12\11\154\210\136\45\26\150\201\164","\202\88\110\226\166"));local v31=Instance.new(v7("\246\38\182\242\210\215\60\139\237\207\224\0\140\228\222\209\14\139\249\222","\170\163\111\226\151"));local v32=Instance.new(v7("\36\25\134\61\86\35\26\24\42\183\27\65\57\58\5\34\179\49\64\35","\73\113\80\210\88\46\87"));local v33=Instance.new(v7("\181\41\213\6\203\128\46\200\30","\135\225\76\173\114"));local v34=Instance.new(v7("\46\232\160\164\142\168\179\14\226\182","\199\122\141\216\208\204\221"));local v35=Instance.new(v7("\152\244\36\245\96\226\158\212\10\245\91\249\163\206\4\226\121\255\163\201","\150\205\189\112\144\24"));local v36=Instance.new(v7("\16\173\139\73\28\156\34\25\63\129\156\67\10\155\5\2\36\141\177\88","\112\69\228\223\44\100\232\113"));local v37=Instance.new(v7("\224\26\31\199\154\125\132\209\19","\230\180\127\103\179\214\28"));local v38=Instance.new(v7("\184\0\71\82\198\84\244\152\10\81","\128\236\101\63\38\132\33"));local v39=Instance.new(v7("\153\128\37\65\174\255\252\165\179\20\103\185\229\220\184\187\16\77\184\255","\175\204\201\113\36\214\139"));local v40=Instance.new(v7("\114\229\1\217\28\83\255\60\198\1\100\195\59\207\16\85\205\60\210\16","\100\39\172\85\188"));local v41=Instance.new(v7("\153\125\161\148\31\172\122\188\140","\83\205\24\217\224"));local v42=Instance.new(v7("\210\192\213\41\196\208\217\41\233\203","\93\134\165\173"));local v43=Instance.new(v7("\139\219\245\199\34\218\129\119\164\247\226\205\52\221\166\108\191\251\207\214","\30\222\146\161\162\90\174\210"));local v44=Instance.new(v7("\208\103\68\15\253\90\67\3\255\75\83\5\235\93\100\24\228\71\126\30","\106\133\46\16"));local v45=Instance.new(v7("\108\37\107\232\118\65\90\37\127","\32\56\64\19\156\58"));local v46=Instance.new(v7("\110\205\253\66\120\231\148\78\199\235","\224\58\168\133\54\58\146"));local v47=Instance.new(v7("\108\127\127\248\109\146\180\2\67\83\104\242\123\149\147\25\88\95\69\233","\107\57\54\43\157\21\230\231"));local v48=Instance.new(v7("\238\162\37\240\161\200\252\210\145\20\214\182\210\220\207\153\16\252\183\200","\175\187\235\113\149\217\188"));local v49=Instance.new(v7("\8\170\153\88\207\120\122\57\163","\24\92\207\225\44\131\25"));local v50=Instance.new(v7("\127\214\160\88\57\104\95\199\183\66","\29\43\179\216\44\123"));local v51=Instance.new(v7("\136\240\20\73\165\205\19\69\167\220\3\67\179\202\52\94\188\208\46\88","\44\221\185\64"));local v52=Instance.new(v7("\52\206\124\90\107\21\212\65\69\118\34\232\70\76\103\19\230\65\81\103","\19\97\135\40\63"));local v53=Instance.new(v7("\154\89\43\47\3\48\172\89\63","\81\206\60\83\91\79"));local v54=Instance.new(v7("\122\174\200\102\13\214\89\176\65\165","\196\46\203\176\18\79\163\45"));local v55=Instance.new(v7("\141\11\74\27\60\239\220\177\56\123\61\43\245\252\172\48\127\23\42\239","\143\216\66\30\126\68\155"));local v56=Instance.new(v7("\159\225\57\206\221\183\228\232\176\205\46\196\203\176\195\243\171\193\3\223","\129\202\168\109\171\165\195\183"));local v57=Instance.new(v7("\22\93\47\204\242\21\228\39\84","\134\66\56\87\184\190\116"));local v58=Instance.new(v7("\8\52\17\175\59\254\53\33\51\63","\85\92\81\105\219\121\139\65"));local v59=Instance.new(v7("\200\154\100\64\100\203\206\186\74\64\95\208\243\160\68\87\125\214\243\167","\191\157\211\48\37\28"));local v60=Instance.new(v7("\234\54\192\25\34\203\44\253\6\63\252\16\250\15\46\205\30\253\18\46","\90\191\127\148\124"));local v61=Instance.new(v7("\76\130\54\3\84\134\44\18\116","\119\24\231\78"));local v62=Instance.new(v7("\182\40\189\94\254\85\5\150\34\171","\113\226\77\197\42\188\32"));local v63=Instance.new(v7("\15\63\192\176\34\2\199\188\32\19\215\186\52\5\224\167\59\31\250\161","\213\90\118\148"));local v64=Instance.new(v7("\110\7\128\83\85\79\29\189\76\72\120\33\186\69\89\73\47\189\88\89","\45\59\78\212\54"));local v65=Instance.new(v7("\36\83\155\159\170\47\175\245\28","\144\112\54\227\235\230\78\205"));local v66=Instance.new(v7("\135\45\23\232\242\78\167\60\0\242","\59\211\72\111\156\176"));local v67=Instance.new(v7("\123\174\215\40\86\147\208\36\84\130\192\34\64\148\247\63\79\142\237\57","\77\46\231\131"));local v68=Instance.new(v7("\143\125\130\69\162\64\133\73\160\81\149\79\180\71\162\82\187\93\184\84","\32\218\52\214"));local v69=Instance.new(v7("\122\18\41\188\221\177\71\95\66","\58\46\119\81\200\145\208\37"));local v70=Instance.new(v7("\31\137\40\184\139\168\34\63\131\62","\86\75\236\80\204\201\221"));local v71=Instance.new(v7("\71\104\67\128\230\159\65\72\109\128\221\132\124\82\99\151\255\130\124\85","\235\18\33\23\229\158"));local v72=Instance.new(v7("\101\147\245\190\72\174\242\178\74\191\226\180\94\169\213\169\81\179\207\175","\219\48\218\161"));local v73=Instance.new(v7("\208\116\100\93\247\78\226\225\125","\128\132\17\28\41\187\47"));local v74=Instance.new(v7("\53\55\30\46\127\20\38\18\53\83","\61\97\82\102\90"));local v75=Instance.new(v7("\153\7\159\78\223\67\45\0\182\43\136\68\201\68\10\27\173\39\165\95","\105\204\78\203\43\167\55\126"));local v76=Instance.new(v7("\144\131\23\27\11\16\244\88\191\175\0\17\29\23\211\67\164\163\45\10","\49\197\202\67\126\115\100\167"));local v77=Instance.new(v7("\3\94\199\61\172\87\92\50\87","\62\87\59\191\73\224\54"));local v78=Instance.new(v7("\211\7\226\221\197\23\238\221\232\12","\169\135\98\154"));local v79=Instance.new(v7("\254\94\16\81\229\39\251\194\109\33\119\242\61\219\223\101\37\93\243\39","\168\171\23\68\52\157\83"));local v80=Instance.new(v7("\193\88\193\168\61\57\180\253\107\240\142\42\35\148\224\99\244\164\43\57","\231\148\17\149\205\69\77"));local v81=Instance.new(v7("\180\162\223\239\123\254\130\162\203","\159\224\199\167\155\55"));local v82=Instance.new(v7("\195\246\36\198\213\230\40\198\248\253","\178\151\147\92"));local v83=Instance.new(v7("\185\212\120\55\10\88\73\133\231\73\17\29\66\105\152\239\77\59\28\88","\26\236\157\44\82\114\44"));local v84=Instance.new(v7("\31\7\225\94\50\58\230\82\48\43\246\84\36\61\193\73\43\39\219\79","\59\74\78\181"));local v85=Instance.new(v7("\17\212\66\78\159\36\211\95\86","\211\69\177\58\58"));local v86=Instance.new(v7("\130\204\77\240\241\223\132\236\99\240\202\196\185\246\109\231\232\194\185\241","\171\215\133\25\149\137"));local v87=Instance.new(v7("\213\205\42\238\195\49\254\71\237","\34\129\168\82\154\143\80\156"));local v88=Instance.new(v7("\176\155\7\14\80\90\186\140\168\54\40\71\64\154\145\160\50\2\70\90","\233\229\210\83\107\40\46"));local v89=Instance.new(v7("\245\71\42\194\41\192\64\55\218","\101\161\34\82\182"));local v90=Instance.new(v7("\221\36\109\251\195\246\177\39\242\8\122\241\213\241\150\60\233\4\87\234","\78\136\109\57\158\187\130\226"));local v91=Instance.new(v7("\10\58\225\229\18\62\251\244\50","\145\94\95\153"));local v92=Instance.new(v7("\200\228\32\208\86\163\206\196\14\208\109\184\243\222\0\199\79\190\243\217","\215\157\173\116\181\46"));v9.Parent=game:GetService(v7("\22\187\153\247\253\32\189","\186\85\212\235\146"));v9.ResetOnSpawn=false;v10.Name=v7("\234\148\24\234\60\252\112\215\131\86\232\107","\56\162\225\118\158\89\142");v10.Parent=v9;v10.BackgroundColor3=Color3.fromRGB(0 -0 ,1007 -(564 + 443) ,0);v10.BackgroundTransparency=0.4 -0 ;v10.BorderColor3=Color3.fromRGB(574 -(337 + 121) ,116,116);v10.BorderSizePixel=5 -3 ;v10.Position=UDim2.new(0.543610573,0 -0 ,1911.225239635 -(1261 + 650) ,0 + 0 );v10.Size=UDim2.new(0.326572001 -0 ,1817 -(772 + 1045) ,0.688498378 + 0 ,0);v10.Draggable=true;v10.Active=true;v11.Name=v7("\104\12\212\163\39","\184\60\101\160\207\66");v11.Parent=v10;v11.BackgroundColor3=Color3.fromRGB(0,144 -(102 + 42) ,1844 -(1524 + 320) );v11.BorderColor3=Color3.fromRGB(1270 -(1049 + 221) ,156 -(18 + 138) ,0 -0 );v11.BorderSizePixel=0;v11.Size=UDim2.new(1103 -(67 + 1035) ,348 -(136 + 212) ,0.0805970058 -0 ,0 + 0 );v11.Font=Enum.Font.Merriweather;v11.Text=v7("\25\151\114\168\52\144\84\169\51\194\106\238\127\212\50\239","\220\81\226\28");v11.TextColor3=Color3.fromRGB(236 + 19 ,1859 -(240 + 1364) ,1337 -(1050 + 32) );v11.TextScaled=true;v11.TextSize=49 -35 ;v11.TextWrapped=true;v12.Parent=v11;v12.MaxTextSize=9 + 5 ;v13.Parent=v10;v13.BackgroundColor3=Color3.fromRGB(1055 -(331 + 724) ,0 + 0 ,644 -(269 + 375) );v13.BackgroundTransparency=726 -(267 + 458) ;v13.BorderColor3=Color3.fromRGB(0 + 0 ,0,0 -0 );v13.BorderSizePixel=818 -(667 + 151) ;v13.Position=UDim2.new(1497.0310559012 -(1410 + 87) ,1897 -(1504 + 393) ,0.109048732 -0 ,0 -0 );v13.Size=UDim2.new(0.310559005,0,0.0556844585,796 -(461 + 335) );v13.Font=Enum.Font.Merriweather;v13.Text=v7("\50\192\150\244\222\213\18\220\140\187\187\151\73","\167\115\181\226\155\138");v13.TextColor3=Color3.fromRGB(33 + 222 ,2016 -(1730 + 31) ,1922 -(728 + 939) );v13.TextScaled=true;v13.TextSize=49 -35 ;v13.TextWrapped=true;v13.TextXAlignment=Enum.TextXAlignment.Left;v14.Name=v7("\195\55\243\83\79\99\199\235\44\182\12","\166\130\66\135\60\27\17");v14.Parent=v13;v14.BackgroundColor3=Color3.fromRGB(70,141 -71 ,160 -90 );v14.BorderColor3=Color3.fromRGB(1207 -(138 + 930) ,139,128 + 11 );v14.Position=UDim2.new(1 + 0 ,0 + 0 ,0 -0 ,0);v14.Size=UDim2.new(1766.349999994 -(459 + 1307) ,1870 -(474 + 1396) ,1,0 -0 );v14.Font=Enum.Font.Merriweather;v14.Text=v7("\97\82\205\97","\80\36\42\174\21");v14.TextColor3=Color3.fromRGB(235 + 15 ,0 + 0 ,0);v14.TextScaled=true;v14.TextSize=40 -26 ;v14.TextWrapped=true;v14.MouseButton1Click:Connect(function() local v786=0 + 0 ;local v787;while true do if (v786==0) then v787=game:GetService(v7("\124\21\39\118\71\19\54\110\75\20\4\110\65\2\54\125\75","\26\46\112\87"));while wait(0.7) do local v975=0 -0 ;while true do if (v975==(0 -0)) then v787.RemoteEvent.AddPowerEvent:FireServer(v7("\159\49\164\121\139\173\68\189\183\42\165\115","\212\217\67\203\20\223\223\37"),601 -(562 + 29) );wait(0.7 + 0 );v975=1420 -(374 + 1045) ;end if (v975==(1 + 0)) then v787.RemoteEvent.AddPowerEvent:FireServer(v7("\156\159\167\223\142\159\169\219\180\132\166\213","\178\218\237\200"),27.990000000000002 -18 );break;end end end break;end end end);v15.Parent=v14;v15.MaxTextSize=14;v16.Parent=v13;v16.MaxTextSize=14;v17.Parent=v10;v17.BackgroundColor3=Color3.fromRGB(638 -(448 + 190) ,0 + 0 ,0 + 0 );v17.BackgroundTransparency=1 + 0 ;v17.BorderColor3=Color3.fromRGB(0,0 -0 ,0 -0 );v17.BorderSizePixel=0;v17.Position=UDim2.new(0.484472036,0,0.109048732,0);v17.Size=UDim2.new(1494.344720483 -(1307 + 187) ,0 -0 ,0.0556844585,0);v17.Font=Enum.Font.Merriweather;v17.Text=v7("\151\160\242\223\130\167\231\217\184\245\180\128\236","\176\214\213\134");v17.TextColor3=Color3.fromRGB(597 -342 ,255,781 -526 );v17.TextScaled=true;v17.TextSize=14;v17.TextWrapped=true;v17.TextXAlignment=Enum.TextXAlignment.Left;v18.Name=v7("\213\184\162\219\156\68\88\253\163\228\132","\57\148\205\214\180\200\54");v18.Parent=v17;v18.BackgroundColor3=Color3.fromRGB(753 -(232 + 451) ,67 + 3 ,62 + 8 );v18.BorderColor3=Color3.fromRGB(703 -(510 + 54) ,139,139);v18.Position=UDim2.new(1 -0 ,0,0,36 -(13 + 23) );v18.Size=UDim2.new(0.315315336 -0 ,0 -0 ,1,0 -0 );v18.Font=Enum.Font.Merriweather;v18.Text=v7("\55\229\54\32","\22\114\157\85\84");v18.TextColor3=Color3.fromRGB(1343 -(830 + 258) ,0,0 -0 );v18.TextScaled=true;v18.TextSize=9 + 5 ;v18.TextWrapped=true;v18.MouseButton1Click:Connect(function() local v788=0 + 0 ;local v789;while true do if (v788==(1441 -(860 + 581))) then v789=game:GetService(v7("\246\206\3\200\84\245\169\208\206\23\247\73\249\186\197\204\22","\200\164\171\115\164\61\150"));while wait(0.7 -0 ) do local v976=0 + 0 ;while true do if (v976==0) then v789.RemoteEvent.AddPowerEvent:FireServer(v7("\152\230\12\72\183\172\245\10\75\138\176\243","\227\222\148\99\37"),261 -(237 + 4) );wait(0.7 -0 );v976=2 -1 ;end if (v976==1) then v789.RemoteEvent.AddPowerEvent:FireServer(v7("\21\64\93\251\205\33\83\91\248\240\61\85","\153\83\50\50\150"),35.989999999999995 -16 );break;end end end break;end end end);v19.Parent=v18;v19.MaxTextSize=12 + 2 ;v20.Parent=v17;v20.MaxTextSize=14;v21.Parent=v10;v21.BackgroundColor3=Color3.fromRGB(0,0,0);v21.BackgroundTransparency=1 + 0 ;v21.BorderColor3=Color3.fromRGB(0 -0 ,0 + 0 ,0 + 0 );v21.BorderSizePixel=1426 -(85 + 1341) ;v21.Position=UDim2.new(0.0310559012 -0 ,0 -0 ,0.187935054,372 -(45 + 327) );v21.Size=UDim2.new(0.310559005 -0 ,502 -(444 + 58) ,0.0556844585 + 0 ,0 + 0 );v21.Font=Enum.Font.Merriweather;v21.Text=v7("\115\121\85\58\41","\45\61\22\19\124\19\203");v21.TextColor3=Color3.fromRGB(125 + 130 ,255,255);v21.TextScaled=true;v21.TextSize=40 -26 ;v21.TextWrapped=true;v21.TextXAlignment=Enum.TextXAlignment.Left;v22.Name=v7("\239\29\43\211","\217\161\114\109\149\98\16");v22.Parent=v21;v22.BackgroundColor3=Color3.fromRGB(1802 -(64 + 1668) ,2043 -(1227 + 746) ,70);v22.BorderColor3=Color3.fromRGB(139,139,139);v22.Position=UDim2.new(2 -1 ,0,0 -0 ,494 -(415 + 79) );v22.Size=UDim2.new(0.349999994,0 + 0 ,492 -(142 + 349) ,0 + 0 );v22.Font=Enum.Font.Merriweather;v22.Text=v7("\55\56\59\104","\20\114\64\88\28\220");v22.TextColor3=Color3.fromRGB(350 -95 ,0 + 0 ,0 + 0 );v22.TextScaled=true;v22.TextSize=38 -24 ;v22.TextWrapped=true;v22.MouseButton1Click:Connect(function() local v790=0;local v791;local v792;while true do if (v790==(1866 -(1710 + 154))) then while true do local v977=318 -(200 + 118) ;local v978;while true do if (v977==(0 + 0)) then wait(0.1 -0 );v978=game.Players.LocalPlayer.Character;v977=1 -0 ;end if (v977==(1 + 0)) then if (v978 and v978:FindFirstChild(v7("\253\222\60\95\42\113\210\212\34\88","\55\187\177\78\60\79"))) then v791();wait(0.1 + 0 );v792();end break;end end end break;end if (v790==0) then local v931=0 + 0 ;while true do if (v931==1) then v790=1 + 0 ;break;end if (v931==(0 -0)) then v791=nil;function v791() local v1085=0;local v1086;while true do if (v1085==(1251 -(363 + 887))) then if v1086 then v1086.Parent=game.Players.LocalPlayer.Character;end break;end if (v1085==0) then repeat wait();until game.Players.LocalPlayer.Backpack:FindFirstChild(v7("\2\22\221\166\252","\221\81\97\178\212\152\176")) v1086=game.Players.LocalPlayer.Backpack:FindFirstChild(v7("\254\240\18\233\30","\122\173\135\125\155"));v1085=1 -0 ;end end end v931=4 -3 ;end end end if (v790==(1 + 0)) then v792=nil;function v792() local v979=0 -0 ;local v980;while true do if (v979==0) then v980=game.Players.LocalPlayer.Character:FindFirstChild(v7("\183\214\15\171\59","\168\228\161\96\217\95\81"));if v980 then v980.Parent=game.Players.LocalPlayer.Backpack;end break;end end end v790=2;end end end);v23.Parent=v22;v23.MaxTextSize=10 + 4 ;v24.Parent=v21;v24.MaxTextSize=1678 -(674 + 990) ;v25.Parent=v10;v25.BackgroundColor3=Color3.fromRGB(0 + 0 ,0,0 + 0 );v25.BackgroundTransparency=1 -0 ;v25.BorderColor3=Color3.fromRGB(1055 -(507 + 548) ,837 -(289 + 548) ,0);v25.BorderSizePixel=0;v25.Position=UDim2.new(0.484472036,0,1818.187935054 -(821 + 997) ,0);v25.Size=UDim2.new(0.344720483,255 -(195 + 60) ,0.0556844585,0 + 0 );v25.Font=Enum.Font.Merriweather;v25.Text=v7("\12\219\75\228\98\221\143\61\250\108\177","\224\77\174\63\139\38\175");v25.TextColor3=Color3.fromRGB(255,1756 -(251 + 1250) ,255);v25.TextScaled=true;v25.TextSize=40 -26 ;v25.TextWrapped=true;v25.TextXAlignment=Enum.TextXAlignment.Left;v26.Name=v7("\165\84\76\33\160\83\87\62\176\114","\78\228\33\56");v26.Parent=v25;v26.BackgroundColor3=Color3.fromRGB(49 + 21 ,1102 -(809 + 223) ,102 -32 );v26.BorderColor3=Color3.fromRGB(417 -278 ,139,459 -320 );v26.Position=UDim2.new(1 + 0 ,0 + 0 ,617 -(14 + 603) ,129 -(118 + 11) );v26.Size=UDim2.new(0.315315336 + 0 ,0,1 + 0 ,0 -0 );v26.Font=Enum.Font.Merriweather;v26.Text=v7("\235\102\177\23","\229\174\30\210\99");v26.TextColor3=Color3.fromRGB(255,949 -(551 + 398) ,0);v26.TextScaled=true;v26.TextSize=9 + 5 ;v26.TextWrapped=true;v26.MouseButton1Click:Connect(function() local v793=game:GetService(v7("\43\225\135\72\232\47\42","\89\123\141\230\49\141\93"));local function v794(v894) if (v894 and v894:IsA(v7("\199\126\249\0","\42\147\17\150\108\112"))) then local v932=0 + 0 ;while true do if (v932==0) then v894.Parent=workspace;v894.Handle.CFrame=game.Players.LocalPlayer.Character.PrimaryPart.CFrame * CFrame.new(0, -(5 + 0),0) ;break;end end end end local function v795() local v895=0;local v896;local v897;local v898;while true do if (v895==(7 -5)) then if v898 then local v1043=0 -0 ;while true do if (v1043==(1 + 0)) then v794(v898);break;end if ((0 -0)==v1043) then v898.Parent=v896.Character;wait(0.2 + 0 );v1043=90 -(40 + 49) ;end end end break;end if (v895==(3 -2)) then v897=v896:FindFirstChild(v7("\45\167\46\116\247\233\12\173","\136\111\198\77\31\135"));v898=v897 and v897:FindFirstChild(v7("\54\27\166\95\179","\201\98\105\199\54\221\132\119")) ;v895=492 -(99 + 391) ;end if (v895==(0 + 0)) then wait(4 -3 );v896=game.Players.LocalPlayer;v895=2 -1 ;end end end local function v796() local v899=v793.LocalPlayer;local function v900() local v919=0 + 0 ;local v920;while true do if (v919==(0 -0)) then v920=0;while true do if (v920==(1605 -(1032 + 572))) then v899.ChildAdded:Connect(function(v1114) if (v1114:IsA(v7("\148\3\135\36\14","\204\217\108\227\65\98\85")) and (v1114.Name==v7("\110\207\244\252\41\210","\160\62\163\149\133\76"))) then v795();end end);break;end if (v920==(417 -(203 + 214))) then v795();v899.CharacterAdded:Connect(function(v1115) v795();end);v920=1;end end break;end end end if v899.Character then v900();else v899.CharacterAdded:Connect(v900);end end v796();end);v27.Parent=v26;v27.MaxTextSize=14;v28.Parent=v25;v28.MaxTextSize=1831 -(568 + 1249) ;v29.Parent=v10;v29.BackgroundColor3=Color3.fromRGB(0 + 0 ,0 -0 ,0 -0 );v29.BackgroundTransparency=1307 -(913 + 393) ;v29.BorderColor3=Color3.fromRGB(0,0 -0 ,0);v29.BorderSizePixel=0 -0 ;v29.Position=UDim2.new(410.0310559012 -(269 + 141) ,0 -0 ,1981.266821325 -(362 + 1619) ,1625 -(950 + 675) );v29.Size=UDim2.new(0.310559005,0 + 0 ,0.0556844585,0);v29.Font=Enum.Font.Merriweather;v29.Text=v7("\254\131\46\46\206\198\250","\163\182\192\109\79");v29.TextColor3=Color3.fromRGB(1434 -(216 + 963) ,255,1542 -(485 + 802) );v29.TextScaled=true;v29.TextSize=573 -(432 + 127) ;v29.TextWrapped=true;v29.TextXAlignment=Enum.TextXAlignment.Left;v30.Name=v7("\7\39\6\197\198\36\41\20","\149\84\70\96\160");v30.Parent=v29;v30.BackgroundColor3=Color3.fromRGB(1143 -(1065 + 8) ,39 + 31 ,1671 -(635 + 966) );v30.BorderColor3=Color3.fromRGB(100 + 39 ,181 -(5 + 37) ,345 -206 );v30.Position=UDim2.new(1,0 + 0 ,0 -0 ,0);v30.Size=UDim2.new(0.349999994,0 + 0 ,1 -0 ,0 -0 );v30.Font=Enum.Font.Merriweather;v30.Text=v7("\29\30\14\249","\141\88\102\109");v30.TextColor3=Color3.fromRGB(480 -225 ,0 -0 ,0);v30.TextScaled=true;v30.TextSize=11 + 3 ;v30.TextWrapped=true;v30.MouseButton1Click:Connect(function() local v797=Instance.new(v7("\131\82\216\100","\161\211\51\170\16\122\93\53"));v797.Size=Vector3.new(579 -(318 + 211) ,4 -3 ,1637 -(963 + 624) );v797.Anchored=true;v797.Position=Vector3.new(124.430862,427421.65286300005 + 572578 ,1317.85906 -(518 + 328) );v797.Parent=game.Workspace;local v803=game.Players.LocalPlayer;local v804=v803.Character or v803.CharacterAdded:Wait() ;v804:WaitForChild(v7("\211\187\191\41\245\161\187\44\201\161\189\60\203\175\160\60","\72\155\206\210")).CFrame=CFrame.new(288.430862 -164 ,1000000.652863,752.85906 -281 ) + Vector3.new(318 -(301 + 16) ,0,0 -0 ) ;end);v31.Parent=v30;v31.MaxTextSize=39 -25 ;v32.Parent=v29;v32.MaxTextSize=36 -22 ;v33.Parent=v10;v33.BackgroundColor3=Color3.fromRGB(0 + 0 ,0 + 0 ,0 -0 );v33.BackgroundTransparency=1 + 0 ;v33.BorderColor3=Color3.fromRGB(0,0 + 0 ,0 -0 );v33.BorderSizePixel=0;v33.Position=UDim2.new(0.484472036 + 0 ,1019 -(829 + 190) ,0.264501154 -0 ,0 -0 );v33.Size=UDim2.new(0.344720483,0 -0 ,0.0556844585 -0 ,0 + 0 );v33.Font=Enum.Font.Merriweather;v33.Text=v7("\103\116\64\7\18\96\81\14","\83\38\26\52\110");v33.TextColor3=Color3.fromRGB(84 + 171 ,773 -518 ,255);v33.TextScaled=true;v33.TextSize=14;v33.TextWrapped=true;v33.TextXAlignment=Enum.TextXAlignment.Left;v34.Name=v7("\121\25\51\79\121\49\12","\38\56\119\71");v34.Parent=v33;v34.BackgroundColor3=Color3.fromRGB(70,67 + 3 ,683 -(520 + 93) );v34.BorderColor3=Color3.fromRGB(415 -(259 + 17) ,9 + 130 ,51 + 88 );v34.Position=UDim2.new(3 -2 ,591 -(396 + 195) ,0 -0 ,0);v34.Size=UDim2.new(0.315315336,1761 -(440 + 1321) ,1830 -(1059 + 770) ,0 -0 );v34.Font=Enum.Font.Merriweather;v34.Text=v7("\214\247\91\194","\54\147\143\56\182\69");v34.TextColor3=Color3.fromRGB(800 -(424 + 121) ,0 + 0 ,1347 -(641 + 706) );v34.TextScaled=true;v34.TextSize=6 + 8 ;v34.TextWrapped=true;v34.MouseButton1Click:Connect(function() local v806=440 -(249 + 191) ;local v807;while true do if ((0 -0)==v806) then v807=game:GetService(v7("\224\136\237\93\202\215\141\202\90\218\196","\191\182\225\159\41"));game:GetService(v7("\27\30\41\76\142\149\209","\162\75\114\72\53\235\231")).LocalPlayer.Idled:connect(function() v807:Button2Down(Vector2.new(0 + 0 ,0 -0 ),workspace.CurrentCamera.CFrame);wait(428 -(183 + 244) );v807:Button2Up(Vector2.new(0,0 + 0 ),workspace.CurrentCamera.CFrame);end);break;end end end);v35.Parent=v34;v35.MaxTextSize=744 -(434 + 296) ;v36.Parent=v33;v36.MaxTextSize=44 -30 ;v37.Parent=v10;v37.BackgroundColor3=Color3.fromRGB(0,0,512 -(169 + 343) );v37.BackgroundTransparency=1 + 0 ;v37.BorderColor3=Color3.fromRGB(0 -0 ,0 -0 ,0 + 0 );v37.BorderSizePixel=0 -0 ;v37.Position=UDim2.new(0.0310559012,0,1123.345707655 -(651 + 472) ,0 + 0 );v37.Size=UDim2.new(0.310559005 + 0 ,0 -0 ,483.0556844585 -(397 + 86) ,876 -(423 + 453) );v37.Font=Enum.Font.Merriweather;v37.Text=v7("\184\61\86\229\86\22\188\48\69\251\86\16\214","\98\236\92\36\130\51");v37.TextColor3=Color3.fromRGB(26 + 229 ,255,255);v37.TextScaled=true;v37.TextSize=2 + 12 ;v37.TextWrapped=true;v37.TextXAlignment=Enum.TextXAlignment.Left;v38.Name=v7("\143\16\0\182\117\164\180\41\161\11","\80\196\121\108\218\37\200\213");v38.Parent=v37;v38.BackgroundColor3=Color3.fromRGB(62 + 8 ,56 + 14 ,63 + 7 );v38.BorderColor3=Color3.fromRGB(139,139,1329 -(50 + 1140) );v38.Position=UDim2.new(1 + 0 ,0 + 0 ,0 + 0 ,0 -0 );v38.Size=UDim2.new(0.349999994,0,1,0 + 0 );v38.Font=Enum.Font.Merriweather;v38.Text=v7("\35\127\13\108\78","\234\96\19\98\31\43\110");v38.TextColor3=Color3.fromRGB(851 -(157 + 439) ,0 -0 ,0);v38.TextScaled=true;v38.TextSize=46 -32 ;v38.TextWrapped=true;local v327=false;local v328=Instance.new(v7("\53\28\64\194\169\124\172\19\22","\235\102\127\50\167\204\18"));v328.Name=v7("\96\173\244\58\65\60\99\164\249\38\71\58\95\179\210\22\109","\78\48\193\149\67\36");v328.ResetOnSpawn=false;local v331=Instance.new(v7("\22\12\129\21\68","\33\80\126\224\120"));v331.Size=UDim2.new(0 -0 ,200,0,1218 -(782 + 136) );v331.Position=UDim2.new(855.5 -(112 + 743) ,1321 -(1026 + 145) ,0.5 + 0 , -(868 -(493 + 225)));v331.BackgroundColor3=Color3.new(0 -0 ,0 + 0 ,0 -0 );v331.BackgroundTransparency=0.4 + 0 ;v331.BorderSizePixel=5 -3 ;v331.Visible=false;v331.Parent=v328;v331.Active=true;v331.Draggable=true;local v341=Instance.new(v7("\223\171\17\203\80\224\161\13\195\122\254\169\14\193","\60\140\200\99\164"));v341.Size=UDim2.new(1 + 0 ,0,1 -0 , -(1625 -(210 + 1385)));v341.Position=UDim2.new(1689 -(1201 + 488) ,0 + 0 ,0,53 -23 );v341.CanvasSize=UDim2.new(0 -0 ,585 -(352 + 233) ,0,0);v341.BackgroundTransparency=1;v341.Parent=v331;local function v347(v808) local v809=0 -0 ;local v810;local v811;local v812;while true do if (v809==(1 + 0)) then v812=nil;v808.InputBegan:Connect(function(v982) if (v982.UserInputType==Enum.UserInputType.MouseButton1) then local v1044=0 -0 ;while true do if (v1044==1) then v812=v808.Position;v982.Changed:Connect(function() if (v982.UserInputState==Enum.UserInputState.End) then v810=false;end end);break;end if (v1044==(574 -(489 + 85))) then v810=true;v811=v982.Position;v1044=1502 -(277 + 1224) ;end end end end);v809=2;end if (v809==(1493 -(663 + 830))) then v810=nil;v811=nil;v809=1 + 0 ;end if (v809==(4 -2)) then v808.InputChanged:Connect(function(v983) if ((v983.UserInputType==Enum.UserInputType.MouseMovement) and v810) then local v1045=v983.Position-v811 ;v808.Position=UDim2.new(v812.X.Scale,v812.X.Offset + v1045.X ,v812.Y.Scale,v812.Y.Offset + v1045.Y );end end);break;end end end local v348=Instance.new(v7("\179\241\28\50\142\134\246\1\42","\194\231\148\100\70"));v348.Size=UDim2.new(876 -(461 + 414) ,0 + 0 ,0 + 0 ,3 + 27 );v348.Position=UDim2.new(0 + 0 ,250 -(172 + 78) ,0 -0 ,0);v348.BackgroundColor3=Color3.new(0,0,0 + 0 );v348.Text=v7("\114\77\211\164\243\220\118\64\192\186\243\218","\168\38\44\161\195\150");v348.TextColor3=Color3.new(1 -0 ,1 + 0 ,1 + 0 );v348.TextSize=14;v348.Font=Enum.Font.Fantasy;v348.Parent=v331;v347(v331);local v358=nil;local function v359(v813) local v814=0;local v815;while true do if (v814==(0 -0)) then if ( not v813 or  not v813.Character or  not v813.Character:FindFirstChild(v7("\168\233\143\119\62\231\191\18\178\243\141\98\0\233\164\2","\118\224\156\226\22\80\136\214")) or  not v813.Character:FindFirstChild(v7("\106\235\88\132","\224\34\142\57"))) then local v1015=0;while true do if (v1015==0) then warn(v7("\247\169\211\220\127\248\89\78\202\166\215\218\118\229\29\30\210\166\220\216\97","\110\190\199\165\189\19\145\61"));return;end end end v815=v813.Character.Head.Position;v814=1 -0 ;end if ((1 + 0)==v814) then game.Players.LocalPlayer.Character.Shuriken.Handle.CFrame=CFrame.new(v815);game.Players.LocalPlayer.Character.Shuriken.HitEvent:FireServer(v815);break;end end end local function v360() while v358 do local v901=0;while true do if (0==v901) then v359(v358);wait((1 + 0)/(250 + 450) );break;end end end end local function v361(v816) local v817=0 -0 ;local v818;local v819;local v820;local v821;while true do if (v817==(0 -0)) then v818=7 + 13 ;v819=3 + 2 ;v820=( #v341:GetChildren() -(448 -(133 + 314))) * (v818 + v819) ;v817=1 + 0 ;end if (v817==2) then v821.Text=v816.Name;v821.TextSize=14;v821.Font=Enum.Font.Fantasy;v817=216 -(199 + 14) ;end if (v817==(3 -2)) then v821=Instance.new(v7("\238\238\111\252\169\210\206\255\120\230","\167\186\139\23\136\235"));v821.Size=UDim2.new(1, -v819 * 2 ,1549 -(647 + 902) ,v818);v821.Position=UDim2.new(0 -0 ,v819,233 -(85 + 148) ,v820);v817=1291 -(426 + 863) ;end if (v817==(18 -14)) then v821.Parent=v341;v821.MouseButton1Click:Connect(function() local v984=1654 -(873 + 781) ;while true do if (v984==(0 -0)) then v358=v816;v360();break;end end end);v341.CanvasSize=UDim2.new(0,0,0,v820 + v818 + v819 );break;end if (v817==(7 -4)) then v821.BackgroundTransparency=1 + 0 ;v821.TextColor3=Color3.new(3 -2 ,1 -0 ,2 -1 );v821.Name=v816.Name   .. v7("\56\160\156\25\21\187","\109\122\213\232") ;v817=1951 -(414 + 1533) ;end end end local function v362(v822) local v823=0 + 0 ;local v824;while true do if (v823==(555 -(443 + 112))) then v824=v341:FindFirstChild(v822.Name   .. v7("\204\226\182\36\225\249","\80\142\151\194") );if v824 then local v1016=0;local v1017;local v1018;local v1019;local v1020;while true do if (v1016==(1479 -(888 + 591))) then v824:Destroy();v1017=v341:GetChildren();v1016=2 -1 ;end if (v1016==(1 + 1)) then v1020=0 -0 ;for v1118,v1119 in ipairs(v1017) do if v1119:IsA(v7("\55\195\111\88\33\211\99\88\12\200","\44\99\166\23")) then local v1136=0;while true do if (0==v1136) then v1119.Position=UDim2.new(0 + 0 ,v1019,0,v1020);v1020=v1020 + v1018 + v1019 ;break;end end end end v1016=3;end if (v1016==(2 + 1)) then v341.CanvasSize=UDim2.new(0,0 + 0 ,0 -0 ,v1020);break;end if ((1 -0)==v1016) then local v1094=1678 -(136 + 1542) ;while true do if (v1094==(3 -2)) then v1016=2;break;end if ((0 + 0)==v1094) then v1018=31 -11 ;v1019=4 + 1 ;v1094=1;end end end end end break;end end end local function v363() local v825=486 -(68 + 418) ;local v826;while true do if (v825==0) then v826=game.Players:GetPlayers();for v985,v986 in ipairs(v826) do v361(v986);end break;end end end game.Players.PlayerAdded:Connect(v361);game.Players.PlayerRemoving:Connect(v362);v363();local function v364() v328.Parent=game.Players.LocalPlayer:WaitForChild(v7("\76\251\40\47\54\182\91\226\32","\196\28\151\73\86\83"));end v364();game.Players.LocalPlayer.CharacterAdded:Connect(v364);v38.MouseButton1Down:Connect(function() local v828=0 -0 ;while true do if (v828==(1 -0)) then if v327 then local v1021=0 + 0 ;while true do if (v1021==(1092 -(770 + 322))) then v38.Text=v7("\220\19\44\30","\22\147\99\73\112\226\56\120");v38.TextColor3=Color3.fromRGB(0 + 0 ,74 + 181 ,0 + 0 );break;end end else local v1022=0 -0 ;while true do if (v1022==(0 -0)) then v38.Text=v7("\155\121\237\230\136","\237\216\21\130\149");v38.TextColor3=Color3.fromRGB(694 -439 ,0 -0 ,0 + 0 );break;end end end break;end if (v828==(0 -0)) then v327= not v327;v331.Visible=v327;v828=1;end end end);v39.Parent=v38;v39.MaxTextSize=7 + 7 ;v40.Parent=v37;v40.MaxTextSize=9 + 5 ;v41.Parent=v10;v41.BackgroundColor3=Color3.fromRGB(0 + 0 ,0,0);v41.BackgroundTransparency=3 -2 ;v41.BorderColor3=Color3.fromRGB(0 -0 ,0,0 + 0 );v41.BorderSizePixel=0 -0 ;v41.Position=UDim2.new(0.484472036,0 -0 ,0.345707655 + 0 ,0);v41.Size=UDim2.new(0.344720483 -0 ,831 -(762 + 69) ,0.0556844585 -0 ,0 + 0 );v41.Font=Enum.Font.Merriweather;v41.Text=v7("\166\75\94\75\184\236\79\151\71\79\5","\62\226\46\63\63\208\169");v41.TextColor3=Color3.fromRGB(166 + 89 ,255,616 -361 );v41.TextScaled=true;v41.TextSize=14;v41.TextWrapped=true;v41.TextXAlignment=Enum.TextXAlignment.Left;v42.Name=v7("\195\24\70\151\43\2\32\82\246","\62\133\121\53\227\127\109\79");v42.Parent=v41;v42.BackgroundColor3=Color3.fromRGB(70,23 + 47 ,2 + 68 );v42.BorderColor3=Color3.fromRGB(541 -402 ,296 -(8 + 149) ,1459 -(1199 + 121) );v42.Position=UDim2.new(1 -0 ,0 -0 ,0 + 0 ,0 -0 );v42.Size=UDim2.new(0.315315336,0 -0 ,1 + 0 ,1807 -(518 + 1289) );v42.Font=Enum.Font.Merriweather;v42.Text=v7("\53\12\49\225","\194\112\116\82\149\182\206");v42.TextColor3=Color3.fromRGB(255,0,0 -0 );v42.TextScaled=true;v42.TextSize=2 + 12 ;v42.TextWrapped=true;v42.MouseButton1Click:Connect(function() local v829=0 -0 ;local v830;local v831;while true do if (v829==1) then local v948=0;while true do if (v948==(1 + 0)) then v829=471 -(304 + 165) ;break;end if (v948==(0 + 0)) then v831=nil;function v831(v1087) local v1088=0;local v1089;while true do if (v1088==(160 -(54 + 106))) then v1089=v1087:FindFirstChildOfClass(v7("\30\92\254\17\125\193\63\77","\174\86\41\147\112\19"));if v1089 then v1089.Died:Connect(function() v830(v1087);end);end break;end end end v948=1;end end end if (v829==(1969 -(1618 + 351))) then v830=nil;function v830(v987) local v988=0 + 0 ;local v989;while true do if (v988==(1017 -(10 + 1006))) then if v989 then local v1120=0 + 0 ;local v1121;local v1122;while true do if (v1120==(0 + 0)) then local v1145=0;while true do if (v1145==(3 -2)) then v1120=1;break;end if (v1145==(1033 -(912 + 121))) then v1121=Instance.new(v7("\141\204\71\66\70\88","\45\203\163\43\38\35\42\91"));v1121.Name=v7("\230\138\211\47\148\138\91\220\145\221\42\137\172\70","\52\178\229\188\67\231\201");v1145=1 + 0 ;end end end if (v1120==3) then v1121.Parent=v989.Backpack;break;end if (v1120==(1291 -(1140 + 149))) then v1122=v987:FindFirstChildOfClass(v7("\247\242\163\217\253\208\238\170","\147\191\135\206\184"));if (v1122 and v1122:IsDescendantOf(game.Workspace)) then local v1158=0 + 0 ;local v1159;while true do if (v1158==(0 -0)) then v1159=v1122:FindFirstChildOfClass(v7("\176\39\169\205","\210\228\72\198\161\184\51"));if v1159 then v1159.Parent=v1121;end break;end end end v1120=1 + 2 ;end if (v1120==(3 -2)) then v1121.Parent=workspace;for v1153,v1154 in ipairs(v989.Backpack:GetChildren()) do if v1154:IsA(v7("\21\78\95\8","\67\65\33\48\100\151\60")) then v1154.Parent=v1121;end end v1120=2;end end end break;end if (v988==(0 -0)) then for v1099,v1100 in ipairs(v987:GetDescendants()) do if v1100:IsA(v7("\27\169\95\29\240\227\28\45","\110\89\200\44\120\160\130")) then v1100.Anchored=true;end end v989=game.Players:GetPlayerFromCharacter(v987);v988=1;end end end v829=1 + 0 ;end if (v829==(6 -4)) then game.Players.PlayerAdded:Connect(function(v990) v990.CharacterAdded:Connect(v831);end);for v991,v992 in ipairs(game.Players:GetPlayers()) do if v992.Character then v831(v992.Character);end end break;end end end);v43.Parent=v42;v43.MaxTextSize=200 -(165 + 21) ;v44.Parent=v41;v44.MaxTextSize=125 -(61 + 50) ;v45.Parent=v10;v45.BackgroundColor3=Color3.fromRGB(0,0,0 + 0 );v45.BackgroundTransparency=4 -3 ;v45.BorderColor3=Color3.fromRGB(0,0,0 -0 );v45.BorderSizePixel=0 + 0 ;v45.Position=UDim2.new(1460.0310559012 -(1295 + 165) ,0 + 0 ,0.424593955 + 0 ,1397 -(819 + 578) );v45.Size=UDim2.new(1402.310559005 -(331 + 1071) ,0,743.0556844585 -(588 + 155) ,1282 -(546 + 736) );v45.Font=Enum.Font.Merriweather;v45.Text=v7("\122\21\153\4\3\6\3\174\1","\203\59\96\237\107\69\111\113");v45.TextColor3=Color3.fromRGB(255,255,2192 -(1834 + 103) );v45.TextScaled=true;v45.TextSize=14;v45.TextWrapped=true;v45.TextXAlignment=Enum.TextXAlignment.Left;v46.Name=v7("\12\31\184\227\62\232","\183\68\118\204\129\81\144");v46.Parent=v45;v46.BackgroundColor3=Color3.fromRGB(70,70,44 + 26 );v46.BorderColor3=Color3.fromRGB(414 -275 ,1905 -(1536 + 230) ,630 -(128 + 363) );v46.Position=UDim2.new(1,0,0,0 + 0 );v46.Size=UDim2.new(0.349999994 -0 ,0 + 0 ,1,0 -0 );v46.Font=Enum.Font.Merriweather;v46.Text=v7("\33\171\118","\226\110\205\16\132\107");v46.TextColor3=Color3.fromRGB(255,0,0 -0 );v46.TextScaled=true;v46.TextSize=33 -19 ;v46.TextWrapped=true;local v425=false;v46.MouseButton1Down:Connect(function() v425= not v425;if v425 then local v921=0 + 0 ;while true do if (v921==0) then v46.Text=v7("\196\205","\33\139\163\128\185");v46.TextColor3=Color3.fromRGB(0,255,1009 -(615 + 394) );break;end end else local v922=0 + 0 ;while true do if (v922==0) then v46.Text=v7("\120\94\2","\190\55\56\100");v46.TextColor3=Color3.fromRGB(255,0,0 + 0 );break;end end end local function v832() local v902=0 -0 ;local v903;local v904;local v905;local v906;local v907;local v908;local v909;while true do if (v902==1) then v905=Vector3.new(0,5,0 -0 );v906=v904.HumanoidRootPart.CFrame.LookVector;v902=653 -(59 + 592) ;end if (v902==(0 -0)) then v903=game:GetService(v7("\102\163\61\7\22\241\224","\147\54\207\92\126\115\131")).LocalPlayer;v904=v903.Character or v903.CharacterAdded:Wait() ;v902=1 -0 ;end if (v902==3) then v909=v903.Backpack:FindFirstChild(v7("\62\57\32\111\4\117\8\63","\30\109\81\85\29\109")) or v904:FindFirstChild(v7("\204\121\65\164\63\213\249\241","\156\159\17\52\214\86\190")) ;if v909 then local v1047=0;while true do if (v1047==1) then if (v909.Parent==v904) then v909.Parent=v903.Backpack;end break;end if (v1047==(0 + 0)) then if (v909.Parent==v903.Backpack) then v909.Parent=v904;end v909.HitEvent:FireServer(unpack(v908));v1047=172 -(70 + 101) ;end end else warn(v7("\157\231\168\174\167\228\184\178\238\225\178\168\238\233\178\169\160\235\253\181\160\175\191\189\173\228\173\189\173\228\253\179\188\175\190\180\175\253\188\191\186\234\175","\220\206\143\221"));end break;end if ((4 -2)==v902) then local v995=0 + 0 ;while true do if ((0 -0)==v995) then v907=v904.HumanoidRootPart.Position + v905 ;v908={[1]=v907,[243 -(123 + 118) ]=v906};v995=1;end if (v995==(1 + 0)) then v902=3;break;end end end end end if v425 then spawn(function() while v425 do local v996=0;while true do if (v996==(0 + 0)) then v832();wait(1399.001 -(653 + 746) );break;end end end end);end end);v47.Parent=v46;v47.MaxTextSize=26 -12 ;v48.Parent=v45;v48.MaxTextSize=19 -5 ;v49.Parent=v10;v49.BackgroundColor3=Color3.fromRGB(0,0 -0 ,0 + 0 );v49.BackgroundTransparency=1;v49.BorderColor3=Color3.fromRGB(0 + 0 ,0,0);v49.BorderSizePixel=0;v49.Position=UDim2.new(0.484472036 + 0 ,0 + 0 ,0.424593955,0 + 0 );v49.Size=UDim2.new(0.344720483 -0 ,0 + 0 ,0.0556844585 -0 ,0);v49.Font=Enum.Font.Merriweather;v49.Text=v7("\167\85\30\0\215\222\214\220","\178\230\29\77\119\184\172");v49.TextColor3=Color3.fromRGB(1489 -(885 + 349) ,203 + 52 ,255);v49.TextScaled=true;v49.TextSize=14;v49.TextWrapped=true;v49.TextXAlignment=Enum.TextXAlignment.Left;v50.Name=v7("\212\150\57\12\120\234\241","\152\149\222\106\123\23");v50.Parent=v49;v50.BackgroundColor3=Color3.fromRGB(190 -120 ,203 -133 ,1038 -(915 + 53) );v50.BorderColor3=Color3.fromRGB(940 -(768 + 33) ,532 -393 ,244 -105 );v50.Position=UDim2.new(329 -(287 + 41) ,0,847 -(638 + 209) ,0 + 0 );v50.Size=UDim2.new(1686.315315336 -(96 + 1590) ,1672 -(741 + 931) ,1 + 0 ,0);v50.Font=Enum.Font.Merriweather;v50.Text=v7("\248\62\245\87","\213\189\70\150\35");v50.TextColor3=Color3.fromRGB(726 -471 ,0 -0 ,0);v50.TextScaled=true;v50.TextSize=7 + 7 ;v50.TextWrapped=true;v50.MouseButton1Click:Connect(function() repeat task.wait();until game.Players.LocalPlayer.Backpack:WaitForChild(v7("\124\66\123\26\75","\104\47\53\20")) local v833=game.Players.LocalPlayer.Backpack:FindFirstChild(v7("\144\91\142\14\184","\111\195\44\225\124\220"));v833.Parent=game.Players.LocalPlayer.Character;while true do local v910=0;while true do if (v910==(0 + 0)) then wait();game.Players.LocalPlayer.Character.Sword.HitEvent:FireServer();break;end end end end);v51.Parent=v50;v51.MaxTextSize=5 + 9 ;v52.Parent=v49;v52.MaxTextSize=14;v53.Parent=v10;v53.BackgroundColor3=Color3.fromRGB(0,0 -0 ,0 + 0 );v53.BackgroundTransparency=1 + 0 ;v53.BorderColor3=Color3.fromRGB(0 -0 ,0 + 0 ,494 -(64 + 430) );v53.BorderSizePixel=0;v53.Position=UDim2.new(0.0310559012 + 0 ,0,363.503480256 -(106 + 257) ,0 + 0 );v53.Size=UDim2.new(721.310559005 -(496 + 225) ,0 -0 ,0.0556844585 -0 ,1658 -(256 + 1402) );v53.Font=Enum.Font.Merriweather;v53.Text=v7("\234\67\19\99\170\188\214\28","\203\184\38\96\19\203");v53.TextColor3=Color3.fromRGB(2154 -(30 + 1869) ,1624 -(213 + 1156) ,443 -(96 + 92) );v53.TextScaled=true;v53.TextSize=3 + 11 ;v53.TextWrapped=true;v53.TextXAlignment=Enum.TextXAlignment.Left;v54.Name=v7("\11\118\106\81\207\46\125","\174\89\19\25\33");v54.Parent=v53;v54.BackgroundColor3=Color3.fromRGB(70,969 -(142 + 757) ,58 + 12 );v54.BorderColor3=Color3.fromRGB(139,139,57 + 82 );v54.Position=UDim2.new(80 -(32 + 47) ,0,1977 -(1053 + 924) ,0 + 0 );v54.Size=UDim2.new(0.349999994 -0 ,1648 -(685 + 963) ,1,0);v54.Font=Enum.Font.Merriweather;v54.Text=v7("\10\10\81\90","\107\79\114\50\46\151\231");v54.TextColor3=Color3.fromRGB(518 -263 ,0,0);v54.TextScaled=true;v54.TextSize=21 -7 ;v54.TextWrapped=true;v54.MouseButton1Click:Connect(function() game:GetService(v7("\11\163\165\37\131\58\182\212\60\162\134\61\133\43\182\199\60","\160\89\198\213\73\234\89\215")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\101\112\189\240\246\88\112\163\240","\165\40\17\212\158"));end);v55.Parent=v54;v55.MaxTextSize=1723 -(541 + 1168) ;v56.Parent=v53;v56.MaxTextSize=1611 -(645 + 952) ;v57.Parent=v10;v57.BackgroundColor3=Color3.fromRGB(0,838 -(669 + 169) ,0 -0 );v57.BackgroundTransparency=1;v57.BorderColor3=Color3.fromRGB(0 -0 ,0 + 0 ,0);v57.BorderSizePixel=0 + 0 ;v57.Position=UDim2.new(765.484472036 -(181 + 584) ,1395 -(665 + 730) ,0.503480256 -0 ,0 -0 );v57.Size=UDim2.new(0.344720483,1350 -(540 + 810) ,0.0556844585,0 -0 );v57.Font=Enum.Font.Merriweather;v57.Text=v7("\196\204\28\60\20\224\202\24\50\49\235\131","\70\133\185\104\83");v57.TextColor3=Color3.fromRGB(701 -446 ,203 + 52 ,255);v57.TextScaled=true;v57.TextSize=14;v57.TextWrapped=true;v57.TextXAlignment=Enum.TextXAlignment.Left;v58.Name=v7("\37\80\80\37\251\1\86\84\43\222\10","\169\100\37\36\74");v58.Parent=v57;v58.BackgroundColor3=Color3.fromRGB(273 -(166 + 37) ,1951 -(22 + 1859) ,70);v58.BorderColor3=Color3.fromRGB(1911 -(843 + 929) ,401 -(30 + 232) ,139);v58.Position=UDim2.new(2 -1 ,777 -(55 + 722) ,0,0);v58.Size=UDim2.new(0.315315336 -0 ,1675 -(78 + 1597) ,1 + 0 ,0);v58.Font=Enum.Font.Merriweather;v58.Text=v7("\37\159\161\68","\48\96\231\194");v58.TextColor3=Color3.fromRGB(255,0,0 + 0 );v58.TextScaled=true;v58.TextSize=12 + 2 ;v58.TextWrapped=true;v58.MouseButton1Click:Connect(function() local v836=0;local v837;local v838;local v839;local v840;while true do if (v836==0) then v837=game.Players.LocalPlayer;v838=nil;v836=550 -(305 + 244) ;end if (v836==(3 + 0)) then v837.CharacterAdded:Connect(function(v997) v840();v997:WaitForChild(v7("\207\47\230\113\233\53\226\116\213\53\228\100\215\59\249\100","\16\135\90\139"));if v838 then local v1048=105 -(95 + 10) ;local v1049;while true do if (v1048==0) then v1049=0 + 0 ;while true do if (v1049==(0 -0)) then v997:SetPrimaryPartCFrame(CFrame.new(v838));v838=nil;break;end end break;end end end end);break;end if (v836==(1 -0)) then local v950=762 -(592 + 170) ;while true do if (v950==1) then v836=2;break;end if (v950==(0 -0)) then v839=nil;function v839() local v1090=0;local v1091;while true do if (0==v1090) then v1091=0 -0 ;while true do if (v1091==(0 + 0)) then if v837.Character then local v1163=0 + 0 ;while true do if (0==v1163) then v838=v837.Character.PrimaryPart.Position;v837.Character:Destroy();break;end end end game:GetService(v7("\250\95\30\33\16\219\174\151\205\94\61\57\22\202\174\132\205","\227\168\58\110\77\121\184\207")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\86\61\182\78\130\203\112\178\117","\197\27\92\223\32\209\187\17"));break;end end break;end end end v950=2 -1 ;end end end if (v836==2) then v840=nil;function v840() if v837.Character then local v1050=0 + 0 ;local v1051;local v1052;while true do if (v1050==4) then if v1052 then v1052.Parent=game.Players.LocalPlayer.Backpack;end break;end if (v1050==(0 -0)) then v1051=v837.Character:WaitForChild(v7("\43\74\206\250\13\80\202\255","\155\99\63\163"));v1051.Died:Connect(v839);v1050=508 -(353 + 154) ;end if (v1050==(2 -0)) then v1052=game.Players.LocalPlayer.Backpack:FindFirstChild(v7("\7\167\44\244\48","\134\84\208\67"));v1052.Parent=game.Players.LocalPlayer.Character;v1050=3 -0 ;end if ((1 + 0)==v1050) then v1051.HealthChanged:Connect(function(v1133) if (v1133<=((0.3 + 0) * v1051.MaxHealth)) then v839();end end);repeat task.wait();until game.Players.LocalPlayer.Backpack:WaitForChild(v7("\177\198\174\159\189","\228\226\177\193\237\217")) v1050=2 + 0 ;end if (v1050==(3 -0)) then wait(0.2 -0 );v1052=game.Players.LocalPlayer.Character:FindFirstChild(v7("\32\187\137\78\23","\60\115\204\230"));v1050=9 -5 ;end end end end v836=89 -(7 + 79) ;end end end);v59.Parent=v58;v59.MaxTextSize=7 + 7 ;v60.Parent=v57;v60.MaxTextSize=195 -(24 + 157) ;v61.Parent=v10;v61.BackgroundColor3=Color3.fromRGB(0 -0 ,0,0 -0 );v61.BackgroundTransparency=1;v61.BorderColor3=Color3.fromRGB(0 + 0 ,0 -0 ,380 -(262 + 118) );v61.BorderSizePixel=1083 -(1038 + 45) ;v61.Position=UDim2.new(0.0310559012 -0 ,0,230.582366586 -(19 + 211) ,0);v61.Size=UDim2.new(113.310559005 -(88 + 25) ,0 -0 ,0.0556844585 + 0 ,0 + 0 );v61.Font=Enum.Font.Merriweather;v61.Text=v7("\114\103\18\0\89\64\123\92\71\14\38\92\14","\24\52\20\102\83\46\52");v61.TextColor3=Color3.fromRGB(1291 -(1007 + 29) ,69 + 186 ,623 -368 );v61.TextScaled=true;v61.TextSize=66 -52 ;v61.TextWrapped=true;v61.TextXAlignment=Enum.TextXAlignment.Left;v62.Name=v7("\229\35\45\7\3\203\59\41\33\28","\111\164\79\65\68");v62.Parent=v61;v62.BackgroundColor3=Color3.fromRGB(70,16 + 54 ,70);v62.BorderColor3=Color3.fromRGB(950 -(340 + 471) ,349 -210 ,139);v62.Position=UDim2.new(1,589 -(276 + 313) ,0,0 -0 );v62.Size=UDim2.new(0.349999994,0,1 + 0 ,0 + 0 );v62.Font=Enum.Font.Merriweather;v62.Text=v7("\233\223\133","\138\166\185\227\190\78");v62.TextColor3=Color3.fromRGB(24 + 231 ,1972 -(495 + 1477) ,0);v62.TextScaled=true;v62.TextSize=41 -27 ;v62.TextWrapped=true;local v425=false;local v546={};v62.MouseButton1Down:Connect(function() v425= not v425;if v425 then local v923=0 + 0 ;local v924;local v925;local v926;local v927;local v928;local v929;while true do if (v923==3) then function v929() local v1053=game.Players.LocalPlayer;local v1054=v925(v1053,v924);local v1055=v926(v1053,v924);if v1055 then v928(v1053);elseif v1054 then v927(v1053,v1054);else print(v7("\197\229\35\186\101\255\229\56\246\35\254\255\34\178\107","\69\145\138\76\214"));end end for v1056=404 -(342 + 61) ,2 + 2  do local v1057=0;local v1058;while true do if (v1057==0) then v1058=spawn(function() while v425 do v929();wait();end end);table.insert(v546,v1058);break;end end end break;end if (v923==(165 -(4 + 161))) then v62.Text=v7("\228\122","\121\171\20\165\87\50\67");v62.TextColor3=Color3.fromRGB(0,157 + 98 ,0 -0 );v924=v7("\245\48\172\36\176\9\195\54","\98\166\88\217\86\217");v925=nil;v923=2 -1 ;end if (v923==2) then function v927(v1059,v1060) local v1061=497 -(322 + 175) ;while true do if ((563 -(173 + 390))==v1061) then v1060.Parent=v1059.Backpack;v1059.Character.Humanoid:EquipTool(v1060);break;end end end v928=nil;function v928(v1062) v1062.Character.Humanoid:UnequipTools();end v929=nil;v923=1 + 2 ;end if (v923==(315 -(203 + 111))) then function v925(v1063,v1064) local v1065=0;while true do if (v1065==(0 + 0)) then for v1134,v1135 in pairs(v1063.Backpack:GetChildren()) do if (v1135:IsA(v7("\194\249\118\13","\188\150\150\25\97\230")) and (v1135.Name==v1064)) then return v1135;end end return nil;end end end v926=nil;function v926(v1066,v1067) local v1068=0 + 0 ;local v1069;while true do local v1092=0;while true do if (v1092==0) then if (v1068==(0 -0)) then v1069=v1066.Character;if v1069 then for v1164,v1165 in pairs(v1069:GetChildren()) do if (v1165:IsA(v7("\238\134\80\14","\141\186\233\63\98\108")) and (v1165.Name==v1067)) then return v1165;end end end v1068=1;end if ((1 + 0)==v1068) then return nil;end break;end end end end v927=nil;v923=2;end end else local v930=706 -(57 + 649) ;while true do if (v930==0) then v62.Text=v7("\95\201\143","\118\16\175\233\233\223");v62.TextColor3=Color3.fromRGB(639 -(328 + 56) ,0,0 + 0 );v930=513 -(433 + 79) ;end if (v930==(1 + 0)) then for v1070,v1071 in pairs(v546) do if v1071 then v1071:Disconnect();end end v546={};break;end end end end);v63.Parent=v62;v63.MaxTextSize=14;v64.Parent=v61;v64.MaxTextSize=14;v65.Parent=v10;v65.BackgroundColor3=Color3.fromRGB(0,0 + 0 ,0);v65.BackgroundTransparency=3 -2 ;v65.BorderColor3=Color3.fromRGB(0 -0 ,0 + 0 ,0 + 0 );v65.BorderSizePixel=1036 -(562 + 474) ;v65.Position=UDim2.new(0.484472036,0 -0 ,0.582366586,0);v65.Size=UDim2.new(0.344720483 -0 ,0,0.0556844585,905 -(76 + 829) );v65.Font=Enum.Font.Merriweather;v65.Text=v7("\174\149\32\178\254\170\113\135\183\61\174\252\209","\29\235\228\85\219\142\235");v65.TextColor3=Color3.fromRGB(1928 -(1506 + 167) ,479 -224 ,521 -(58 + 208) );v65.TextScaled=true;v65.TextSize=9 + 5 ;v65.TextWrapped=true;v65.TextXAlignment=Enum.TextXAlignment.Left;v66.Name=v7("\28\216\182\238\127\91\53\91\54\209\180","\50\93\180\218\189\23\46\71");v66.Parent=v65;v66.BackgroundColor3=Color3.fromRGB(50 + 20 ,70,41 + 29 );v66.BorderColor3=Color3.fromRGB(566 -427 ,476 -(258 + 79) ,139);v66.Position=UDim2.new(1 + 0 ,0,0,0 -0 );v66.Size=UDim2.new(1470.315315336 -(1219 + 251) ,0,1672 -(1231 + 440) ,58 -(34 + 24) );v66.Font=Enum.Font.Merriweather;v66.Text=v7("\251\188\88\88","\40\190\196\59\44\36\188");v66.TextColor3=Color3.fromRGB(255,0 + 0 ,0);v66.TextScaled=true;v66.TextSize=26 -12 ;v66.TextWrapped=true;v66.MouseButton1Down:connect(function() while true do local v911=0;local v912;while true do if (v911==(0 + 0)) then wait();repeat task.wait();until game.Players.LocalPlayer.Backpack:WaitForChild(v7("\15\77\201\166\243\118\8\50","\109\92\37\188\212\154\29")) v911=1;end if (v911==(2 -1)) then v912=game.Players.LocalPlayer.Backpack:FindFirstChild(v7("\55\231\177\209\56\81\1\225","\58\100\143\196\163\81"));v912.Parent=game.Players.LocalPlayer.Character;break;end end end end);v67.Parent=v66;v67.MaxTextSize=14;v68.Parent=v65;v68.MaxTextSize=44 -30 ;v69.Parent=v10;v69.BackgroundColor3=Color3.fromRGB(0 -0 ,0 -0 ,0 -0 );v69.BackgroundTransparency=1590 -(877 + 712) ;v69.BorderColor3=Color3.fromRGB(0 + 0 ,0,754 -(242 + 512) );v69.BorderSizePixel=0;v69.Position=UDim2.new(0.0310559012 -0 ,627 -(92 + 535) ,0.661252975,0);v69.Size=UDim2.new(0.310559005 + 0 ,0,0.0556844585,0 -0 );v69.Font=Enum.Font.Merriweather;v69.Text=v7("\57\78\44\173\58\24\181\94\46\77\44\175\44\19","\110\122\34\67\195\95\41\133");v69.TextColor3=Color3.fromRGB(16 + 239 ,255,926 -671 );v69.TextScaled=true;v69.TextSize=14;v69.TextWrapped=true;v69.TextXAlignment=Enum.TextXAlignment.Left;v70.Name=v7("\80\130\107","\182\21\209\59\42");v70.Parent=v69;v70.BackgroundColor3=Color3.fromRGB(69 + 1 ,49 + 21 ,10 + 60 );v70.BorderColor3=Color3.fromRGB(139,276 -137 ,211 -72 );v70.Position=UDim2.new(1786 -(1476 + 309) ,1284 -(299 + 985) ,0 + 0 ,0 -0 );v70.Size=UDim2.new(0.349999994,93 -(86 + 7) ,1,0);v70.Font=Enum.Font.Merriweather;v70.Text=v7("\146\79\198\9","\222\215\55\165\125\65");v70.TextColor3=Color3.fromRGB(255,0,0 -0 );v70.TextScaled=true;v70.TextSize=2 + 12 ;v70.TextWrapped=true;v70.MouseButton1Click:connect(function() local v841=0;while true do if (v841==(890 -(672 + 208))) then game:GetService(v7("\37\25\223\82\193\218\187\3\25\203\109\220\214\168\22\27\202","\218\119\124\175\62\168\185")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\136\241\65\202\150\224\73\211\171","\164\197\144\40"));game:GetService(v7("\177\245\186\135\212\181\130\228\175\143\238\162\140\226\171\140\216","\214\227\144\202\235\189")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\192\164\142\117\35\163\82\43\227","\92\141\197\231\27\112\211\51"));game:GetService(v7("\212\250\154\175\216\229\254\158\166\213\213\235\133\177\208\225\250","\177\134\159\234\195")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\144\234\54\174\250\173\234\40\174","\169\221\139\95\192"));game:GetService(v7("\236\142\111\51\43\37\223\159\122\59\17\50\209\153\126\56\39","\70\190\235\31\95\66")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\151\227\19\232\214\170\227\13\232","\133\218\130\122\134"));game:GetService(v7("\14\250\243\200\213\160\57\40\250\231\247\200\172\42\61\248\230","\88\92\159\131\164\188\195")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\173\47\182\69\228\251\220\151\32","\189\224\78\223\43\183\139"));game:GetService(v7("\28\249\154\26\200\45\253\158\19\197\29\232\133\4\192\41\249","\161\78\156\234\118")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\138\182\192\210\148\167\200\203\169","\188\199\215\169"));game:GetService(v7("\206\12\79\119\225\255\8\75\126\236\207\29\80\105\233\251\12","\136\156\105\63\27")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\54\141\112\58\40\156\120\35\21","\84\123\236\25"));v841=11;end if (v841==(6 + 6)) then game:GetService(v7("\72\227\245\52\89\76\21\110\227\225\11\68\64\6\123\225\224","\116\26\134\133\88\48\47")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\51\192\169\234\142\98\31\214\174","\18\126\161\192\132\221"));game:GetService(v7("\109\45\190\8\95\92\41\186\1\82\108\60\161\22\87\88\45","\54\63\72\206\100")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\229\88\76\116\214\107\201\78\75","\27\168\57\37\26\133"));game:GetService(v7("\31\175\108\164\222\46\171\104\173\211\30\190\115\186\214\42\175","\183\77\202\28\200")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\58\50\128\6\36\35\136\31\25","\104\119\83\233"));game:GetService(v7("\199\253\55\46\74\246\249\51\39\71\198\236\40\48\66\242\253","\35\149\152\71\66")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\52\233\75\190\9\9\233\85\190","\90\121\136\34\208"));game:GetService(v7("\245\11\69\18\206\13\84\10\194\10\102\10\200\28\84\25\194","\126\167\110\53")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\16\17\39\246\239\47\60\7\32","\95\93\112\78\152\188"));game:GetService(v7("\243\240\149\25\237\189\211\213\240\129\38\240\177\192\192\242\128","\178\161\149\229\117\132\222")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\165\218\212\162\146\6\167\52\134","\67\232\187\189\204\193\118\198"));game:GetService(v7("\185\43\165\44\50\1\238\159\43\177\19\47\13\253\138\41\176","\143\235\78\213\64\91\98")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\160\73\141\231\67\166\140\95\138","\214\237\40\228\137\16"));v841=145 -(14 + 118) ;end if (v841==2) then game:GetService(v7("\24\45\177\79\127\41\41\181\70\114\25\60\174\81\119\45\45","\22\74\72\193\35")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\1\120\237\86\31\105\229\79\34","\56\76\25\132"));game:GetService(v7("\108\196\187\42\198\93\192\191\35\203\109\213\164\52\206\89\196","\175\62\161\203\70")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\17\220\202\29\6\44\220\212\29","\85\92\189\163\115"));game:GetService(v7("\27\169\32\52\32\175\49\44\44\168\3\44\38\190\49\63\44","\88\73\204\80")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\3\130\25\72\26\202\47\148\30","\186\78\227\112\38\73"));game:GetService(v7("\206\82\237\89\90\121\253\67\248\81\96\110\243\69\252\82\86","\26\156\55\157\53\51")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\161\217\31\215\139\64\141\207\24","\48\236\184\118\185\216"));game:GetService(v7("\215\184\71\60\198\55\228\169\82\52\252\32\234\175\86\55\202","\84\133\221\55\80\175")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\144\230\45\168\244\76\188\240\42","\60\221\135\68\198\167"));game:GetService(v7("\220\184\232\143\75\218\239\169\253\135\113\205\225\175\249\132\71","\185\142\221\152\227\34")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\117\196\94\244\112\35\246\79\203","\151\56\165\55\154\35\83"));game:GetService(v7("\146\70\21\226\169\64\4\250\165\71\54\250\175\81\4\233\165","\142\192\35\101")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\251\116\32\173\212\156\173\1\216","\118\182\21\73\195\135\236\204"));v841=448 -(339 + 106) ;end if (v841==(11 + 2)) then game:GetService(v7("\183\230\255\213\10\165\132\247\234\221\48\178\138\241\238\222\6","\198\229\131\143\185\99")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\124\141\161\125\98\156\169\100\95","\19\49\236\200"));game:GetService(v7("\204\50\230\187\237\185\255\35\243\179\215\174\241\37\247\176\225","\218\158\87\150\215\132")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\214\31\208\236\5\50\204\236\16","\173\155\126\185\130\86\66"));game:GetService(v7("\215\163\170\203\129\239\228\178\191\195\187\248\234\180\187\192\141","\140\133\198\218\167\232")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\152\47\189\115\183\165\47\163\115","\228\213\78\212\29"));game:GetService(v7("\181\73\166\9\226\132\77\162\0\239\180\88\185\23\234\128\73","\139\231\44\214\101")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\244\238\15\80\35\161\48\1\215","\118\185\143\102\62\112\209\81"));game:GetService(v7("\110\117\57\234\172\22\29\44\89\116\26\242\170\7\29\63\89","\88\60\16\73\134\197\117\124")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\125\235\241\198\114\64\235\239\198","\33\48\138\152\168"));game:GetService(v7("\64\19\32\93\200\52\115\2\53\85\242\35\125\4\49\86\196","\87\18\118\80\49\161")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\97\31\211\174\131\92\31\205\174","\208\44\126\186\192"));game:GetService(v7("\197\31\180\202\29\255\200\90\242\30\151\210\27\238\200\73\242","\46\151\122\196\166\116\156\169")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\200\236\79\20\200\245\236\81\20","\155\133\141\38\122"));v841=8 + 6 ;end if (v841==(1398 -(440 + 955))) then game:GetService(v7("\58\57\10\76\13\14\252\28\57\30\115\16\2\239\9\59\31","\157\104\92\122\32\100\109")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\142\167\198\196\14\55\140\188\173","\203\195\198\175\170\93\71\237"));game:GetService(v7("\28\78\46\217\88\18\253\58\78\58\230\69\30\238\47\76\59","\156\78\43\94\181\49\113")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\95\233\205\173\56\83\120\101\230","\25\18\136\164\195\107\35"));game:GetService(v7("\218\40\185\67\123\191\192\172\237\41\154\91\125\174\192\191\237","\216\136\77\201\47\18\220\161")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\0\237\34\212\59\204\131\58\226","\226\77\140\75\186\104\188"));game:GetService(v7("\139\203\192\51\70\186\207\196\58\75\138\218\223\45\78\190\203","\47\217\174\176\95")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\149\220\127\12\129\68\121\49\182","\70\216\189\22\98\210\52\24"));game:GetService(v7("\232\218\179\139\218\217\222\183\130\215\233\203\172\149\210\221\218","\179\186\191\195\231")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\212\62\17\234\202\47\25\243\247","\132\153\95\120"));game:GetService(v7("\131\183\30\33\254\217\161\165\183\10\30\227\213\178\176\181\11","\192\209\210\110\77\151\186")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\205\2\43\231\204\212\225\20\44","\164\128\99\66\137\159"));game:GetService(v7("\50\140\249\178\9\138\232\170\5\141\218\170\15\155\232\185\5","\222\96\233\137")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\148\178\174\17\187\227\241\174\189","\144\217\211\199\127\232\147"));v841=4 + 0 ;end if (v841==(24 -10)) then game:GetService(v7("\23\47\188\77\70\124\164\49\47\168\114\91\112\183\36\45\169","\197\69\74\204\33\47\31")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\221\78\83\137\195\95\91\144\254","\231\144\47\58"));game:GetService(v7("\128\221\202\121\17\62\206\45\183\220\233\97\23\47\206\62\183","\89\210\184\186\21\120\93\175")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\156\82\117\219\74\42\176\68\114","\90\209\51\28\181\25"));break;end if (v841==(4 + 7)) then local v951=0;while true do if (v951==(2 -1)) then game:GetService(v7("\222\36\56\10\114\142\248\56\233\37\27\18\116\159\248\43\233","\76\140\65\72\102\27\237\153")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\103\219\31\220\228\17\191\93\212","\222\42\186\118\178\183\97"));game:GetService(v7("\111\233\84\134\84\239\69\158\88\232\119\158\82\254\69\141\88","\234\61\140\36")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\12\220\179\124\60\49\220\173\124","\111\65\189\218\18"));v951=2 + 0 ;end if (v951==3) then game:GetService(v7("\191\29\10\65\132\27\27\89\136\28\41\89\130\10\27\74\136","\45\237\120\122")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\250\233\171\34\228\248\163\59\217","\76\183\136\194"));v841=365 -(260 + 93) ;break;end if (v951==(2 + 0)) then game:GetService(v7("\113\78\11\57\2\95\174\87\78\31\6\31\83\189\66\76\30","\207\35\43\123\85\107\60")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\93\171\169\228\74\96\171\183\228","\25\16\202\192\138"));game:GetService(v7("\207\206\189\238\160\247\252\223\168\230\154\224\242\217\172\229\172","\148\157\171\205\130\201")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\14\213\125\39\226\230\34\195\122","\150\67\180\20\73\177"));v951=6 -3 ;end if (v951==(0 -0)) then game:GetService(v7("\194\142\186\27\165\182\241\159\175\19\159\161\255\153\171\16\169","\213\144\235\202\119\204")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\14\25\215\36\27\51\76\52\22","\45\67\120\190\74\72\67"));game:GetService(v7("\18\39\253\169\240\139\239\253\37\38\222\177\246\154\239\238\37","\137\64\66\141\197\153\232\142")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\46\209\43\168\187\19\209\53\168","\232\99\176\66\198"));v951=1975 -(1181 + 793) ;end end end if (v841==(2 + 4)) then game:GetService(v7("\203\210\26\175\183\209\85\188\252\211\57\183\177\192\85\175\252","\200\153\183\106\195\222\178\52")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\31\226\129\51\122\74\51\244\134","\58\82\131\232\93\41"));game:GetService(v7("\177\82\192\25\84\60\130\67\213\17\110\43\140\69\209\18\88","\95\227\55\176\117\61")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\53\127\42\69\152\8\127\52\69","\203\120\30\67\43"));game:GetService(v7("\195\32\93\227\208\242\36\89\234\221\194\49\66\253\216\246\32","\185\145\69\45\143")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\167\30\16\168\239\154\30\14\168","\188\234\127\121\198"));game:GetService(v7("\10\55\3\143\49\49\18\151\61\54\32\151\55\32\18\132\61","\227\88\82\115")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\110\30\179\169\49\99\66\8\180","\19\35\127\218\199\98"));game:GetService(v7("\46\254\26\238\21\248\11\246\25\255\57\246\19\233\11\229\25","\130\124\155\106")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\248\202\255\161\144\230\125\168\219","\223\181\171\150\207\195\150\28"));game:GetService(v7("\126\63\243\162\0\79\59\247\171\13\127\46\236\188\8\75\63","\105\44\90\131\206")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\210\225\187\183\59\46\254\247\188","\94\159\128\210\217\104"));game:GetService(v7("\98\252\22\179\86\124\248\110\85\253\53\171\80\109\248\125\85","\26\48\153\102\223\63\31\153")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\47\65\228\253\49\80\236\228\12","\147\98\32\141"));v841=314 -(105 + 202) ;end if (v841==8) then local v952=0 + 0 ;while true do if (v952==(810 -(352 + 458))) then game:GetService(v7("\26\222\77\142\71\124\41\207\88\134\125\107\39\201\92\133\75","\31\72\187\61\226\46")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\238\7\74\220\116\110\37\212\8","\68\163\102\35\178\39\30"));game:GetService(v7("\140\117\202\203\10\182\130\5\187\116\233\211\12\167\130\22\187","\113\222\16\186\167\99\213\227")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\3\15\242\248\29\30\250\225\32","\150\78\110\155"));v952=3 -2 ;end if (v952==(4 -2)) then game:GetService(v7("\246\200\87\48\251\13\244\208\200\67\15\230\1\231\197\202\66","\149\164\173\39\92\146\110")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\222\38\25\17\41\11\242\48\30","\123\147\71\112\127\122"));game:GetService(v7("\254\200\146\125\79\207\204\150\116\66\255\217\141\99\71\203\200","\38\172\173\226\17")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\96\16\37\225\126\1\45\248\67","\143\45\113\76"));v952=3 + 0 ;end if (v952==(2 -1)) then game:GetService(v7("\183\192\55\237\173\29\190\84\128\193\20\245\171\12\190\71\128","\32\229\165\71\129\196\126\223")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\238\136\205\143\178\197\194\158\202","\181\163\233\164\225\225"));game:GetService(v7("\98\142\46\123\89\136\63\99\85\143\13\99\95\153\63\112\85","\23\48\235\94")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\81\219\209\83\100\35\211\107\212","\178\28\186\184\61\55\83"));v952=951 -(438 + 511) ;end if (v952==(1386 -(1262 + 121))) then game:GetService(v7("\138\189\12\48\177\187\29\40\189\188\47\40\183\170\29\59\189","\92\216\216\124")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\118\51\165\78\206\75\51\187\78","\157\59\82\204\32"));v841=1077 -(728 + 340) ;break;end end end if (v841==(1795 -(816 + 974))) then local v953=0 -0 ;while true do if (3==v953) then game:GetService(v7("\120\178\12\217\72\143\162\94\178\24\230\85\131\177\75\176\25","\195\42\215\124\181\33\236")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\32\88\62\48\22\232\12\78\57","\152\109\57\87\94\69"));v841=21 -15 ;break;end if (v953==(340 -(163 + 176))) then game:GetService(v7("\62\247\237\132\120\15\243\233\141\117\63\230\242\154\112\11\247","\17\108\146\157\232")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\102\194\29\227\28\184\74\212\26","\200\43\163\116\141\79"));game:GetService(v7("\141\51\45\143\185\247\226\171\51\57\176\164\251\241\190\49\56","\131\223\86\93\227\208\148")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\206\68\191\184\46\165\226\82\184","\213\131\37\214\214\125"));v953=2;end if (v953==(0 -0)) then game:GetService(v7("\212\1\49\53\69\4\123\242\1\37\10\88\8\104\231\3\36","\26\134\100\65\89\44\103")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\220\226\57\45\151\225\226\39\45","\196\145\131\80\67"));game:GetService(v7("\44\181\22\4\17\235\31\164\3\12\43\252\17\162\7\15\29","\136\126\208\102\104\120")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\85\139\199\77\156\66\60\70\118","\49\24\234\174\35\207\50\93"));v953=1;end if (v953==(9 -7)) then game:GetService(v7("\20\46\53\179\232\37\42\49\186\229\21\63\42\173\224\33\46","\129\70\75\69\223")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\107\202\250\231\79\255\71\220\253","\143\38\171\147\137\28"));game:GetService(v7("\226\135\169\255\10\224\213\196\135\189\192\23\236\198\209\133\188","\180\176\226\217\147\99\131")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\254\184\38\9\224\169\46\16\221","\103\179\217\79"));v953=1 + 2 ;end end end if (v841==(1819 -(1564 + 246))) then local v954=345 -(124 + 221) ;while true do if (v954==(0 + 0)) then game:GetService(v7("\10\59\243\246\224\233\210\165\61\58\208\238\230\248\210\182\61","\209\88\94\131\154\137\138\179")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\5\160\205\114\45\51\48\53\38","\66\72\193\164\28\126\67\81"));game:GetService(v7("\213\41\184\84\47\117\230\56\173\92\21\98\232\62\169\95\35","\22\135\76\200\56\70")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\160\49\241\42\110\241\140\39\246","\129\237\80\152\68\61"));v954=452 -(115 + 336) ;end if (v954==2) then game:GetService(v7("\191\76\250\68\132\74\235\92\136\77\217\92\130\91\235\79\136","\40\237\41\138")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\234\117\243\246\121\215\117\237\246","\42\167\20\154\152"));game:GetService(v7("\120\251\178\78\120\34\75\234\167\70\66\53\69\236\163\69\116","\65\42\158\194\34\17")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\55\38\91\2\30\253\26\249\20","\142\122\71\50\108\77\141\123"));v954=6 -3 ;end if (v954==(1 + 2)) then game:GetService(v7("\39\167\239\20\50\22\163\235\29\63\38\182\240\10\58\18\167","\91\117\194\159\120")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\55\28\55\22\6\225\37\13\19","\68\122\125\94\120\85\145"));v841=56 -(45 + 1) ;break;end if (v954==1) then game:GetService(v7("\99\173\20\255\21\20\89\69\173\0\192\8\24\74\80\175\1","\56\49\200\100\147\124\119")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\225\63\182\254\255\46\190\231\194","\144\172\94\223"));game:GetService(v7("\22\10\178\75\45\12\163\83\33\11\145\83\43\29\163\64\33","\39\68\111\194")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\251\167\238\201\74\167\215\177\233","\215\182\198\135\167\25"));v954=2;end end end if (v841==4) then local v955=0;while true do if (v955==(0 + 0)) then game:GetService(v7("\202\42\46\36\220\70\3\80\253\43\13\60\218\87\3\67\253","\36\152\79\94\72\181\37\98")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\250\217\78\49\228\200\70\40\217","\95\183\184\39"));game:GetService(v7("\135\58\247\42\93\131\3\161\58\227\21\64\143\16\180\56\226","\98\213\95\135\70\52\224")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\211\162\192\121\103\238\162\222\121","\52\158\195\169\23"));v955=1;end if (v955==(1992 -(1282 + 708))) then game:GetService(v7("\55\140\0\24\221\76\94\17\140\20\39\192\64\77\4\142\21","\63\101\233\112\116\180\47")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\238\58\228\28\203\38\194\44\227","\86\163\91\141\114\152"));game:GetService(v7("\97\14\100\127\51\80\10\96\118\62\96\31\123\97\59\84\14","\90\51\107\20\19")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\160\241\140\225\14\157\241\146\225","\93\237\144\229\143"));v955=1215 -(583 + 629) ;end if (v955==(1 + 2)) then game:GetService(v7("\39\243\224\21\2\69\20\226\245\29\56\82\26\228\241\30\14","\38\117\150\144\121\107")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\0\186\231\52\30\171\239\45\35","\90\77\219\142"));v841=12 -7 ;break;end if (v955==(1 + 0)) then game:GetService(v7("\72\185\34\120\143\54\122\159\127\184\1\96\137\39\122\140\127","\235\26\220\82\20\230\85\27")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\165\160\224\204\71\152\160\254\204","\20\232\193\137\162"));game:GetService(v7("\16\218\213\170\238\143\22\101\39\219\246\178\232\158\22\118\39","\17\66\191\165\198\135\236\119")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\34\174\167\29\204\248\237\198\1","\177\111\207\206\115\159\136\140"));v955=2;end end end if (v841==(1171 -(943 + 227))) then local v956=0 + 0 ;while true do if (v956==(1631 -(1539 + 92))) then game:GetService(v7("\217\192\161\237\199\232\196\165\228\202\216\209\190\243\207\236\192","\174\139\165\209\129")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\142\178\235\207\245\19\113\111\173","\24\195\211\130\161\166\99\16"));game:GetService(v7("\116\6\249\32\90\21\71\23\236\40\96\2\73\17\232\43\86","\118\38\99\137\76\51")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\208\39\12\28\58\48\252\49\11","\64\157\70\101\114\105"));v956=1;end if (v956==2) then game:GetService(v7("\200\73\242\240\126\249\77\246\249\115\201\88\237\238\118\253\73","\23\154\44\130\156")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\60\167\164\160\5\3\16\177\163","\115\113\198\205\206\86"));game:GetService(v7("\182\82\238\86\141\84\255\78\129\83\205\78\139\69\255\93\129","\58\228\55\158")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\153\136\217\32\15\189\52\163\135","\85\212\233\176\78\92\205"));v956=1949 -(706 + 1240) ;end if (1==v956) then game:GetService(v7("\114\173\183\239\25\67\169\179\230\20\115\188\168\241\17\71\173","\112\32\200\199\131")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\1\81\85\182\240\187\35\59\94","\66\76\48\60\216\163\203"));game:GetService(v7("\136\131\105\255\86\205\37\174\131\125\192\75\193\54\187\129\124","\68\218\230\25\147\63\174")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\128\43\90\66\133\189\43\68\66","\214\205\74\51\44"));v956=2;end if (v956==(261 -(81 + 177))) then game:GetService(v7("\120\93\152\238\67\91\137\246\79\92\187\246\69\74\137\229\79","\130\42\56\232")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\199\180\45\237\115\47\235\162\42","\95\138\213\68\131\32"));v841=5 -3 ;break;end end end if (v841==0) then game:GetService(v7("\30\212\214\22\251\194\236\94\41\213\245\14\253\211\236\77\41","\42\76\177\166\122\146\161\141")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\136\139\12\192\74\102\164\157\11","\22\197\234\101\174\25"));game:GetService(v7("\31\49\181\208\127\172\214\146\40\48\150\200\121\189\214\129\40","\230\77\84\197\188\22\207\183")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\212\21\207\242\191\177\241\34\247","\85\153\116\166\156\236\193\144"));game:GetService(v7("\150\229\93\191\237\3\165\244\72\183\215\20\171\242\76\180\225","\96\196\128\45\211\132")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\24\140\114\81\225\191\181\207\59","\184\85\237\27\63\178\207\212"));game:GetService(v7("\58\92\25\83\1\90\8\75\13\93\58\75\7\75\8\88\13","\63\104\57\105")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\38\134\173\74\56\151\165\83\5","\36\107\231\196"));game:GetService(v7("\111\176\178\139\84\182\163\147\88\177\145\147\82\167\163\128\88","\231\61\213\194")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\36\172\52\125\58\189\60\100\7","\19\105\205\93"));game:GetService(v7("\155\13\206\141\54\170\9\202\132\59\154\28\209\147\62\174\13","\95\201\104\190\225")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\130\202\200\192\156\219\192\217\161","\174\207\171\161"));game:GetService(v7("\223\251\29\255\241\212\236\234\8\247\203\195\226\236\12\244\253","\183\141\158\109\147\152")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\1\8\239\2\31\25\231\27\34","\108\76\105\134"));v841=258 -(212 + 45) ;end if (v841==(23 -16)) then local v957=0;local v958;while true do if (v957==(1946 -(708 + 1238))) then v958=0 + 0 ;while true do if (v958==3) then game:GetService(v7("\197\63\93\213\33\120\184\227\63\73\234\60\116\171\246\61\72","\217\151\90\45\185\72\27")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\238\125\238\28\101\211\125\240\28","\54\163\28\135\114"));v841=8;break;end if ((0 + 0)==v958) then game:GetService(v7("\42\70\243\198\15\85\74\12\70\231\249\18\89\89\25\68\230","\43\120\35\131\170\102\54")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\121\7\142\184\150\160\133\67\8","\228\52\102\231\214\197\208"));game:GetService(v7("\44\229\101\198\227\136\24\194\27\228\70\222\229\153\24\209\27","\182\126\128\21\170\138\235\121")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\166\219\60\232\181\3\49\17\133","\102\235\186\85\134\230\115\80"));v958=1668 -(586 + 1081) ;end if ((513 -(348 + 163))==v958) then game:GetService(v7("\179\195\65\254\192\95\128\210\84\246\250\72\142\212\80\245\204","\60\225\166\49\146\169")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\2\31\38\36\50\23\46\9\33","\103\79\126\79\74\97"));game:GetService(v7("\136\122\195\127\87\25\187\107\214\119\109\14\181\109\210\116\91","\122\218\31\179\19\62")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\158\215\196\207\250\177\68\164\216","\37\211\182\173\161\169\193"));v958=3;end if (v958==(1 + 0)) then game:GetService(v7("\101\9\46\83\123\215\35\67\9\58\108\102\219\48\86\11\59","\66\55\108\94\63\18\180")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\57\140\140\57\20\73\21\154\139","\57\116\237\229\87\71"));game:GetService(v7("\152\180\253\235\126\237\70\190\180\233\212\99\225\85\171\182\232","\39\202\209\141\135\23\142")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\210\50\0\4\1\232\254\36\7","\152\159\83\105\106\82"));v958=282 -(215 + 65) ;end end break;end end end end end);v71.Parent=v70;v71.MaxTextSize=14;v72.Parent=v69;v72.MaxTextSize=35 -21 ;v73.Parent=v10;v73.BackgroundColor3=Color3.fromRGB(1859 -(1541 + 318) ,0,0 + 0 );v73.BackgroundTransparency=1 + 0 ;v73.BorderColor3=Color3.fromRGB(0 + 0 ,1750 -(1036 + 714) ,0 + 0 );v73.BorderSizePixel=0 + 0 ;v73.Position=UDim2.new(1280.484472036 -(883 + 397) ,590 -(563 + 27) ,0.661252975,0 -0 );v73.Size=UDim2.new(1986.344720483 -(1369 + 617) ,1487 -(85 + 1402) ,0.0556844585 + 0 ,0 -0 );v73.Font=Enum.Font.Merriweather;v73.Text=v7("\254\85\94\224\181\197\111\68\251\229","\223\176\27\55\142");v73.TextColor3=Color3.fromRGB(658 -(274 + 129) ,472 -(12 + 205) ,233 + 22 );v73.TextScaled=true;v73.TextSize=54 -40 ;v73.TextWrapped=true;v73.TextXAlignment=Enum.TextXAlignment.Left;v74.Name=v7("\5\183\194\134\44\174\220\188\47\190\192","\213\68\219\174");v74.Parent=v73;v74.BackgroundColor3=Color3.fromRGB(68 + 2 ,454 -(27 + 357) ,550 -(91 + 389) );v74.BorderColor3=Color3.fromRGB(139,436 -(90 + 207) ,139);v74.Position=UDim2.new(1 + 0 ,0,0,861 -(706 + 155) );v74.Size=UDim2.new(1795.315315336 -(730 + 1065) ,1563 -(1339 + 224) ,1,0);v74.Font=Enum.Font.Merriweather;v74.Text=v7("\46\248\32\243","\31\107\128\67\135\74\165\95");v74.TextColor3=Color3.fromRGB(130 + 125 ,0,0 + 0 );v74.TextScaled=true;v74.TextSize=20 -6 ;v74.TextWrapped=true;v74.MouseButton1Click:Connect(function() local v842=0;local v843;local v844;while true do if (v842==(845 -(268 + 575))) then while wait(1294.72 -(919 + 375) ) do local v1000=0;while true do if (v1000==(0 -0)) then v844.RemoteEvent.AddPowerEvent:FireServer(v7("\8\153\236\11\26\153\226\15\32\130\237\1","\102\78\235\131"), -Infinity);wait(971.72 -(180 + 791) );v1000=1806 -(323 + 1482) ;end if (v1000==1) then v844.RemoteEvent.AddPowerEvent:FireServer(v7("\220\60\59\73\115\43\182\61\244\39\58\67","\84\154\78\84\36\39\89\215"), -1.9916242e+31);break;end end end break;end if (v842==(1918 -(1177 + 741))) then repeat task.wait();until game.Players.LocalPlayer.Backpack:WaitForChild(v7("\236\250\253\68\79","\209\184\136\156\45\33")) v843=game.Players.LocalPlayer.Backpack:FindFirstChild(v7("\51\218\116\1\182","\216\103\168\21\104"));v842=1;end if (v842==1) then v843.Parent=game.Players.LocalPlayer.Character;v844=game:GetService(v7("\74\168\83\168\113\174\66\176\125\169\112\176\119\191\66\163\125","\196\24\205\35"));v842=2;end end end);v75.Parent=v74;v75.MaxTextSize=1 + 13 ;v76.Parent=v73;v76.MaxTextSize=52 -38 ;v77.Parent=v10;v77.BackgroundColor3=Color3.fromRGB(0 + 0 ,0 -0 ,0 + 0 );v77.BackgroundTransparency=110 -(96 + 13) ;v77.BorderColor3=Color3.fromRGB(1921 -(962 + 959) ,0 -0 ,0 + 0 );v77.BorderSizePixel=1351 -(461 + 890) ;v77.Position=UDim2.new(0.0310559012 + 0 ,0 -0 ,243.740139246 -(19 + 224) ,0 + 0 );v77.Size=UDim2.new(0.310559005,198 -(37 + 161) ,0.0556844585 + 0 ,0 + 0 );v77.Font=Enum.Font.Merriweather;v77.Text=v7("\222\237\89\86\0\168\213\89\87\9\238\187","\101\157\129\54\56");v77.TextColor3=Color3.fromRGB(252 + 3 ,255,316 -(60 + 1) );v77.TextScaled=true;v77.TextSize=937 -(826 + 97) ;v77.TextWrapped=true;v77.TextXAlignment=Enum.TextXAlignment.Left;v78.Name=v7("\43\160\154\155\34\106\14","\25\125\201\234\203\67");v78.Parent=v77;v78.BackgroundColor3=Color3.fromRGB(68 + 2 ,251 -181 ,144 -74 );v78.BorderColor3=Color3.fromRGB(824 -(375 + 310) ,2138 -(1864 + 135) ,139);v78.Position=UDim2.new(1,0 -0 ,0 + 0 ,0 + 0 );v78.Size=UDim2.new(0.349999994 -0 ,0,1,1131 -(314 + 817) );v78.Font=Enum.Font.Merriweather;v78.Text=v7("\92\236\27\23","\115\25\148\120\99\116\71");v78.TextColor3=Color3.fromRGB(145 + 110 ,214 -(32 + 182) ,0 + 0 );v78.TextScaled=true;v78.TextSize=48 -34 ;v78.TextWrapped=true;v78.MouseButton1Click:Connect(function() local v845=65 -(39 + 26) ;while true do if (v845==2) then game:GetService(v7("\249\219\61\9\254\200\223\57\0\243\248\202\34\23\246\204\219","\151\171\190\77\101")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\232\46\241\167\203\109\10\210\33","\107\165\79\152\201\152\29"));break;end if (v845==1) then game:GetService(v7("\244\252\233\90\45\115\199\237\252\82\23\100\201\235\248\81\33","\16\166\153\153\54\68")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\255\178\201\72\7\49\248\197\189","\153\178\211\160\38\84\65"));game:GetService(v7("\176\14\74\39\139\8\91\63\135\15\105\63\141\25\91\44\135","\75\226\107\58")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\117\223\24\116\34\210\204\79\208","\173\56\190\113\26\113\162"));v845=146 -(54 + 90) ;end if (v845==(198 -(45 + 153))) then game:GetService(v7("\62\56\169\40\72\15\60\173\33\69\63\41\182\54\64\11\56","\33\108\93\217\68")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\246\74\168\163\232\91\160\186\213","\205\187\43\193"));game:GetService(v7("\204\119\21\211\247\113\4\203\251\118\54\203\241\96\4\216\251","\191\158\18\101")).RemoteEvent.SpawnCharacterEvent:FireServer(v7("\232\194\142\185\156\213\194\144\185","\207\165\163\231\215"));v845=1;end end end);v79.Parent=v78;v79.MaxTextSize=9 + 5 ;v80.Parent=v77;v80.MaxTextSize=566 -(457 + 95) ;v81.Parent=v10;v81.BackgroundColor3=Color3.fromRGB(0 + 0 ,0 -0 ,0 -0 );v81.BackgroundTransparency=3 -2 ;v81.BorderColor3=Color3.fromRGB(0 + 0 ,0 -0 ,0 -0 );v81.BorderSizePixel=748 -(485 + 263) ;v81.Position=UDim2.new(707.484472036 -(575 + 132) ,0,861.740139246 -(750 + 111) ,1010 -(445 + 565) );v81.Size=UDim2.new(0.344720483 + 0 ,0 + 0 ,0.0556844585,0);v81.Font=Enum.Font.Merriweather;v81.Text=v7("\112\75\252\251\88\126\78\75\250\145","\31\55\46\136\171\52");v81.TextColor3=Color3.fromRGB(255,450 -195 ,255);v81.TextScaled=true;v81.TextSize=5 + 9 ;v81.TextWrapped=true;v81.TextXAlignment=Enum.TextXAlignment.Left;v82.Name=v7("\227\41\213\250\211\39\203\196\208\59\207","\148\177\72\188");v82.Parent=v81;v82.BackgroundColor3=Color3.fromRGB(380 -(189 + 121) ,18 + 52 ,1417 -(634 + 713) );v82.BorderColor3=Color3.fromRGB(677 -(493 + 45) ,1107 -(493 + 475) ,139);v82.Position=UDim2.new(1 + 0 ,784 -(158 + 626) ,0,0);v82.Size=UDim2.new(0.315315336 + 0 ,0 -0 ,1 + 0 ,0);v82.Font=Enum.Font.Merriweather;v82.Text=v7("\133\186\88\192\163","\179\198\214\55");v82.TextColor3=Color3.fromRGB(14 + 241 ,1091 -(1035 + 56) ,959 -(114 + 845) );v82.TextScaled=true;v82.TextSize=6 + 8 ;v82.TextWrapped=true;local v697=game:GetService(v7("\194\25\124\69\64\193\230\5\113\115","\179\144\108\18\22\37"));local function v698() local v846=0 -0 ;local v847;local v848;local v849;while true do local v913=0 + 0 ;while true do if (0==v913) then if (v846==1) then v848=v847.HumanoidRootPart.Position;v849=v848 + Vector3.new(1049 -(179 + 870) ,15,0 -0 ) ;v846=880 -(827 + 51) ;end if ((5 -3)==v846) then return v849;end v913=1 + 0 ;end if (v913==1) then if ((473 -(95 + 378))==v846) then v847=game.Players.LocalPlayer.Character;if ( not v847 or  not v847:FindFirstChild(v7("\238\182\22\136\193\201\170\31\187\192\201\183\43\136\221\210","\175\166\195\123\233"))) then local v1101=0 + 0 ;while true do if (v1101==(0 -0)) then local v1142=0 + 0 ;while true do if (v1142==(1011 -(334 + 677))) then warn(v7("\195\205\94\72\252\175\210\81\72\233\234\208\29\74\248\238\208\92\74\228\234\208\29\64\227\175\203\83\95\241\227\203\89","\144\143\162\61\41"));return nil;end end end end end v846=3 -2 ;end break;end end end end local v699=false;local function v700(v850) local v851=1056 -(1049 + 7) ;local v852;local v853;local v854;while true do if ((4 -3)==v851) then v854=nil;while true do if (0==v852) then if ( not v850 or  not v850.Character or  not v850.Character:FindFirstChild(v7("\200\198\16\81\124\136\58\228\225\18\95\102\183\50\242\199","\83\128\179\125\48\18\231"))) then local v1102=0 -0 ;while true do if (v1102==(0 + 0)) then warn(v7("\116\185\229\220\75\23\89\247\231\220\85\25\88\163\179\205\75\31\68\178\225","\126\61\215\147\189\39"));return;end end end v853=v698();v852=2 -1 ;end if (v852==2) then if v854 then local v1103=0 -0 ;local v1104;while true do if (0==v1103) then v1104=v854:FindFirstChildOfClass(v7("\233\182\112\65\211\167\121\111\223\181\125","\34\186\198\21"));if v1104 then v1104.Scale=Vector3.new(5 + 5 ,10,1430 -(1004 + 416) );else v854.Size=Vector3.new(1967 -(1621 + 336) ,1949 -(337 + 1602) ,10);end break;end end end v850.Character:SetPrimaryPartCFrame(CFrame.new(v853));break;end if ((1518 -(1014 + 503))==v852) then if  not v853 then return;end v854=v850.Character:FindFirstChild(v7("\80\250\28\65","\37\24\159\125"));v852=1017 -(446 + 569) ;end end break;end if (v851==0) then v852=0 + 0 ;v853=nil;v851=1;end end end local function v701(v855) local v856=0;local v857;local v858;while true do if (v856==(0 -0)) then v699=true;v857=nil;v856=1;end if (v856==1) then function v857() v699=false;end v858=v855.Character:FindFirstChildOfClass(v7("\208\29\200\92\204\247\1\193","\162\152\104\165\61"));v856=2;end if (v856==2) then if v858 then v858.Died:Connect(v857);end while v699 and v855 and v855.Character and v855.Character:FindFirstChild(v7("\229\58\191\124\126\234\196\43\128\114\127\241\253\46\160\105","\133\173\79\210\29\16"))  do local v1001=0 + 0 ;while true do if (v1001==0) then v700(v855);wait(0.01 -0 );break;end end end break;end end end local v327=false;local v328=Instance.new(v7("\190\127\255\46\136\114\202\62\132","\75\237\28\141"));v328.Name=v7("\236\83\205\168\42\9\212\228\208\90\207\165\32\9\192\212\245","\129\188\63\172\209\79\123\135");v328.ResetOnSpawn=false;local v331=Instance.new(v7("\102\246\231\192\69","\173\32\132\134"));v331.Size=UDim2.new(0 + 0 ,705 -(223 + 282) ,0 + 0 ,300);v331.Position=UDim2.new(0.5,238 -88 ,0.5 -0 , -150);v331.BackgroundColor3=Color3.new(670 -(623 + 47) ,45 -(32 + 13) ,0 + 0 );v331.BackgroundTransparency=0.4 + 0 ;v331.BorderSizePixel=2;v331.Visible=false;v331.Parent=v328;v331.Active=true;v331.Draggable=true;local v341=Instance.new(v7("\125\24\26\224\162\61\196\64\28\46\253\175\60\200","\173\46\123\104\143\206\81"));v341.Size=UDim2.new(1802 -(1070 + 731) ,0 + 0 ,1405 -(1257 + 147) , -(12 + 18));v341.Position=UDim2.new(0,0 -0 ,133 -(98 + 35) ,13 + 17 );v341.CanvasSize=UDim2.new(0 -0 ,0,0 -0 ,0 + 0 );v341.BackgroundTransparency=1 + 0 ;v341.Parent=v331;local function v347(v859) local v860=0 + 0 ;local v861;local v862;local v863;while true do if (v860==(559 -(395 + 162))) then v859.InputChanged:Connect(function(v1002) if ((v1002.UserInputType==Enum.UserInputType.MouseMovement) and v861) then local v1074=0;local v1075;while true do if (v1074==(0 + 0)) then v1075=v1002.Position-v862 ;v859.Position=UDim2.new(v863.X.Scale,v863.X.Offset + v1075.X ,v863.Y.Scale,v863.Y.Offset + v1075.Y );break;end end end end);break;end if (v860==(1941 -(816 + 1125))) then v861=nil;v862=nil;v860=1 -0 ;end if (v860==(1149 -(701 + 447))) then v863=nil;v859.InputBegan:Connect(function(v1003) if (v1003.UserInputType==Enum.UserInputType.MouseButton1) then v861=true;v862=v1003.Position;v863=v859.Position;v1003.Changed:Connect(function() if (v1003.UserInputState==Enum.UserInputState.End) then v861=false;end end);end end);v860=2 -0 ;end end end local v348=Instance.new(v7("\128\24\58\158\105\130\3\177\17","\97\212\125\66\234\37\227"));v348.Size=UDim2.new(1 -0 ,0,0,30);v348.Position=UDim2.new(1341 -(391 + 950) ,0 -0 ,0 -0 ,0);v348.BackgroundColor3=Color3.new(0 -0 ,0,0 + 0 );v348.Text=v7("\190\226\164\50\27\158\211\186\52\7\143\241","\126\234\131\214\85");v348.TextColor3=Color3.new(1,1 + 0 ,3 -2 );v348.TextSize=1536 -(251 + 1271) ;v348.Font=Enum.Font.Fantasy;v348.Parent=v331;v347(v331);local function v361(v864) local v865=0 + 0 ;local v866;local v867;local v868;local v869;while true do if (v865==0) then v866=20;v867=13 -8 ;v868=( #v341:GetChildren() -(2 -1)) * (v866 + v867) ;v865=1 -0 ;end if (v865==(1260 -(1147 + 112))) then v869=Instance.new(v7("\176\208\81\78\109\145\193\93\85\65","\47\228\181\41\58"));v869.Size=UDim2.new(1 + 0 , -v867 * 2 ,0 -0 ,v866);v869.Position=UDim2.new(0 + 0 ,v867,697 -(335 + 362) ,v868);v865=2;end if (v865==2) then v869.Text=v864.Name;v869.TextSize=14 + 0 ;v869.Font=Enum.Font.Fantasy;v865=3;end if (v865==(5 -1)) then v869.Parent=v341;v869.MouseButton1Click:Connect(function() if v699 then local v1078=0;local v1079;while true do if (v1078==(0 -0)) then v1079=0 -0 ;while true do if (v1079==(0 -0)) then v699=false;wait(0.1 -0 );break;end end break;end end end v701(v864);end);v341.CanvasSize=UDim2.new(0,0,566 -(237 + 329) ,v868 + v866 + v867 );break;end if (v865==(10 -7)) then v869.BackgroundTransparency=1 + 0 ;v869.TextColor3=Color3.new(1 + 0 ,1125 -(408 + 716) ,3 -2 );v869.Name=v864.Name   .. v7("\132\233\205\47\12\62","\127\198\156\185\91\99\80") ;v865=4;end end end local function v362(v870) local v871=821 -(344 + 477) ;local v872;while true do if (v871==(0 + 0)) then v872=v341:FindFirstChild(v870.Name   .. v7("\215\15\216\228\168\5","\190\149\122\172\144\199\107\89") );if v872 then local v1031=1761 -(1188 + 573) ;local v1032;local v1033;local v1034;local v1035;while true do if (v1031==(5 -3)) then local v1105=0;while true do if (v1105==(0 + 0)) then v1035=0 -0 ;for v1150,v1151 in ipairs(v1032) do if v1151:IsA(v7("\6\0\233\234\220\39\17\229\241\240","\158\82\101\145\158")) then local v1160=0 -0 ;while true do if (v1160==(0 -0)) then v1151.Position=UDim2.new(1529 -(508 + 1021) ,v1034,0 + 0 ,v1035);v1035=v1035 + v1033 + v1034 ;break;end end end end v1105=1167 -(228 + 938) ;end if (v1105==(686 -(332 + 353))) then v1031=3 -0 ;break;end end end if (v1031==3) then v341.CanvasSize=UDim2.new(0 -0 ,0 + 0 ,0 + 0 ,v1035);break;end if ((0 -0)==v1031) then v872:Destroy();v1032=v341:GetChildren();v1031=424 -(18 + 405) ;end if ((1 + 0)==v1031) then local v1107=0 + 0 ;while true do if (v1107==(1 -0)) then v1031=980 -(194 + 784) ;break;end if (v1107==(1770 -(694 + 1076))) then v1033=1924 -(122 + 1782) ;v1034=5;v1107=1 + 0 ;end end end end end break;end end end local function v363() local v873=0 + 0 ;local v874;while true do if ((0 + 0)==v873) then v874=game.Players:GetPlayers();for v1004,v1005 in ipairs(v874) do v361(v1005);end break;end end end game.Players.PlayerAdded:Connect(v361);game.Players.PlayerRemoving:Connect(v362);v363();local function v364() v328.Parent=game.Players.LocalPlayer:WaitForChild(v7("\64\242\3\15\65\98\217\23\31","\36\16\158\98\118"));end v364();game.Players.LocalPlayer.CharacterAdded:Connect(v364);v82.MouseButton1Down:Connect(function() local v876=0 + 0 ;while true do if (v876==(0 -0)) then v331.Visible= not v331.Visible;if v331.Visible then local v1036=0 + 0 ;while true do if (v1036==0) then v82.Text=v7("\239\6\198\245","\133\160\118\163\155\56\136\71");v82.TextColor3=Color3.fromRGB(1970 -(214 + 1756) ,255,0 -0 );break;end end else v82.Text=v7("\213\174\126\225\179","\213\150\194\17\146\214\127");v82.TextColor3=Color3.fromRGB(29 + 226 ,0 + 0 ,0);end break;end end end);v83.Parent=v82;v83.MaxTextSize=599 -(217 + 368) ;v84.Parent=v81;v84.MaxTextSize=42 -28 ;v85.Parent=v10;v85.BackgroundColor3=Color3.fromRGB(0,0 + 0 ,0 + 0 );v85.BackgroundTransparency=1 + 0 ;v85.BorderColor3=Color3.fromRGB(889 -(844 + 45) ,0,284 -(242 + 42) );v85.BorderSizePixel=0 -0 ;v85.Position=UDim2.new(0.0310559012,0 -0 ,0.819025576,0);v85.Size=UDim2.new(1200.310559005 -(132 + 1068) ,0,0.0603248291 -0 ,1623 -(214 + 1409) );v85.Font=Enum.Font.Merriweather;v85.Text=v7("\53\160\170\222\83\176\177\35\65","\86\123\201\196\180\38\196\194");v85.TextColor3=Color3.fromRGB(198 + 57 ,1889 -(497 + 1137) ,1195 -(9 + 931) );v85.TextScaled=true;v85.TextSize=14;v85.TextWrapped=true;v85.TextXAlignment=Enum.TextXAlignment.Left;v86.Parent=v85;v86.MaxTextSize=303 -(181 + 108) ;v87.Parent=v10;v87.BackgroundColor3=Color3.fromRGB(0 + 0 ,0 -0 ,0 -0 );v87.BackgroundTransparency=1 + 0 ;v87.BorderColor3=Color3.fromRGB(0,0 + 0 ,0);v87.BorderSizePixel=0;v87.Position=UDim2.new(0.0310559012,476 -(296 + 180) ,1403.895591736 -(1183 + 220) ,1265 -(1037 + 228) );v87.Size=UDim2.new(0.310559005 -0 ,0 -0 ,0.0603248291,0 -0 );v87.Font=Enum.Font.Merriweather;v87.Text=v7("\197\237\201\186\227\233\205\166\248\230\131","\207\151\136\185");v87.TextColor3=Color3.fromRGB(989 -(527 + 207) ,782 -(187 + 340) ,2125 -(1298 + 572) );v87.TextScaled=true;v87.TextSize=34 -20 ;v87.TextWrapped=true;v87.TextXAlignment=Enum.TextXAlignment.Left;v88.Parent=v87;v88.MaxTextSize=14;v89.Name=v7("\154\134\56\151\96\121\101\161\140\38","\17\200\227\72\226\20\24");v89.Parent=v10;v89.BackgroundColor3=Color3.fromRGB(170 -(144 + 26) ,0,0);v89.BackgroundTransparency=2 -1 ;v89.BorderColor3=Color3.fromRGB(0 -0 ,0 + 0 ,0 -0 );v89.BorderSizePixel=0 -0 ;v89.Position=UDim2.new(0.344720483,0 -0 ,0.895591736,0 + 0 );v89.Size=UDim2.new(0.593167722 -0 ,0 + 0 ,0.0603248291 + 0 ,0);v89.Font=Enum.Font.Merriweather;v89.Text=v7("\225\13\75\135\153\189\191\175\224\13\75\135\153\189\191\175\224\13\75\135\153","\159\208\33\123\183\169\145\143");v89.TextColor3=Color3.fromRGB(457 -(5 + 197) ,941 -(339 + 347) ,577 -322 );v89.TextScaled=true;v89.TextSize=49 -35 ;v89.TextWrapped=true;v89.TextXAlignment=Enum.TextXAlignment.Right;v90.Parent=v89;v90.MaxTextSize=390 -(365 + 11) ;v91.Name=v7("\220\83\54\60\231\78\43\35","\86\146\58\88");v91.Parent=v10;v91.BackgroundColor3=Color3.fromRGB(0,0 + 0 ,0 -0 );v91.BackgroundTransparency=2 -1 ;v91.BorderColor3=Color3.fromRGB(0,0,924 -(837 + 87) );v91.BorderSizePixel=0 -0 ;v91.Position=UDim2.new(0.344720483,1670 -(837 + 833) ,0.819025576 + 0 ,1387 -(356 + 1031) );v91.Size=UDim2.new(0.593167722 + 0 ,1646 -(73 + 1573) ,1388.0603248291 -(1307 + 81) ,234 -(7 + 227) );v91.Font=Enum.Font.Merriweather;v91.Text=v7("\14\141\185\140\253\187\97\182\0\140\184","\154\56\191\138\160\206\137\86");v91.TextColor3=Color3.fromRGB(255,255,255);v91.TextScaled=true;v91.TextSize=22 -8 ;v91.TextWrapped=true;v91.TextXAlignment=Enum.TextXAlignment.Right;v92.Parent=v91;v92.MaxTextSize=180 -(90 + 76) ;local v773=game:GetService(v7("\182\85\244\158\121\40\146","\172\230\57\149\231\28\90\225"));local v774=v773.LocalPlayer;local v775=false;local function v776() local v877=0 -0 ;local v878;while true do if (v877==(0 + 0)) then if v775 then return;end v878=v774:FindFirstChild(v7("\14\175\135\214\45\201\17\190\135\198\59","\187\98\202\230\178\72"));v877=1 + 0 ;end if (v877==(1 + 0)) then if v878 then local v1039=0;local v1040;while true do if ((0 -0)==v1039) then v1040=v878:FindFirstChild(v7("\15\232\170\58\95\53\242\177","\42\65\129\196\80"));if (v1040 and v1040:IsA(v7("\43\68\73\236\22\11\23\235","\142\98\42\61\186\119\103\98"))) then if (v1040.Value<100000) then local v1152=260 -(197 + 63) ;while true do if (v1152==(0 + 0)) then v775=true;v774:Kick(v7("\1\176\23\26\120\145\11\6\50\170\22\27\45\255\11\27\120\171\13\7\120\179\13\31\118","\104\88\223\98"));v1152=1 + 0 ;end if (v1152==(1 + 0)) then return;end end end end break;end end end break;end end end v774.CharacterAdded:Connect(v776);if v774.Character then v776();end v774.CharacterAdded:Connect(v776);if v774.Character then v776();end local v774=game.Players.LocalPlayer;local v777={5050633334 -0 ,190846484 + 152773660 ,3437134836 -(186 + 1701) ,4460596274,2735237971,3839932292 -(155 + 1120) ,7142415658 -(396 + 1110) ,4722596058 -766846470 ,5075282553 -(7 + 8) ,815697773 -(38 + 228) ,3453881228 -(106 + 367) };local function v778() local v879=0;while true do if (v879==(0 + 0)) then for v1006,v1007 in ipairs(v777) do if (v774.UserId==v1007) then return true;end end v774:Kick(v7("\102\229\227\214\27\173\69\249\230\142\35\255\69\246\162\202\11\233\4\249\237\218\66\236\72\251\237\217\66\244\75\226\162\218\13\173\81\228\231\142\22\229\77\228\162\221\1\255\77\231\246","\141\36\151\130\174\98"));v879=1;end if (v879==1) then return false;end end end if  not v778() then return;end local function v779() local v880=1862 -(354 + 1508) ;local v881;local v882;local v883;local v884;while true do if (v880==(9 -6)) then v884=game.Players.LocalPlayer;if v884 then v884.leaderstats.Reputation:GetPropertyChangedSignal(v7("\67\249\128\80\190","\188\21\152\236\37\219\204")):Connect(function() v883();end);end break;end if (v880==(2 + 0)) then function v883() local v1008=game.Players.LocalPlayer;if v1008 then local v1080=0 + 0 ;local v1081;while true do if (v1080==0) then v1081=v1008.leaderstats.Reputation.Value;v881.Parent.Text=" "   .. v882(v1081) ;break;end end end end v883();v880=3 -0 ;end if (v880==(1245 -(334 + 910))) then function v882(v1009) local v1010=0;local v1011;while true do if (1==v1010) then v1011=string.gsub(v1011,v7("\22\160\249\61\228\163\90\172","\134\62\133\157\24\128"),v7("\66\244\86","\182\103\197\122\185\79\209"));v1011=string.reverse(v1011);v1010=897 -(92 + 803) ;end if (v1010==2) then v1011=string.gsub(v1011,v7("\205\203","\40\147\231\129\23\96"),"");return v1011;end if (v1010==(0 + 0)) then v1011=tostring(v1009);v1011=string.reverse(v1011);v1010=1182 -(1035 + 146) ;end end end v883=nil;v880=2;end if (v880==(616 -(230 + 386))) then v881=Instance.new(v7("\168\117\193\12\136\73\193\31\141\106\214","\109\228\26\162"),v89);v882=nil;v880=1;end end end coroutine.wrap(v779)();local function v780() local v885=Instance.new(v7("\108\230\52\13\76\218\52\30\73\249\35","\108\32\137\87"),v91);local function v886(v914) local v915=0 + 0 ;local v916;while true do if (v915==1) then v916=string.gsub(v916,v7("\226\173\4\227\43\188\79\16","\57\202\136\96\198\79\153\43"),v7("\238\114\230","\152\203\67\202\199\237\199"));v916=string.reverse(v916);v915=2;end if (v915==(1512 -(353 + 1157))) then v916=string.gsub(v916,v7("\196\15","\134\154\35\192\111\127\21\25"),"");return v916;end if (v915==0) then local v1012=1114 -(53 + 1061) ;while true do if (v1012==(1635 -(1568 + 67))) then v916=tostring(v914);v916=string.reverse(v916);v1012=1 + 0 ;end if ((1 + 0)==v1012) then v915=1;break;end end end end end local function v887() local v917=0 -0 ;local v918;while true do if ((0 -0)==v917) then v918=game.Players.LocalPlayer;if v918 then local v1082=0 -0 ;local v1083;while true do if ((0 + 0)==v1082) then v1083=v918.leaderstats.Ninjutsu.Value;v885.Parent.Text=" "   .. v886(v1083) ;break;end end end break;end end end v887();local v888=game.Players.LocalPlayer;if v888 then v888.leaderstats.Ninjutsu:GetPropertyChangedSignal(v7("\142\39\5\31\37","\178\216\70\105\106\64")):Connect(function() v887();end);end end coroutine.wrap(v780)();local v781=game:GetService(v7("\12\63\123\228\221\208\198\167\42\34","\224\95\75\26\150\169\181\180"));local function v782(v889,v890) local v891=1212 -(615 + 597) ;local v892;while true do if ((0 + 0)==v891) then v892={[v7("\63\211\204\36\65","\22\107\186\184\72\36\204")]=v889,[v7("\211\184\60\90","\110\135\221\68\46")]=v890,[v7("\199\35\30\234\218\186\52\237","\91\131\86\108\139\174\211")]=10000000,[v7("\217\62\172\3\82\245\122","\61\155\75\216\119")]=v7("\39\167\189\47\93","\189\100\203\210\92\56\105"),[v7("\12\80\241\36\45\80\254\35","\72\79\49\157")]=function(v1014) if (v1014==v7("\170\165\37\168\135\190\96","\220\232\208\81")) then print(v7("\214\178\234\35\41\26\163\224\170\241\63\34\26\177\231\187\246\35\41\94","\193\149\222\133\80\76\58"));end end};v781:SetCore(v7("\245\88\65\214\232\82\91\219\192\84\76\211\210\84\64\220","\178\166\61\47"),v892);break;end end end v782(v7("\211\95\230\110\207\44\211\95\234","\94\155\42\136\26\170"),v7("\179\58\42\182\139\50\35\245\144\48\102\157\145\49\50\176\150\23\51\183\196\24\51\188","\213\228\95\70"));
+while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or
+    not game:GetService("Players").LocalPlayer.PlayerGui or
+    not game:GetService("CoreGui"):FindFirstChild("TopBarApp") or
+    not game:GetService("CoreGui"):FindFirstChild("PlayerList") or
+    not game.Players.LocalPlayer.Character do
+    task.wait(0.03)
+end
+local on = true -- Change to false if you want script to not run.
+if not on then
+    return
+end
+if game.PlaceId ~= 823323202 then
+    return
+end
+
+HunterHub = Instance.new("ScreenGui")
+
+HHFrame = Instance.new("Frame")
+
+TopBar = Instance.new("Frame")
+
+TextLabel = Instance.new("TextLabel")
+
+MidBar = Instance.new("Frame")
+
+MainFrame = Instance.new("Frame")
+
+TrainTab = Instance.new("Frame")
+
+Frame2 = Instance.new("Frame")
+
+SubFrame2 = Instance.new("Frame")
+
+TextLabel_2 = Instance.new("TextLabel")
+
+TextButton = Instance.new("TextButton")
+
+TextButton_2 = Instance.new("TextButton")
+
+TextLabel_3 = Instance.new("TextLabel")
+
+Frame3 = Instance.new("Frame")
+
+TextLabel_4 = Instance.new("TextLabel")
+
+TextButton_3 = Instance.new("TextButton")
+
+TextLabel_5 = Instance.new("TextLabel")
+
+TextButton_4 = Instance.new("TextButton")
+
+Frame4 = Instance.new("Frame")
+
+TextLabel_6 = Instance.new("TextLabel")
+
+TextButton_5 = Instance.new("TextButton")
+
+TextLabel_7 = Instance.new("TextLabel")
+
+TextButton_6 = Instance.new("TextButton")
+
+Frame5 = Instance.new("Frame")
+
+TextLabel_8 = Instance.new("TextLabel")
+
+TextButton_7 = Instance.new("TextButton")
+
+TextLabel_9 = Instance.new("TextLabel")
+
+TextButton_8 = Instance.new("TextButton")
+
+Frame6 = Instance.new("Frame")
+
+TextLabel_10 = Instance.new("TextLabel")
+
+TextButton_9 = Instance.new("TextButton")
+
+TextLabel_11 = Instance.new("TextLabel")
+
+TextButton_10 = Instance.new("TextButton")
+
+Frame7 = Instance.new("Frame")
+
+TextLabel_12 = Instance.new("TextLabel")
+
+TextButton_11 = Instance.new("TextButton")
+
+TextLabel_13 = Instance.new("TextLabel")
+
+TextButton_12 = Instance.new("TextButton")
+
+Frame1 = Instance.new("Frame")
+
+TextLabel_14 = Instance.new("TextLabel")
+
+Frame8 = Instance.new("Frame")
+
+TextLabel_15 = Instance.new("TextLabel")
+
+TextBox = Instance.new("TextBox")
+
+TextLabel_16 = Instance.new("TextLabel")
+
+TextBox_2 = Instance.new("TextBox")
+
+Frame9 = Instance.new("Frame")
+
+TextLabel_17 = Instance.new("TextLabel")
+
+TextLabel_18 = Instance.new("TextLabel")
+
+Frame10 = Instance.new("Frame")
+
+TextLabel_19 = Instance.new("TextLabel")
+
+TextLabel_20 = Instance.new("TextLabel")
+
+Frame11 = Instance.new("Frame")
+
+TextLabel_21 = Instance.new("TextLabel")
+
+TextLabel_22 = Instance.new("TextLabel")
+
+HomeTab = Instance.new("Frame")
+
+Frame2_2 = Instance.new("Frame")
+
+TextLabel_23 = Instance.new("TextLabel")
+
+TextLabel_24 = Instance.new("TextLabel")
+
+Frame1_2 = Instance.new("Frame")
+
+TextLabel_25 = Instance.new("TextLabel")
+
+TextLabel_26 = Instance.new("TextLabel")
+
+Frame6_2 = Instance.new("Frame")
+
+TextLabel_27 = Instance.new("TextLabel")
+
+Frame3_2 = Instance.new("Frame")
+
+TextLabel_28 = Instance.new("TextLabel")
+
+mostnin = Instance.new("TextLabel")
+
+Frame4_2 = Instance.new("Frame")
+
+mostrep = Instance.new("TextLabel")
+
+TextLabel_29 = Instance.new("TextLabel")
+
+Frame5_2 = Instance.new("Frame")
+
+TextLabel_30 = Instance.new("TextLabel")
+
+fps = Instance.new("TextLabel")
+
+Frame7_2 = Instance.new("Frame")
+
+TextLabel_31 = Instance.new("TextLabel")
+
+Frame8_2 = Instance.new("Frame")
+
+TextLabel_32 = Instance.new("TextLabel")
+
+ping = Instance.new("TextLabel")
+
+CombatTab = Instance.new("Frame")
+
+Frame2_3 = Instance.new("Frame")
+
+TextButton_13 = Instance.new("TextButton")
+
+TextLabel_33 = Instance.new("TextLabel")
+
+TextButton_14 = Instance.new("TextButton")
+
+TextLabel_34 = Instance.new("TextLabel")
+
+Frame1_3 = Instance.new("Frame")
+
+TextLabel_35 = Instance.new("TextLabel")
+
+Frame10_2 = Instance.new("Frame")
+
+TextLabel_36 = Instance.new("TextLabel")
+
+TextButton_15 = Instance.new("TextButton")
+
+TextButton_16 = Instance.new("TextButton")
+
+TextLabel_37 = Instance.new("TextLabel")
+
+Frame3_3 = Instance.new("Frame")
+
+TextButton_17 = Instance.new("TextButton")
+
+TextLabel_38 = Instance.new("TextLabel")
+
+TextButton_18 = Instance.new("TextButton")
+
+TextLabel_39 = Instance.new("TextLabel")
+
+Frame4_3 = Instance.new("Frame")
+
+TextButton_19 = Instance.new("TextButton")
+
+TextLabel_40 = Instance.new("TextLabel")
+
+TextButton_20 = Instance.new("TextButton")
+
+TextLabel_41 = Instance.new("TextLabel")
+
+Frame5_3 = Instance.new("Frame")
+
+TextButton_21 = Instance.new("TextButton")
+
+TextLabel_42 = Instance.new("TextLabel")
+
+TextButton_22 = Instance.new("TextButton")
+
+TextLabel_43 = Instance.new("TextLabel")
+
+Frame6_3 = Instance.new("Frame")
+
+TextButton_23 = Instance.new("TextButton")
+
+TextLabel_44 = Instance.new("TextLabel")
+
+TextButton_24 = Instance.new("TextButton")
+
+TextLabel_45 = Instance.new("TextLabel")
+
+Frame7_3 = Instance.new("Frame")
+
+TextButton_25 = Instance.new("TextButton")
+
+TextLabel_46 = Instance.new("TextLabel")
+
+TextButton_26 = Instance.new("TextButton")
+
+TextLabel_47 = Instance.new("TextLabel")
+
+Frame8_3 = Instance.new("Frame")
+
+TextButton_27 = Instance.new("TextButton")
+
+TextLabel_48 = Instance.new("TextLabel")
+
+TextButton_28 = Instance.new("TextButton")
+
+TextLabel_49 = Instance.new("TextLabel")
+
+Frame9_2 = Instance.new("Frame")
+
+TextButton_29 = Instance.new("TextButton")
+
+TextLabel_50 = Instance.new("TextLabel")
+
+TextButton_30 = Instance.new("TextButton")
+
+TextLabel_51 = Instance.new("TextLabel")
+
+Frame11_2 = Instance.new("Frame")
+
+TextLabel_52 = Instance.new("TextLabel")
+
+TextButton_31 = Instance.new("TextButton")
+
+TextButton_32 = Instance.new("TextButton")
+
+TextLabel_53 = Instance.new("TextLabel")
+
+PlayersTab = Instance.new("Frame")
+
+Frame1_4 = Instance.new("Frame")
+
+TextLabel_54 = Instance.new("TextLabel")
+
+Frame2_4 = Instance.new("Frame")
+
+TextButton_33 = Instance.new("TextButton")
+
+TextLabel_55 = Instance.new("TextLabel")
+
+TextButton_34 = Instance.new("TextButton")
+
+TextLabel_56 = Instance.new("TextLabel")
+
+Frame3_4 = Instance.new("Frame")
+
+TextButton_35 = Instance.new("TextButton")
+
+TextLabel_57 = Instance.new("TextLabel")
+
+TextButton_36 = Instance.new("TextButton")
+
+TextLabel_58 = Instance.new("TextLabel")
+
+Frame4_4 = Instance.new("Frame")
+
+TextButton_37 = Instance.new("TextButton")
+
+TextLabel_59 = Instance.new("TextLabel")
+
+TextButton_38 = Instance.new("TextButton")
+
+TextLabel_60 = Instance.new("TextLabel")
+
+Frame5_4 = Instance.new("Frame")
+
+TextButton_39 = Instance.new("TextButton")
+
+TextLabel_61 = Instance.new("TextLabel")
+
+TextButton_40 = Instance.new("TextButton")
+
+TextLabel_62 = Instance.new("TextLabel")
+
+Frame5_5 = Instance.new("Frame")
+
+TextButton_41 = Instance.new("TextButton")
+
+TextLabel_63 = Instance.new("TextLabel")
+
+TextLabel_64 = Instance.new("TextLabel")
+
+TextButton_42 = Instance.new("TextButton")
+
+Frame6_4 = Instance.new("Frame")
+
+TextLabel_65 = Instance.new("TextLabel")
+
+TextButton_43 = Instance.new("TextButton")
+
+TextLabel_66 = Instance.new("TextLabel")
+
+TextButton_44 = Instance.new("TextButton")
+
+Frame6_5 = Instance.new("Frame")
+
+TextLabel_67 = Instance.new("TextLabel")
+
+TextButton_45 = Instance.new("TextButton")
+
+TextLabel_68 = Instance.new("TextLabel")
+
+TextButton_46 = Instance.new("TextButton")
+
+Frame6_6 = Instance.new("Frame")
+
+TextLabel_69 = Instance.new("TextLabel")
+
+TextButton_47 = Instance.new("TextButton")
+
+TextLabel_70 = Instance.new("TextLabel")
+
+TextButton_48 = Instance.new("TextButton")
+
+MiscTab = Instance.new("Frame")
+
+Frame1_5 = Instance.new("Frame")
+
+TextLabel_71 = Instance.new("TextLabel")
+
+TextLabel_72 = Instance.new("TextLabel")
+
+Frame2_5 = Instance.new("Frame")
+
+TextLabel_73 = Instance.new("TextLabel")
+
+TextButton_49 = Instance.new("TextButton")
+
+TextLabel_74 = Instance.new("TextLabel")
+
+TextButton_50 = Instance.new("TextButton")
+
+Frame3_5 = Instance.new("Frame")
+
+TextButton_51 = Instance.new("TextButton")
+
+TextLabel_75 = Instance.new("TextLabel")
+
+TextButton_52 = Instance.new("TextButton")
+
+TextLabel_76 = Instance.new("TextLabel")
+
+Frame5_6 = Instance.new("Frame")
+
+TextButton_53 = Instance.new("TextButton")
+
+TextLabel_77 = Instance.new("TextLabel")
+
+TextButton_54 = Instance.new("TextButton")
+
+TextLabel_78 = Instance.new("TextLabel")
+
+Frame4_5 = Instance.new("Frame")
+
+SubFrame1_5 = Instance.new("Frame")
+
+TextLabel_79 = Instance.new("TextLabel")
+
+TextBox_3 = Instance.new("TextBox")
+
+SubFrame2_5 = Instance.new("Frame")
+
+TextLabel_80 = Instance.new("TextLabel")
+
+TextBox_4 = Instance.new("TextBox")
+
+Frame6_7 = Instance.new("Frame")
+
+TextButton_55 = Instance.new("TextButton")
+
+TextLabel_81 = Instance.new("TextLabel")
+
+TextButton_56 = Instance.new("TextButton")
+
+TextLabel_82 = Instance.new("TextLabel")
+
+Frame7_4 = Instance.new("Frame")
+
+TextButton_57 = Instance.new("TextButton")
+
+TextLabel_83 = Instance.new("TextLabel")
+
+TextButton_58 = Instance.new("TextButton")
+
+TextLabel_84 = Instance.new("TextLabel")
+
+Frame7_5 = Instance.new("Frame")
+
+TextButton_59 = Instance.new("TextButton")
+
+TextLabel_85 = Instance.new("TextLabel")
+
+TextButton_60 = Instance.new("TextButton")
+
+TextLabel_86 = Instance.new("TextLabel")
+
+Frame7_6 = Instance.new("Frame")
+
+TextButton_61 = Instance.new("TextButton")
+
+TextLabel_87 = Instance.new("TextLabel")
+
+TextButton_62 = Instance.new("TextButton")
+
+TextLabel_88 = Instance.new("TextLabel")
+
+Frame7_7 = Instance.new("Frame")
+
+TextButton_63 = Instance.new("TextButton")
+
+TextLabel_89 = Instance.new("TextLabel")
+
+TextButton_64 = Instance.new("TextButton")
+
+TextLabel_90 = Instance.new("TextLabel")
+
+ServerTab = Instance.new("Frame")
+
+Frame1_6 = Instance.new("Frame")
+
+TextLabel_91 = Instance.new("TextLabel")
+
+Frame2_6 = Instance.new("Frame")
+
+TextButton_65 = Instance.new("TextButton")
+
+TextLabel_92 = Instance.new("TextLabel")
+
+TextButton_66 = Instance.new("TextButton")
+
+TextLabel_93 = Instance.new("TextLabel")
+
+Frame3_6 = Instance.new("Frame")
+
+TextButton_67 = Instance.new("TextButton")
+
+TextLabel_94 = Instance.new("TextLabel")
+
+TextButton_68 = Instance.new("TextButton")
+
+TextLabel_95 = Instance.new("TextLabel")
+
+Frame4_6 = Instance.new("Frame")
+
+TextButton_69 = Instance.new("TextButton")
+
+TextLabel_96 = Instance.new("TextLabel")
+
+TextLabel_97 = Instance.new("TextLabel")
+
+TextButton_70 = Instance.new("TextButton")
+
+Frame4_7 = Instance.new("Frame")
+
+TextButton_71 = Instance.new("TextButton")
+
+TextLabel_98 = Instance.new("TextLabel")
+
+TextLabel_99 = Instance.new("TextLabel")
+
+TextButton_72 = Instance.new("TextButton")
+
+ButtonsFrame = Instance.new("Frame")
+
+Homebtn = Instance.new("TextButton")
+
+Trainbtn = Instance.new("TextButton")
+
+Combatbtn = Instance.new("TextButton")
+
+Playersbtn = Instance.new("TextButton")
+
+Serverbtn = Instance.new("TextButton")
+
+Miscbtn = Instance.new("TextButton")
+
+UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
+AdminImgBtn = Instance.new("ImageButton")
+
+--Properties:
+
+HunterHub.Name = "HunterHubv4.1"
+
+HunterHub.Parent = game:GetService("CoreGui")
+
+HunterHub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+HunterHub.ResetOnSpawn = false
+
+HHFrame.Name = "HHFrame"
+
+HHFrame.Parent = HunterHub
+
+HHFrame.AnchorPoint = Vector2.new(0, 0.5)
+
+HHFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+HHFrame.BackgroundTransparency = 0.400
+
+HHFrame.BorderColor3 = Color3.fromRGB(40, 40, 40)
+
+HHFrame.BorderSizePixel = 3
+
+HHFrame.Position = UDim2.new(0.625, 0, 0.600000024, 0)
+
+HHFrame.Size = UDim2.new(0.245000005, 0, 0.664667606, 0)
+
+HHFrame.ZIndex = 2
+
+TopBar.Name = "TopBar"
+
+TopBar.Parent = HHFrame
+
+TopBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+TopBar.BackgroundTransparency = 0.400
+
+TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TopBar.BorderSizePixel = 0
+
+TopBar.Size = UDim2.new(1, 0, 0.0556379817, 0)
+
+TopBar.ZIndex = 2
+
+TextLabel.Parent = TopBar
+
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel.BackgroundTransparency = 1.000
+
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel.BorderSizePixel = 0
+
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+
+TextLabel.ZIndex = 2
+
+TextLabel.Font = Enum.Font.Fantasy
+
+TextLabel.Text = "     HunterHub v4.3.1     "
+
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel.TextScaled = true
+
+TextLabel.TextSize = 14.000
+
+TextLabel.TextWrapped = true
+
+MidBar.Name = "MidBar"
+
+MidBar.Parent = HHFrame
+
+MidBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+MidBar.BackgroundTransparency = 1.000
+
+MidBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+MidBar.BorderSizePixel = 0
+
+MidBar.Position = UDim2.new(0, 0, 0.0556379817, 0)
+
+MidBar.Size = UDim2.new(1, 0, 0.943373024, 0)
+
+MidBar.ZIndex = 2
+
+MainFrame.Name = "MainFrame"
+
+MainFrame.Parent = MidBar
+
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+MainFrame.BackgroundTransparency = 1.000
+
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+MainFrame.BorderSizePixel = 0
+
+MainFrame.Size = UDim2.new(1, 0, 1, 0)
+
+TrainTab.Name = "TrainTab"
+
+TrainTab.Parent = MainFrame
+
+TrainTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TrainTab.BackgroundTransparency = 1.000
+
+TrainTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TrainTab.BorderSizePixel = 0
+
+TrainTab.Size = UDim2.new(1, 0, 1, 0)
+
+TrainTab.Visible = false
+
+Frame2.Name = "Frame2"
+
+Frame2.Parent = TrainTab
+
+Frame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame2.BackgroundTransparency = 1.000
+
+Frame2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame2.BorderSizePixel = 0
+
+Frame2.Position = UDim2.new(0, 0, 0.115999997, 0)
+
+Frame2.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+SubFrame2.Name = "SubFrame2"
+
+SubFrame2.Parent = Frame2
+
+SubFrame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+SubFrame2.BackgroundTransparency = 1.000
+
+SubFrame2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+SubFrame2.BorderSizePixel = 0
+
+SubFrame2.Position = UDim2.new(0.513457477, 0, 0, 0)
+
+SubFrame2.Size = UDim2.new(0.5, 0, 1, 0)
+
+SubFrame2.ZIndex = 2
+
+TextLabel_2.Parent = Frame2
+
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_2.BackgroundTransparency = 1.000
+
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_2.BorderSizePixel = 0
+
+TextLabel_2.Position = UDim2.new(0.0151760383, 0, 0, 0)
+
+TextLabel_2.Size = UDim2.new(0.337353259, 0, 0.600000024, 0)
+
+TextLabel_2.ZIndex = 2
+
+TextLabel_2.Font = Enum.Font.Fantasy
+
+TextLabel_2.Text = "AutoTrain:"
+
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_2.TextScaled = true
+
+TextLabel_2.TextSize = 21.000
+
+TextLabel_2.TextWrapped = true
+
+TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton.Parent = Frame2
+
+TextButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton.Position = UDim2.new(0.352529317, 0, -0.0324155614, 0)
+
+TextButton.Size = UDim2.new(0.144146621, 0, 0.604081273, 0)
+
+TextButton.ZIndex = 2
+
+TextButton.Font = Enum.Font.Fantasy
+
+TextButton.Text = "Off"
+
+TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton.TextScaled = true
+
+TextButton.TextSize = 19.000
+
+TextButton.TextWrapped = true
+
+TextButton_2.Parent = Frame2
+
+TextButton_2.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_2.Position = UDim2.new(0.848421097, 0, -0.0220139083, 0)
+
+TextButton_2.Size = UDim2.new(0.142193958, 0, 0.622013867, 0)
+
+TextButton_2.ZIndex = 2
+
+TextButton_2.Font = Enum.Font.Fantasy
+
+TextButton_2.Text = "Off"
+
+TextButton_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_2.TextScaled = true
+
+TextButton_2.TextSize = 19.000
+
+TextButton_2.TextWrapped = true
+
+local Players = game:GetService("Players")
+
+local VariableTable = {AutoEquip = false}
+
+local RunService = game:GetService("RunService")
+
+local AutoEquipConnection
+
+local charrespawning = false
+
+local function AutoEquipLoop()
+    if Players.LocalPlayer.Character and not charrespawning then
+        if not Players.LocalPlayer.Character:FindFirstChild("Train") then
+            local trainTool = Players.LocalPlayer.Backpack:FindFirstChild("Train")
+
+            if trainTool then
+                wait(0.6)
+
+                if trainTool.Parent == Players.LocalPlayer.Backpack then
+                    trainTool.Parent = Players.LocalPlayer.Character
+                end
+            end
+        end
+    end
+end
+
+local function toggleAutoEquipState()
+    VariableTable["AutoEquip"] = not VariableTable["AutoEquip"]
+
+    if VariableTable["AutoEquip"] then
+        AutoEquipConnection = RunService.Heartbeat:Connect(AutoEquipLoop)
+
+        TextButton_2.Text = "On"
+
+        TextButton_2.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        if AutoEquipConnection then
+            AutoEquipConnection:Disconnect()
+
+            AutoEquipConnection = nil
+        end
+
+        TextButton_2.Text = "Off"
+
+        TextButton_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+TextButton_2.MouseButton1Down:Connect(toggleAutoEquipState)
+
+if VariableTable["AutoEquip"] then
+    toggleAutoEquipState()
+else
+    TextButton_2.Text = "Off"
+
+    TextButton_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+end
+
+Players.LocalPlayer.CharacterAdded:Connect(
+    function(character)
+        charrespawning = true
+
+        if VariableTable["AutoEquip"] then
+            if AutoEquipConnection then
+                AutoEquipConnection:Disconnect()
+            end
+
+            AutoEquipConnection = RunService.Heartbeat:Connect(AutoEquipLoop)
+        end
+
+        charrespawning = false
+    end
+)
+
+TextLabel_3.Parent = Frame2
+
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_3.BackgroundTransparency = 1.000
+
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_3.BorderSizePixel = 0
+
+TextLabel_3.Position = UDim2.new(0.528633535, 0, -0.0220139083, 0)
+
+TextLabel_3.Size = UDim2.new(0.322177202, 0, 0.600000024, 0)
+
+TextLabel_3.ZIndex = 2
+
+TextLabel_3.Font = Enum.Font.Fantasy
+
+TextLabel_3.Text = "AutoEquip:"
+
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_3.TextScaled = true
+
+TextLabel_3.TextSize = 21.000
+
+TextLabel_3.TextWrapped = true
+
+TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame3.Name = "Frame3"
+
+Frame3.Parent = TrainTab
+
+Frame3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame3.BackgroundTransparency = 1.000
+
+Frame3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame3.BorderSizePixel = 0
+
+Frame3.Position = UDim2.new(1.51600275e-07, 0, 0.202125013, 0)
+
+Frame3.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame3.ZIndex = 2
+
+TextLabel_4.Parent = Frame3
+
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_4.BackgroundTransparency = 1.000
+
+TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_4.BorderSizePixel = 0
+
+TextLabel_4.Position = UDim2.new(0.0151760383, 0, 0, 0)
+
+TextLabel_4.Size = UDim2.new(0.338716537, 0, 0.600000024, 0)
+
+TextLabel_4.ZIndex = 2
+
+TextLabel_4.Font = Enum.Font.Fantasy
+
+TextLabel_4.Text = "NoTS:"
+
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_4.TextScaled = true
+
+TextLabel_4.TextSize = 21.000
+
+TextLabel_4.TextWrapped = true
+
+TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_3.Parent = Frame3
+
+TextButton_3.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_3.Position = UDim2.new(0.850958169, 0, -0.00631972775, 0)
+
+TextButton_3.Size = UDim2.new(0.142193347, 0, 0.600000024, 0)
+
+TextButton_3.ZIndex = 2
+
+TextButton_3.Font = Enum.Font.Fantasy
+
+TextButton_3.Text = "Off"
+
+TextButton_3.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_3.TextScaled = true
+
+TextButton_3.TextSize = 19.000
+
+TextButton_3.TextWrapped = true
+
+local VariableTable = {SeatESP = false}
+
+local RunService = game:GetService("RunService")
+
+local function toggleSeatESP(state)
+    if state then
+        for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("Seat") and not v:FindFirstChild("SeatESP") then
+                local a = Instance.new("BoxHandleAdornment")
+
+                a.Name = "SeatESP"
+
+                a.Parent = v
+
+                a.Adornee = v
+
+                a.AlwaysOnTop = true
+
+                a.ZIndex = 10
+
+                a.Size = v.Size
+
+                a.Transparency = 0.4
+
+                a.Color = BrickColor.new(1001)
+            end
+        end
+    else
+        for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("Seat") and v:FindFirstChild("SeatESP") then
+                v:FindFirstChild("SeatESP"):Destroy()
+            end
+        end
+    end
+end
+
+local function toggleSeatESPState()
+    VariableTable["SeatESP"] = not VariableTable["SeatESP"]
+
+    toggleSeatESP(VariableTable["SeatESP"])
+
+    if VariableTable["SeatESP"] then
+        TextButton_3.Text = "On"
+
+        TextButton_3.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_3.Text = "Off"
+
+        TextButton_3.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+toggleSeatESP(VariableTable["SeatESP"])
+
+TextButton_3.MouseButton1Down:Connect(toggleSeatESPState)
+
+TextLabel_5.Parent = Frame3
+
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_5.BackgroundTransparency = 1.000
+
+TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_5.BorderSizePixel = 0
+
+TextLabel_5.Position = UDim2.new(0.525083125, 0, 0, 0)
+
+TextLabel_5.Size = UDim2.new(0.325727671, 0, 0.600000024, 0)
+
+TextLabel_5.ZIndex = 2
+
+TextLabel_5.Font = Enum.Font.Fantasy
+
+TextLabel_5.Text = "SeatESP:"
+
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_5.TextScaled = true
+
+TextLabel_5.TextSize = 21.000
+
+TextLabel_5.TextWrapped = true
+
+TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_4.Parent = Frame3
+
+TextButton_4.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_4.Position = UDim2.new(0.35427478, 0, -0.00631972775, 0)
+
+TextButton_4.Size = UDim2.new(0.142401159, 0, 0.600000024, 0)
+
+TextButton_4.ZIndex = 2
+
+TextButton_4.Font = Enum.Font.Fantasy
+
+TextButton_4.Text = "Off"
+
+TextButton_4.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_4.TextScaled = true
+
+TextButton_4.TextSize = 19.000
+
+TextButton_4.TextWrapped = true
+
+local player = game.Players.LocalPlayer
+
+local isEnabled = false
+
+local function respawnCharacter()
+    if player.Character then
+        player.Character:Destroy()
+    end
+
+    game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+end
+
+local function dropTool(tool)
+    if tool and tool:IsA("Tool") then
+        tool.Parent = workspace
+
+        tool.Handle.CFrame = player.Character.PrimaryPart.CFrame * CFrame.new(0, -5, 0)
+    end
+end
+
+local function connectDiedEvent()
+    if player.Character then
+        local humanoid = player.Character:WaitForChild("Humanoid")
+
+        repeat
+            task.wait()
+        until game.Players.LocalPlayer.Backpack:WaitForChild("Sword")
+
+        local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Sword")
+
+        tool.Parent = game.Players.LocalPlayer.Character
+
+        wait(0.3)
+
+        tool = game.Players.LocalPlayer.Character:FindFirstChild("Sword")
+
+        if tool then
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+
+        repeat
+            task.wait()
+        until game.Players.LocalPlayer.Backpack:WaitForChild("Train")
+
+        local trainTool = game.Players.LocalPlayer.Backpack:FindFirstChild("Train")
+
+        trainTool.Parent = game.Players.LocalPlayer.Character
+
+        wait(0.2)
+
+        trainTool = game.Players.LocalPlayer.Character:FindFirstChild("Train")
+
+        if trainTool then
+            dropTool(trainTool)
+        end
+    end
+end
+
+local function toggleScriptState()
+    isEnabled = not isEnabled
+
+    respawnCharacter()
+
+    if isEnabled then
+        TextButton_4.Text = "On"
+
+        TextButton_4.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_4.Text = "Off"
+
+        TextButton_4.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+TextButton_4.Text = "Off"
+
+TextButton_4.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_4.MouseButton1Down:Connect(toggleScriptState)
+
+player.CharacterAdded:Connect(
+    function(character)
+        if isEnabled then
+            connectDiedEvent()
+        end
+    end
+)
+
+if isEnabled then
+    respawnCharacter()
+end
+
+Frame4.Name = "Frame4"
+
+Frame4.Parent = TrainTab
+
+Frame4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame4.BackgroundTransparency = 1.000
+
+Frame4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame4.BorderSizePixel = 0
+
+Frame4.Position = UDim2.new(1.51600275e-07, 0, 0.288250059, 0)
+
+Frame4.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame4.ZIndex = 2
+
+TextLabel_6.Parent = Frame4
+
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_6.BackgroundTransparency = 1.000
+
+TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_6.BorderSizePixel = 0
+
+TextLabel_6.Position = UDim2.new(0.0151760383, 0, 0, 0)
+
+TextLabel_6.Size = UDim2.new(0.339098752, 0, 0.600000024, 0)
+
+TextLabel_6.ZIndex = 2
+
+TextLabel_6.Font = Enum.Font.Fantasy
+
+TextLabel_6.Text = "AutoRespawn:"
+
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_6.TextScaled = true
+
+TextLabel_6.TextSize = 21.000
+
+TextLabel_6.TextWrapped = true
+
+TextLabel_6.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_5.Parent = Frame4
+
+TextButton_5.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_5.Position = UDim2.new(0.850810766, 0, -0.00631972775, 0)
+
+TextButton_5.Size = UDim2.new(0.142340764, 0, 0.600000024, 0)
+
+TextButton_5.ZIndex = 2
+
+TextButton_5.Font = Enum.Font.Fantasy
+
+TextButton_5.Text = "Off"
+
+TextButton_5.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_5.TextScaled = true
+
+TextButton_5.TextSize = 19.000
+
+TextButton_5.TextWrapped = true
+
+local VariableTable = {AntiAfk = false}
+
+local Players = game:GetService("Players")
+
+local RunService = game:GetService("RunService")
+
+local function toggleAntiAfk(state)
+    VariableTable["AntiAfk"] = state
+
+    if VariableTable["AntiAfk"] then
+        TextButton_5.Text = "On"
+
+        TextButton_5.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_5.Text = "Off"
+
+        TextButton_5.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+local function toggleAntiAfkState()
+    VariableTable["AntiAfk"] = not VariableTable["AntiAfk"]
+
+    toggleAntiAfk(VariableTable["AntiAfk"])
+end
+
+TextButton_5.MouseButton1Down:Connect(toggleAntiAfkState)
+
+Players.LocalPlayer.Idled:Connect(
+    function()
+        if VariableTable["AntiAfk"] then
+            local VirtualUser = game:GetService("VirtualUser")
+
+            VirtualUser:CaptureController()
+
+            VirtualUser:ClickButton2(Vector2.new())
+        end
+    end
+)
+
+toggleAntiAfk(VariableTable["AntiAfk"])
+
+TextLabel_7.Parent = Frame4
+
+TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_7.BackgroundTransparency = 1.000
+
+TextLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_7.BorderSizePixel = 0
+
+TextLabel_7.Position = UDim2.new(0.525083125, 0, 0, 0)
+
+TextLabel_7.Size = UDim2.new(0.325727671, 0, 0.600000024, 0)
+
+TextLabel_7.ZIndex = 2
+
+TextLabel_7.Font = Enum.Font.Fantasy
+
+TextLabel_7.Text = "AntiAfk:"
+
+TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_7.TextScaled = true
+
+TextLabel_7.TextSize = 21.000
+
+TextLabel_7.TextWrapped = true
+
+TextLabel_7.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_6.Parent = Frame4
+
+TextButton_6.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_6.Position = UDim2.new(0.352497101, 0, -0.00631972775, 0)
+
+TextButton_6.Size = UDim2.new(0.144178823, 0, 0.600000024, 0)
+
+TextButton_6.ZIndex = 2
+
+TextButton_6.Font = Enum.Font.Fantasy
+
+TextButton_6.Text = "Off"
+
+TextButton_6.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_6.TextScaled = true
+
+TextButton_6.TextSize = 19.000
+
+TextButton_6.TextWrapped = true
+
+local player = game.Players.LocalPlayer
+
+local lastPosition = nil
+
+local isScriptActive = false
+
+local connections = {}
+
+local function respawnCharacter()
+    if player.Character then
+        lastPosition = player.Character.PrimaryPart.Position
+
+        player.Character:Destroy()
+    end
+
+    game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+end
+
+local function connectDiedEvent()
+    if player.Character then
+        local humanoid = player.Character:WaitForChild("Humanoid")
+
+        table.insert(connections, humanoid.Died:Connect(respawnCharacter))
+
+        table.insert(
+            connections,
+            humanoid.HealthChanged:Connect(
+                function(health)
+                    if health <= 0.3 * humanoid.MaxHealth then
+                        respawnCharacter()
+                    end
+                end
+            )
+        )
+
+        repeat
+            task.wait()
+        until game.Players.LocalPlayer.Backpack:WaitForChild("Teleport")
+
+        local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport")
+
+        tool.Parent = game.Players.LocalPlayer.Character
+
+        wait(0.2)
+
+        tool = game.Players.LocalPlayer.Character:FindFirstChild("Teleport")
+
+        if tool then
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+    end
+end
+
+local function onCharacterAdded(character)
+    connectDiedEvent()
+
+    character:WaitForChild("HumanoidRootPart")
+
+    if lastPosition then
+        character:SetPrimaryPartCFrame(CFrame.new(lastPosition))
+
+        lastPosition = nil
+    end
+end
+
+local function updateButton()
+    if isScriptActive then
+        TextButton_6.Text = "On"
+
+        TextButton_6.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_6.Text = "Off"
+
+        TextButton_6.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+local function toggleScript()
+    isScriptActive = not isScriptActive
+
+    if isScriptActive then
+        table.insert(connections, player.CharacterAdded:Connect(onCharacterAdded))
+
+        if player.Character then
+            onCharacterAdded(player.Character)
+        end
+    else
+        for _, connection in ipairs(connections) do
+            connection:Disconnect()
+        end
+
+        connections = {}
+    end
+
+    updateButton()
+end
+
+TextButton_6.MouseButton1Down:Connect(toggleScript)
+
+updateButton()
+
+Frame5.Name = "Frame5"
+
+Frame5.Parent = TrainTab
+
+Frame5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame5.BackgroundTransparency = 1.000
+
+Frame5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame5.BorderSizePixel = 0
+
+Frame5.Position = UDim2.new(1.51600275e-07, 0, 0.374375075, 0)
+
+Frame5.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame5.ZIndex = 2
+
+TextLabel_8.Parent = Frame5
+
+TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_8.BackgroundTransparency = 1.000
+
+TextLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_8.BorderSizePixel = 0
+
+TextLabel_8.Position = UDim2.new(0.0152224936, 0, 0, 0)
+
+TextLabel_8.Size = UDim2.new(0.338670135, 0, 0.600000024, 0)
+
+TextLabel_8.ZIndex = 2
+
+TextLabel_8.Font = Enum.Font.Fantasy
+
+TextLabel_8.Text = "NoClip:"
+
+TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_8.TextScaled = true
+
+TextLabel_8.TextSize = 21.000
+
+TextLabel_8.TextWrapped = true
+
+TextLabel_8.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_7.Parent = Frame5
+
+TextButton_7.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_7.Position = UDim2.new(0.850810766, 0, -0.00631972775, 0)
+
+TextButton_7.Size = UDim2.new(0.142340764, 0, 0.600000024, 0)
+
+TextButton_7.ZIndex = 2
+
+TextButton_7.Font = Enum.Font.Fantasy
+
+TextButton_7.Text = "Off"
+
+TextButton_7.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_7.TextScaled = true
+
+TextButton_7.TextSize = 19.000
+
+TextButton_7.TextWrapped = true
+
+function toggleFreeze(character, freeze)
+    for i, v in pairs(character:GetChildren()) do
+        if v:IsA("BasePart") then
+            v.Anchored = freeze
+        end
+    end
+end
+
+local player = game.Players.LocalPlayer
+
+local Character = player.Character or player.CharacterAdded:Wait()
+
+local VariableTable = {Freeze = false}
+
+function toggleFreezeState()
+    VariableTable["Freeze"] = not VariableTable["Freeze"]
+
+    toggleFreeze(Character, VariableTable["Freeze"])
+
+    if VariableTable["Freeze"] then
+        TextButton_7.Text = "On"
+
+        TextButton_7.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_7.Text = "Off"
+
+        TextButton_7.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+player.CharacterAdded:Connect(
+    function(character)
+        Character = character
+
+        toggleFreeze(Character, VariableTable["Freeze"])
+    end
+)
+
+toggleFreeze(Character, VariableTable["Freeze"])
+
+TextButton_7.MouseButton1Down:Connect(toggleFreezeState)
+
+TextLabel_9.Parent = Frame5
+
+TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_9.BackgroundTransparency = 1.000
+
+TextLabel_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_9.BorderSizePixel = 0
+
+TextLabel_9.Position = UDim2.new(0.525083125, 0, 0, 0)
+
+TextLabel_9.Size = UDim2.new(0.325727671, 0, 0.600000024, 0)
+
+TextLabel_9.ZIndex = 2
+
+TextLabel_9.Font = Enum.Font.Fantasy
+
+TextLabel_9.Text = "Freeze:"
+
+TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_9.TextScaled = true
+
+TextLabel_9.TextSize = 21.000
+
+TextLabel_9.TextWrapped = true
+
+TextLabel_9.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_8.Parent = Frame5
+
+TextButton_8.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_8.Position = UDim2.new(0.352497101, 0, -0.00631972775, 0)
+
+TextButton_8.Size = UDim2.new(0.144178838, 0, 0.600000024, 0)
+
+TextButton_8.ZIndex = 2
+
+TextButton_8.Font = Enum.Font.Fantasy
+
+TextButton_8.Text = "Off"
+
+TextButton_8.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_8.TextScaled = true
+
+TextButton_8.TextSize = 19.000
+
+TextButton_8.TextWrapped = true
+
+local RunService = game:GetService("RunService")
+
+local Players = game:GetService("Players")
+
+local VariableTable = {Noclip = false}
+
+local NoclipHandler = nil
+
+function NoclipLoop()
+    local character = Players.LocalPlayer.Character
+
+    if character then
+        for _, v in pairs(character:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = not VariableTable["Noclip"]
+            end
+        end
+    end
+end
+
+function toggleNoclipState()
+    VariableTable["Noclip"] = not VariableTable["Noclip"]
+
+    if VariableTable["Noclip"] then
+        NoclipHandler = RunService.Heartbeat:Connect(NoclipLoop)
+
+        TextButton_8.Text = "On"
+
+        TextButton_8.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        if NoclipHandler then
+            NoclipHandler:Disconnect()
+
+            NoclipHandler = nil
+        end
+
+        NoclipLoop() -- Ensure colliders are reset when turning off
+
+        TextButton_8.Text = "Off"
+
+        TextButton_8.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+TextButton_8.MouseButton1Down:Connect(toggleNoclipState)
+
+if VariableTable["Noclip"] then
+    toggleNoclipState()
+else
+    TextButton_8.Text = "Off"
+
+    TextButton_8.TextColor3 = Color3.fromRGB(255, 0, 0)
+end
+
+Players.LocalPlayer.CharacterAdded:Connect(
+    function(character)
+        if VariableTable["Noclip"] then
+            NoclipHandler = RunService.Heartbeat:Connect(NoclipLoop)
+        end
+    end
+)
+
+Frame6.Name = "Frame6"
+
+Frame6.Parent = TrainTab
+
+Frame6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame6.BackgroundTransparency = 1.000
+
+Frame6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame6.BorderSizePixel = 0
+
+Frame6.Position = UDim2.new(1.51600275e-07, 0, 0.460500091, 0)
+
+Frame6.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame6.ZIndex = 2
+
+TextLabel_10.Parent = Frame6
+
+TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_10.BackgroundTransparency = 1.000
+
+TextLabel_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_10.BorderSizePixel = 0
+
+TextLabel_10.Position = UDim2.new(0.0152224936, 0, -0.0220139083, 0)
+
+TextLabel_10.Size = UDim2.new(0.33905229, 0, 0.600000024, 0)
+
+TextLabel_10.ZIndex = 2
+
+TextLabel_10.Font = Enum.Font.Fantasy
+
+TextLabel_10.Text = "NoFF:"
+
+TextLabel_10.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_10.TextScaled = true
+
+TextLabel_10.TextSize = 21.000
+
+TextLabel_10.TextWrapped = true
+
+TextLabel_10.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_9.Parent = Frame6
+
+TextButton_9.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_9.Position = UDim2.new(0.352497101, 0, -0.00631972775, 0)
+
+TextButton_9.Size = UDim2.new(0.144178838, 0, 0.600000024, 0)
+
+TextButton_9.ZIndex = 2
+
+TextButton_9.Font = Enum.Font.Fantasy
+
+TextButton_9.Text = "Off"
+
+TextButton_9.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_9.TextScaled = true
+
+TextButton_9.TextSize = 19.000
+
+TextButton_9.TextWrapped = true
+
+local Players = game:GetService("Players")
+
+local RunService = game:GetService("RunService")
+
+local VariableTable = {AutoSword = false}
+
+local toolConnection
+
+function equipTool(toolName)
+    local tool = Players.LocalPlayer.Backpack:FindFirstChild(toolName)
+
+    if tool then
+        tool.Parent = Players.LocalPlayer.Character
+    end
+end
+
+function unequipTool(toolName)
+    local tool = Players.LocalPlayer.Character:FindFirstChild(toolName)
+
+    if tool then
+        tool.Parent = Players.LocalPlayer.Backpack
+    end
+end
+
+function toolLoop()
+    if Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("ForceField") then
+        for i = 1, 4 do
+            if not VariableTable["AutoSword"] then
+                return
+            end
+
+            if i % 2 == 1 then
+                equipTool("Sword")
+
+                wait()
+
+                unequipTool("Sword")
+            else
+                equipTool("Shuriken")
+
+                wait()
+
+                unequipTool("Shuriken")
+            end
+
+            wait()
+        end
+    end
+end
+
+function toggleToolState()
+    VariableTable["AutoSword"] = not VariableTable["AutoSword"]
+
+    if VariableTable["AutoSword"] then
+        toolConnection = RunService.Heartbeat:Connect(toolLoop)
+
+        TextButton_9.Text = "On"
+
+        TextButton_9.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        if toolConnection then
+            toolConnection:Disconnect()
+
+            toolConnection = nil
+        end
+
+        TextButton_9.Text = "Off"
+
+        TextButton_9.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+TextButton_9.MouseButton1Down:Connect(toggleToolState)
+
+if VariableTable["AutoSword"] then
+    toggleToolState()
+else
+    TextButton_9.Text = "Off"
+
+    TextButton_9.TextColor3 = Color3.fromRGB(255, 0, 0)
+end
+
+Players.LocalPlayer.CharacterAdded:Connect(
+    function(character)
+        if VariableTable["AutoSword"] then
+            RunService.Heartbeat:Wait()
+
+            if toolConnection then
+                toolConnection:Disconnect()
+
+                toolConnection = nil
+            end
+
+            toolConnection = RunService.Heartbeat:Connect(toolLoop)
+        end
+    end
+)
+
+TextLabel_11.Parent = Frame6
+
+TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_11.BackgroundTransparency = 1.000
+
+TextLabel_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_11.BorderSizePixel = 0
+
+TextLabel_11.Position = UDim2.new(0.525083125, 0, -0.0220139083, 0)
+
+TextLabel_11.Size = UDim2.new(0.325727671, 0, 0.600000024, 0)
+
+TextLabel_11.ZIndex = 2
+
+TextLabel_11.Font = Enum.Font.Fantasy
+
+TextLabel_11.Text = "HCCamp:"
+
+TextLabel_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_11.TextScaled = true
+
+TextLabel_11.TextSize = 21.000
+
+TextLabel_11.TextWrapped = true
+
+TextLabel_11.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_10.Parent = Frame6
+
+TextButton_10.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_10.Position = UDim2.new(0.850810766, 0, -0.00631972775, 0)
+
+TextButton_10.Size = UDim2.new(0.142340764, 0, 0.600000024, 0)
+
+TextButton_10.ZIndex = 2
+
+TextButton_10.Font = Enum.Font.Fantasy
+
+TextButton_10.Text = "Off"
+
+TextButton_10.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_10.TextScaled = true
+
+TextButton_10.TextSize = 19.000
+
+TextButton_10.TextWrapped = true
+
+local safeSpotPosition = Vector3.new(124.430862, 999999.652863, 471.85906)
+
+local lastPosition
+
+local function moveToSafeSpot()
+    local humanoidRootPart = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+
+    if humanoidRootPart then
+        lastPosition = humanoidRootPart.Position
+
+        local part = Instance.new("Part")
+
+        part.Size = Vector3.new(50, 1, 50)
+
+        part.Anchored = true
+
+        part.Position = safeSpotPosition
+
+        part.Parent = game.Workspace
+
+        humanoidRootPart.CFrame = CFrame.new(part.Position + Vector3.new(0, 1, 0))
+
+        TextButton_10.Text = "On"
+
+        TextButton_10.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        warn("HumanoidRootPart not found")
+    end
+end
+
+local function moveToStoredPosition()
+    if lastPosition then
+        local humanoidRootPart = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+
+        if humanoidRootPart then
+            humanoidRootPart.CFrame = CFrame.new(lastPosition)
+
+            TextButton_10.Text = "Off"
+
+            TextButton_10.TextColor3 = Color3.fromRGB(255, 0, 0)
+        else
+            warn("HumanoidRootPart not found")
+        end
+    else
+        warn("Last position is not set")
+    end
+end
+
+local function toggleMovement()
+    if TextButton_10.Text == "Off" then
+        moveToSafeSpot()
+    else
+        moveToStoredPosition()
+    end
+end
+
+TextButton_10.MouseButton1Click:Connect(
+    function()
+        toggleMovement()
+    end
+)
+
+Frame7.Name = "Frame7"
+
+Frame7.Parent = TrainTab
+
+Frame7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame7.BackgroundTransparency = 1.000
+
+Frame7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame7.BorderSizePixel = 0
+
+Frame7.Position = UDim2.new(1.51600275e-07, 0, 0.546625078, 0)
+
+Frame7.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame7.ZIndex = 2
+
+TextLabel_12.Parent = Frame7
+
+TextLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_12.BackgroundTransparency = 1.000
+
+TextLabel_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_12.BorderSizePixel = 0
+
+TextLabel_12.Position = UDim2.new(0.0152224936, 0, 0, 0)
+
+TextLabel_12.Size = UDim2.new(0.337274611, 0, 0.600000024, 0)
+
+TextLabel_12.ZIndex = 2
+
+TextLabel_12.Font = Enum.Font.Fantasy
+
+TextLabel_12.Text = "AnimTrain:"
+
+TextLabel_12.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_12.TextScaled = true
+
+TextLabel_12.TextSize = 21.000
+
+TextLabel_12.TextWrapped = true
+
+TextLabel_12.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_11.Parent = Frame7
+
+TextButton_11.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_11.Position = UDim2.new(0.352497101, 0, -0.0063203997, 0)
+
+TextButton_11.Size = UDim2.new(0.144178838, 0, 0.600000024, 0)
+
+TextButton_11.ZIndex = 2
+
+TextButton_11.Font = Enum.Font.Fantasy
+
+TextButton_11.Text = "Off"
+
+TextButton_11.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_11.TextScaled = true
+
+TextButton_11.TextSize = 19.000
+
+TextButton_11.TextWrapped = true
+
+local firstAnimationId = "rbxassetid://1028779243"
+
+local secondAnimationId = "rbxassetid://1028830945"
+
+local thirdAnimationId = "rbxassetid://1029863696"
+
+local AnimationsEnabled = false
+
+local function playAnimations()
+    local player = game.Players.LocalPlayer
+
+    local character = player.Character or player.CharacterAdded:Wait()
+
+    local firstAnimation = Instance.new("Animation")
+
+    firstAnimation.AnimationId = firstAnimationId
+
+    local secondAnimation = Instance.new("Animation")
+
+    secondAnimation.AnimationId = secondAnimationId
+
+    local thirdAnimation = Instance.new("Animation")
+
+    thirdAnimation.AnimationId = thirdAnimationId
+
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+    if humanoid then
+        while AnimationsEnabled do
+            local firstAnimationTrack = humanoid:LoadAnimation(firstAnimation)
+
+            local secondAnimationTrack = humanoid:LoadAnimation(secondAnimation)
+
+            local thirdAnimationTrack = humanoid:LoadAnimation(thirdAnimation)
+
+            firstAnimationTrack:Play()
+
+            wait(1)
+
+            firstAnimationTrack:Stop()
+
+            secondAnimationTrack:Play()
+
+            wait(1)
+
+            secondAnimationTrack:Stop()
+
+            thirdAnimationTrack:Play()
+
+            wait(1)
+
+            thirdAnimationTrack:Stop()
+
+            wait()
+        end
+    end
+end
+
+TextButton_11.MouseButton1Down:Connect(
+    function()
+        AnimationsEnabled = not AnimationsEnabled
+
+        if AnimationsEnabled then
+            TextButton_11.Text = "On"
+
+            TextButton_11.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            playAnimations()
+        else
+            TextButton_11.Text = "Off"
+
+            TextButton_11.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
+
+game.Players.LocalPlayer.CharacterAdded:Connect(
+    function()
+        AnimationsEnabled = false
+
+        TextButton_11.Text = "Off"
+
+        TextButton_11.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+)
+
+if game.Players.LocalPlayer.Character and AnimationsEnabled then
+    playAnimations()
+end
+
+TextLabel_13.Parent = Frame7
+
+TextLabel_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_13.BackgroundTransparency = 1.000
+
+TextLabel_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_13.BorderSizePixel = 0
+
+TextLabel_13.Position = UDim2.new(0.525083125, 0, 0, 0)
+
+TextLabel_13.Size = UDim2.new(0.325727671, 0, 0.600000024, 0)
+
+TextLabel_13.ZIndex = 2
+
+TextLabel_13.Font = Enum.Font.Fantasy
+
+TextLabel_13.Text = "TPToChair:"
+
+TextLabel_13.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_13.TextScaled = true
+
+TextLabel_13.TextSize = 21.000
+
+TextLabel_13.TextWrapped = true
+
+TextLabel_13.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_12.Parent = Frame7
+
+TextButton_12.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_12.Position = UDim2.new(0.850810766, 0, -0.0063203997, 0)
+
+TextButton_12.Size = UDim2.new(0.142340764, 0, 0.600000024, 0)
+
+TextButton_12.ZIndex = 2
+
+TextButton_12.Font = Enum.Font.Fantasy
+
+TextButton_12.Text = "Off"
+
+TextButton_12.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_12.TextScaled = true
+
+TextButton_12.TextSize = 19.000
+
+TextButton_12.TextWrapped = true
+
+local TeleportEnabled = false
+
+local function findPartByName(parent, name)
+    for _, child in ipairs(parent:GetDescendants()) do
+        if child.Name == name and child:IsA("BasePart") then
+            return child
+        end
+    end
+
+    return nil
+end
+
+local function teleportToSeat()
+    local seat = findPartByName(game.Workspace, "Seat")
+
+    if seat then
+        local player = game.Players.LocalPlayer
+
+        local character = player.Character or player.CharacterAdded:Wait()
+
+        if not character.PrimaryPart then
+            character.PrimaryPart = character:FindFirstChild("HumanoidRootPart")
+        end
+
+        character:SetPrimaryPartCFrame(seat.CFrame + Vector3.new(0, 3, 0))
+
+        if character:FindFirstChild("Humanoid") then
+            character.Humanoid.Sit = true
+        end
+    else
+        warn("Seat part not found in the workspace.")
+    end
+end
+
+local function makePlayerJump()
+    local player = game.Players.LocalPlayer
+
+    local character = player.Character or player.CharacterAdded:Wait()
+
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+    if humanoid then
+        humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    else
+        warn("Humanoid not found in character")
+    end
+end
+
+TextButton_12.MouseButton1Down:Connect(
+    function()
+        TeleportEnabled = not TeleportEnabled
+
+        if TeleportEnabled then
+            TextButton_12.Text = "On"
+
+            TextButton_12.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            teleportToSeat()
+        else
+            TextButton_12.Text = "Off"
+
+            TextButton_12.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            makePlayerJump()
+        end
+    end
+)
+
+game.Players.LocalPlayer.CharacterAdded:Connect(
+    function()
+        if TeleportEnabled then
+            teleportToSeat()
+        end
+    end
+)
+
+if game.Players.LocalPlayer.Character and TeleportEnabled then
+    teleportToSeat()
+end
+
+Frame1.Name = "Frame1"
+
+Frame1.Parent = TrainTab
+
+Frame1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame1.BackgroundTransparency = 1.000
+
+Frame1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame1.BorderSizePixel = 0
+
+Frame1.LayoutOrder = 1
+
+Frame1.Position = UDim2.new(1.51600275e-07, 0, 0.0570957363, 0)
+
+Frame1.Size = UDim2.new(0.981999993, 0, 0.0579999983, 0)
+
+Frame1.ZIndex = 2
+
+TextLabel_14.Parent = Frame1
+
+TextLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_14.BackgroundTransparency = 1.000
+
+TextLabel_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_14.BorderSizePixel = 0
+
+TextLabel_14.Size = UDim2.new(1, 0, 1, 0)
+
+TextLabel_14.Font = Enum.Font.Fantasy
+
+TextLabel_14.Text = "Train Tab"
+
+TextLabel_14.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_14.TextScaled = true
+
+TextLabel_14.TextSize = 14.000
+
+TextLabel_14.TextWrapped = true
+
+Frame8.Name = "Frame8"
+
+Frame8.Parent = TrainTab
+
+Frame8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame8.BackgroundTransparency = 1.000
+
+Frame8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame8.BorderSizePixel = 0
+
+Frame8.Position = UDim2.new(1.51600275e-07, 0, 0.632750094, 0)
+
+Frame8.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame8.ZIndex = 2
+
+TextLabel_15.Parent = Frame8
+
+TextLabel_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_15.BackgroundTransparency = 1.000
+
+TextLabel_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_15.BorderSizePixel = 0
+
+TextLabel_15.Position = UDim2.new(0.0152224936, 0, -0.0220139083, 0)
+
+TextLabel_15.Size = UDim2.new(0.335031122, 0, 0.600000024, 0)
+
+TextLabel_15.ZIndex = 2
+
+TextLabel_15.Font = Enum.Font.Fantasy
+
+TextLabel_15.Text = "TrainRate:"
+
+TextLabel_15.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_15.TextScaled = true
+
+TextLabel_15.TextSize = 21.000
+
+TextLabel_15.TextWrapped = true
+
+TextLabel_15.TextXAlignment = Enum.TextXAlignment.Left
+
+TextBox.Parent = Frame8
+
+TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+TextBox.BackgroundTransparency = 0.600
+
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextBox.BorderSizePixel = 2
+
+TextBox.Position = UDim2.new(0.350253612, 0, -0.00600061752, 0)
+
+TextBox.Size = UDim2.new(0.146422327, 0, 0.600000024, 0)
+
+TextBox.ZIndex = 2
+
+TextBox.ClearTextOnFocus = false
+
+TextBox.Font = Enum.Font.Fantasy
+
+TextBox.Text = "0.7"
+
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextBox.TextScaled = true
+
+TextBox.TextSize = 19.000
+
+TextBox.TextWrapped = true
+
+TextLabel_16.Parent = Frame8
+
+TextLabel_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_16.BackgroundTransparency = 1.000
+
+TextLabel_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_16.BorderSizePixel = 0
+
+TextLabel_16.Position = UDim2.new(0.527620196, 0, -0.0220139083, 0)
+
+TextLabel_16.Size = UDim2.new(0.32319057, 0, 0.600000024, 0)
+
+TextLabel_16.ZIndex = 2
+
+TextLabel_16.Font = Enum.Font.Fantasy
+
+TextLabel_16.Text = "TrainAmount:"
+
+TextLabel_16.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_16.TextScaled = true
+
+TextLabel_16.TextSize = 21.000
+
+TextLabel_16.TextWrapped = true
+
+TextLabel_16.TextXAlignment = Enum.TextXAlignment.Left
+
+TextBox_2.Parent = Frame8
+
+TextBox_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+TextBox_2.BackgroundTransparency = 0.600
+
+TextBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextBox_2.BorderSizePixel = 2
+
+TextBox_2.Position = UDim2.new(0.850810766, 0, -0.00600061752, 0)
+
+TextBox_2.Size = UDim2.new(0.145999998, 0, 0.600000024, 0)
+
+TextBox_2.ZIndex = 2
+
+TextBox_2.ClearTextOnFocus = false
+
+TextBox_2.Font = Enum.Font.Fantasy
+
+TextBox_2.Text = "20"
+
+TextBox_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextBox_2.TextScaled = true
+
+TextBox_2.TextSize = 19.000
+
+TextBox_2.TextWrapped = true
+
+local rs = game:GetService("ReplicatedStorage")
+
+local addPowerEvent = rs:WaitForChild("RemoteEvent"):WaitForChild("AddPowerEvent")
+
+local isAutoTrainOn = false
+
+local trainRate = tonumber(TextBox.Text)
+
+local trainAmount = tonumber(TextBox_2.Text)
+
+local function updateValues()
+    trainRate = tonumber(TextBox.Text) or trainRate
+
+    trainAmount = tonumber(TextBox_2.Text) or trainAmount
+end
+
+local function autoTrain()
+    while isAutoTrainOn do
+        addPowerEvent:FireServer("FromTraining", trainAmount)
+
+        wait(trainRate)
+
+        addPowerEvent:FireServer("FromTraining", trainAmount - 0.001)
+
+        wait(trainRate)
+    end
+end
+
+TextButton.MouseButton1Down:Connect(
+    function()
+        isAutoTrainOn = not isAutoTrainOn
+
+        if isAutoTrainOn then
+            TextButton.Text = "On"
+
+            TextButton.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            spawn(autoTrain)
+        else
+            TextButton.Text = "Off"
+
+            TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
+
+TextBox.FocusLost:Connect(
+    function()
+        updateValues()
+    end
+)
+
+TextBox_2.FocusLost:Connect(
+    function()
+        updateValues()
+    end
+)
+
+Frame9.Name = "Frame9"
+
+Frame9.Parent = TrainTab
+
+Frame9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame9.BackgroundTransparency = 1.000
+
+Frame9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame9.BorderSizePixel = 0
+
+Frame9.Position = UDim2.new(1.51600275e-07, 0, 0.71887511, 0)
+
+Frame9.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame9.ZIndex = 2
+
+TextLabel_17.Parent = Frame9
+
+TextLabel_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_17.BackgroundTransparency = 1.000
+
+TextLabel_17.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_17.BorderSizePixel = 0
+
+TextLabel_17.Position = UDim2.new(0.0152224936, 0, 0, 0)
+
+TextLabel_17.Size = UDim2.new(0.33905229, 0, 0.600000024, 0)
+
+TextLabel_17.ZIndex = 2
+
+TextLabel_17.Font = Enum.Font.Fantasy
+
+TextLabel_17.Text = "Ninjutsu:"
+
+TextLabel_17.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_17.TextScaled = true
+
+TextLabel_17.TextSize = 21.000
+
+TextLabel_17.TextWrapped = true
+
+TextLabel_17.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_18.Parent = Frame9
+
+TextLabel_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_18.BackgroundTransparency = 1.000
+
+TextLabel_18.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_18.BorderSizePixel = 0
+
+TextLabel_18.Position = UDim2.new(0.496675968, 0, 0, 0)
+
+TextLabel_18.Size = UDim2.new(0.492715538, 0, 0.600000024, 0)
+
+TextLabel_18.ZIndex = 2
+
+TextLabel_18.Font = Enum.Font.Fantasy
+
+TextLabel_18.Text = "629,247,950"
+
+TextLabel_18.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_18.TextScaled = true
+
+TextLabel_18.TextSize = 21.000
+
+TextLabel_18.TextWrapped = true
+
+TextLabel_18.TextXAlignment = Enum.TextXAlignment.Right
+
+Frame10.Name = "Frame10"
+
+Frame10.Parent = TrainTab
+
+Frame10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame10.BackgroundTransparency = 1.000
+
+Frame10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame10.BorderSizePixel = 0
+
+Frame10.Position = UDim2.new(1.51600275e-07, 0, 0.804611623, 0)
+
+Frame10.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame10.ZIndex = 2
+
+TextLabel_19.Parent = Frame10
+
+TextLabel_19.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_19.BackgroundTransparency = 1.000
+
+TextLabel_19.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_19.BorderSizePixel = 0
+
+TextLabel_19.Position = UDim2.new(0.0152224936, 0, 0, 0)
+
+TextLabel_19.Size = UDim2.new(0.335031122, 0, 0.600000024, 0)
+
+TextLabel_19.ZIndex = 2
+
+TextLabel_19.Font = Enum.Font.Fantasy
+
+TextLabel_19.Text = "Reputation:"
+
+TextLabel_19.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_19.TextScaled = true
+
+TextLabel_19.TextSize = 21.000
+
+TextLabel_19.TextWrapped = true
+
+TextLabel_19.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_20.Parent = Frame10
+
+TextLabel_20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_20.BackgroundTransparency = 1.000
+
+TextLabel_20.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_20.BorderSizePixel = 0
+
+TextLabel_20.Position = UDim2.new(0.499212742, 0, 0, 0)
+
+TextLabel_20.Size = UDim2.new(0.492714614, 0, 0.600000024, 0)
+
+TextLabel_20.ZIndex = 2
+
+TextLabel_20.Font = Enum.Font.Fantasy
+
+TextLabel_20.Text = "1,000,000,000,000"
+
+TextLabel_20.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_20.TextScaled = true
+
+TextLabel_20.TextSize = 21.000
+
+TextLabel_20.TextWrapped = true
+
+TextLabel_20.TextXAlignment = Enum.TextXAlignment.Right
+
+Frame11.Name = "Frame11"
+
+Frame11.Parent = TrainTab
+
+Frame11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame11.BackgroundTransparency = 1.000
+
+Frame11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame11.BorderSizePixel = 0
+
+Frame11.Position = UDim2.new(3.04127752e-07, 0, 0.891274214, 0)
+
+Frame11.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame11.ZIndex = 2
+
+TextLabel_21.Parent = Frame11
+
+TextLabel_21.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_21.BackgroundTransparency = 1.000
+
+TextLabel_21.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_21.BorderSizePixel = 0
+
+TextLabel_21.Position = UDim2.new(0.0152215641, 0, 0, 0)
+
+TextLabel_21.Size = UDim2.new(0.335030824, 0, 0.600000024, 0)
+
+TextLabel_21.ZIndex = 2
+
+TextLabel_21.Font = Enum.Font.Fantasy
+
+TextLabel_21.Text = "Server  Time:"
+
+TextLabel_21.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_21.TextScaled = true
+
+TextLabel_21.TextSize = 21.000
+
+TextLabel_21.TextWrapped = true
+
+TextLabel_21.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_22.Parent = Frame11
+
+TextLabel_22.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_22.BackgroundTransparency = 1.000
+
+TextLabel_22.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_22.BorderSizePixel = 0
+
+TextLabel_22.Position = UDim2.new(0.49667564, 0, 0, 0)
+
+TextLabel_22.Size = UDim2.new(0.492714912, 0, 0.600000024, 0)
+
+TextLabel_22.ZIndex = 2
+
+TextLabel_22.Font = Enum.Font.Fantasy
+
+TextLabel_22.Text = "00:00:00"
+
+TextLabel_22.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_22.TextScaled = true
+
+TextLabel_22.TextSize = 21.000
+
+TextLabel_22.TextWrapped = true
+
+TextLabel_22.TextXAlignment = Enum.TextXAlignment.Right
+
+HomeTab.Name = "HomeTab"
+
+HomeTab.Parent = MainFrame
+
+HomeTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+HomeTab.BackgroundTransparency = 1.000
+
+HomeTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+HomeTab.BorderSizePixel = 0
+
+HomeTab.Size = UDim2.new(1, 0, 1, 0)
+
+Frame2_2.Name = "Frame2"
+
+Frame2_2.Parent = HomeTab
+
+Frame2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame2_2.BackgroundTransparency = 1.000
+
+Frame2_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame2_2.BorderSizePixel = 0
+
+Frame2_2.Position = UDim2.new(3.04127752e-07, 0, 0.215605855, 0)
+
+Frame2_2.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame2_2.ZIndex = 2
+
+TextLabel_23.Parent = Frame2_2
+
+TextLabel_23.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_23.BackgroundTransparency = 1.000
+
+TextLabel_23.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_23.BorderSizePixel = 0
+
+TextLabel_23.Position = UDim2.new(0.0583532006, 0, -0.00582594657, 0)
+
+TextLabel_23.Size = UDim2.new(0.571680784, 0, 0.652469218, 0)
+
+TextLabel_23.ZIndex = 2
+
+TextLabel_23.Font = Enum.Font.Fantasy
+
+TextLabel_23.Text = "Players in the server:"
+
+TextLabel_23.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_23.TextScaled = true
+
+TextLabel_23.TextSize = 14.000
+
+TextLabel_23.TextWrapped = true
+
+TextLabel_24.Parent = Frame2_2
+
+TextLabel_24.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_24.BackgroundTransparency = 1.000
+
+TextLabel_24.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_24.BorderSizePixel = 0
+
+TextLabel_24.Position = UDim2.new(0.611724198, 0, -0.00582527462, 0)
+
+TextLabel_24.Size = UDim2.new(0.294973582, 0, 0.652468383, 0)
+
+TextLabel_24.ZIndex = 2
+
+TextLabel_24.Font = Enum.Font.Fantasy
+
+TextLabel_24.Text = "20"
+
+TextLabel_24.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_24.TextScaled = true
+
+TextLabel_24.TextSize = 21.000
+
+TextLabel_24.TextWrapped = true
+
+Frame1_2.Name = "Frame1"
+
+Frame1_2.Parent = HomeTab
+
+Frame1_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame1_2.BackgroundTransparency = 1.000
+
+Frame1_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame1_2.BorderSizePixel = 0
+
+Frame1_2.Position = UDim2.new(0, 0, 0.115999997, 0)
+
+Frame1_2.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+TextLabel_25.Parent = Frame1_2
+
+TextLabel_25.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_25.BackgroundTransparency = 1.000
+
+TextLabel_25.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_25.BorderSizePixel = 0
+
+TextLabel_25.Position = UDim2.new(0.0152231129, 0, -0.0514318496, 0)
+
+TextLabel_25.Size = UDim2.new(0.617348015, 0, 0.600000203, 0)
+
+TextLabel_25.ZIndex = 2
+
+TextLabel_25.Font = Enum.Font.Fantasy
+
+TextLabel_25.Text = "Welcome to Hunter Hub,"
+
+TextLabel_25.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_25.TextScaled = true
+
+TextLabel_25.TextSize = 14.000
+
+TextLabel_25.TextWrapped = true
+
+TextLabel_26.Parent = Frame1_2
+
+TextLabel_26.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_26.BackgroundTransparency = 1.000
+
+TextLabel_26.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_26.BorderSizePixel = 0
+
+TextLabel_26.Position = UDim2.new(0.629484117, 0, -0.0514318496, 0)
+
+TextLabel_26.Size = UDim2.new(0.340993732, 0, 0.600000024, 0)
+
+TextLabel_26.ZIndex = 2
+
+TextLabel_26.Font = Enum.Font.Fantasy
+
+TextLabel_26.Text = "Player's Name"
+
+TextLabel_26.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_26.TextScaled = true
+
+TextLabel_26.TextSize = 21.000
+
+TextLabel_26.TextWrapped = true
+
+Frame6_2.Name = "Frame6"
+
+Frame6_2.Parent = HomeTab
+
+Frame6_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame6_2.BackgroundTransparency = 1.000
+
+Frame6_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame6_2.BorderSizePixel = 0
+
+Frame6_2.Position = UDim2.new(3.04127752e-07, 0, 0.741059005, 0)
+
+Frame6_2.Size = UDim2.new(0.981999993, 0, 0.0984950066, 0)
+
+Frame6_2.ZIndex = 2
+
+TextLabel_27.Parent = Frame6_2
+
+TextLabel_27.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_27.BackgroundTransparency = 1.000
+
+TextLabel_27.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_27.BorderSizePixel = 0
+
+TextLabel_27.Position = UDim2.new(3.09702415e-07, 0, -0.273736805, 0)
+
+TextLabel_27.Size = UDim2.new(1.01832914, 0, 1.01060534, 0)
+
+TextLabel_27.ZIndex = 2
+
+TextLabel_27.Font = Enum.Font.Fantasy
+
+TextLabel_27.Text = "Created by: QT_xAlip & philippinesBraxy123"
+
+TextLabel_27.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_27.TextScaled = true
+
+TextLabel_27.TextSize = 14.000
+
+TextLabel_27.TextWrapped = true
+
+Frame3_2.Name = "Frame3"
+
+Frame3_2.Parent = HomeTab
+
+Frame3_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame3_2.BackgroundTransparency = 1.000
+
+Frame3_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame3_2.BorderSizePixel = 0
+
+Frame3_2.Position = UDim2.new(3.04127752e-07, 0, 0.315749347, 0)
+
+Frame3_2.Size = UDim2.new(0.981999993, 0, 0.108124204, 0)
+
+Frame3_2.ZIndex = 2
+
+TextLabel_28.Parent = Frame3_2
+
+TextLabel_28.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_28.BackgroundTransparency = 1.000
+
+TextLabel_28.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_28.BorderSizePixel = 0
+
+TextLabel_28.Position = UDim2.new(0.0625797734, 0, 0.0184746329, 0)
+
+TextLabel_28.Size = UDim2.new(0.260817975, 0, 0.600000024, 0)
+
+TextLabel_28.ZIndex = 2
+
+TextLabel_28.Font = Enum.Font.Fantasy
+
+TextLabel_28.Text = "Most nin:"
+
+TextLabel_28.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_28.TextScaled = true
+
+TextLabel_28.TextSize = 21.000
+
+TextLabel_28.TextWrapped = true
+
+mostnin.Name = "mostnin"
+
+mostnin.Parent = Frame3_2
+
+mostnin.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+mostnin.BackgroundTransparency = 1.000
+
+mostnin.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+mostnin.BorderSizePixel = 0
+
+mostnin.Position = UDim2.new(0.324245483, 0, 0.0184746329, 0)
+
+mostnin.Size = UDim2.new(0.673156619, 0, 0.600000024, 0)
+
+mostnin.ZIndex = 2
+
+mostnin.Font = Enum.Font.Fantasy
+
+mostnin.Text = "Player with 629,247,950"
+
+mostnin.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+mostnin.TextScaled = true
+
+mostnin.TextSize = 21.000
+
+mostnin.TextWrapped = true
+
+Frame4_2.Name = "Frame4"
+
+Frame4_2.Parent = HomeTab
+
+Frame4_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame4_2.BackgroundTransparency = 1.000
+
+Frame4_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame4_2.BorderSizePixel = 0
+
+Frame4_2.Position = UDim2.new(3.04127752e-07, 0, 0.448632091, 0)
+
+Frame4_2.Size = UDim2.new(0.981999993, 0, 0.127382591, 0)
+
+Frame4_2.ZIndex = 2
+
+mostrep.Name = "mostrep"
+
+mostrep.Parent = Frame4_2
+
+mostrep.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+mostrep.BackgroundTransparency = 1.000
+
+mostrep.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+mostrep.BorderSizePixel = 0
+
+mostrep.Position = UDim2.new(0.337315738, 0, -0.190839976, 0)
+
+mostrep.Size = UDim2.new(0.646232307, 0, 0.494826853, 0)
+
+mostrep.ZIndex = 2
+
+mostrep.Font = Enum.Font.Fantasy
+
+mostrep.Text = "Player with 1,000,000,000"
+
+mostrep.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+mostrep.TextScaled = true
+
+mostrep.TextSize = 21.000
+
+mostrep.TextWrapped = true
+
+TextLabel_29.Parent = Frame4_2
+
+TextLabel_29.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_29.BackgroundTransparency = 1.000
+
+TextLabel_29.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_29.BorderSizePixel = 0
+
+TextLabel_29.Position = UDim2.new(0.0426681787, 0, -0.190839976, 0)
+
+TextLabel_29.Size = UDim2.new(0.29553929, 0, 0.494826853, 0)
+
+TextLabel_29.ZIndex = 2
+
+TextLabel_29.Font = Enum.Font.Fantasy
+
+TextLabel_29.Text = "Most rep:"
+
+TextLabel_29.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_29.TextScaled = true
+
+TextLabel_29.TextSize = 21.000
+
+TextLabel_29.TextWrapped = true
+
+Frame5_2.Name = "Frame5"
+
+Frame5_2.Parent = HomeTab
+
+Frame5_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame5_2.BackgroundTransparency = 1.000
+
+Frame5_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame5_2.BorderSizePixel = 0
+
+Frame5_2.Position = UDim2.new(3.04127752e-07, 0, 0.596921384, 0)
+
+Frame5_2.Size = UDim2.new(0.981999993, 0, 0.117753379, 0)
+
+Frame5_2.ZIndex = 2
+
+TextLabel_30.Parent = Frame5_2
+
+TextLabel_30.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_30.BackgroundTransparency = 1.000
+
+TextLabel_30.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_30.BorderSizePixel = 0
+
+TextLabel_30.Position = UDim2.new(0.305339336, 0, -0.605257452, 0)
+
+TextLabel_30.Size = UDim2.new(0.218929648, 0, 0.404959351, 0)
+
+TextLabel_30.ZIndex = 2
+
+TextLabel_30.Font = Enum.Font.Fantasy
+
+TextLabel_30.Text = "FPS:"
+
+TextLabel_30.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_30.TextScaled = true
+
+TextLabel_30.TextSize = 21.000
+
+TextLabel_30.TextWrapped = true
+
+fps.Name = "fps"
+
+fps.Parent = Frame5_2
+
+fps.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+fps.BackgroundTransparency = 1.000
+
+fps.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+fps.BorderSizePixel = 0
+
+fps.Position = UDim2.new(0.501998484, 0, -0.605257452, 0)
+
+fps.Size = UDim2.new(0.109725706, 0, 0.40495953, 0)
+
+fps.ZIndex = 2
+
+fps.Font = Enum.Font.Fantasy
+
+fps.Text = "120"
+
+fps.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+fps.TextScaled = true
+
+fps.TextSize = 21.000
+
+fps.TextWrapped = true
+
+Frame7_2.Name = "Frame7"
+
+Frame7_2.Parent = HomeTab
+
+Frame7_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame7_2.BackgroundTransparency = 1.000
+
+Frame7_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame7_2.BorderSizePixel = 0
+
+Frame7_2.Position = UDim2.new(3.04127752e-07, 0, 0.864612639, 0)
+
+Frame7_2.Size = UDim2.new(0.981999993, 0, 0.104272507, 0)
+
+Frame7_2.ZIndex = 2
+
+TextLabel_31.Parent = Frame7_2
+
+TextLabel_31.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_31.BackgroundTransparency = 1.000
+
+TextLabel_31.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_31.BorderSizePixel = 0
+
+TextLabel_31.Position = UDim2.new(3.09702415e-07, 0, -0.221630007, 0)
+
+TextLabel_31.Size = UDim2.new(1.01832902, 0, 0.98785454, 0)
+
+TextLabel_31.ZIndex = 2
+
+TextLabel_31.Font = Enum.Font.Fantasy
+
+TextLabel_31.Text = "Hunter Clan is the strongest in NA "
+
+TextLabel_31.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_31.TextScaled = true
+
+TextLabel_31.TextSize = 21.000
+
+TextLabel_31.TextWrapped = true
+
+Frame8_2.Name = "Frame8"
+
+Frame8_2.Parent = HomeTab
+
+Frame8_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame8_2.BackgroundTransparency = 1.000
+
+Frame8_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame8_2.BorderSizePixel = 0
+
+Frame8_2.Position = UDim2.new(3.04127752e-07, 0, 0.596921384, 0)
+
+Frame8_2.Size = UDim2.new(0.981999993, 0, 0.117753379, 0)
+
+Frame8_2.ZIndex = 2
+
+TextLabel_32.Parent = Frame8_2
+
+TextLabel_32.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_32.BackgroundTransparency = 1.000
+
+TextLabel_32.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_32.BorderSizePixel = 0
+
+TextLabel_32.Position = UDim2.new(0.35354358, 0, 0.256171107, 0)
+
+TextLabel_32.Size = UDim2.new(0.135206863, 0, 0.502481639, 0)
+
+TextLabel_32.ZIndex = 2
+
+TextLabel_32.Font = Enum.Font.Fantasy
+
+TextLabel_32.Text = "Ping:"
+
+TextLabel_32.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_32.TextScaled = true
+
+TextLabel_32.TextSize = 21.000
+
+TextLabel_32.TextWrapped = true
+
+ping.Name = "ping"
+
+ping.Parent = Frame8_2
+
+ping.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+ping.BackgroundTransparency = 1.000
+
+ping.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+ping.BorderSizePixel = 0
+
+ping.Position = UDim2.new(0.506509662, 0, 0.256171107, 0)
+
+ping.Size = UDim2.new(0.153419152, 0, 0.502481759, 0)
+
+ping.ZIndex = 2
+
+ping.Font = Enum.Font.Fantasy
+
+ping.Text = "260 ms"
+
+ping.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+ping.TextScaled = true
+
+ping.TextSize = 21.000
+
+ping.TextWrapped = true
+
+CombatTab.Name = "CombatTab"
+
+CombatTab.Parent = MainFrame
+
+CombatTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+CombatTab.BackgroundTransparency = 1.000
+
+CombatTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+CombatTab.BorderSizePixel = 0
+
+CombatTab.Size = UDim2.new(1, 0, 1, 0)
+
+CombatTab.Visible = false
+
+Frame2_3.Name = "Frame2"
+
+Frame2_3.Parent = CombatTab
+
+Frame2_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame2_3.BackgroundTransparency = 1.000
+
+Frame2_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame2_3.BorderSizePixel = 0
+
+Frame2_3.Position = UDim2.new(0, 0, 0.115999997, 0)
+
+Frame2_3.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+TextButton_13.Parent = Frame2_3
+
+TextButton_13.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_13.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_13.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_13.ZIndex = 2
+
+TextButton_13.Font = Enum.Font.Fantasy
+
+TextButton_13.Text = "Off"
+
+TextButton_13.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_13.TextScaled = true
+
+TextButton_13.TextSize = 19.000
+
+TextButton_13.TextWrapped = true
+
+local TextButtonEnabled = false
+
+TextButton_13.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled = not TextButtonEnabled
+
+        if TextButtonEnabled then
+            TextButton_13.Text = "On"
+
+            TextButton_13.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_13.Text = "Off"
+
+            TextButton_13.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+
+        if TextButtonEnabled then
+            spawn(
+                function()
+                    local player = game:GetService("Players").LocalPlayer
+
+                    local character = player.Character or player.CharacterAdded:Wait()
+
+                    local offset = Vector3.new(0, 5, 0)
+
+                    local function throwShuriken()
+                        local direction = character.HumanoidRootPart.CFrame.LookVector
+
+                        local spawnPosition = character.HumanoidRootPart.Position + offset
+
+                        local args = {
+                            [1] = spawnPosition,
+                            [2] = direction
+                        }
+
+                        local shuriken =
+                            player.Backpack:FindFirstChild("Shuriken") or character:FindFirstChild("Shuriken")
+
+                        if shuriken then
+                            if shuriken.Parent == player.Backpack then
+                                shuriken.Parent = character
+                            end
+
+                            shuriken.HitEvent:FireServer(unpack(args))
+
+                            if shuriken.Parent == character then
+                                shuriken.Parent = player.Backpack
+                            end
+                        else
+                            warn("Shuriken not found in backpack or character")
+                        end
+                    end
+
+                    while TextButtonEnabled do
+                        throwShuriken()
+
+                        wait()
+                    end
+                end
+            )
+        end
+    end
+)
+
+TextLabel_33.Parent = Frame2_3
+
+TextLabel_33.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_33.BackgroundTransparency = 1.000
+
+TextLabel_33.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_33.BorderSizePixel = 0
+
+TextLabel_33.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_33.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_33.ZIndex = 2
+
+TextLabel_33.Font = Enum.Font.Fantasy
+
+TextLabel_33.Text = "AFShur:"
+
+TextLabel_33.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_33.TextScaled = true
+
+TextLabel_33.TextSize = 21.000
+
+TextLabel_33.TextWrapped = true
+
+TextLabel_33.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_14.Parent = Frame2_3
+
+TextButton_14.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_14.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_14.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_14.ZIndex = 2
+
+TextButton_14.Font = Enum.Font.Fantasy
+
+TextButton_14.Text = "Close"
+
+TextButton_14.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_14.TextScaled = true
+
+TextButton_14.TextSize = 19.000
+
+TextButton_14.TextWrapped = true
+
+local frameVisible = false
+
+local gui = Instance.new("ScreenGui")
+
+gui.Name = "PlayerSelectorGUI"
+
+gui.ResetOnSpawn = false
+
+local frame = Instance.new("Frame")
+
+frame.Size = UDim2.new(0, 200, 0, 300)
+
+frame.Position = UDim2.new(0.5, -100, 0.5, -150)
+
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+
+frame.BackgroundTransparency = 0.4
+
+frame.BorderSizePixel = 2
+
+frame.Visible = false
+
+frame.Parent = gui
+
+local scrollFrame = Instance.new("ScrollingFrame")
+
+scrollFrame.Size = UDim2.new(1, 0, 1, -30)
+
+scrollFrame.Position = UDim2.new(0, 0, 0, 30)
+
+scrollFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+scrollFrame.BackgroundTransparency = 1
+
+scrollFrame.Parent = frame
+
+local function makeDraggable(element)
+    local dragging
+
+    local dragStart
+
+    local startPos
+
+    element.InputBegan:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                dragging = true
+
+                dragStart = input.Position
+
+                startPos = element.Position
+
+                input.Changed:Connect(
+                    function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            dragging = false
+                        end
+                    end
+                )
+            end
+        end
+    )
+
+    element.InputChanged:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+                local delta = input.Position - dragStart
+
+                element.Position =
+                    UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            end
+        end
+    )
+end
+
+local label = Instance.new("TextLabel")
+
+label.Size = UDim2.new(1, 0, 0, 30) -- Adjusted size for label
+
+label.Position = UDim2.new(0, 0, 0, 0)
+
+label.BackgroundColor3 = Color3.new(0, 0, 0)
+
+label.Text = "TargetPlayer"
+
+label.TextColor3 = Color3.new(1, 1, 1)
+
+label.TextSize = 14
+
+label.Font = Enum.Font.Fantasy
+
+label.Parent = frame
+
+makeDraggable(frame)
+
+local selectedPlayer = nil
+
+local function fireShuriken(targetPlayer)
+    if
+        not targetPlayer or not targetPlayer.Character or not targetPlayer.Character:FindFirstChild("HumanoidRootPart") or
+            not targetPlayer.Character:FindFirstChild("Head")
+     then
+        warn("Invalid target player")
+
+        return
+    end
+
+    local targetPosition = targetPlayer.Character.Head.Position
+
+    game.Players.LocalPlayer.Character.Shuriken.Handle.CFrame = CFrame.new(targetPosition)
+
+    game.Players.LocalPlayer.Character.Shuriken.HitEvent:FireServer(targetPosition)
+end
+
+local function continuouslyFireShuriken()
+    while selectedPlayer do
+        fireShuriken(selectedPlayer)
+
+        wait(1 / 700)
+    end
+end
+
+local function addPlayerToList(player)
+    local buttonHeight = 20
+
+    local padding = 5
+
+    local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
+
+    local button = Instance.new("TextButton")
+
+    button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
+
+    button.Position = UDim2.new(0, padding, 0, offsetY)
+
+    button.Text = player.Name
+
+    button.TextSize = 14
+
+    button.Font = Enum.Font.Fantasy
+
+    button.BackgroundTransparency = 1
+
+    button.TextColor3 = Color3.new(1, 1, 1)
+
+    button.Name = player.Name .. "Button"
+
+    button.Parent = scrollFrame
+
+    button.MouseButton1Down:Connect(
+        function()
+            selectedPlayer = player
+
+            continuouslyFireShuriken()
+        end
+    )
+
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
+end
+
+local function removePlayerFromList(player)
+    local button = scrollFrame:FindFirstChild(player.Name .. "Button")
+
+    if button then
+        button:Destroy()
+
+        local buttons = scrollFrame:GetChildren()
+
+        local buttonHeight = 20
+
+        local padding = 5
+
+        local offsetY = 0
+
+        for _, btn in ipairs(buttons) do
+            if btn:IsA("TextButton") then
+                btn.Position = UDim2.new(0, padding, 0, offsetY)
+
+                offsetY = offsetY + buttonHeight + padding
+            end
+        end
+
+        scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
+    end
+end
+
+local function populatePlayerList()
+    local players = game.Players:GetPlayers()
+
+    for _, player in ipairs(players) do
+        addPlayerToList(player)
+    end
+end
+
+game.Players.PlayerAdded:Connect(addPlayerToList)
+
+game.Players.PlayerRemoving:Connect(removePlayerFromList)
+
+populatePlayerList()
+
+local function reparentGUI()
+    gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+end
+
+reparentGUI()
+
+game.Players.LocalPlayer.CharacterAdded:Connect(reparentGUI)
+
+TextButton_14.MouseButton1Down:Connect(
+    function()
+        frame.Visible = not frame.Visible
+
+        if frame.Visible then
+            TextButton_14.Text = "Open"
+
+            TextButton_14.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_14.Text = "Close"
+
+            TextButton_14.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
+
+TextLabel_34.Parent = Frame2_3
+
+TextLabel_34.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_34.BackgroundTransparency = 1.000
+
+TextLabel_34.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_34.BorderSizePixel = 0
+
+TextLabel_34.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_34.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_34.ZIndex = 2
+
+TextLabel_34.Font = Enum.Font.Fantasy
+
+TextLabel_34.Text = "TargetPlyr:"
+
+TextLabel_34.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_34.TextScaled = true
+
+TextLabel_34.TextSize = 21.000
+
+TextLabel_34.TextWrapped = true
+
+TextLabel_34.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame1_3.Name = "Frame1"
+
+Frame1_3.Parent = CombatTab
+
+Frame1_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame1_3.BackgroundTransparency = 1.000
+
+Frame1_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame1_3.BorderSizePixel = 0
+
+Frame1_3.LayoutOrder = 1
+
+Frame1_3.Position = UDim2.new(1.51600275e-07, 0, 0.0570957363, 0)
+
+Frame1_3.Size = UDim2.new(0.981999993, 0, 0.0579999983, 0)
+
+Frame1_3.ZIndex = 2
+
+TextLabel_35.Parent = Frame1_3
+
+TextLabel_35.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_35.BackgroundTransparency = 1.000
+
+TextLabel_35.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_35.BorderSizePixel = 0
+
+TextLabel_35.Size = UDim2.new(1, 0, 1, 0)
+
+TextLabel_35.Font = Enum.Font.Fantasy
+
+TextLabel_35.Text = "Combat Tab"
+
+TextLabel_35.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_35.TextScaled = true
+
+TextLabel_35.TextSize = 14.000
+
+TextLabel_35.TextWrapped = true
+
+Frame10_2.Name = "Frame10"
+
+Frame10_2.Parent = CombatTab
+
+Frame10_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame10_2.BackgroundTransparency = 1.000
+
+Frame10_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame10_2.BorderSizePixel = 0
+
+Frame10_2.Position = UDim2.new(3.04127752e-07, 0, 0.808538854, 0)
+
+Frame10_2.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame10_2.ZIndex = 2
+
+TextLabel_36.Parent = Frame10_2
+
+TextLabel_36.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_36.BackgroundTransparency = 1.000
+
+TextLabel_36.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_36.BorderSizePixel = 0
+
+TextLabel_36.Position = UDim2.new(0.0126851015, 0, 0, 0)
+
+TextLabel_36.Size = UDim2.new(0.339811683, 0, 0.600000083, 0)
+
+TextLabel_36.ZIndex = 2
+
+TextLabel_36.Font = Enum.Font.Fantasy
+
+TextLabel_36.Text = "EquipAllShur:"
+
+TextLabel_36.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_36.TextScaled = true
+
+TextLabel_36.TextSize = 21.000
+
+TextLabel_36.TextWrapped = true
+
+TextLabel_36.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_15.Parent = Frame10_2
+
+TextButton_15.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_15.Position = UDim2.new(0.352496803, 0, -0.00631929329, 0)
+
+TextButton_15.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_15.ZIndex = 2
+
+TextButton_15.Font = Enum.Font.Fantasy
+
+TextButton_15.Text = "Off"
+
+TextButton_15.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_15.TextScaled = true
+
+TextButton_15.TextSize = 19.000
+
+TextButton_15.TextWrapped = true
+
+local VariableTable = {AutoEquipShuriken = false}
+
+local equipShurikenConnection
+
+local function equipShuriken()
+    repeat
+        task.wait()
+    until game.Players.LocalPlayer.Backpack:WaitForChild("Shuriken")
+
+    local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Shuriken")
+
+    if tool then
+        tool.Parent = game.Players.LocalPlayer.Character
+    end
+end
+
+local function toggleEquipShuriken()
+    VariableTable["AutoEquipShuriken"] = not VariableTable["AutoEquipShuriken"]
+
+    if VariableTable["AutoEquipShuriken"] then
+        equipShurikenConnection = game:GetService("RunService").Heartbeat:Connect(equipShuriken)
+
+        TextButton_15.Text = "On"
+
+        TextButton_15.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        if equipShurikenConnection then
+            equipShurikenConnection:Disconnect()
+
+            equipShurikenConnection = nil
+        end
+
+        TextButton_15.Text = "Off"
+
+        TextButton_15.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+TextButton_15.MouseButton1Down:Connect(toggleEquipShuriken)
+
+if VariableTable["AutoEquipShuriken"] then
+    toggleEquipShuriken()
+else
+    TextButton_15.Text = "Off"
+
+    TextButton_15.TextColor3 = Color3.fromRGB(255, 0, 0)
+end
+
+TextButton_16.Parent = Frame10_2
+
+TextButton_16.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_16.Position = UDim2.new(0.849972069, 0, -0.00631929329, 0)
+
+TextButton_16.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_16.ZIndex = 2
+
+TextButton_16.Font = Enum.Font.Fantasy
+
+TextButton_16.Text = "Off"
+
+TextButton_16.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_16.TextScaled = true
+
+TextButton_16.TextSize = 19.000
+
+TextButton_16.TextWrapped = true
+
+local VariableTable = {SwordsEquipped = false}
+
+local function equipAllSwords()
+    local player = game.Players.LocalPlayer
+
+    local backpack = player:WaitForChild("Backpack")
+
+    for _, tool in ipairs(backpack:GetChildren()) do
+        if tool:IsA("Tool") and tool.Name == "Sword" then
+            tool.Parent = player.Character
+        end
+    end
+end
+
+local function unequipAllSwords()
+    local player = game.Players.LocalPlayer
+
+    local character = player.Character or player.CharacterAdded:Wait()
+
+    for _, tool in ipairs(character:GetChildren()) do
+        if tool:IsA("Tool") and tool.Name == "Sword" then
+            tool.Parent = player.Backpack
+        end
+    end
+end
+
+TextButton_16.MouseButton1Down:Connect(
+    function()
+        VariableTable["SwordsEquipped"] = not VariableTable["SwordsEquipped"]
+
+        if VariableTable["SwordsEquipped"] then
+            equipAllSwords()
+
+            TextButton_16.Text = "On"
+
+            TextButton_16.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            unequipAllSwords()
+
+            TextButton_16.Text = "Off"
+
+            TextButton_16.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
+
+TextLabel_37.Parent = Frame10_2
+
+TextLabel_37.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_37.BackgroundTransparency = 1.000
+
+TextLabel_37.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_37.BorderSizePixel = 0
+
+TextLabel_37.Position = UDim2.new(0.507324457, 0, -0.0221513268, 0)
+
+TextLabel_37.Size = UDim2.new(0.343487561, 0, 0.600000083, 0)
+
+TextLabel_37.ZIndex = 2
+
+TextLabel_37.Font = Enum.Font.Fantasy
+
+TextLabel_37.Text = "EquipAllSwrd:"
+
+TextLabel_37.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_37.TextScaled = true
+
+TextLabel_37.TextSize = 21.000
+
+TextLabel_37.TextWrapped = true
+
+TextLabel_37.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame3_3.Name = "Frame3"
+
+Frame3_3.Parent = CombatTab
+
+Frame3_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame3_3.BackgroundTransparency = 1.000
+
+Frame3_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame3_3.BorderSizePixel = 0
+
+Frame3_3.Position = UDim2.new(0, 0, 0.202662647, 0)
+
+Frame3_3.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame3_3.ZIndex = 2
+
+TextButton_17.Parent = Frame3_3
+
+TextButton_17.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_17.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_17.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_17.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_17.ZIndex = 2
+
+TextButton_17.Font = Enum.Font.Fantasy
+
+TextButton_17.Text = "Off"
+
+TextButton_17.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_17.TextScaled = true
+
+TextButton_17.TextSize = 19.000
+
+TextButton_17.TextWrapped = true
+
+local TextButtonEnabled = false
+
+local connections = {}
+
+TextButton_17.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled = not TextButtonEnabled
+
+        if TextButtonEnabled then
+            TextButton_17.Text = "On"
+
+            TextButton_17.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            local toolName = "Shuriken"
+
+            local function findToolInBackpack(player, toolName)
+                for _, item in pairs(player.Backpack:GetChildren()) do
+                    if item:IsA("Tool") and item.Name == toolName then
+                        return item
+                    end
+                end
+
+                return nil
+            end
+
+            local function findToolInCharacter(player, toolName)
+                local character = player.Character
+
+                if character then
+                    for _, item in pairs(character:GetChildren()) do
+                        if item:IsA("Tool") and item.Name == toolName then
+                            return item
+                        end
+                    end
+                end
+
+                return nil
+            end
+
+            local function equipTool(player, tool)
+                tool.Parent = player.Backpack
+
+                player.Character.Humanoid:EquipTool(tool)
+            end
+
+            local function unequipTool(player)
+                player.Character.Humanoid:UnequipTools()
+            end
+
+            local function main()
+                local player = game.Players.LocalPlayer
+
+                local toolInBackpack = findToolInBackpack(player, toolName)
+
+                local toolInCharacter = findToolInCharacter(player, toolName)
+
+                if toolInCharacter then
+                    unequipTool(player)
+                elseif toolInBackpack then
+                    equipTool(player, toolInBackpack)
+                end
+            end
+
+            for i = 1, 4 do
+                local connection =
+                    spawn(
+                    function()
+                        while TextButtonEnabled do
+                            main()
+
+                            wait()
+                        end
+                    end
+                )
+
+                table.insert(connections, connection)
+            end
+        else
+            TextButton_17.Text = "Off"
+
+            TextButton_17.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            for _, connection in pairs(connections) do
+                if connection then
+                    connection:Disconnect()
+                end
+            end
+
+            connections = {}
+        end
+    end
+)
+
+TextLabel_38.Parent = Frame3_3
+
+TextLabel_38.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_38.BackgroundTransparency = 1.000
+
+TextLabel_38.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_38.BorderSizePixel = 0
+
+TextLabel_38.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_38.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_38.ZIndex = 2
+
+TextLabel_38.Font = Enum.Font.Fantasy
+
+TextLabel_38.Text = "FstSwchShur:"
+
+TextLabel_38.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_38.TextScaled = true
+
+TextLabel_38.TextSize = 21.000
+
+TextLabel_38.TextWrapped = true
+
+TextLabel_38.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_18.Parent = Frame3_3
+
+TextButton_18.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_18.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_18.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_18.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_18.ZIndex = 2
+
+TextButton_18.Font = Enum.Font.Fantasy
+
+TextButton_18.Text = "Off"
+
+TextButton_18.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_18.TextScaled = true
+
+TextButton_18.TextSize = 19.000
+
+TextButton_18.TextWrapped = true
+
+local TextButtonEnabled = false
+
+local connection
+
+TextButton_18.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled = not TextButtonEnabled
+
+        if TextButtonEnabled then
+            TextButton_18.Text = "On"
+
+            TextButton_18.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            connection =
+                spawn(
+                function()
+                    local players = game:GetService("Players"):GetPlayers()
+
+                    local offset = Vector3.new(0, 0, 0)
+
+                    local function throwShuriken(player)
+                        local character = player.Character or player.CharacterAdded:Wait()
+
+                        local head = character:WaitForChild("Head")
+
+                        local direction = character.HumanoidRootPart.CFrame.LookVector
+
+                        local spawnPosition = head.Position + offset
+
+                        local args = {
+                            [1] = spawnPosition,
+                            [2] = direction
+                        }
+
+                        local shuriken =
+                            player.Backpack:FindFirstChild("Shuriken") or character:FindFirstChild("Shuriken")
+
+                        if shuriken then
+                            if shuriken.Parent == player.Backpack then
+                                shuriken.Parent = character
+                            end
+
+                            shuriken.HitEvent:FireServer(unpack(args))
+
+                            if shuriken.Parent == character then
+                                shuriken.Parent = player.Backpack
+                            end
+                        else
+                            warn("Shuriken not found in backpack or character")
+                        end
+                    end
+
+                    while TextButtonEnabled do
+                        for _, player in ipairs(players) do
+                            throwShuriken(player)
+                        end
+
+                        wait(0.00001)
+                    end
+                end
+            )
+        else
+            TextButton_18.Text = "Off"
+
+            TextButton_18.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            if connection then
+                connection:Disconnect()
+            end
+        end
+    end
+)
+
+TextLabel_39.Parent = Frame3_3
+
+TextLabel_39.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_39.BackgroundTransparency = 1.000
+
+TextLabel_39.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_39.BorderSizePixel = 0
+
+TextLabel_39.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_39.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_39.ZIndex = 2
+
+TextLabel_39.Font = Enum.Font.Fantasy
+
+TextLabel_39.Text = "TrgtAllPlyr:"
+
+TextLabel_39.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_39.TextScaled = true
+
+TextLabel_39.TextSize = 21.000
+
+TextLabel_39.TextWrapped = true
+
+TextLabel_39.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame4_3.Name = "Frame4"
+
+Frame4_3.Parent = CombatTab
+
+Frame4_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame4_3.BackgroundTransparency = 1.000
+
+Frame4_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame4_3.BorderSizePixel = 0
+
+Frame4_3.Position = UDim2.new(0, 0, 0.289325267, 0)
+
+Frame4_3.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame4_3.ZIndex = 2
+
+TextButton_19.Parent = Frame4_3
+
+TextButton_19.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_19.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_19.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_19.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_19.ZIndex = 2
+
+TextButton_19.Font = Enum.Font.Fantasy
+
+TextButton_19.Text = "Off"
+
+TextButton_19.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_19.TextScaled = true
+
+TextButton_19.TextSize = 19.000
+
+TextButton_19.TextWrapped = true
+
+local TextButtonEnabled = false
+
+local connection
+
+TextButton_19.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled = not TextButtonEnabled
+
+        if TextButtonEnabled then
+            TextButton_19.Text = "On"
+
+            TextButton_19.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            connection =
+                spawn(
+                function()
+                    local Players = game:GetService("Players")
+
+                    local LocalPlayer = Players.LocalPlayer
+
+                    local function throwShuriken(player)
+                        local character = player.Character or player.CharacterAdded:Wait()
+
+                        local head = LocalPlayer.Character:WaitForChild("Head")
+
+                        local direction = (head.Position - character.HumanoidRootPart.Position).unit
+
+                        local spawnPosition = head.Position
+
+                        local args = {
+                            [1] = spawnPosition,
+                            [2] = direction
+                        }
+
+                        local shuriken =
+                            player.Backpack:FindFirstChild("Shuriken") or character:FindFirstChild("Shuriken")
+
+                        if shuriken then
+                            if shuriken.Parent == player.Backpack then
+                                shuriken.Parent = character
+                            end
+
+                            shuriken.HitEvent:FireServer(unpack(args))
+
+                            if shuriken.Parent == character then
+                                shuriken.Parent = player.Backpack
+                            end
+                        else
+                            warn("Shuriken not found in backpack or character")
+                        end
+                    end
+
+                    while TextButtonEnabled do
+                        for _, player in ipairs(Players:GetPlayers()) do
+                            throwShuriken(player)
+                        end
+
+                        wait()
+                    end
+                end
+            )
+        else
+            TextButton_19.Text = "Off"
+
+            TextButton_19.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            if connection then
+                connection:Disconnect()
+            end
+        end
+    end
+)
+
+TextLabel_40.Parent = Frame4_3
+
+TextLabel_40.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_40.BackgroundTransparency = 1.000
+
+TextLabel_40.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_40.BorderSizePixel = 0
+
+TextLabel_40.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_40.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_40.ZIndex = 2
+
+TextLabel_40.Font = Enum.Font.Fantasy
+
+TextLabel_40.Text = "AFStlShurs:"
+
+TextLabel_40.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_40.TextScaled = true
+
+TextLabel_40.TextSize = 21.000
+
+TextLabel_40.TextWrapped = true
+
+TextLabel_40.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_20.Parent = Frame4_3
+
+TextButton_20.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_20.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_20.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_20.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_20.ZIndex = 2
+
+TextButton_20.Font = Enum.Font.Fantasy
+
+TextButton_20.Text = "Off"
+
+TextButton_20.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_20.TextScaled = true
+
+TextButton_20.TextSize = 19.000
+
+TextButton_20.TextWrapped = true
+
+local enabled = false
+
+local runConnection
+
+local function teleportKunaiToPlayerHead(kunai, player)
+    if player and player.Character and kunai and kunai:IsA("BasePart") then
+        local character = player.Character
+
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+        if humanoid then
+            local head = character:FindFirstChild("Head")
+
+            if head then
+                kunai.CFrame = head.CFrame
+            end
+        end
+    end
+end
+
+local function teleportKunaisToPlayers(kunais)
+    local players = game.Players:GetPlayers()
+
+    local localPlayer = game.Players.LocalPlayer
+
+    for i, kunai in ipairs(kunais) do
+        local playerIndex = (i - 1) % #players + 1
+
+        local player = players[playerIndex]
+
+        if player ~= localPlayer then
+            teleportKunaiToPlayerHead(kunai, player)
+        end
+    end
+end
+
+local function checkForThrownKunais()
+    local thrownKunais = {}
+
+    for _, kunai in ipairs(workspace:GetChildren()) do
+        if kunai.Name == "ThrownKunai" then
+            table.insert(thrownKunais, kunai)
+        end
+    end
+
+    if #thrownKunais > 0 then
+        teleportKunaisToPlayers(thrownKunais)
+    end
+end
+
+local function startLoop()
+    while enabled do
+        checkForThrownKunais()
+
+        wait(0.1)
+    end
+end
+
+local function toggle()
+    enabled = not enabled
+
+    if enabled then
+        TextButton_20.Text = "On"
+
+        TextButton_20.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+        runConnection = coroutine.create(startLoop)
+
+        coroutine.resume(runConnection)
+    else
+        TextButton_20.Text = "Off"
+
+        TextButton_20.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+        if runConnection then
+            coroutine.yield(runConnection)
+
+            runConnection = nil
+        end
+    end
+end
+
+TextButton_20.MouseButton1Click:Connect(toggle)
+
+TextButton_20.Text = "Off"
+
+TextButton_20.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextLabel_41.Parent = Frame4_3
+
+TextLabel_41.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_41.BackgroundTransparency = 1.000
+
+TextLabel_41.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_41.BorderSizePixel = 0
+
+TextLabel_41.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_41.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_41.ZIndex = 2
+
+TextLabel_41.Font = Enum.Font.Fantasy
+
+TextLabel_41.Text = "GetAllPlyr:"
+
+TextLabel_41.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_41.TextScaled = true
+
+TextLabel_41.TextSize = 21.000
+
+TextLabel_41.TextWrapped = true
+
+TextLabel_41.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame5_3.Name = "Frame5"
+
+Frame5_3.Parent = CombatTab
+
+Frame5_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame5_3.BackgroundTransparency = 1.000
+
+Frame5_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame5_3.BorderSizePixel = 0
+
+Frame5_3.Position = UDim2.new(0, 0, 0.375987917, 0)
+
+Frame5_3.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame5_3.ZIndex = 2
+
+TextButton_21.Parent = Frame5_3
+
+TextButton_21.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_21.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_21.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_21.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_21.ZIndex = 2
+
+TextButton_21.Font = Enum.Font.Fantasy
+
+TextButton_21.Text = "Off"
+
+TextButton_21.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_21.TextScaled = true
+
+TextButton_21.TextSize = 19.000
+
+TextButton_21.TextWrapped = true
+
+local TextButtonEnabled = false
+
+TextButton_21.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled = not TextButtonEnabled
+
+        if TextButtonEnabled then
+            TextButton_21.Text = "On"
+
+            TextButton_21.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            local character = game.Players.LocalPlayer.Character
+
+            local backpack = game.Players.LocalPlayer.Backpack
+
+            if not character:FindFirstChild("Sword") then
+                local tool = backpack:FindFirstChild("Sword")
+
+                if tool then
+                    tool.Parent = character
+                end
+            end
+
+            if character:FindFirstChild("Sword") then
+                while TextButtonEnabled do
+                    character.Sword.HitEvent:FireServer()
+
+                    wait()
+                end
+            end
+        else
+            TextButton_21.Text = "Off"
+
+            TextButton_21.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            local tool = game.Players.LocalPlayer.Character:FindFirstChild("Sword")
+
+            if tool then
+                tool.Parent = game.Players.LocalPlayer.Backpack
+            end
+        end
+    end
+)
+
+TextLabel_42.Parent = Frame5_3
+
+TextLabel_42.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_42.BackgroundTransparency = 1.000
+
+TextLabel_42.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_42.BorderSizePixel = 0
+
+TextLabel_42.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_42.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_42.ZIndex = 2
+
+TextLabel_42.Font = Enum.Font.Fantasy
+
+TextLabel_42.Text = "AHSword:"
+
+TextLabel_42.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_42.TextScaled = true
+
+TextLabel_42.TextSize = 21.000
+
+TextLabel_42.TextWrapped = true
+
+TextLabel_42.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_22.Parent = Frame5_3
+
+TextButton_22.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_22.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_22.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_22.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_22.ZIndex = 2
+
+TextButton_22.Font = Enum.Font.Fantasy
+
+TextButton_22.Text = "Off"
+
+TextButton_22.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_22.TextScaled = true
+
+TextButton_22.TextSize = 19.000
+
+TextButton_22.TextWrapped = true
+
+local enabled = false
+
+local player = game:GetService("Players").LocalPlayer
+
+local running = false
+
+local function startLoop()
+    running = true
+
+    while running do
+        local character = player.Character
+
+        if character then
+            for _, tool in ipairs(character:GetChildren()) do
+                if tool:IsA("Tool") and tool:FindFirstChild("HitEvent") then
+                    tool.HitEvent:FireServer()
+
+                    wait(0.000001)
+                end
+            end
+        end
+
+        wait(0.05)
+    end
+end
+
+local function toggle()
+    enabled = not enabled
+
+    if enabled then
+        TextButton_22.Text = "On"
+
+        TextButton_22.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+        if not running then
+            spawn(startLoop)
+        end
+    else
+        TextButton_22.Text = "Off"
+
+        TextButton_22.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+        running = false
+    end
+end
+
+TextButton_22.MouseButton1Click:Connect(toggle)
+
+TextButton_22.Text = "Off"
+
+TextButton_22.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextLabel_43.Parent = Frame5_3
+
+TextLabel_43.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_43.BackgroundTransparency = 1.000
+
+TextLabel_43.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_43.BorderSizePixel = 0
+
+TextLabel_43.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_43.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_43.ZIndex = 2
+
+TextLabel_43.Font = Enum.Font.Fantasy
+
+TextLabel_43.Text = "ActvteAllSwrd:"
+
+TextLabel_43.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_43.TextScaled = true
+
+TextLabel_43.TextSize = 21.000
+
+TextLabel_43.TextWrapped = true
+
+TextLabel_43.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame6_3.Name = "Frame6"
+
+Frame6_3.Parent = CombatTab
+
+Frame6_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame6_3.BackgroundTransparency = 1.000
+
+Frame6_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame6_3.BorderSizePixel = 0
+
+Frame6_3.Position = UDim2.new(0, 0, 0.462650537, 0)
+
+Frame6_3.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame6_3.ZIndex = 2
+
+TextButton_23.Parent = Frame6_3
+
+TextButton_23.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_23.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_23.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_23.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_23.ZIndex = 2
+
+TextButton_23.Font = Enum.Font.Fantasy
+
+TextButton_23.Text = "Off"
+
+TextButton_23.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_23.TextScaled = true
+
+TextButton_23.TextSize = 19.000
+
+TextButton_23.TextWrapped = true
+
+TextButton_23.MouseButton1Down:Connect(
+    function()
+        local d = string.byte
+        local r = string.char
+        local c = string.sub
+        local u = table.concat
+        local h = math.ldexp
+        local W = getfenv or function()
+                return _ENV
+            end
+        local l = setmetatable
+        local s = select
+        local a = unpack
+        local f = tonumber
+        local function b(d)
+            local e, n, t = "", "", {}
+            local a = 256
+            local o = {}
+            for l = 0, a - 1 do
+                o[l] = r(l)
+            end
+            local l = 1
+            local function i()
+                local e = f(c(d, l, l), 36)
+                l = l + 1
+                local n = f(c(d, l, l + e - 1), 36)
+                l = l + e
+                return n
+            end
+            e = r(i())
+            t[1] = e
+            while l < #d do
+                local l = i()
+                if o[l] then
+                    n = o[l]
+                else
+                    n = e .. c(e, 1, 1)
+                end
+                o[a] = e .. c(n, 1, 1)
+                t[#t + 1], e, a = n, n, a + 1
+            end
+            return table.concat(t)
+        end
+        local f =
+            b(
+            "21X21W27527621W27427521Y27921W21121X22727621V22422C21W24T22421W25G21U27625127527P22C25025725127K25G21X22427W24M27N27528524L28527724X27628128328522027624P27727K21W24Z28K28A27621S28524R28521Z27627B27621121Y28G27521821721721B1Y21D21621321C21921721621Y21S27621F21121921C21W27Q27521T27V25724M28K21X22K28322K27522121W27W24U28P22K22S21W24N29W21W21T28225724I28528Q27528S275"
+        )
+        local o = bit and bit.bxor or function(l, e)
+                local n, o = 1, 0
+                while l > 0 and e > 0 do
+                    local a, c = l % 2, e % 2
+                    if a ~= c then
+                        o = o + n
+                    end
+                    l, e, n = (l - a) / 2, (e - c) / 2, n * 2
+                end
+                if l < e then
+                    l = e
+                end
+                while l > 0 do
+                    local e = l % 2
+                    if e > 0 then
+                        o = o + n
+                    end
+                    l, n = (l - e) / 2, n * 2
+                end
+                return o
+            end
+        local function l(e, l, n)
+            if n then
+                local l = (e / 2 ^ (l - 1)) % 2 ^ ((n - 1) - (l - 1) + 1)
+                return l - l % 1
+            else
+                local l = 2 ^ (l - 1)
+                return (e % (l + l) >= l) and 1 or 0
+            end
+        end
+        local e = 1
+        local function n()
+            local n, c, a, l = d(f, e, e + 3)
+            n = o(n, 68)
+            c = o(c, 68)
+            a = o(a, 68)
+            l = o(l, 68)
+            e = e + 4
+            return (l * 16777216) + (a * 65536) + (c * 256) + n
+        end
+        local function t()
+            local l = o(d(f, e, e), 68)
+            e = e + 1
+            return l
+        end
+        local function i()
+            local e = n()
+            local o = n()
+            local c = 1
+            local n = (l(o, 1, 20) * (2 ^ 32)) + e
+            local e = l(o, 21, 31)
+            local l = ((-1) ^ l(o, 32))
+            if (e == 0) then
+                if (n == 0) then
+                    return l * 0
+                else
+                    e = 1
+                    c = 0
+                end
+            elseif (e == 2047) then
+                return (n == 0) and (l * (1 / 0)) or (l * (0 / 0))
+            end
+            return h(l, e - 1023) * (c + (n / (2 ^ 52)))
+        end
+        local h = n
+        local function b(l)
+            local n
+            if (not l) then
+                l = h()
+                if (l == 0) then
+                    return ""
+                end
+            end
+            n = c(f, e, e + l - 1)
+            e = e + l
+            local e = {}
+            for l = 1, #n do
+                e[l] = r(o(d(c(n, l, l)), 68))
+            end
+            return u(e)
+        end
+        local e = n
+        local function f(...)
+            return {...}, s("#", ...)
+        end
+        local function u()
+            local d = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+            local e = {0}
+            local c = {}
+            local a = {d, nil, e, nil, c}
+            for l = 1, n() do
+                e[l - 1] = u()
+            end
+            local e = n()
+            local c = {0, 0, 0}
+            for n = 1, e do
+                local e = t()
+                local l
+                if (e == 0) then
+                    l = (t() ~= 0)
+                elseif (e == 3) then
+                    l = i()
+                elseif (e == 2) then
+                    l = b()
+                end
+                c[n] = l
+            end
+            a[2] = c
+            a[4] = t()
+            for a = 1, n() do
+                local c = o(n(), 4)
+                local n = o(n(), 229)
+                local o = l(c, 1, 2)
+                local e = l(n, 1, 11)
+                local e = {e, l(c, 3, 11), nil, nil, n}
+                if (o == 0) then
+                    e[3] = l(c, 12, 20)
+                    e[5] = l(c, 21, 29)
+                elseif (o == 1) then
+                    e[3] = l(n, 12, 33)
+                elseif (o == 2) then
+                    e[3] = l(n, 12, 32) - 1048575
+                elseif (o == 3) then
+                    e[3] = l(n, 12, 32) - 1048575
+                    e[5] = l(c, 21, 29)
+                end
+                d[a] = e
+            end
+            return a
+        end
+        local function r(l, e, c)
+            local o = l[1]
+            local n = l[2]
+            local e = l[3]
+            local l = l[4]
+            return function(...)
+                local u = o
+                local t = n
+                local h = e
+                local n = l
+                local l = f
+                local o = 1
+                local d = -1
+                local W = {}
+                local i = {...}
+                local f = s("#", ...) - 1
+                local l = {}
+                local e = {}
+                for l = 0, f do
+                    if (l >= n) then
+                        W[l - n] = i[l + 1]
+                    else
+                        e[l] = i[l + 1]
+                    end
+                end
+                local l = f - n + 1
+                local l
+                local n
+                while true do
+                    l = u[o]
+                    n = l[1]
+                    if n <= 10 then
+                        if n <= 4 then
+                            if n <= 1 then
+                                if n == 0 then
+                                    o = o + l[3]
+                                else
+                                    local o = l[2]
+                                    local t = {}
+                                    local n = 0
+                                    local c = o + l[3] - 1
+                                    for l = o + 1, c do
+                                        n = n + 1
+                                        t[n] = e[l]
+                                    end
+                                    local c = {e[o](a(t, 1, c - o))}
+                                    local l = o + l[5] - 2
+                                    n = 0
+                                    for l = o, l do
+                                        n = n + 1
+                                        e[l] = c[n]
+                                    end
+                                    d = l
+                                end
+                            elseif n <= 2 then
+                                do
+                                    return
+                                end
+                            elseif n > 3 then
+                                local l = l[2]
+                                do
+                                    return e[l]()
+                                end
+                            else
+                                c[t[l[3]]] = e[l[2]]
+                            end
+                        elseif n <= 7 then
+                            if n <= 5 then
+                                if not e[l[2]] then
+                                    o = o + 1
+                                else
+                                    o = o + l[3]
+                                end
+                            elseif n > 6 then
+                                e[l[2]] = c[t[l[3]]]
+                            else
+                                local o = l[2]
+                                local c = {}
+                                local n = 0
+                                local t = o + l[3] - 1
+                                for l = o + 1, t do
+                                    n = n + 1
+                                    c[n] = e[l]
+                                end
+                                local c = {e[o](a(c, 1, t - o))}
+                                local l = o + l[5] - 2
+                                n = 0
+                                for l = o, l do
+                                    n = n + 1
+                                    e[l] = c[n]
+                                end
+                                d = l
+                            end
+                        elseif n <= 8 then
+                            e[l[2]] = e[l[3]]
+                        elseif n == 9 then
+                            e[l[2]] = r(h[l[3]], nil, c)
+                        else
+                            do
+                                return
+                            end
+                        end
+                    elseif n <= 15 then
+                        if n <= 12 then
+                            if n == 11 then
+                                local c = l[2]
+                                local o = d
+                                local n = {}
+                                local l = 0
+                                for o = c, o do
+                                    l = l + 1
+                                    n[l] = e[o]
+                                end
+                                do
+                                    return a(n, 1, l)
+                                end
+                            else
+                                if not e[l[2]] then
+                                    o = o + 1
+                                else
+                                    o = o + l[3]
+                                end
+                            end
+                        elseif n <= 13 then
+                            e[l[2]] = c[t[l[3]]]
+                        elseif n > 14 then
+                            e[l[2]] = r(h[l[3]], nil, c)
+                        else
+                            local n = l[2]
+                            local o = {}
+                            local l = n + l[3] - 1
+                            for l = n + 1, l do
+                                o[#o + 1] = e[l]
+                            end
+                            do
+                                return e[n](a(o, 1, l - n))
+                            end
+                        end
+                    elseif n <= 18 then
+                        if n <= 16 then
+                            local o = l[2]
+                            local c = d
+                            local n = {}
+                            local l = 0
+                            for o = o, c do
+                                l = l + 1
+                                n[l] = e[o]
+                            end
+                            do
+                                return a(n, 1, l)
+                            end
+                        elseif n == 17 then
+                            local l = l[2]
+                            do
+                                return e[l]()
+                            end
+                        else
+                            local n = l[2]
+                            local o = {}
+                            local l = n + l[3] - 1
+                            for l = n + 1, l do
+                                o[#o + 1] = e[l]
+                            end
+                            do
+                                return e[n](a(o, 1, l - n))
+                            end
+                        end
+                    elseif n <= 19 then
+                        c[t[l[3]]] = e[l[2]]
+                    elseif n > 20 then
+                        e[l[2]] = e[l[3]]
+                    else
+                        o = o + l[3]
+                    end
+                    o = o + 1
+                end
+            end
+        end
+        return r(u(), {}, W())()
+    end
+)
+
+TextLabel_44.Parent = Frame6_3
+
+TextLabel_44.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_44.BackgroundTransparency = 1.000
+
+TextLabel_44.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_44.BorderSizePixel = 0
+
+TextLabel_44.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_44.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_44.ZIndex = 2
+
+TextLabel_44.Font = Enum.Font.Fantasy
+
+TextLabel_44.Text = "FastTools:"
+
+TextLabel_44.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_44.TextScaled = true
+
+TextLabel_44.TextSize = 21.000
+
+TextLabel_44.TextWrapped = true
+
+TextLabel_44.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_24.Parent = Frame6_3
+
+TextButton_24.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_24.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_24.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_24.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_24.ZIndex = 2
+
+TextButton_24.Font = Enum.Font.Fantasy
+
+TextButton_24.Text = "Off"
+
+TextButton_24.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_24.TextScaled = true
+
+TextButton_24.TextSize = 19.000
+
+TextButton_24.TextWrapped = true
+
+mouseButtonConnection = nil
+
+enabled = false
+
+function fireAllShurikens(targetPosition)
+    local character = game:GetService("Players").LocalPlayer.Character
+
+    if character then
+        for _, tool in ipairs(character:GetChildren()) do
+            if tool:IsA("Tool") and tool.Name == "Shuriken" and tool:FindFirstChild("HitEvent") then
+                tool.HitEvent:FireServer(targetPosition)
+            end
+        end
+    end
+end
+
+function toggle()
+    enabled = not enabled
+
+    if enabled then
+        TextButton_24.Text = "On"
+
+        TextButton_24.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+        if not mouseButtonConnection then
+            mouseButtonConnection =
+                game:GetService("Players").LocalPlayer:GetMouse().Button1Down:Connect(
+                function()
+                    local clickPosition = game:GetService("Players").LocalPlayer:GetMouse().Hit.p
+
+                    fireAllShurikens(clickPosition)
+                end
+            )
+        end
+    else
+        TextButton_24.Text = "Off"
+
+        TextButton_24.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+        if mouseButtonConnection then
+            mouseButtonConnection:Disconnect()
+
+            mouseButtonConnection = nil
+        end
+    end
+end
+
+TextButton_24.MouseButton1Click:Connect(toggle)
+
+TextButton_24.Text = "Off"
+
+TextButton_24.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextLabel_45.Parent = Frame6_3
+
+TextLabel_45.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_45.BackgroundTransparency = 1.000
+
+TextLabel_45.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_45.BorderSizePixel = 0
+
+TextLabel_45.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_45.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_45.ZIndex = 2
+
+TextLabel_45.Font = Enum.Font.Fantasy
+
+TextLabel_45.Text = "ActvteAllShur:"
+
+TextLabel_45.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_45.TextScaled = true
+
+TextLabel_45.TextSize = 21.000
+
+TextLabel_45.TextWrapped = true
+
+TextLabel_45.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame7_3.Name = "Frame7"
+
+Frame7_3.Parent = CombatTab
+
+Frame7_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame7_3.BackgroundTransparency = 1.000
+
+Frame7_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame7_3.BorderSizePixel = 0
+
+Frame7_3.Position = UDim2.new(0, 0, 0.549313128, 0)
+
+Frame7_3.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame7_3.ZIndex = 2
+
+TextButton_25.Parent = Frame7_3
+
+TextButton_25.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_25.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_25.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_25.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_25.ZIndex = 2
+
+TextButton_25.Font = Enum.Font.Fantasy
+
+TextButton_25.Text = "Off"
+
+TextButton_25.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_25.TextScaled = true
+
+TextButton_25.TextSize = 19.000
+
+TextButton_25.TextWrapped = true
+
+TextButton_25.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+    end
+)
+
+TextLabel_46.Parent = Frame7_3
+
+TextLabel_46.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_46.BackgroundTransparency = 1.000
+
+TextLabel_46.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_46.BorderSizePixel = 0
+
+TextLabel_46.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_46.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_46.ZIndex = 2
+
+TextLabel_46.Font = Enum.Font.Fantasy
+
+TextLabel_46.Text = "Clone5Tools:"
+
+TextLabel_46.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_46.TextScaled = true
+
+TextLabel_46.TextSize = 21.000
+
+TextLabel_46.TextWrapped = true
+
+TextLabel_46.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_26.Parent = Frame7_3
+
+TextButton_26.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_26.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_26.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_26.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_26.ZIndex = 2
+
+TextButton_26.Font = Enum.Font.Fantasy
+
+TextButton_26.Text = "Off"
+
+TextButton_26.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_26.TextScaled = true
+
+TextButton_26.TextSize = 19.000
+
+TextButton_26.TextWrapped = true
+
+clickInterval = 0
+
+autoClickerEnabled = false
+
+lastClickTime = 0
+
+userInputService = game:GetService("UserInputService")
+
+virtualUser = game:GetService("VirtualUser")
+
+runService = game:GetService("RunService")
+
+mainScriptEnabled = false
+
+function autoClick()
+    player = game.Players.LocalPlayer
+
+    mouse = player:GetMouse()
+
+    clickPosition = Vector2.new(mouse.X, mouse.Y)
+
+    virtualUser:CaptureController()
+
+    virtualUser:Button1Down(clickPosition, workspace.CurrentCamera.CFrame)
+
+    virtualUser:Button1Up(clickPosition, workspace.CurrentCamera.CFrame)
+end
+
+function onInputBegan(input, gameProcessedEvent)
+    if gameProcessedEvent then
+        return
+    end
+
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        autoClickerEnabled = true
+    end
+end
+
+function onInputEnded(input, gameProcessedEvent)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        autoClickerEnabled = false
+    end
+end
+
+userInputService.InputBegan:Connect(onInputBegan)
+
+userInputService.InputEnded:Connect(onInputEnded)
+
+runService.Heartbeat:Connect(
+    function(step)
+        if mainScriptEnabled and autoClickerEnabled and tick() - lastClickTime >= clickInterval then
+            autoClick()
+
+            lastClickTime = tick()
+        end
+    end
+)
+
+function toggleMainScript()
+    mainScriptEnabled = not mainScriptEnabled
+
+    if mainScriptEnabled then
+        TextButton_26.Text = "On"
+
+        TextButton_26.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_26.Text = "Off"
+
+        TextButton_26.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+TextButton_26.MouseButton1Down:Connect(toggleMainScript)
+
+TextButton_26.Text = "Off"
+
+TextButton_26.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextLabel_47.Parent = Frame7_3
+
+TextLabel_47.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_47.BackgroundTransparency = 1.000
+
+TextLabel_47.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_47.BorderSizePixel = 0
+
+TextLabel_47.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_47.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_47.ZIndex = 2
+
+TextLabel_47.Font = Enum.Font.Fantasy
+
+TextLabel_47.Text = "HoldToFire:"
+
+TextLabel_47.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_47.TextScaled = true
+
+TextLabel_47.TextSize = 21.000
+
+TextLabel_47.TextWrapped = true
+
+TextLabel_47.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame8_3.Name = "Frame8"
+
+Frame8_3.Parent = CombatTab
+
+Frame8_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame8_3.BackgroundTransparency = 1.000
+
+Frame8_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame8_3.BorderSizePixel = 0
+
+Frame8_3.Position = UDim2.new(0, 0, 0.635975718, 0)
+
+Frame8_3.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame8_3.ZIndex = 2
+
+TextButton_27.Parent = Frame8_3
+
+TextButton_27.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_27.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_27.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_27.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_27.ZIndex = 2
+
+TextButton_27.Font = Enum.Font.Fantasy
+
+TextButton_27.Text = "Close"
+
+TextButton_27.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_27.TextScaled = true
+
+TextButton_27.TextSize = 19.000
+
+TextButton_27.TextWrapped = true
+
+local frameVisible = false
+
+local gui = Instance.new("ScreenGui")
+
+gui.Name = "PlayerSelectorGUI"
+
+gui.ResetOnSpawn = false
+
+local frame = Instance.new("Frame")
+
+frame.Size = UDim2.new(0, 200, 0, 300)
+
+frame.Position = UDim2.new(0.5, -100, 0.5, -150)
+
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+
+frame.BackgroundTransparency = 0.4
+
+frame.BorderSizePixel = 2
+
+frame.Visible = false
+
+frame.Parent = gui
+
+local scrollFrame = Instance.new("ScrollingFrame")
+
+scrollFrame.Size = UDim2.new(1, 0, 1, -30)
+
+scrollFrame.Position = UDim2.new(0, 0, 0, 30)
+
+scrollFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+scrollFrame.BackgroundTransparency = 1
+
+scrollFrame.Parent = frame
+
+local function makeDraggable(element)
+    local dragging
+
+    local dragStart
+
+    local startPos
+
+    element.InputBegan:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                dragging = true
+
+                dragStart = input.Position
+
+                startPos = element.Position
+
+                input.Changed:Connect(
+                    function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            dragging = false
+                        end
+                    end
+                )
+            end
+        end
+    )
+
+    element.InputChanged:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+                local delta = input.Position - dragStart
+
+                element.Position =
+                    UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            end
+        end
+    )
+end
+
+local label = Instance.new("TextLabel")
+
+label.Size = UDim2.new(1, 0, 0, 30)
+
+label.Position = UDim2.new(0, 0, 0, 0)
+
+label.BackgroundColor3 = Color3.new(0, 0, 0)
+
+label.Text = "TargetPlayer"
+
+label.TextColor3 = Color3.new(1, 1, 1)
+
+label.TextSize = 14
+
+label.Font = Enum.Font.Fantasy
+
+label.Parent = frame
+
+makeDraggable(frame)
+
+local selectedPlayer = nil
+
+local selectedPlayerName = nil
+
+local TweenService = game:GetService("TweenService")
+
+local teleportedKunais = {}
+
+local function teleportKunaiToPlayerHead(kunai, playerName)
+    local player = game.Players:FindFirstChild(playerName)
+
+    if player and player.Character and kunai and kunai:IsA("BasePart") then
+        local character = player.Character
+
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+        if humanoid then
+            local head = character:FindFirstChild("Head")
+
+            if head then
+                local tweenInfo = TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+
+                local targetCFrame = head.CFrame
+
+                local tween = TweenService:Create(kunai, tweenInfo, {CFrame = targetCFrame})
+
+                tween:Play()
+
+                teleportedKunais[kunai] = true
+            end
+        end
+    end
+end
+
+local function checkForKunais()
+    if selectedPlayerName then
+        for _, kunai in ipairs(workspace:GetChildren()) do
+            if (kunai.Name == "ThrownKunai" or kunai.Name == "ShurikenKunai") and not teleportedKunais[kunai] then
+                teleportKunaiToPlayerHead(kunai, selectedPlayerName)
+            end
+        end
+    end
+end
+
+spawn(
+    function()
+        while true do
+            checkForKunais()
+
+            wait(0.5)
+        end
+    end
+)
+
+local function addPlayerToList(player)
+    local buttonHeight = 20
+
+    local padding = 5
+
+    local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
+
+    local button = Instance.new("TextButton")
+
+    button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
+
+    button.Position = UDim2.new(0, padding, 0, offsetY)
+
+    button.Text = player.Name
+
+    button.TextSize = 14
+
+    button.Font = Enum.Font.Fantasy
+
+    button.BackgroundTransparency = 1
+
+    button.TextColor3 = Color3.new(1, 1, 1)
+
+    button.Name = player.Name .. "Button"
+
+    button.Parent = scrollFrame
+
+    button.MouseButton1Down:Connect(
+        function()
+            selectedPlayerName = player.Name
+        end
+    )
+
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
+end
+
+local function removePlayerFromList(player)
+    local button = scrollFrame:FindFirstChild(player.Name .. "Button")
+
+    if button then
+        button:Destroy()
+
+        local buttons = scrollFrame:GetChildren()
+
+        local buttonHeight = 20
+
+        local padding = 5
+
+        local offsetY = 0
+
+        for _, btn in ipairs(buttons) do
+            if btn:IsA("TextButton") then
+                btn.Position = UDim2.new(0, padding, 0, offsetY)
+
+                offsetY = offsetY + buttonHeight + padding
+            end
+        end
+
+        scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
+    end
+end
+
+local function populatePlayerList()
+    local players = game.Players:GetPlayers()
+
+    for _, player in ipairs(players) do
+        addPlayerToList(player)
+    end
+end
+
+game.Players.PlayerAdded:Connect(addPlayerToList)
+
+game.Players.PlayerRemoving:Connect(removePlayerFromList)
+
+populatePlayerList()
+
+local function reparentGUI()
+    gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+end
+
+reparentGUI()
+
+game.Players.LocalPlayer.CharacterAdded:Connect(reparentGUI)
+
+TextButton_27.MouseButton1Down:Connect(
+    function()
+        frame.Visible = not frame.Visible
+
+        if frame.Visible then
+            TextButton_27.Text = "Open"
+
+            TextButton_27.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_27.Text = "Close"
+
+            TextButton_27.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
+
+TextLabel_48.Parent = Frame8_3
+
+TextLabel_48.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_48.BackgroundTransparency = 1.000
+
+TextLabel_48.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_48.BorderSizePixel = 0
+
+TextLabel_48.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_48.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_48.ZIndex = 2
+
+TextLabel_48.Font = Enum.Font.Fantasy
+
+TextLabel_48.Text = "BendShur:"
+
+TextLabel_48.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_48.TextScaled = true
+
+TextLabel_48.TextSize = 21.000
+
+TextLabel_48.TextWrapped = true
+
+TextLabel_48.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_28.Parent = Frame8_3
+
+TextButton_28.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_28.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_28.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_28.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_28.ZIndex = 2
+
+TextButton_28.Font = Enum.Font.Fantasy
+
+TextButton_28.Text = "Close"
+
+TextButton_28.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_28.TextScaled = true
+
+TextButton_28.TextSize = 19.000
+
+TextButton_28.TextWrapped = true
+
+local frameVisible = false
+
+local gui = Instance.new("ScreenGui")
+
+gui.Name = "PlayerSelectorGUI"
+
+gui.ResetOnSpawn = false
+
+local frame = Instance.new("Frame")
+
+frame.Size = UDim2.new(0, 200, 0, 300)
+
+frame.Position = UDim2.new(0.5, -100, 0.5, -150)
+
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+
+frame.BackgroundTransparency = 0.4
+
+frame.BorderSizePixel = 2
+
+frame.Visible = false
+
+frame.Parent = gui
+
+local scrollFrame = Instance.new("ScrollingFrame")
+
+scrollFrame.Size = UDim2.new(1, 0, 1, -30)
+
+scrollFrame.Position = UDim2.new(0, 0, 0, 30)
+
+scrollFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+scrollFrame.BackgroundTransparency = 1
+
+scrollFrame.Parent = frame
+
+local function makeDraggable(element)
+    local dragging
+
+    local dragStart
+
+    local startPos
+
+    element.InputBegan:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                dragging = true
+
+                dragStart = input.Position
+
+                startPos = element.Position
+
+                input.Changed:Connect(
+                    function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            dragging = false
+                        end
+                    end
+                )
+            end
+        end
+    )
+
+    element.InputChanged:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+                local delta = input.Position - dragStart
+
+                element.Position =
+                    UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            end
+        end
+    )
+end
+
+local label = Instance.new("TextLabel")
+
+label.Size = UDim2.new(1, 0, 0, 30)
+
+label.Position = UDim2.new(0, 0, 0, 0)
+
+label.BackgroundColor3 = Color3.new(0, 0, 0)
+
+label.Text = "TargetPlayer"
+
+label.TextColor3 = Color3.new(1, 1, 1)
+
+label.TextSize = 14
+
+label.Font = Enum.Font.Fantasy
+
+label.Parent = frame
+
+makeDraggable(frame)
+
+local selectedPlayer = nil
+
+local playerService = game:GetService("Players")
+
+local localPlayer = playerService.LocalPlayer
+
+local function disableShurikens(targetPlayer)
+    if targetPlayer and targetPlayer ~= localPlayer then
+        local shurikens = {}
+
+        print("Disabling shurikens for player:", targetPlayer.Name)
+
+        for _, item in ipairs(targetPlayer.Backpack:GetChildren()) do
+            if item.Name == "Shuriken" then
+                table.insert(shurikens, item)
+
+                print("Found shuriken in backpack:", item.Name)
+            end
+        end
+
+        local character = targetPlayer.Character
+
+        if character then
+            for _, item in ipairs(character:GetChildren()) do
+                if item.Name == "Shuriken" then
+                    table.insert(shurikens, item)
+
+                    print("Found shuriken in character:", item.Name)
+                end
+            end
+        end
+
+        for _, shuriken in ipairs(shurikens) do
+            if shuriken:FindFirstChild("HitEvent") then
+                shuriken.HitEvent:FireServer()
+
+                print("Disabled shuriken:", shuriken.Name)
+            else
+                print("No HitEvent found for shuriken:", shuriken.Name)
+            end
+        end
+    else
+        print("Player not found or is the local player.")
+    end
+end
+
+local function onPlayerRespawn(targetPlayer)
+    targetPlayer.CharacterAdded:Connect(
+        function()
+            wait(1)
+
+            disableShurikens(targetPlayer)
+        end
+    )
+end
+
+local function initializeDisabling(targetPlayerName)
+    local targetPlayer = playerService:FindFirstChild(targetPlayerName)
+
+    if targetPlayer and targetPlayer ~= localPlayer then
+        disableShurikens(targetPlayer)
+
+        onPlayerRespawn(targetPlayer)
+    else
+        print("Player " .. targetPlayerName .. " not found or is the local player.")
+    end
+end
+
+local function addPlayerToList(player)
+    local buttonHeight = 20
+
+    local padding = 5
+
+    local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
+
+    local button = Instance.new("TextButton")
+
+    button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
+
+    button.Position = UDim2.new(0, padding, 0, offsetY)
+
+    button.Text = player.Name
+
+    button.TextSize = 14
+
+    button.Font = Enum.Font.Fantasy
+
+    button.BackgroundTransparency = 1
+
+    button.TextColor3 = Color3.new(1, 1, 1)
+
+    button.Name = player.Name .. "Button"
+
+    button.Parent = scrollFrame
+
+    button.MouseButton1Down:Connect(
+        function()
+            initializeDisabling(player.Name)
+        end
+    )
+
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
+end
+
+local function removePlayerFromList(player)
+    local button = scrollFrame:FindFirstChild(player.Name .. "Button")
+
+    if button then
+        button:Destroy()
+
+        local buttons = scrollFrame:GetChildren()
+
+        local buttonHeight = 20
+
+        local padding = 5
+
+        local offsetY = 0
+
+        for _, btn in ipairs(buttons) do
+            if btn:IsA("TextButton") then
+                btn.Position = UDim2.new(0, padding, 0, offsetY)
+
+                offsetY = offsetY + buttonHeight + padding
+            end
+        end
+
+        scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
+    end
+end
+
+local function populatePlayerList()
+    local players = game.Players:GetPlayers()
+
+    for _, player in ipairs(players) do
+        addPlayerToList(player)
+    end
+end
+
+game.Players.PlayerAdded:Connect(addPlayerToList)
+
+game.Players.PlayerRemoving:Connect(removePlayerFromList)
+
+populatePlayerList()
+
+local function reparentGUI()
+    gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+end
+
+reparentGUI()
+
+game.Players.LocalPlayer.CharacterAdded:Connect(reparentGUI)
+
+TextButton_28.MouseButton1Down:Connect(
+    function()
+        frame.Visible = not frame.Visible
+
+        if frame.Visible then
+            TextButton_28.Text = "Open"
+
+            TextButton_28.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_28.Text = "Close"
+
+            TextButton_28.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
+
+TextLabel_49.Parent = Frame8_3
+
+TextLabel_49.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_49.BackgroundTransparency = 1.000
+
+TextLabel_49.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_49.BorderSizePixel = 0
+
+TextLabel_49.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_49.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_49.ZIndex = 2
+
+TextLabel_49.Font = Enum.Font.Fantasy
+
+TextLabel_49.Text = "DisbleShur:"
+
+TextLabel_49.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_49.TextScaled = true
+
+TextLabel_49.TextSize = 21.000
+
+TextLabel_49.TextWrapped = true
+
+TextLabel_49.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame9_2.Name = "Frame9"
+
+Frame9_2.Parent = CombatTab
+
+Frame9_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame9_2.BackgroundTransparency = 1.000
+
+Frame9_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame9_2.BorderSizePixel = 0
+
+Frame9_2.Position = UDim2.new(0, 0, 0.722638369, 0)
+
+Frame9_2.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame9_2.ZIndex = 2
+
+TextButton_29.Parent = Frame9_2
+
+TextButton_29.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_29.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_29.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_29.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_29.ZIndex = 2
+
+TextButton_29.Font = Enum.Font.Fantasy
+
+TextButton_29.Text = "Close"
+
+TextButton_29.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_29.TextScaled = true
+
+TextButton_29.TextSize = 19.000
+
+TextButton_29.TextWrapped = true
+
+local frameVisible = false
+
+local gui = Instance.new("ScreenGui")
+
+gui.Name = "PlayerSelectorGUI"
+
+gui.ResetOnSpawn = false
+
+local frame = Instance.new("Frame")
+
+frame.Size = UDim2.new(0, 200, 0, 300)
+
+frame.Position = UDim2.new(0.5, -100, 0.5, -150)
+
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+
+frame.BackgroundTransparency = 0.4
+
+frame.BorderSizePixel = 2
+
+frame.Visible = false
+
+frame.Parent = gui
+
+frame.Active = true
+
+frame.Draggable = true
+
+local scrollFrame = Instance.new("ScrollingFrame")
+
+scrollFrame.Size = UDim2.new(1, 0, 1, -30)
+
+scrollFrame.Position = UDim2.new(0, 0, 0, 30)
+
+scrollFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+scrollFrame.BackgroundTransparency = 1
+
+scrollFrame.Parent = frame
+
+local function makeDraggable(element)
+    local dragging
+
+    local dragStart
+
+    local startPos
+
+    element.InputBegan:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                dragging = true
+
+                dragStart = input.Position
+
+                startPos = element.Position
+
+                input.Changed:Connect(
+                    function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            dragging = false
+                        end
+                    end
+                )
+            end
+        end
+    )
+
+    element.InputChanged:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+                local delta = input.Position - dragStart
+
+                element.Position =
+                    UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            end
+        end
+    )
+end
+
+local label = Instance.new("TextLabel")
+
+label.Size = UDim2.new(1, 0, 0, 30)
+
+label.Position = UDim2.new(0, 0, 0, 0)
+
+label.BackgroundColor3 = Color3.new(0, 0, 0)
+
+label.Text = "TargetPlayer"
+
+label.TextColor3 = Color3.new(1, 1, 1)
+
+label.TextSize = 14
+
+label.Font = Enum.Font.Fantasy
+
+label.Parent = frame
+
+makeDraggable(frame)
+
+local selectedPlayer = nil
+
+local selectedPlayerName = nil
+
+local TweenService = game:GetService("TweenService")
+
+local teleportedKunais = {}
+
+local function teleportKunaiToPlayerHead(kunai, playerName)
+    local player = game.Players:FindFirstChild(playerName)
+
+    if player and player.Character and kunai and kunai:IsA("BasePart") then
+        local character = player.Character
+
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+        if humanoid then
+            local head = character:FindFirstChild("Head")
+
+            if head then
+                local tweenInfo = TweenInfo.new(0.001, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+
+                local targetCFrame = head.CFrame
+
+                local tween = TweenService:Create(kunai, tweenInfo, {CFrame = targetCFrame})
+
+                tween:Play()
+
+                teleportedKunais[kunai] = true
+            end
+        end
+    end
+end
+
+local function checkForKunais()
+    if selectedPlayerName then
+        for _, kunai in ipairs(workspace:GetChildren()) do
+            if (kunai.Name == "ThrownKunai" or kunai.Name == "ShurikenKunai") and not teleportedKunais[kunai] then
+                teleportKunaiToPlayerHead(kunai, selectedPlayerName)
+            end
+        end
+    end
+end
+
+spawn(
+    function()
+        while true do
+            checkForKunais()
+
+            wait(0.5)
+        end
+    end
+)
+
+local function addPlayerToList(player)
+    local buttonHeight = 20
+
+    local padding = 5
+
+    local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
+
+    local button = Instance.new("TextButton")
+
+    button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
+
+    button.Position = UDim2.new(0, padding, 0, offsetY)
+
+    button.Text = player.Name
+
+    button.TextSize = 14
+
+    button.Font = Enum.Font.Fantasy
+
+    button.BackgroundTransparency = 1
+
+    button.TextColor3 = Color3.new(1, 1, 1)
+
+    button.Name = player.Name .. "Button"
+
+    button.Parent = scrollFrame
+
+    button.MouseButton1Down:Connect(
+        function()
+            selectedPlayerName = player.Name
+        end
+    )
+
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
+end
+
+local function removePlayerFromList(player)
+    local button = scrollFrame:FindFirstChild(player.Name .. "Button")
+
+    if button then
+        button:Destroy()
+
+        local buttons = scrollFrame:GetChildren()
+
+        local buttonHeight = 20
+
+        local padding = 5
+
+        local offsetY = 0
+
+        for _, btn in ipairs(buttons) do
+            if btn:IsA("TextButton") then
+                btn.Position = UDim2.new(0, padding, 0, offsetY)
+
+                offsetY = offsetY + buttonHeight + padding
+            end
+        end
+
+        scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
+    end
+end
+
+local function populatePlayerList()
+    local players = game.Players:GetPlayers()
+
+    for _, player in ipairs(players) do
+        addPlayerToList(player)
+    end
+end
+
+game.Players.PlayerAdded:Connect(addPlayerToList)
+
+game.Players.PlayerRemoving:Connect(removePlayerFromList)
+
+populatePlayerList()
+
+local function reparentGUI()
+    gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+end
+
+reparentGUI()
+
+game.Players.LocalPlayer.CharacterAdded:Connect(reparentGUI)
+
+TextButton_29.MouseButton1Down:Connect(
+    function()
+        frame.Visible = not frame.Visible
+
+        if frame.Visible then
+            TextButton_29.Text = "Open"
+
+            TextButton_29.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_29.Text = "Close"
+
+            TextButton_29.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
+
+TextLabel_50.Parent = Frame9_2
+
+TextLabel_50.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_50.BackgroundTransparency = 1.000
+
+TextLabel_50.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_50.BorderSizePixel = 0
+
+TextLabel_50.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_50.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_50.ZIndex = 2
+
+TextLabel_50.Font = Enum.Font.Fantasy
+
+TextLabel_50.Text = "TPShur:"
+
+TextLabel_50.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_50.TextScaled = true
+
+TextLabel_50.TextSize = 21.000
+
+TextLabel_50.TextWrapped = true
+
+TextLabel_50.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_30.Parent = Frame9_2
+
+TextButton_30.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_30.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_30.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_30.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_30.ZIndex = 2
+
+TextButton_30.Font = Enum.Font.Fantasy
+
+TextButton_30.Text = "Off"
+
+TextButton_30.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_30.TextScaled = true
+
+TextButton_30.TextSize = 19.000
+
+TextButton_30.TextWrapped = true
+
+lastPosition = nil
+
+teleportEnabled = false
+
+function findPartByName(parent, name)
+    for _, child in ipairs(parent:GetDescendants()) do
+        if child.Name == name and child:IsA("BasePart") then
+            return child
+        end
+    end
+
+    return nil
+end
+
+function teleportToSeat()
+    seat = findPartByName(game.Workspace, "Seat")
+
+    if seat then
+        player = game.Players.LocalPlayer
+
+        character = player.Character or player.CharacterAdded:Wait()
+
+        if not character.PrimaryPart then
+            character.PrimaryPart = character:FindFirstChild("HumanoidRootPart")
+        end
+
+        lastPosition = character.PrimaryPart.Position
+
+        character:SetPrimaryPartCFrame(seat.CFrame + Vector3.new(0, 3, 0))
+
+        wait(0.5)
+
+        humanoid = character:FindFirstChildOfClass("Humanoid")
+
+        if humanoid then
+            humanoid.Sit = true
+
+            humanoid.Jump = false
+        end
+    else
+        warn("Seat part not found in the workspace.")
+    end
+end
+
+TextButton_30.MouseButton1Down:Connect(
+    function()
+        if teleportEnabled then
+            teleportEnabled = false
+
+            TextButton_30.Text = "Off"
+
+            TextButton_30.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            player = game.Players.LocalPlayer
+
+            character = player.Character or player.CharacterAdded:Wait()
+
+            if lastPosition then
+                character:SetPrimaryPartCFrame(CFrame.new(lastPosition))
+            end
+
+            game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        else
+            teleportEnabled = true
+
+            TextButton_30.Text = "On"
+
+            TextButton_30.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            teleportToSeat()
+
+            repeat
+                wait()
+            until game.Players.LocalPlayer.Backpack:WaitForChild("Teleport")
+
+            tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport")
+
+            tool.Parent = game.Players.LocalPlayer.Character
+
+            args = {[1] = Vector3.new(-0.33369356393814087, -500.5, -0.3928697407245636)}
+
+            game:GetService("Players").LocalPlayer.Character.Teleport.HitEvent:FireServer(unpack(args))
+
+            function unequipTool(toolName)
+                character = game.Players.LocalPlayer.Character
+
+                tool = character:FindFirstChild(toolName)
+
+                if tool then
+                    tool.Parent = game.Players.LocalPlayer.Backpack
+                end
+            end
+
+            unequipTool("Teleport")
+        end
+    end
+)
+
+TextLabel_51.Parent = Frame9_2
+
+TextLabel_51.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_51.BackgroundTransparency = 1.000
+
+TextLabel_51.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_51.BorderSizePixel = 0
+
+TextLabel_51.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_51.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_51.ZIndex = 2
+
+TextLabel_51.Font = Enum.Font.Fantasy
+
+TextLabel_51.Text = "AntiLoop:"
+
+TextLabel_51.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_51.TextScaled = true
+
+TextLabel_51.TextSize = 21.000
+
+TextLabel_51.TextWrapped = true
+
+TextLabel_51.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame11_2.Name = "Frame11"
+
+Frame11_2.Parent = CombatTab
+
+Frame11_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame11_2.BackgroundTransparency = 1.000
+
+Frame11_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame11_2.BorderSizePixel = 0
+
+Frame11_2.Position = UDim2.new(3.04127752e-07, 0, 0.895201504, 0)
+
+Frame11_2.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame11_2.ZIndex = 2
+
+TextLabel_52.Parent = Frame11_2
+
+TextLabel_52.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_52.BackgroundTransparency = 1.000
+
+TextLabel_52.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_52.BorderSizePixel = 0
+
+TextLabel_52.Position = UDim2.new(0.0126851015, 0, 0, 0)
+
+TextLabel_52.Size = UDim2.new(0.339811683, 0, 0.600000083, 0)
+
+TextLabel_52.ZIndex = 2
+
+TextLabel_52.Font = Enum.Font.Fantasy
+
+TextLabel_52.Text = "AutoTarget:"
+
+TextLabel_52.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_52.TextScaled = true
+
+TextLabel_52.TextSize = 21.000
+
+TextLabel_52.TextWrapped = true
+
+TextLabel_52.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_31.Parent = Frame11_2
+
+TextButton_31.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_31.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_31.Position = UDim2.new(0.352496803, 0, -0.00631929329, 0)
+
+TextButton_31.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_31.ZIndex = 2
+
+TextButton_31.Font = Enum.Font.Fantasy
+
+TextButton_31.Text = "Off"
+
+TextButton_31.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_31.TextScaled = true
+
+TextButton_31.TextSize = 19.000
+
+TextButton_31.TextWrapped = true
+
+local isRunning = false
+
+local connections = {}
+
+local whitelist = {}
+
+local connectedPlayers = {}
+
+local addedTargets = {}
+
+local function resetConnections()
+    for _, connection in ipairs(connections) do
+        connection:Disconnect()
+    end
+
+    connections = {}
+
+    addedTargets = {}
+end
+
+local function initializeScript()
+    local player = game.Players.LocalPlayer
+
+    local function addTarget(targetName)
+        if addedTargets[targetName] or whitelist[targetName] then
+            return
+        end
+
+        if targetName == player.Name then
+            return
+        end
+
+        addedTargets[targetName] = true
+
+        game.StarterGui:SetCore(
+            "ChatMakeSystemMessage",
+            {
+                Text = "{System} " .. targetName .. " added to the SoftTarget",
+                Color = Color3.fromRGB(0, 255, 0),
+                Font = Enum.Font.Merriweather,
+                FontSize = Enum.FontSize.Size24
+            }
+        )
+    end
+
+    local function removeTarget(targetName)
+        addedTargets[targetName] = nil
+    end
+
+    local function onToolTouch(hit)
+        if not isRunning then
+            return
+        end
+
+        local tool = nil
+
+        local attacker = nil
+
+        if hit.Name == "Sword" then
+            tool = hit
+        elseif hit.Name == "ThrownKunai" then
+            local creator = hit:FindFirstChild("creator")
+
+            if creator and creator.Value then
+                attacker = creator.Value
+            end
+        else
+            tool = hit.Parent
+
+            while tool and not tool:IsA("Tool") do
+                tool = tool.Parent
+            end
+        end
+
+        if tool and tool.Name == "Sword" then
+            attacker = game:GetService("Players"):GetPlayerFromCharacter(tool.Parent)
+        end
+
+        if attacker and not whitelist[attacker.Name] then
+            addTarget(attacker.Name)
+        end
+    end
+
+    local function onCharacterAdded(character)
+        for _, part in pairs(character:GetChildren()) do
+            if part:IsA("BasePart") then
+                table.insert(connections, part.Touched:Connect(onToolTouch))
+            end
+        end
+    end
+
+    table.insert(connections, player.CharacterAdded:Connect(onCharacterAdded))
+
+    if player.Character then
+        onCharacterAdded(player.Character)
+    end
+
+    local function teleportKunaiToTarget(thrownKunai, targetName)
+        local targetPlayer = game.Players:FindFirstChild(targetName)
+
+        if targetPlayer and targetPlayer.Character and not whitelist[targetName] then
+            local targetHead = targetPlayer.Character:FindFirstChild("Head")
+
+            if targetHead then
+                thrownKunai.CFrame = targetHead.CFrame
+            end
+        end
+    end
+
+    local function checkKunaiLoop()
+        while isRunning do
+            wait(0.1)
+
+            for _, kunai in ipairs(workspace:GetChildren()) do
+                if kunai:IsA("BasePart") and kunai.Name == "ThrownKunai" then
+                    local creator = kunai:FindFirstChild("creator")
+
+                    if creator and creator.Value == player then
+                        for targetName in pairs(addedTargets) do
+                            teleportKunaiToTarget(kunai, targetName)
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    coroutine.wrap(checkKunaiLoop)()
+
+    local function checkPlayerHealth()
+        while isRunning do
+            wait(1)
+
+            for playerName in pairs(addedTargets) do
+                local targetPlayer = game.Players:FindFirstChild(playerName)
+
+                if
+                    not targetPlayer or not targetPlayer.Character or
+                        not targetPlayer.Character:FindFirstChild("Humanoid")
+                 then
+                    removeTarget(playerName)
+                else
+                    local humanoid = targetPlayer.Character:FindFirstChild("Humanoid")
+
+                    if humanoid.Health <= 0 then
+                        removeTarget(playerName)
+                    end
+                end
+            end
+        end
+    end
+
+    coroutine.wrap(checkPlayerHealth)()
+
+    local function fireShurikenLoop()
+        while isRunning do
+            wait(0.1)
+
+            if next(addedTargets) then
+                local character = game:GetService("Players").LocalPlayer.Character
+
+                if character and character:FindFirstChild("HumanoidRootPart") then
+                    local shuriken = character:FindFirstChild("Shuriken")
+
+                    if shuriken and shuriken:IsA("Tool") and character:FindFirstChild("HumanoidRootPart") then
+                        local characterPosition = character.HumanoidRootPart.Position
+
+                        local targetPosition =
+                            Vector3.new(characterPosition.X, characterPosition.Y + 50, characterPosition.Z)
+
+                        for targetName in pairs(addedTargets) do
+                            if not whitelist[targetName] then
+                                local args = {
+                                    [1] = targetPosition
+                                }
+
+                                game:GetService("Players").LocalPlayer.Character.Shuriken.HitEvent:FireServer(
+                                    unpack(args)
+                                )
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    coroutine.wrap(fireShurikenLoop)()
+end
+
+local function handleWhitelist(newPlayer)
+    if not connectedPlayers[newPlayer.Name] then
+        connectedPlayers[newPlayer.Name] = true
+
+        newPlayer.Chatted:Connect(
+            function(msg)
+                if string.sub(msg, 1, 6) == ">soft," then
+                    local namePart = string.sub(msg, 8)
+
+                    for _, player in pairs(game.Players:GetPlayers()) do
+                        if string.find(player.Name:lower(), namePart:lower()) then
+                            if not whitelist[player.Name] then
+                                whitelist[player.Name] = true
+
+                                game.StarterGui:SetCore(
+                                    "ChatMakeSystemMessage",
+                                    {
+                                        Text = "{System} " .. player.Name .. " has been whitelisted.",
+                                        Color = Color3.fromRGB(0, 255, 0),
+                                        Font = Enum.Font.Merriweather,
+                                        FontSize = Enum.FontSize.Size24
+                                    }
+                                )
+                            end
+
+                            return
+                        end
+                    end
+
+                    game.StarterGui:SetCore(
+                        "ChatMakeSystemMessage",
+                        {
+                            Text = "{System} No player found with name containing: " .. namePart,
+                            Color = Color3.fromRGB(255, 0, 0),
+                            Font = Enum.Font.Merriweather,
+                            FontSize = Enum.FontSize.Size24
+                        }
+                    )
+                end
+            end
+        )
+    end
+end
+
+TextButton_31.MouseButton1Down:Connect(
+    function()
+        isRunning = not isRunning
+
+        if isRunning then
+            TextButton_31.Text = "On"
+
+            TextButton_31.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            initializeScript()
+        else
+            TextButton_31.Text = "Off"
+
+            TextButton_31.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            resetConnections()
+        end
+    end
+)
+
+game.Players.LocalPlayer.CharacterAdded:Connect(
+    function()
+        wait(0.5)
+
+        if isRunning then
+            resetConnections()
+
+            initializeScript()
+        end
+    end
+)
+
+for _, p in pairs(game.Players:GetPlayers()) do
+    handleWhitelist(p)
+end
+
+game.Players.PlayerAdded:Connect(handleWhitelist)
+
+TextButton_32.Parent = Frame11_2
+
+TextButton_32.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_32.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_32.Position = UDim2.new(0.849971473, 0, -0.00631929329, 0)
+
+TextButton_32.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_32.ZIndex = 2
+
+TextButton_32.Font = Enum.Font.Fantasy
+
+TextButton_32.Text = "Off"
+
+TextButton_32.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_32.TextScaled = true
+
+TextButton_32.TextSize = 19.000
+
+TextButton_32.TextWrapped = true
+
+local isScriptActive_32 = false
+
+local connections_32 = {}
+
+local player = game.Players.LocalPlayer
+
+local function onDeath(character)
+    for _, part in ipairs(character:GetDescendants()) do
+        if part:IsA("BasePart") then
+            part.Anchored = true
+        end
+    end
+
+    local player = game.Players:GetPlayerFromCharacter(character)
+
+    if player then
+        local toolsContainer = Instance.new("Folder")
+
+        toolsContainer.Name = "ToolsContainer"
+
+        toolsContainer.Parent = workspace
+
+        for _, tool in ipairs(player.Backpack:GetChildren()) do
+            if tool:IsA("Tool") then
+                tool.Parent = toolsContainer
+            end
+        end
+
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+        if humanoid and humanoid:IsDescendantOf(game.Workspace) then
+            local equippedTool = humanoid:FindFirstChildOfClass("Tool")
+
+            if equippedTool then
+                equippedTool.Parent = toolsContainer
+            end
+        end
+
+        toolsContainer.Parent = player.Backpack
+    end
+end
+
+local function onCharacterAdded_32(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+    if humanoid then
+        table.insert(
+            connections_32,
+            humanoid.Died:Connect(
+                function()
+                    onDeath(character)
+                end
+            )
+        )
+    end
+end
+
+local function toggleScript_32()
+    isScriptActive_32 = not isScriptActive_32
+
+    if isScriptActive_32 then
+        TextButton_32.Text = "On"
+
+        TextButton_32.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+        table.insert(
+            connections_32,
+            game.Players.PlayerAdded:Connect(
+                function(player)
+                    table.insert(connections_32, player.CharacterAdded:Connect(onCharacterAdded_32))
+                end
+            )
+        )
+
+        for _, player in ipairs(game.Players:GetPlayers()) do
+            if player.Character then
+                onCharacterAdded_32(player.Character)
+            end
+        end
+
+        table.insert(
+            connections_32,
+            player.CharacterAdded:Connect(
+                function()
+                    if isScriptActive_32 then
+                        toggleScript_32()
+                    end
+                end
+            )
+        )
+    else
+        TextButton_32.Text = "Off"
+
+        TextButton_32.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+        for _, connection in ipairs(connections_32) do
+            connection:Disconnect()
+        end
+
+        connections_32 = {}
+    end
+end
+
+TextButton_32.MouseButton1Down:Connect(toggleScript_32)
+
+TextLabel_53.Parent = Frame11_2
+
+TextLabel_53.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_53.BackgroundTransparency = 1.000
+
+TextLabel_53.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_53.BorderSizePixel = 0
+
+TextLabel_53.Position = UDim2.new(0.507324457, 0, -0.0221513268, 0)
+
+TextLabel_53.Size = UDim2.new(0.343487561, 0, 0.600000083, 0)
+
+TextLabel_53.ZIndex = 2
+
+TextLabel_53.Font = Enum.Font.Fantasy
+
+TextLabel_53.Text = "DeathEquip:"
+
+TextLabel_53.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_53.TextScaled = true
+
+TextLabel_53.TextSize = 21.000
+
+TextLabel_53.TextWrapped = true
+
+TextLabel_53.TextXAlignment = Enum.TextXAlignment.Left
+
+PlayersTab.Name = "PlayersTab"
+
+PlayersTab.Parent = MainFrame
+
+PlayersTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+PlayersTab.BackgroundTransparency = 1.000
+
+PlayersTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+PlayersTab.BorderSizePixel = 0
+
+PlayersTab.Size = UDim2.new(1, 0, 1, 0)
+
+PlayersTab.Visible = false
+
+Frame1_4.Name = "Frame1"
+
+Frame1_4.Parent = PlayersTab
+
+Frame1_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame1_4.BackgroundTransparency = 1.000
+
+Frame1_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame1_4.BorderSizePixel = 0
+
+Frame1_4.LayoutOrder = 1
+
+Frame1_4.Position = UDim2.new(1.51600275e-07, 0, 0.0570957363, 0)
+
+Frame1_4.Size = UDim2.new(0.981999993, 0, 0.0579999983, 0)
+
+Frame1_4.ZIndex = 2
+
+TextLabel_54.Parent = Frame1_4
+
+TextLabel_54.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_54.BackgroundTransparency = 1.000
+
+TextLabel_54.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_54.BorderSizePixel = 0
+
+TextLabel_54.Size = UDim2.new(1, 0, 1, 0)
+
+TextLabel_54.Font = Enum.Font.Fantasy
+
+TextLabel_54.Text = "Players Tab"
+
+TextLabel_54.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_54.TextScaled = true
+
+TextLabel_54.TextSize = 14.000
+
+TextLabel_54.TextWrapped = true
+
+Frame2_4.Name = "Frame2"
+
+Frame2_4.Parent = PlayersTab
+
+Frame2_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame2_4.BackgroundTransparency = 1.000
+
+Frame2_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame2_4.BorderSizePixel = 0
+
+Frame2_4.Position = UDim2.new(0, 0, 0.115999997, 0)
+
+Frame2_4.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+TextButton_33.Parent = Frame2_4
+
+TextButton_33.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_33.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_33.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_33.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_33.ZIndex = 2
+
+TextButton_33.Font = Enum.Font.Fantasy
+
+TextButton_33.Text = "Exct"
+
+TextButton_33.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_33.TextScaled = true
+
+TextButton_33.TextSize = 19.000
+
+TextButton_33.TextWrapped = true
+
+TextButton_33.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+    end
+)
+
+TextLabel_55.Parent = Frame2_4
+
+TextLabel_55.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_55.BackgroundTransparency = 1.000
+
+TextLabel_55.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_55.BorderSizePixel = 0
+
+TextLabel_55.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_55.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_55.ZIndex = 2
+
+TextLabel_55.Font = Enum.Font.Fantasy
+
+TextLabel_55.Text = "Respawn:"
+
+TextLabel_55.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_55.TextScaled = true
+
+TextLabel_55.TextSize = 21.000
+
+TextLabel_55.TextWrapped = true
+
+TextLabel_55.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_34.Parent = Frame2_4
+
+TextButton_34.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_34.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_34.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_34.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_34.ZIndex = 2
+
+TextButton_34.Font = Enum.Font.Fantasy
+
+TextButton_34.Text = "Off"
+
+TextButton_34.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_34.TextScaled = true
+
+TextButton_34.TextSize = 19.000
+
+TextButton_34.TextWrapped = true
+
+isOn_34 = false
+
+TextButton_34.Text = "Off"
+
+TextButton_34.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_34.MouseButton1Click:Connect(
+    function()
+        isOn_34 = not isOn_34
+
+        if isOn_34 then
+            TextButton_34.Text = "On"
+
+            TextButton_34.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_34.Text = "Off"
+
+            TextButton_34.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+
+        while isOn_34 do
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying12")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying13")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying14")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying15")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying16")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying17")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying18")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying19")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying20")
+
+            wait(0.01)
+
+            if not isOn_34 then
+                break
+            end
+        end
+    end
+)
+
+TextLabel_56.Parent = Frame2_4
+
+TextLabel_56.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_56.BackgroundTransparency = 1.000
+
+TextLabel_56.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_56.BorderSizePixel = 0
+
+TextLabel_56.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_56.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_56.ZIndex = 2
+
+TextLabel_56.Font = Enum.Font.Fantasy
+
+TextLabel_56.Text = "RainbowYin:"
+
+TextLabel_56.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_56.TextScaled = true
+
+TextLabel_56.TextSize = 21.000
+
+TextLabel_56.TextWrapped = true
+
+TextLabel_56.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame3_4.Name = "Frame3"
+
+Frame3_4.Parent = PlayersTab
+
+Frame3_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame3_4.BackgroundTransparency = 1.000
+
+Frame3_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame3_4.BorderSizePixel = 0
+
+Frame3_4.Position = UDim2.new(0, 0, 0.202662647, 0)
+
+Frame3_4.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame3_4.ZIndex = 2
+
+TextButton_35.Parent = Frame3_4
+
+TextButton_35.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_35.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_35.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_35.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_35.ZIndex = 2
+
+TextButton_35.Font = Enum.Font.Fantasy
+
+TextButton_35.Text = "Exct"
+
+TextButton_35.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_35.TextScaled = true
+
+TextButton_35.TextSize = 19.000
+
+TextButton_35.TextWrapped = true
+
+TextButton_35.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+    end
+)
+
+TextLabel_57.Parent = Frame3_4
+
+TextLabel_57.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_57.BackgroundTransparency = 1.000
+
+TextLabel_57.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_57.BorderSizePixel = 0
+
+TextLabel_57.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_57.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_57.ZIndex = 2
+
+TextLabel_57.Font = Enum.Font.Fantasy
+
+TextLabel_57.Text = "Clone50:"
+
+TextLabel_57.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_57.TextScaled = true
+
+TextLabel_57.TextSize = 21.000
+
+TextLabel_57.TextWrapped = true
+
+TextLabel_57.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_36.Parent = Frame3_4
+
+TextButton_36.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_36.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_36.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_36.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_36.ZIndex = 2
+
+TextButton_36.Font = Enum.Font.Fantasy
+
+TextButton_36.Text = "Off"
+
+TextButton_36.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_36.TextScaled = true
+
+TextButton_36.TextSize = 19.000
+
+TextButton_36.TextWrapped = true
+
+isOn_36 = false
+
+TextButton_36.Text = "Off"
+
+TextButton_36.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_36.MouseButton1Click:Connect(
+    function()
+        isOn_36 = not isOn_36
+
+        if isOn_36 then
+            TextButton_36.Text = "On"
+
+            TextButton_36.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_36.Text = "Off"
+
+            TextButton_36.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+
+        while isOn_36 do
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang12")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang13")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang14")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang15")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang16")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang17")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang18")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang19")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang20")
+
+            wait(0.01)
+
+            if not isOn_36 then
+                break
+            end
+        end
+    end
+)
+
+TextLabel_58.Parent = Frame3_4
+
+TextLabel_58.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_58.BackgroundTransparency = 1.000
+
+TextLabel_58.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_58.BorderSizePixel = 0
+
+TextLabel_58.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_58.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_58.ZIndex = 2
+
+TextLabel_58.Font = Enum.Font.Fantasy
+
+TextLabel_58.Text = "RainbowYang:"
+
+TextLabel_58.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_58.TextScaled = true
+
+TextLabel_58.TextSize = 21.000
+
+TextLabel_58.TextWrapped = true
+
+TextLabel_58.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame4_4.Name = "Frame4"
+
+Frame4_4.Parent = PlayersTab
+
+Frame4_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame4_4.BackgroundTransparency = 1.000
+
+Frame4_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame4_4.BorderSizePixel = 0
+
+Frame4_4.Position = UDim2.new(0, 0, 0.289325267, 0)
+
+Frame4_4.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame4_4.ZIndex = 2
+
+TextButton_37.Parent = Frame4_4
+
+TextButton_37.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_37.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_37.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_37.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_37.ZIndex = 2
+
+TextButton_37.Font = Enum.Font.Fantasy
+
+TextButton_37.Text = "Exct"
+
+TextButton_37.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_37.TextScaled = true
+
+TextButton_37.TextSize = 19.000
+
+TextButton_37.TextWrapped = true
+
+TextButton_37.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+    end
+)
+
+TextLabel_59.Parent = Frame4_4
+
+TextLabel_59.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_59.BackgroundTransparency = 1.000
+
+TextLabel_59.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_59.BorderSizePixel = 0
+
+TextLabel_59.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_59.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_59.ZIndex = 2
+
+TextLabel_59.Font = Enum.Font.Fantasy
+
+TextLabel_59.Text = "Clone100:"
+
+TextLabel_59.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_59.TextScaled = true
+
+TextLabel_59.TextSize = 21.000
+
+TextLabel_59.TextWrapped = true
+
+TextLabel_59.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_38.Parent = Frame4_4
+
+TextButton_38.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_38.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_38.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_38.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_38.ZIndex = 2
+
+TextButton_38.Font = Enum.Font.Fantasy
+
+TextButton_38.Text = "Off"
+
+TextButton_38.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_38.TextScaled = true
+
+TextButton_38.TextSize = 19.000
+
+TextButton_38.TextWrapped = true
+
+local TweenService = game:GetService("TweenService")
+
+local Players = game:GetService("Players")
+
+local Workspace = game:GetService("Workspace")
+
+local localPlayer = Players.LocalPlayer
+
+local isOn = false
+
+local function updateButton()
+    if isOn then
+        TextButton_38.Text = "On"
+
+        TextButton_38.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_38.Text = "Off"
+
+        TextButton_38.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end
+
+TextButton_38.MouseButton1Click:Connect(
+    function()
+        isOn = not isOn
+
+        updateButton()
+    end
+)
+
+local function getCharacterHeadPosition()
+    if localPlayer.Character and localPlayer.Character:FindFirstChild("Head") then
+        return localPlayer.Character.Head.Position
+    end
+
+    return Vector3.new(0, 0, 0)
+end
+
+local heartPoints = {
+    Vector3.new(0, 50, 0),
+    Vector3.new(5, 55, 0),
+    Vector3.new(10, 60, 0),
+    Vector3.new(15, 62, 0),
+    Vector3.new(20, 63, 0),
+    Vector3.new(25, 62, 0),
+    Vector3.new(30, 60, 0),
+    Vector3.new(35, 55, 0),
+    Vector3.new(40, 50, 0),
+    Vector3.new(35, 45, 0),
+    Vector3.new(30, 40, 0),
+    Vector3.new(25, 35, 0),
+    Vector3.new(20, 30, 0),
+    Vector3.new(15, 25, 0),
+    Vector3.new(10, 20, 0),
+    Vector3.new(5, 15, 0),
+    Vector3.new(0, 10, 0),
+    Vector3.new(-5, 15, 0),
+    Vector3.new(-10, 20, 0),
+    Vector3.new(-15, 25, 0),
+    Vector3.new(-20, 30, 0),
+    Vector3.new(-25, 35, 0),
+    Vector3.new(-30, 40, 0),
+    Vector3.new(-35, 45, 0),
+    Vector3.new(-40, 50, 0),
+    Vector3.new(-35, 55, 0),
+    Vector3.new(-30, 60, 0),
+    Vector3.new(-25, 62, 0),
+    Vector3.new(-20, 63, 0),
+    Vector3.new(-15, 62, 0),
+    Vector3.new(-10, 60, 0),
+    Vector3.new(-5, 55, 0),
+    Vector3.new(0, 50, 0)
+}
+
+local function tweenKunaiToPoints(kunai, points, basePosition)
+    for i, point in ipairs(points) do
+        local goal = {Position = basePosition + point}
+
+        local tweenInfo = TweenInfo.new(0.01, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+
+        local tween = TweenService:Create(kunai, tweenInfo, goal)
+
+        tween:Play()
+
+        tween.Completed:Wait()
+    end
+end
+
+local function onThrownKunaiAdded(kunai)
+    if kunai:IsA("BasePart") and isOn then
+        local headPosition = getCharacterHeadPosition()
+
+        local basePosition = headPosition + Vector3.new(0, 20, -10)
+
+        tweenKunaiToPoints(kunai, heartPoints, basePosition)
+    end
+end
+
+for _, kunai in ipairs(Workspace:GetChildren()) do
+    if kunai.Name == "ThrownKunai" then
+        onThrownKunaiAdded(kunai)
+    end
+end
+
+Workspace.ChildAdded:Connect(
+    function(child)
+        if child.Name == "ThrownKunai" then
+            onThrownKunaiAdded(child)
+        end
+    end
+)
+
+updateButton()
+
+TextLabel_60.Parent = Frame4_4
+
+TextLabel_60.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_60.BackgroundTransparency = 1.000
+
+TextLabel_60.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_60.BorderSizePixel = 0
+
+TextLabel_60.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_60.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_60.ZIndex = 2
+
+TextLabel_60.Font = Enum.Font.Fantasy
+
+TextLabel_60.Text = "HeartShur:"
+
+TextLabel_60.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_60.TextScaled = true
+
+TextLabel_60.TextSize = 21.000
+
+TextLabel_60.TextWrapped = true
+
+TextLabel_60.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame5_4.Name = "Frame5"
+
+Frame5_4.Parent = PlayersTab
+
+Frame5_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame5_4.BackgroundTransparency = 1.000
+
+Frame5_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame5_4.BorderSizePixel = 0
+
+Frame5_4.Position = UDim2.new(0, 0, 0.375987917, 0)
+
+Frame5_4.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame5_4.ZIndex = 2
+
+TextButton_39.Parent = Frame5_4
+
+TextButton_39.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_39.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_39.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_39.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_39.ZIndex = 2
+
+TextButton_39.Font = Enum.Font.Fantasy
+
+TextButton_39.Text = "Exct"
+
+TextButton_39.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_39.TextScaled = true
+
+TextButton_39.TextSize = 19.000
+
+TextButton_39.TextWrapped = true
+
+TextButton_39.MouseButton1Down:connect(
+    function()
+        repeat
+            task.wait()
+        until game.Players.LocalPlayer.Backpack:WaitForChild("Train")
+
+        local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Train")
+
+        tool.Parent = game.Players.LocalPlayer.Character
+
+        local rs = game:GetService("ReplicatedStorage")
+
+        while wait(0.72) do
+            rs.RemoteEvent.AddPowerEvent:FireServer("FromTraining", -2000000000000000000000000000000000000000000000000)
+
+            wait(0.72)
+
+            rs.RemoteEvent.AddPowerEvent:FireServer("FromTraining", -19916241294912496129491248999999.99)
+        end
+    end
+)
+
+TextLabel_61.Parent = Frame5_4
+
+TextLabel_61.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_61.BackgroundTransparency = 1.000
+
+TextLabel_61.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_61.BorderSizePixel = 0
+
+TextLabel_61.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_61.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_61.ZIndex = 2
+
+TextLabel_61.Font = Enum.Font.Fantasy
+
+TextLabel_61.Text = "NNinjutsu:"
+
+TextLabel_61.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_61.TextScaled = true
+
+TextLabel_61.TextSize = 21.000
+
+TextLabel_61.TextWrapped = true
+
+TextLabel_61.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_40.Parent = Frame5_4
+
+TextButton_40.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_40.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_40.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_40.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_40.ZIndex = 2
+
+TextButton_40.Font = Enum.Font.Fantasy
+
+TextButton_40.Text = "Off"
+
+TextButton_40.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_40.TextScaled = true
+
+TextButton_40.TextSize = 19.000
+
+TextButton_40.TextWrapped = true
+
+isOn = false
+
+TextButton_40.Text = "Off"
+
+TextButton_40.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_40.MouseButton1Click:Connect(
+    function()
+        isOn = not isOn
+
+        if isOn then
+            TextButton_40.Text = "On"
+
+            TextButton_40.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_40.Text = "Off"
+
+            TextButton_40.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+
+        if isOn then
+            Players = game:GetService("Players")
+
+            LocalPlayer = Players.LocalPlayer
+
+            function changeLightningAuraProperties(character)
+                bodyParts = {
+                    "UpperTorso",
+                    "RightLowerLeg",
+                    "LeftLowerLeg",
+                    "RightUpperArm",
+                    "LeftUpperArm"
+                }
+
+                colorKeypoints = {
+                    ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),
+                    ColorSequenceKeypoint.new(0.5, Color3.new(0, 0, 0)),
+                    ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
+                }
+
+                colorSequence = ColorSequence.new(colorKeypoints)
+
+                for _, partName in ipairs(bodyParts) do
+                    bodyPart = character:FindFirstChild(partName)
+
+                    if bodyPart then
+                        lightningAuraEff = bodyPart:FindFirstChild("LightingAuraEff")
+
+                        if lightningAuraEff then
+                            lightningAuraEff.Color = colorSequence
+
+                            lightningAuraEff.LightEmission = 0
+                        else
+                            warn("LightingAuraEff not found on " .. partName)
+                        end
+                    else
+                        warn(partName .. " not found in character")
+                    end
+                end
+            end
+
+            function onCharacterAdded(character)
+                changeLightningAuraProperties(character)
+            end
+
+            LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+
+            if LocalPlayer.Character then
+                onCharacterAdded(LocalPlayer.Character)
+            end
+        end
+    end
+)
+
+TextLabel_62.Parent = Frame5_4
+
+TextLabel_62.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_62.BackgroundTransparency = 1.000
+
+TextLabel_62.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_62.BorderSizePixel = 0
+
+TextLabel_62.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_62.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_62.ZIndex = 2
+
+TextLabel_62.Font = Enum.Font.Fantasy
+
+TextLabel_62.Text = "BlackAura:"
+
+TextLabel_62.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_62.TextScaled = true
+
+TextLabel_62.TextSize = 21.000
+
+TextLabel_62.TextWrapped = true
+
+TextLabel_62.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame5_5.Name = "Frame5"
+
+Frame5_5.Parent = PlayersTab
+
+Frame5_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame5_5.BackgroundTransparency = 1.000
+
+Frame5_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame5_5.BorderSizePixel = 0
+
+Frame5_5.Position = UDim2.new(0, 0, 0.462112963, 0)
+
+Frame5_5.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame5_5.ZIndex = 2
+
+TextButton_41.Parent = Frame5_5
+
+TextButton_41.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_41.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_41.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_41.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_41.ZIndex = 2
+
+TextButton_41.Font = Enum.Font.Fantasy
+
+TextButton_41.Text = "Off"
+
+TextButton_41.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_41.TextScaled = true
+
+TextButton_41.TextSize = 19.000
+
+TextButton_41.TextWrapped = true
+
+isOn = false
+
+TextButton_41.Text = "Off"
+
+TextButton_41.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_41.MouseButton1Click:Connect(
+    function()
+        isOn = not isOn
+
+        if isOn then
+            TextButton_41.Text = "On"
+
+            TextButton_41.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_41.Text = "Off"
+
+            TextButton_41.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+
+        while isOn do
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken1")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken2")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken3")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken4")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken5")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken6")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken7")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken8Ying")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken8Yang")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken9Ying")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken9Yang")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("VipPass", "Chakra")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("RainbowPass", "MetallicThrowingKnives")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("PizzaPass", "PizzaKunai")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "BoomerangDagger")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "DarkageKunai")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "GhostDagger")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "GrabBag")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "OctopusCannon")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "StarfishShuriken")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "ThrowingDonuts")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "WarRock")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "FlowerStar1")
+
+            wait(0.01)
+
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "FlowerStar3")
+
+            wait(0.01)
+
+            if not isOn then
+                break
+            end
+        end
+    end
+)
+
+TextLabel_63.Parent = Frame5_5
+
+TextLabel_63.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_63.BackgroundTransparency = 1.000
+
+TextLabel_63.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_63.BorderSizePixel = 0
+
+TextLabel_63.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_63.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_63.ZIndex = 2
+
+TextLabel_63.Font = Enum.Font.Fantasy
+
+TextLabel_63.Text = "RnBwShur:"
+
+TextLabel_63.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_63.TextScaled = true
+
+TextLabel_63.TextSize = 21.000
+
+TextLabel_63.TextWrapped = true
+
+TextLabel_63.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_64.Parent = Frame5_5
+
+TextLabel_64.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_64.BackgroundTransparency = 1.000
+
+TextLabel_64.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_64.BorderSizePixel = 0
+
+TextLabel_64.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_64.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_64.ZIndex = 2
+
+TextLabel_64.Font = Enum.Font.Fantasy
+
+TextLabel_64.Text = "SwordAura:"
+
+TextLabel_64.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_64.TextScaled = true
+
+TextLabel_64.TextSize = 21.000
+
+TextLabel_64.TextWrapped = true
+
+TextLabel_64.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_42.Parent = Frame5_5
+
+TextButton_42.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_42.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_42.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_42.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_42.ZIndex = 2
+
+TextButton_42.Font = Enum.Font.Fantasy
+
+TextButton_42.Text = "Off"
+
+TextButton_42.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_42.TextScaled = true
+
+TextButton_42.TextSize = 19.000
+
+TextButton_42.TextWrapped = true
+
+isOn = false
+
+TextButton_42.Text = "Off"
+
+TextButton_42.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_42.MouseButton1Click:Connect(
+    function()
+        isOn = not isOn
+
+        if isOn then
+            TextButton_42.Text = "On"
+
+            TextButton_42.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_42.Text = "Off"
+
+            TextButton_42.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+
+        if isOn then
+            player = game.Players.LocalPlayer
+
+            sword = player.Character and player.Character:FindFirstChild("Sword")
+
+            if sword then
+                swordEff1 = sword.Handle and sword.Handle:FindFirstChild("SwordEff1")
+
+                if swordEff1 then
+                    swordEff1.Color =
+                        ColorSequence.new(
+                        {
+                            ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),
+                            ColorSequenceKeypoint.new(0.5, Color3.new(0, 0, 0)),
+                            ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
+                        }
+                    )
+
+                    swordEff1.Rate = 25
+
+                    swordEff1.LightEmission = 0
+                else
+                    print("SwordEff1 not found in Sword handle")
+                end
+            else
+                print("Sword not found in LocalPlayer's character")
+            end
+        end
+    end
+)
+
+Frame6_4.Name = "Frame6"
+
+Frame6_4.Parent = PlayersTab
+
+Frame6_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame6_4.BackgroundTransparency = 1.000
+
+Frame6_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame6_4.BorderSizePixel = 0
+
+Frame6_4.Position = UDim2.new(0, 0, 0.547248423, 0)
+
+Frame6_4.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame6_4.ZIndex = 2
+
+TextLabel_65.Parent = Frame6_4
+
+TextLabel_65.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_65.BackgroundTransparency = 1.000
+
+TextLabel_65.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_65.BorderSizePixel = 0
+
+TextLabel_65.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_65.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_65.ZIndex = 2
+
+TextLabel_65.Font = Enum.Font.Fantasy
+
+TextLabel_65.Text = "EqpYinShur:"
+
+TextLabel_65.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_65.TextScaled = true
+
+TextLabel_65.TextSize = 21.000
+
+TextLabel_65.TextWrapped = true
+
+TextLabel_65.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_43.Parent = Frame6_4
+
+TextButton_43.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_43.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_43.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_43.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_43.ZIndex = 2
+
+TextButton_43.Font = Enum.Font.Fantasy
+
+TextButton_43.Text = "Exct"
+
+TextButton_43.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_43.TextScaled = true
+
+TextButton_43.TextSize = 19.000
+
+TextButton_43.TextWrapped = true
+
+TextButton_43.MouseButton1Down:connect(
+    function()
+        local args = {
+            [1] = "Shuriken",
+            [2] = "Shuriken9Yang"
+        }
+
+        game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer(unpack(args))
+    end
+)
+
+TextLabel_66.Parent = Frame6_4
+
+TextLabel_66.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_66.BackgroundTransparency = 1.000
+
+TextLabel_66.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_66.BorderSizePixel = 0
+
+TextLabel_66.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_66.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_66.ZIndex = 2
+
+TextLabel_66.Font = Enum.Font.Fantasy
+
+TextLabel_66.Text = "EqpYangShur:"
+
+TextLabel_66.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_66.TextScaled = true
+
+TextLabel_66.TextSize = 21.000
+
+TextLabel_66.TextWrapped = true
+
+TextLabel_66.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_44.Parent = Frame6_4
+
+TextButton_44.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_44.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_44.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_44.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_44.ZIndex = 2
+
+TextButton_44.Font = Enum.Font.Fantasy
+
+TextButton_44.Text = "Exct"
+
+TextButton_44.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_44.TextScaled = true
+
+TextButton_44.TextSize = 19.000
+
+TextButton_44.TextWrapped = true
+
+TextButton_44.MouseButton1Down:connect(
+    function()
+        local args = {
+            [1] = "Shuriken",
+            [2] = "Shuriken9Ying"
+        }
+
+        game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer(unpack(args))
+    end
+)
+
+Frame6_5.Name = "Frame6"
+
+Frame6_5.Parent = PlayersTab
+
+Frame6_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame6_5.BackgroundTransparency = 1.000
+
+Frame6_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame6_5.BorderSizePixel = 0
+
+Frame6_5.Position = UDim2.new(0, 0, 0.631937146, 0)
+
+Frame6_5.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame6_5.ZIndex = 2
+
+TextLabel_67.Parent = Frame6_5
+
+TextLabel_67.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_67.BackgroundTransparency = 1.000
+
+TextLabel_67.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_67.BorderSizePixel = 0
+
+TextLabel_67.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_67.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_67.ZIndex = 2
+
+TextLabel_67.Font = Enum.Font.Fantasy
+
+TextLabel_67.Text = "EqpYinSwrd:"
+
+TextLabel_67.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_67.TextScaled = true
+
+TextLabel_67.TextSize = 21.000
+
+TextLabel_67.TextWrapped = true
+
+TextLabel_67.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_45.Parent = Frame6_5
+
+TextButton_45.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_45.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_45.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_45.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_45.ZIndex = 2
+
+TextButton_45.Font = Enum.Font.Fantasy
+
+TextButton_45.Text = "Exct"
+
+TextButton_45.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_45.TextScaled = true
+
+TextButton_45.TextSize = 19.000
+
+TextButton_45.TextWrapped = true
+
+TextButton_45.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer("Sword", "BlackAndWhiteWingedSword")
+    end
+)
+
+TextLabel_68.Parent = Frame6_5
+
+TextLabel_68.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_68.BackgroundTransparency = 1.000
+
+TextLabel_68.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_68.BorderSizePixel = 0
+
+TextLabel_68.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_68.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_68.ZIndex = 2
+
+TextLabel_68.Font = Enum.Font.Fantasy
+
+TextLabel_68.Text = "EqpYangSwrd:"
+
+TextLabel_68.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_68.TextScaled = true
+
+TextLabel_68.TextSize = 21.000
+
+TextLabel_68.TextWrapped = true
+
+TextLabel_68.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_46.Parent = Frame6_5
+
+TextButton_46.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_46.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_46.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_46.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_46.ZIndex = 2
+
+TextButton_46.Font = Enum.Font.Fantasy
+
+TextButton_46.Text = "Exct"
+
+TextButton_46.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_46.TextScaled = true
+
+TextButton_46.TextSize = 19.000
+
+TextButton_46.TextWrapped = true
+
+TextButton_46.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer("Sword", "UltraKatana")
+    end
+)
+
+Frame6_6.Name = "Frame6"
+
+Frame6_6.Parent = PlayersTab
+
+Frame6_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame6_6.BackgroundTransparency = 1.000
+
+Frame6_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame6_6.BorderSizePixel = 0
+
+Frame6_6.Position = UDim2.new(0, 0, 0.71662581, 0)
+
+Frame6_6.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame6_6.ZIndex = 2
+
+TextLabel_69.Parent = Frame6_6
+
+TextLabel_69.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_69.BackgroundTransparency = 1.000
+
+TextLabel_69.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_69.BorderSizePixel = 0
+
+TextLabel_69.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_69.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_69.ZIndex = 2
+
+TextLabel_69.Font = Enum.Font.Fantasy
+
+TextLabel_69.Text = "EqpYinClth:"
+
+TextLabel_69.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_69.TextScaled = true
+
+TextLabel_69.TextSize = 21.000
+
+TextLabel_69.TextWrapped = true
+
+TextLabel_69.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_47.Parent = Frame6_6
+
+TextButton_47.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_47.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_47.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_47.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_47.ZIndex = 2
+
+TextButton_47.Font = Enum.Font.Fantasy
+
+TextButton_47.Text = "Exct"
+
+TextButton_47.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_47.TextScaled = true
+
+TextButton_47.TextSize = 19.000
+
+TextButton_47.TextWrapped = true
+
+TextButton_47.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang26")
+    end
+)
+
+TextLabel_70.Parent = Frame6_6
+
+TextLabel_70.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_70.BackgroundTransparency = 1.000
+
+TextLabel_70.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_70.BorderSizePixel = 0
+
+TextLabel_70.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_70.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_70.ZIndex = 2
+
+TextLabel_70.Font = Enum.Font.Fantasy
+
+TextLabel_70.Text = "EqpYangClth:"
+
+TextLabel_70.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_70.TextScaled = true
+
+TextLabel_70.TextSize = 21.000
+
+TextLabel_70.TextWrapped = true
+
+TextLabel_70.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_48.Parent = Frame6_6
+
+TextButton_48.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_48.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_48.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_48.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_48.ZIndex = 2
+
+TextButton_48.Font = Enum.Font.Fantasy
+
+TextButton_48.Text = "Exct"
+
+TextButton_48.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_48.TextScaled = true
+
+TextButton_48.TextSize = 19.000
+
+TextButton_48.TextWrapped = true
+
+TextButton_48.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying26")
+    end
+)
+
+MiscTab.Name = "MiscTab"
+
+MiscTab.Parent = MainFrame
+
+MiscTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+MiscTab.BackgroundTransparency = 1.000
+
+MiscTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+MiscTab.BorderSizePixel = 0
+
+MiscTab.Size = UDim2.new(1, 0, 1, 0)
+
+MiscTab.Visible = false
+
+Frame1_5.Name = "Frame1"
+
+Frame1_5.Parent = MiscTab
+
+Frame1_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame1_5.BackgroundTransparency = 1.000
+
+Frame1_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame1_5.BorderSizePixel = 0
+
+Frame1_5.LayoutOrder = 1
+
+Frame1_5.Position = UDim2.new(1.51600275e-07, 0, 0.0570957363, 0)
+
+Frame1_5.Size = UDim2.new(0.981999993, 0, 0.0579999983, 0)
+
+Frame1_5.ZIndex = 2
+
+TextLabel_71.Parent = Frame1_5
+
+TextLabel_71.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_71.BackgroundTransparency = 1.000
+
+TextLabel_71.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_71.BorderSizePixel = 0
+
+TextLabel_71.Position = UDim2.new(0, 0, 5.62116957, 0)
+
+TextLabel_71.Size = UDim2.new(1, 0, 1, 0)
+
+TextLabel_71.ZIndex = 2
+
+TextLabel_71.Font = Enum.Font.Fantasy
+
+TextLabel_71.Text = "GamePasses"
+
+TextLabel_71.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_71.TextScaled = true
+
+TextLabel_71.TextSize = 14.000
+
+TextLabel_71.TextWrapped = true
+
+TextLabel_72.Parent = Frame1_5
+
+TextLabel_72.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_72.BackgroundTransparency = 1.000
+
+TextLabel_72.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_72.BorderSizePixel = 0
+
+TextLabel_72.Size = UDim2.new(1, 0, 1, 0)
+
+TextLabel_72.Font = Enum.Font.Fantasy
+
+TextLabel_72.Text = "Misc Tab"
+
+TextLabel_72.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_72.TextScaled = true
+
+TextLabel_72.TextSize = 14.000
+
+TextLabel_72.TextWrapped = true
+
+Frame2_5.Name = "Frame2"
+
+Frame2_5.Parent = MiscTab
+
+Frame2_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame2_5.BackgroundTransparency = 1.000
+
+Frame2_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame2_5.BorderSizePixel = 0
+
+Frame2_5.Position = UDim2.new(0, 0, 0.115999997, 0)
+
+Frame2_5.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+TextLabel_73.Parent = Frame2_5
+
+TextLabel_73.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_73.BackgroundTransparency = 1.000
+
+TextLabel_73.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_73.BorderSizePixel = 0
+
+TextLabel_73.Position = UDim2.new(0.507370591, 0, 0, 0)
+
+TextLabel_73.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_73.ZIndex = 2
+
+TextLabel_73.Font = Enum.Font.Fantasy
+
+TextLabel_73.Text = "IYAdmin:"
+
+TextLabel_73.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_73.TextScaled = true
+
+TextLabel_73.TextSize = 21.000
+
+TextLabel_73.TextWrapped = true
+
+TextLabel_73.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_49.Parent = Frame2_5
+
+TextButton_49.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_49.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_49.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_49.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_49.ZIndex = 2
+
+TextButton_49.Font = Enum.Font.Fantasy
+
+TextButton_49.Text = "Exct"
+
+TextButton_49.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_49.TextScaled = true
+
+TextButton_49.TextSize = 19.000
+
+TextButton_49.TextWrapped = true
+
+TextLabel_74.Parent = Frame2_5
+
+TextLabel_74.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_74.BackgroundTransparency = 1.000
+
+TextLabel_74.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_74.BorderSizePixel = 0
+
+TextLabel_74.Position = UDim2.new(0.015129583, 0, 0, 0)
+
+TextLabel_74.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_74.ZIndex = 2
+
+TextLabel_74.Font = Enum.Font.Fantasy
+
+TextLabel_74.Text = "InfJump:"
+
+TextLabel_74.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_74.TextScaled = true
+
+TextLabel_74.TextSize = 21.000
+
+TextLabel_74.TextWrapped = true
+
+TextLabel_74.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_50.Parent = Frame2_5
+
+TextButton_50.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_50.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_50.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_50.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_50.ZIndex = 2
+
+TextButton_50.Font = Enum.Font.Fantasy
+
+TextButton_50.Text = "Off"
+
+TextButton_50.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_50.TextScaled = true
+
+TextButton_50.TextSize = 19.000
+
+TextButton_50.TextWrapped = true
+
+Frame3_5.Name = "Frame3"
+
+Frame3_5.Parent = MiscTab
+
+Frame3_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame3_5.BackgroundTransparency = 1.000
+
+Frame3_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame3_5.BorderSizePixel = 0
+
+Frame3_5.Position = UDim2.new(0, 0, 0.202662647, 0)
+
+Frame3_5.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame3_5.ZIndex = 2
+
+TextButton_51.Parent = Frame3_5
+
+TextButton_51.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_51.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_51.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_51.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_51.ZIndex = 2
+
+TextButton_51.Font = Enum.Font.Fantasy
+
+TextButton_51.Text = "Exct"
+
+TextButton_51.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_51.TextScaled = true
+
+TextButton_51.TextSize = 19.000
+
+TextButton_51.TextWrapped = true
+
+TextLabel_75.Parent = Frame3_5
+
+TextLabel_75.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_75.BackgroundTransparency = 1.000
+
+TextLabel_75.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_75.BorderSizePixel = 0
+
+TextLabel_75.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_75.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_75.ZIndex = 2
+
+TextLabel_75.Font = Enum.Font.Fantasy
+
+TextLabel_75.Text = "Dex:"
+
+TextLabel_75.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_75.TextScaled = true
+
+TextLabel_75.TextSize = 21.000
+
+TextLabel_75.TextWrapped = true
+
+TextLabel_75.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_52.Parent = Frame3_5
+
+TextButton_52.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_52.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_52.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_52.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_52.ZIndex = 2
+
+TextButton_52.Font = Enum.Font.Fantasy
+
+TextButton_52.Text = "Exct"
+
+TextButton_52.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_52.TextScaled = true
+
+TextButton_52.TextSize = 19.000
+
+TextButton_52.TextWrapped = true
+
+TextLabel_76.Parent = Frame3_5
+
+TextLabel_76.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_76.BackgroundTransparency = 1.000
+
+TextLabel_76.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_76.BorderSizePixel = 0
+
+TextLabel_76.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_76.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_76.ZIndex = 2
+
+TextLabel_76.Font = Enum.Font.Fantasy
+
+TextLabel_76.Text = "RemoteSpy:"
+
+TextLabel_76.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_76.TextScaled = true
+
+TextLabel_76.TextSize = 21.000
+
+TextLabel_76.TextWrapped = true
+
+TextLabel_76.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame5_6.Name = "Frame5"
+
+Frame5_6.Parent = MiscTab
+
+Frame5_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame5_6.BackgroundTransparency = 1.000
+
+Frame5_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame5_6.BorderSizePixel = 0
+
+Frame5_6.Position = UDim2.new(0, 0, 0.442111403, 0)
+
+Frame5_6.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame5_6.ZIndex = 2
+
+TextButton_53.Parent = Frame5_6
+
+TextButton_53.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_53.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_53.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_53.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_53.ZIndex = 2
+
+TextButton_53.Font = Enum.Font.Fantasy
+
+TextButton_53.Text = "Exct"
+
+TextButton_53.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_53.TextScaled = true
+
+TextButton_53.TextSize = 19.000
+
+TextButton_53.TextWrapped = true
+
+TextButton_53.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("RainbowPass", "UnicornSword")
+    end
+)
+
+TextLabel_77.Parent = Frame5_6
+
+TextLabel_77.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_77.BackgroundTransparency = 1.000
+
+TextLabel_77.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_77.BorderSizePixel = 0
+
+TextLabel_77.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_77.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_77.ZIndex = 2
+
+TextLabel_77.Font = Enum.Font.Fantasy
+
+TextLabel_77.Text = "RainbowSwrd:"
+
+TextLabel_77.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_77.TextScaled = true
+
+TextLabel_77.TextSize = 21.000
+
+TextLabel_77.TextWrapped = true
+
+TextLabel_77.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_54.Parent = Frame5_6
+
+TextButton_54.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_54.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_54.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_54.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_54.ZIndex = 2
+
+TextButton_54.Font = Enum.Font.Fantasy
+
+TextButton_54.Text = "Exct"
+
+TextButton_54.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_54.TextScaled = true
+
+TextButton_54.TextSize = 19.000
+
+TextButton_54.TextWrapped = true
+
+TextButton_54.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("RainbowPass", "MetallicThrowingKnives")
+    end
+)
+
+TextLabel_78.Parent = Frame5_6
+
+TextLabel_78.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_78.BackgroundTransparency = 1.000
+
+TextLabel_78.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_78.BorderSizePixel = 0
+
+TextLabel_78.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_78.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_78.ZIndex = 2
+
+TextLabel_78.Font = Enum.Font.Fantasy
+
+TextLabel_78.Text = "RainbowShur:"
+
+TextLabel_78.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_78.TextScaled = true
+
+TextLabel_78.TextSize = 21.000
+
+TextLabel_78.TextWrapped = true
+
+TextLabel_78.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame4_5.Name = "Frame4"
+
+Frame4_5.Parent = MiscTab
+
+Frame4_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame4_5.BackgroundTransparency = 1.000
+
+Frame4_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame4_5.BorderSizePixel = 0
+
+Frame4_5.Position = UDim2.new(0, 0, 0.289000005, 0)
+
+Frame4_5.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame4_5.ZIndex = 2
+
+SubFrame1_5.Name = "SubFrame1_5"
+
+SubFrame1_5.Parent = Frame4_5
+
+SubFrame1_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+SubFrame1_5.BackgroundTransparency = 1.000
+
+SubFrame1_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+SubFrame1_5.BorderSizePixel = 0
+
+SubFrame1_5.Position = UDim2.new(0.0151760839, 0, 0, 0)
+
+SubFrame1_5.Size = UDim2.new(0.5, 0, 1, 0)
+
+SubFrame1_5.ZIndex = 2
+
+TextLabel_79.Parent = SubFrame1_5
+
+TextLabel_79.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_79.BackgroundTransparency = 1.000
+
+TextLabel_79.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_79.BorderSizePixel = 0
+
+TextLabel_79.Position = UDim2.new(0, 0, -0.0221513268, 0)
+
+TextLabel_79.Size = UDim2.new(0.678196371, 0, 0.600000024, 0)
+
+TextLabel_79.ZIndex = 2
+
+TextLabel_79.Font = Enum.Font.Fantasy
+
+TextLabel_79.Text = "JumpPower:"
+
+TextLabel_79.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_79.TextScaled = true
+
+TextLabel_79.TextSize = 21.000
+
+TextLabel_79.TextWrapped = true
+
+TextLabel_79.TextXAlignment = Enum.TextXAlignment.Left
+
+TextBox_3.Parent = SubFrame1_5
+
+TextBox_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+TextBox_3.BackgroundTransparency = 0.600
+
+TextBox_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextBox_3.BorderSizePixel = 2
+
+TextBox_3.Position = UDim2.new(0.675000012, 0, -0.00600000005, 0)
+
+TextBox_3.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+
+TextBox_3.ZIndex = 2
+
+TextBox_3.ClearTextOnFocus = false
+
+TextBox_3.Font = Enum.Font.Fantasy
+
+TextBox_3.Text = "50"
+
+TextBox_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextBox_3.TextScaled = true
+
+TextBox_3.TextSize = 19.000
+
+TextBox_3.TextWrapped = true
+
+SubFrame2_5.Name = "SubFrame2_5"
+
+SubFrame2_5.Parent = Frame4_5
+
+SubFrame2_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+SubFrame2_5.BackgroundTransparency = 1.000
+
+SubFrame2_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+SubFrame2_5.BorderSizePixel = 0
+
+SubFrame2_5.Position = UDim2.new(0.513457477, 0, 0, 0)
+
+SubFrame2_5.Size = UDim2.new(0.5, 0, 1, 0)
+
+SubFrame2_5.ZIndex = 2
+
+TextLabel_80.Parent = SubFrame2_5
+
+TextLabel_80.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_80.BackgroundTransparency = 1.000
+
+TextLabel_80.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_80.BorderSizePixel = 0
+
+TextLabel_80.Position = UDim2.new(-0.00516707497, 0, -0.0221513268, 0)
+
+TextLabel_80.Size = UDim2.new(0.678196371, 0, 0.600000024, 0)
+
+TextLabel_80.ZIndex = 2
+
+TextLabel_80.Font = Enum.Font.Fantasy
+
+TextLabel_80.Text = "WalkSpeed:"
+
+TextLabel_80.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_80.TextScaled = true
+
+TextLabel_80.TextSize = 21.000
+
+TextLabel_80.TextWrapped = true
+
+TextLabel_80.TextXAlignment = Enum.TextXAlignment.Left
+
+TextBox_4.Parent = SubFrame2_5
+
+TextBox_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+TextBox_4.BackgroundTransparency = 0.600
+
+TextBox_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextBox_4.BorderSizePixel = 2
+
+TextBox_4.Position = UDim2.new(0.675000012, 0, -0.00600000005, 0)
+
+TextBox_4.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+
+TextBox_4.ZIndex = 2
+
+TextBox_4.ClearTextOnFocus = false
+
+TextBox_4.Font = Enum.Font.Fantasy
+
+TextBox_4.Text = "100"
+
+TextBox_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextBox_4.TextScaled = true
+
+TextBox_4.TextSize = 19.000
+
+TextBox_4.TextWrapped = true
+
+Frame6_7.Name = "Frame6"
+
+Frame6_7.Parent = MiscTab
+
+Frame6_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame6_7.BackgroundTransparency = 1.000
+
+Frame6_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame6_7.BorderSizePixel = 0
+
+Frame6_7.Position = UDim2.new(0, 0, 0.528774083, 0)
+
+Frame6_7.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame6_7.ZIndex = 2
+
+TextButton_55.Parent = Frame6_7
+
+TextButton_55.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_55.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_55.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_55.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_55.ZIndex = 2
+
+TextButton_55.Font = Enum.Font.Fantasy
+
+TextButton_55.Text = "Exct"
+
+TextButton_55.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_55.TextScaled = true
+
+TextButton_55.TextSize = 19.000
+
+TextButton_55.TextWrapped = true
+
+TextButton_55.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("VipPass", "ScytheOfSingularity")
+    end
+)
+
+TextLabel_81.Parent = Frame6_7
+
+TextLabel_81.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_81.BackgroundTransparency = 1.000
+
+TextLabel_81.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_81.BorderSizePixel = 0
+
+TextLabel_81.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_81.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_81.ZIndex = 2
+
+TextLabel_81.Font = Enum.Font.Fantasy
+
+TextLabel_81.Text = "Scythe:"
+
+TextLabel_81.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_81.TextScaled = true
+
+TextLabel_81.TextSize = 21.000
+
+TextLabel_81.TextWrapped = true
+
+TextLabel_81.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_56.Parent = Frame6_7
+
+TextButton_56.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_56.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_56.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_56.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_56.ZIndex = 2
+
+TextButton_56.Font = Enum.Font.Fantasy
+
+TextButton_56.Text = "Exct"
+
+TextButton_56.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_56.TextScaled = true
+
+TextButton_56.TextSize = 19.000
+
+TextButton_56.TextWrapped = true
+
+TextButton_56.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("VipPass", "Chakra")
+    end
+)
+
+TextLabel_82.Parent = Frame6_7
+
+TextLabel_82.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_82.BackgroundTransparency = 1.000
+
+TextLabel_82.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_82.BorderSizePixel = 0
+
+TextLabel_82.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_82.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_82.ZIndex = 2
+
+TextLabel_82.Font = Enum.Font.Fantasy
+
+TextLabel_82.Text = "Chakra:"
+
+TextLabel_82.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_82.TextScaled = true
+
+TextLabel_82.TextSize = 21.000
+
+TextLabel_82.TextWrapped = true
+
+TextLabel_82.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame7_4.Name = "Frame7"
+
+Frame7_4.Parent = MiscTab
+
+Frame7_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame7_4.BackgroundTransparency = 1.000
+
+Frame7_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame7_4.BorderSizePixel = 0
+
+Frame7_4.Position = UDim2.new(0, 0, 0.615436673, 0)
+
+Frame7_4.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame7_4.ZIndex = 2
+
+TextButton_57.Parent = Frame7_4
+
+TextButton_57.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_57.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_57.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_57.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_57.ZIndex = 2
+
+TextButton_57.Font = Enum.Font.Fantasy
+
+TextButton_57.Text = "Exct"
+
+TextButton_57.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_57.TextScaled = true
+
+TextButton_57.TextSize = 19.000
+
+TextButton_57.TextWrapped = true
+
+TextButton_57.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("PizzaPass", "PizzaSword")
+    end
+)
+
+TextLabel_83.Parent = Frame7_4
+
+TextLabel_83.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_83.BackgroundTransparency = 1.000
+
+TextLabel_83.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_83.BorderSizePixel = 0
+
+TextLabel_83.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_83.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_83.ZIndex = 2
+
+TextLabel_83.Font = Enum.Font.Fantasy
+
+TextLabel_83.Text = "PizzaSwrd:"
+
+TextLabel_83.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_83.TextScaled = true
+
+TextLabel_83.TextSize = 21.000
+
+TextLabel_83.TextWrapped = true
+
+TextLabel_83.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_58.Parent = Frame7_4
+
+TextButton_58.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_58.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_58.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_58.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_58.ZIndex = 2
+
+TextButton_58.Font = Enum.Font.Fantasy
+
+TextButton_58.Text = "Exct"
+
+TextButton_58.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_58.TextScaled = true
+
+TextButton_58.TextSize = 19.000
+
+TextButton_58.TextWrapped = true
+
+TextButton_58.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("PizzaPass", "PizzaKunai")
+    end
+)
+
+TextLabel_84.Parent = Frame7_4
+
+TextLabel_84.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_84.BackgroundTransparency = 1.000
+
+TextLabel_84.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_84.BorderSizePixel = 0
+
+TextLabel_84.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_84.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_84.ZIndex = 2
+
+TextLabel_84.Font = Enum.Font.Fantasy
+
+TextLabel_84.Text = "PizzaKunai:"
+
+TextLabel_84.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_84.TextScaled = true
+
+TextLabel_84.TextSize = 21.000
+
+TextLabel_84.TextWrapped = true
+
+TextLabel_84.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame7_5.Name = "Frame7"
+
+Frame7_5.Parent = MiscTab
+
+Frame7_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame7_5.BackgroundTransparency = 1.000
+
+Frame7_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame7_5.BorderSizePixel = 0
+
+Frame7_5.Position = UDim2.new(0, 0, 0.700125396, 0)
+
+Frame7_5.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame7_5.ZIndex = 2
+
+TextButton_59.Parent = Frame7_5
+
+TextButton_59.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_59.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_59.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_59.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_59.ZIndex = 2
+
+TextButton_59.Font = Enum.Font.Fantasy
+
+TextButton_59.Text = "Exct"
+
+TextButton_59.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_59.TextScaled = true
+
+TextButton_59.TextSize = 19.000
+
+TextButton_59.TextWrapped = true
+
+TextButton_59.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnySwordPass", "StopSignAxe")
+    end
+)
+
+TextLabel_85.Parent = Frame7_5
+
+TextLabel_85.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_85.BackgroundTransparency = 1.000
+
+TextLabel_85.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_85.BorderSizePixel = 0
+
+TextLabel_85.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_85.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_85.ZIndex = 2
+
+TextLabel_85.Font = Enum.Font.Fantasy
+
+TextLabel_85.Text = "AxeSwrd:"
+
+TextLabel_85.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_85.TextScaled = true
+
+TextLabel_85.TextSize = 21.000
+
+TextLabel_85.TextWrapped = true
+
+TextLabel_85.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_60.Parent = Frame7_5
+
+TextButton_60.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_60.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_60.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_60.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_60.ZIndex = 2
+
+TextButton_60.Font = Enum.Font.Fantasy
+
+TextButton_60.Text = "Exct"
+
+TextButton_60.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_60.TextScaled = true
+
+TextButton_60.TextSize = 19.000
+
+TextButton_60.TextWrapped = true
+
+TextButton_60.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "GhostDagger")
+    end
+)
+
+TextLabel_86.Parent = Frame7_5
+
+TextLabel_86.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_86.BackgroundTransparency = 1.000
+
+TextLabel_86.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_86.BorderSizePixel = 0
+
+TextLabel_86.Position = UDim2.new(0.509860694, 0, -0.0374655947, 0)
+
+TextLabel_86.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_86.ZIndex = 2
+
+TextLabel_86.Font = Enum.Font.Fantasy
+
+TextLabel_86.Text = "GhstDgger:"
+
+TextLabel_86.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_86.TextScaled = true
+
+TextLabel_86.TextSize = 21.000
+
+TextLabel_86.TextWrapped = true
+
+TextLabel_86.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame7_6.Name = "Frame7"
+
+Frame7_6.Parent = MiscTab
+
+Frame7_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame7_6.BackgroundTransparency = 1.000
+
+Frame7_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame7_6.BorderSizePixel = 0
+
+Frame7_6.Position = UDim2.new(0, 0, 0.784814119, 0)
+
+Frame7_6.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame7_6.ZIndex = 2
+
+TextButton_61.Parent = Frame7_6
+
+TextButton_61.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_61.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_61.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_61.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_61.ZIndex = 2
+
+TextButton_61.Font = Enum.Font.Fantasy
+
+TextButton_61.Text = "Exct"
+
+TextButton_61.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_61.TextScaled = true
+
+TextButton_61.TextSize = 19.000
+
+TextButton_61.TextWrapped = true
+
+TextButton_61.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnySwordPass", "Mackerel")
+    end
+)
+
+TextLabel_87.Parent = Frame7_6
+
+TextLabel_87.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_87.BackgroundTransparency = 1.000
+
+TextLabel_87.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_87.BorderSizePixel = 0
+
+TextLabel_87.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_87.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_87.ZIndex = 2
+
+TextLabel_87.Font = Enum.Font.Fantasy
+
+TextLabel_87.Text = "Mackerel:"
+
+TextLabel_87.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_87.TextScaled = true
+
+TextLabel_87.TextSize = 21.000
+
+TextLabel_87.TextWrapped = true
+
+TextLabel_87.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_62.Parent = Frame7_6
+
+TextButton_62.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_62.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_62.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_62.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_62.ZIndex = 2
+
+TextButton_62.Font = Enum.Font.Fantasy
+
+TextButton_62.Text = "Exct"
+
+TextButton_62.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_62.TextScaled = true
+
+TextButton_62.TextSize = 19.000
+
+TextButton_62.TextWrapped = true
+
+TextButton_62.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "OctopusCannon")
+    end
+)
+
+TextLabel_88.Parent = Frame7_6
+
+TextLabel_88.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_88.BackgroundTransparency = 1.000
+
+TextLabel_88.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_88.BorderSizePixel = 0
+
+TextLabel_88.Position = UDim2.new(0.509860694, 0, -0.0374655947, 0)
+
+TextLabel_88.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_88.ZIndex = 2
+
+TextLabel_88.Font = Enum.Font.Fantasy
+
+TextLabel_88.Text = "OctpsShur:"
+
+TextLabel_88.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_88.TextScaled = true
+
+TextLabel_88.TextSize = 21.000
+
+TextLabel_88.TextWrapped = true
+
+TextLabel_88.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame7_7.Name = "Frame7"
+
+Frame7_7.Parent = MiscTab
+
+Frame7_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame7_7.BackgroundTransparency = 1.000
+
+Frame7_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame7_7.BorderSizePixel = 0
+
+Frame7_7.Position = UDim2.new(0, 0, 0.869502783, 0)
+
+Frame7_7.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame7_7.ZIndex = 2
+
+TextButton_63.Parent = Frame7_7
+
+TextButton_63.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_63.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_63.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_63.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_63.ZIndex = 2
+
+TextButton_63.Font = Enum.Font.Fantasy
+
+TextButton_63.Text = "Exct"
+
+TextButton_63.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_63.TextScaled = true
+
+TextButton_63.TextSize = 19.000
+
+TextButton_63.TextWrapped = true
+
+TextButton_63.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnySwordPass", "Frying Pan")
+    end
+)
+
+TextLabel_89.Parent = Frame7_7
+
+TextLabel_89.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_89.BackgroundTransparency = 1.000
+
+TextLabel_89.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_89.BorderSizePixel = 0
+
+TextLabel_89.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_89.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_89.ZIndex = 2
+
+TextLabel_89.Font = Enum.Font.Fantasy
+
+TextLabel_89.Text = "PanSwrd:"
+
+TextLabel_89.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_89.TextScaled = true
+
+TextLabel_89.TextSize = 21.000
+
+TextLabel_89.TextWrapped = true
+
+TextLabel_89.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_64.Parent = Frame7_7
+
+TextButton_64.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_64.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_64.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_64.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_64.ZIndex = 2
+
+TextButton_64.Font = Enum.Font.Fantasy
+
+TextButton_64.Text = "Exct"
+
+TextButton_64.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_64.TextScaled = true
+
+TextButton_64.TextSize = 19.000
+
+TextButton_64.TextWrapped = true
+
+TextButton_64.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "ThrowingDonuts")
+    end
+)
+
+TextLabel_90.Parent = Frame7_7
+
+TextLabel_90.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_90.BackgroundTransparency = 1.000
+
+TextLabel_90.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_90.BorderSizePixel = 0
+
+TextLabel_90.Position = UDim2.new(0.509860694, 0, -0.0374655947, 0)
+
+TextLabel_90.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_90.ZIndex = 2
+
+TextLabel_90.Font = Enum.Font.Fantasy
+
+TextLabel_90.Text = "DonutsShur:"
+
+TextLabel_90.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_90.TextScaled = true
+
+TextLabel_90.TextSize = 21.000
+
+TextLabel_90.TextWrapped = true
+
+TextLabel_90.TextXAlignment = Enum.TextXAlignment.Left
+
+ServerTab.Name = "ServerTab"
+
+ServerTab.Parent = MainFrame
+
+ServerTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+ServerTab.BackgroundTransparency = 1.000
+
+ServerTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+ServerTab.BorderSizePixel = 0
+
+ServerTab.Size = UDim2.new(1, 0, 1, 0)
+
+ServerTab.Visible = false
+
+Frame1_6.Name = "Frame1"
+
+Frame1_6.Parent = ServerTab
+
+Frame1_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame1_6.BackgroundTransparency = 1.000
+
+Frame1_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame1_6.BorderSizePixel = 0
+
+Frame1_6.LayoutOrder = 1
+
+Frame1_6.Position = UDim2.new(1.51600275e-07, 0, 0.0570957363, 0)
+
+Frame1_6.Size = UDim2.new(0.981999993, 0, 0.0579999983, 0)
+
+Frame1_6.ZIndex = 2
+
+TextLabel_91.Parent = Frame1_6
+
+TextLabel_91.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_91.BackgroundTransparency = 1.000
+
+TextLabel_91.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_91.BorderSizePixel = 0
+
+TextLabel_91.Size = UDim2.new(1, 0, 1, 0)
+
+TextLabel_91.Font = Enum.Font.Fantasy
+
+TextLabel_91.Text = "Server Tab"
+
+TextLabel_91.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_91.TextScaled = true
+
+TextLabel_91.TextSize = 14.000
+
+TextLabel_91.TextWrapped = true
+
+Frame2_6.Name = "Frame2"
+
+Frame2_6.Parent = ServerTab
+
+Frame2_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame2_6.BackgroundTransparency = 1.000
+
+Frame2_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame2_6.BorderSizePixel = 0
+
+Frame2_6.Position = UDim2.new(0, 0, 0.115999997, 0)
+
+Frame2_6.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+TextButton_65.Parent = Frame2_6
+
+TextButton_65.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_65.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_65.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_65.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_65.ZIndex = 2
+
+TextButton_65.Font = Enum.Font.Fantasy
+
+TextButton_65.Text = "Off"
+
+TextButton_65.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_65.TextScaled = true
+
+TextButton_65.TextSize = 19.000
+
+TextButton_65.TextWrapped = true
+
+local ESPEnabled = false
+
+local playerConnections = {}
+
+local playerAddedConnection
+
+TextButton_65.MouseButton1Down:Connect(
+    function()
+        ESPEnabled = not ESPEnabled
+
+        if ESPEnabled then
+            TextButton_65.Text = "On"
+
+            TextButton_65.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_65.Text = "Off"
+
+            TextButton_65.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+
+        local Players = game:GetService("Players")
+
+        if ESPEnabled then
+            local function HighLightPlayer(Player)
+                local Character = Player.Character or Player.CharacterAdded:Wait()
+
+                local Humanoid = Character:WaitForChild("Humanoid")
+
+                local Highlighter = Instance.new("Highlight", Character)
+
+                Highlighter.FillColor = Player.TeamColor and Player.TeamColor.Color or Color3.fromRGB(255, 48, 51)
+
+                local Billboard = Instance.new("BillboardGui", Character)
+
+                Billboard.Adornee = Character:WaitForChild("Head")
+
+                Billboard.Size = UDim2.new(0, 150, 0, 30)
+
+                Billboard.StudsOffset = Vector3.new(0, 3, 0)
+
+                Billboard.AlwaysOnTop = true
+
+                Billboard.MaxDistance = 1000000000000
+
+                local NameLabel = Instance.new("TextLabel", Billboard)
+
+                NameLabel.Size = UDim2.new(1, 0, 1, 0)
+
+                NameLabel.BackgroundTransparency = 1
+
+                NameLabel.Text = Player.Name .. " (" .. math.floor(Humanoid.Health) .. " HP)"
+
+                NameLabel.TextColor3 = Color3.new(1, 1, 1)
+
+                NameLabel.TextStrokeTransparency = 0.5
+
+                NameLabel.Font = Enum.Font.SourceSansBold
+
+                NameLabel.TextScaled = true
+
+                NameLabel.TextSize = 14
+
+                NameLabel.TextWrapped = true
+
+                local function UpdateSize()
+                    local camera = game.Workspace.CurrentCamera
+
+                    local distance = (Character.Head.Position - camera.CFrame.Position).Magnitude
+
+                    local newSize = math.clamp(150 - distance, 50, 150)
+
+                    Billboard.Size = UDim2.new(0, newSize, 0, newSize / 3)
+
+                    NameLabel.Text = string.format("%s (%d HP)", Player.Name, math.floor(Humanoid.Health))
+                end
+
+                UpdateSize()
+
+                local updateConnection = game:GetService("RunService").Stepped:Connect(UpdateSize)
+
+                table.insert(
+                    playerConnections,
+                    {
+                        Player = Player,
+                        Connections = {updateConnection}
+                    }
+                )
+
+                local healthConnection =
+                    Humanoid.Changed:Connect(
+                    function()
+                        if Humanoid.Health <= 0 then
+                            Highlighter:Destroy()
+
+                            Billboard:Destroy()
+
+                            updateConnection:Disconnect()
+                        end
+                    end
+                )
+
+                table.insert(
+                    playerConnections,
+                    {
+                        Player = Player,
+                        Connections = {healthConnection}
+                    }
+                )
+            end
+
+            local function HighLightFunc(Player)
+                if Player.Character then
+                    HighLightPlayer(Player)
+                end
+
+                local charAddedConnection =
+                    Player.CharacterAdded:Connect(
+                    function()
+                        HighLightPlayer(Player)
+                    end
+                )
+
+                table.insert(
+                    playerConnections,
+                    {
+                        Player = Player,
+                        Connections = {charAddedConnection}
+                    }
+                )
+            end
+
+            for _, Player in ipairs(Players:GetPlayers()) do
+                HighLightFunc(Player)
+            end
+
+            playerAddedConnection =
+                Players.PlayerAdded:Connect(
+                function(Player)
+                    HighLightFunc(Player)
+                end
+            )
+        else
+            for _, playerData in ipairs(playerConnections) do
+                local Player = playerData.Player
+
+                if Player.Character then
+                    local Character = Player.Character
+
+                    local Highlighter = Character:FindFirstChildOfClass("Highlight")
+
+                    local Billboard = Character:FindFirstChildOfClass("BillboardGui")
+
+                    if Highlighter then
+                        Highlighter:Destroy()
+                    end
+
+                    if Billboard then
+                        Billboard:Destroy()
+                    end
+                end
+
+                for _, connection in ipairs(playerData.Connections) do
+                    connection:Disconnect()
+                end
+            end
+
+            playerConnections = {}
+
+            if playerAddedConnection then
+                playerAddedConnection:Disconnect()
+
+                playerAddedConnection = nil
+            end
+        end
+    end
+)
+
+TextLabel_92.Parent = Frame2_6
+
+TextLabel_92.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_92.BackgroundTransparency = 1.000
+
+TextLabel_92.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_92.BorderSizePixel = 0
+
+TextLabel_92.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_92.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_92.ZIndex = 2
+
+TextLabel_92.Font = Enum.Font.Fantasy
+
+TextLabel_92.Text = "ESP:"
+
+TextLabel_92.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_92.TextScaled = true
+
+TextLabel_92.TextSize = 21.000
+
+TextLabel_92.TextWrapped = true
+
+TextLabel_92.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_66.Parent = Frame2_6
+
+TextButton_66.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_66.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_66.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_66.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_66.ZIndex = 2
+
+TextButton_66.Font = Enum.Font.Fantasy
+
+TextButton_66.Text = "Off"
+
+TextButton_66.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_66.TextScaled = true
+
+TextButton_66.TextSize = 19.000
+
+TextButton_66.TextWrapped = true
+
+local isPlaying = false
+
+TextButton_66.MouseButton1Down:connect(
+    function()
+        isPlaying = not isPlaying
+
+        if isPlaying then
+            TextButton_66.Text = "On"
+
+            TextButton_66.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            local function playSounds(interval)
+                local function findAndPlaySounds()
+                    for _, sound in ipairs(game:GetDescendants()) do
+                        if sound:IsA("Sound") then
+                            sound.Volume = 10
+
+                            sound:Play()
+                        end
+                    end
+                end
+
+                while isPlaying do
+                    findAndPlaySounds()
+
+                    wait(interval)
+                end
+            end
+
+            local intervalInSeconds = 0.100
+
+            playSounds(intervalInSeconds)
+        else
+            TextButton_66.Text = "Off"
+
+            TextButton_66.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
+
+TextLabel_93.Parent = Frame2_6
+
+TextLabel_93.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_93.BackgroundTransparency = 1.000
+
+TextLabel_93.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_93.BorderSizePixel = 0
+
+TextLabel_93.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_93.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_93.ZIndex = 2
+
+TextLabel_93.Font = Enum.Font.Fantasy
+
+TextLabel_93.Text = "CrazySound:"
+
+TextLabel_93.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_93.TextScaled = true
+
+TextLabel_93.TextSize = 21.000
+
+TextLabel_93.TextWrapped = true
+
+TextLabel_93.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame3_6.Name = "Frame3"
+
+Frame3_6.Parent = ServerTab
+
+Frame3_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame3_6.BackgroundTransparency = 1.000
+
+Frame3_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame3_6.BorderSizePixel = 0
+
+Frame3_6.Position = UDim2.new(0, 0, 0.202662647, 0)
+
+Frame3_6.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame3_6.ZIndex = 2
+
+TextButton_67.Parent = Frame3_6
+
+TextButton_67.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_67.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_67.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_67.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_67.ZIndex = 2
+
+TextButton_67.Font = Enum.Font.Fantasy
+
+TextButton_67.Text = "Off"
+
+TextButton_67.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_67.TextScaled = true
+
+TextButton_67.TextSize = 19.000
+
+TextButton_67.TextWrapped = true
+
+isActive_67 = false
+
+connection_67 = nil
+
+TextButton_67.MouseButton1Down:Connect(
+    function()
+        RunService_67 = game:GetService("RunService")
+
+        isActive_67 = not isActive_67
+
+        if isActive_67 then
+            TextButton_67.Text = "On"
+
+            TextButton_67.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            connection_67 =
+                RunService_67.Heartbeat:Connect(
+                function(step)
+                    game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+                end
+            )
+        else
+            TextButton_67.Text = "Off"
+
+            TextButton_67.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            if connection_67 then
+                connection_67:Disconnect()
+
+                connection_67 = nil
+            end
+        end
+    end
+)
+
+TextLabel_94.Parent = Frame3_6
+
+TextLabel_94.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_94.BackgroundTransparency = 1.000
+
+TextLabel_94.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_94.BorderSizePixel = 0
+
+TextLabel_94.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_94.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_94.ZIndex = 2
+
+TextLabel_94.Font = Enum.Font.Fantasy
+
+TextLabel_94.Text = "CrashServer:"
+
+TextLabel_94.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_94.TextScaled = true
+
+TextLabel_94.TextSize = 21.000
+
+TextLabel_94.TextWrapped = true
+
+TextLabel_94.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_68.Parent = Frame3_6
+
+TextButton_68.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_68.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_68.Position = UDim2.new(0.849972427, 0, -0.00631996896, 0)
+
+TextButton_68.Size = UDim2.new(0.143999994, 0, 0.600000024, 0)
+
+TextButton_68.ZIndex = 2
+
+TextButton_68.Font = Enum.Font.Fantasy
+
+TextButton_68.Text = "Off"
+
+TextButton_68.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_68.TextScaled = true
+
+TextButton_68.TextSize = 19.000
+
+TextButton_68.TextWrapped = true
+
+isEnabled_68 = false
+
+connection_68 = nil
+
+function start_68()
+    isEnabled_68 = not isEnabled_68
+
+    if isEnabled_68 then
+        TextButton_68.Text = "On"
+
+        TextButton_68.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+        spyOnMyself = true
+
+        public = false
+
+        publicItalics = true
+
+        privateProperties = {
+            Color = Color3.fromRGB(0, 255, 255),
+            Font = Enum.Font.SourceSansBold,
+            TextSize = 15
+        }
+
+        StarterGui = game:GetService("StarterGui")
+
+        Players = game:GetService("Players")
+
+        player = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
+
+        saymsg =
+            game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild(
+            "SayMessageRequest"
+        )
+
+        getmsg =
+            game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild(
+            "OnMessageDoneFiltering"
+        )
+
+        instance = (_G.chatSpyInstance or 0) + 1
+
+        _G.chatSpyInstance = instance
+
+        function onChatted(p, msg)
+            if _G.chatSpyInstance == instance then
+                if p == player and msg:lower():sub(1, 4) == "/spy" then
+                    isEnabled_68 = not isEnabled_68
+
+                    wait(0.3)
+
+                    privateProperties.Text = "{SPY " .. (isEnabled_68 and "EN" or "DIS") .. "ABLED}"
+
+                    StarterGui:SetCore("ChatMakeSystemMessage", privateProperties)
+                elseif isEnabled_68 and (spyOnMyself or p ~= player) then
+                    msg = msg:gsub("[\n\r]", ""):gsub("\t", " "):gsub("[ ]+", " ")
+
+                    hidden = true
+
+                    conn =
+                        getmsg.OnClientEvent:Connect(
+                        function(packet, channel)
+                            if
+                                packet.SpeakerUserId == p.UserId and
+                                    packet.Message == msg:sub(#msg - #packet.Message + 1) and
+                                    (channel == "All" or
+                                        (channel == "Team" and not public and
+                                            Players[packet.FromSpeaker].Team == player.Team))
+                             then
+                                hidden = false
+                            end
+                        end
+                    )
+
+                    wait(1)
+
+                    conn:Disconnect()
+
+                    if hidden and isEnabled_68 then
+                        if public then
+                            saymsg:FireServer(
+                                (publicItalics and "/me " or "") .. "{SPY} [" .. p.Name .. "]: " .. msg,
+                                "All"
+                            )
+                        else
+                            privateProperties.Text = "{SPY} [" .. p.Name .. "]: " .. msg
+
+                            StarterGui:SetCore("ChatMakeSystemMessage", privateProperties)
+                        end
+                    end
+                end
+            end
+        end
+
+        for _, p in ipairs(Players:GetPlayers()) do
+            p.Chatted:Connect(
+                function(msg)
+                    onChatted(p, msg)
+                end
+            )
+        end
+
+        connection_68 =
+            Players.PlayerAdded:Connect(
+            function(p)
+                p.Chatted:Connect(
+                    function(msg)
+                        onChatted(p, msg)
+                    end
+                )
+            end
+        )
+
+        privateProperties.Text = "{SPY " .. (isEnabled_68 and "EN" or "DIS") .. "ABLED}"
+
+        StarterGui:SetCore("ChatMakeSystemMessage", privateProperties)
+
+        if not player.PlayerGui:FindFirstChild("Chat") then
+            wait(3)
+        end
+
+        chatFrame = player.PlayerGui.Chat.Frame
+
+        chatFrame.ChatChannelParentFrame.Visible = true
+
+        chatFrame.ChatBarParentFrame.Position =
+            chatFrame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), chatFrame.ChatChannelParentFrame.Size.Y)
+    else
+        TextButton_68.Text = "Off"
+
+        TextButton_68.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+        if connection_68 then
+            connection_68:Disconnect()
+        end
+    end
+end
+
+TextButton_68.MouseButton1Down:Connect(
+    function()
+        start_68()
+    end
+)
+
+TextLabel_95.Parent = Frame3_6
+
+TextLabel_95.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_95.BackgroundTransparency = 1.000
+
+TextLabel_95.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_95.BorderSizePixel = 0
+
+TextLabel_95.Position = UDim2.new(0.509860635, 0, 0, 0)
+
+TextLabel_95.Size = UDim2.new(0.340950787, 0, 0.600000083, 0)
+
+TextLabel_95.ZIndex = 2
+
+TextLabel_95.Font = Enum.Font.Fantasy
+
+TextLabel_95.Text = "SpyChat:"
+
+TextLabel_95.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_95.TextScaled = true
+
+TextLabel_95.TextSize = 21.000
+
+TextLabel_95.TextWrapped = true
+
+TextLabel_95.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame4_6.Name = "Frame4"
+
+Frame4_6.Parent = ServerTab
+
+Frame4_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame4_6.BackgroundTransparency = 1.000
+
+Frame4_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame4_6.BorderSizePixel = 0
+
+Frame4_6.Position = UDim2.new(0, 0, 0.289325267, 0)
+
+Frame4_6.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame4_6.ZIndex = 2
+
+TextButton_69.Parent = Frame4_6
+
+TextButton_69.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_69.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_69.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_69.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_69.ZIndex = 2
+
+TextButton_69.Font = Enum.Font.Fantasy
+
+TextButton_69.Text = "Off"
+
+TextButton_69.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_69.TextScaled = true
+
+TextButton_69.TextSize = 19.000
+
+TextButton_69.TextWrapped = true
+
+isEnabled_69 = false
+
+connection_69 = nil
+
+function start_69()
+    isEnabled_69 = not isEnabled_69
+
+    if isEnabled_69 then
+        TextButton_69.Text = "On"
+
+        TextButton_69.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+        connection_69 =
+            game.Players.PlayerAdded:Connect(
+            function(player)
+                for _, enemyName in ipairs(
+                    {
+                        "Naliza27",
+                        "Naliza28",
+                        "ImJxnnyyy",
+                        "caongochaidang1",
+                        "Haidang072023",
+                        "Haidang072024",
+                        "mangbaba12"
+                    }
+                ) do
+                    if player.Name == enemyName then
+                        game.StarterGui:SetCore(
+                            "ChatMakeSystemMessage",
+                            {
+                                Text = "[WARNING] One of the enemies has joined the game!!!",
+                                Color = Color3.fromRGB(255, 255, 0),
+                                Font = Enum.Font.ArialBold,
+                                FontSize = Enum.FontSize.Size24
+                            }
+                        )
+
+                        break
+                    end
+                end
+            end
+        )
+    else
+        TextButton_69.Text = "Off"
+
+        TextButton_69.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+        if connection_69 then
+            connection_69:Disconnect()
+        end
+    end
+end
+
+TextButton_69.MouseButton1Down:Connect(
+    function()
+        start_69()
+    end
+)
+
+TextLabel_96.Parent = Frame4_6
+
+TextLabel_96.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_96.BackgroundTransparency = 1.000
+
+TextLabel_96.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_96.BorderSizePixel = 0
+
+TextLabel_96.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_96.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_96.ZIndex = 2
+
+TextLabel_96.Font = Enum.Font.Fantasy
+
+TextLabel_96.Text = "EnemyNotif:"
+
+TextLabel_96.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_96.TextScaled = true
+
+TextLabel_96.TextSize = 21.000
+
+TextLabel_96.TextWrapped = true
+
+TextLabel_96.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_97.Parent = Frame4_6
+
+TextLabel_97.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_97.BackgroundTransparency = 1.000
+
+TextLabel_97.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_97.BorderSizePixel = 0
+
+TextLabel_97.Position = UDim2.new(0.507370591, 0, 0, 0)
+
+TextLabel_97.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_97.ZIndex = 2
+
+TextLabel_97.Font = Enum.Font.Fantasy
+
+TextLabel_97.Text = "PermTarget:"
+
+TextLabel_97.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_97.TextScaled = true
+
+TextLabel_97.TextSize = 21.000
+
+TextLabel_97.TextWrapped = true
+
+TextLabel_97.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_70.Parent = Frame4_6
+
+TextButton_70.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_70.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_70.Position = UDim2.new(0.848274291, 0, -0.0063190558, 0)
+
+TextButton_70.Size = UDim2.new(0.145697922, 0, 0.600000083, 0)
+
+TextButton_70.ZIndex = 2
+
+TextButton_70.Font = Enum.Font.Fantasy
+
+TextButton_70.Text = "Off"
+
+TextButton_70.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_70.TextScaled = true
+
+TextButton_70.TextSize = 19.000
+
+TextButton_70.TextWrapped = true
+
+TextButtonEnabled_70 = false
+
+connection_70 = nil
+
+TextButton_70.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled_70 = not TextButtonEnabled_70
+
+        if TextButtonEnabled_70 then
+            TextButton_70.Text = "On"
+
+            TextButton_70.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            connection_70 =
+                spawn(
+                function()
+                    Players_70 = game:GetService("Players")
+
+                    targetPlayers_70 = {
+                        "AhronZokAlt",
+                        "Naliza27",
+                        "Naliza28",
+                        "ImJxnnyyy",
+                        "ItsMeAron9815",
+                        "guyasumi",
+                        "coolkidakrt91",
+                        "RoundAhmet7777777",
+                        "stxdix",
+                        "breezyjazzy9",
+                        "breezyAlt_Altt",
+                        "mangbaba12"
+                    }
+
+                    teleportHeight_70 = 20
+
+                    headSize_70 = 5
+
+                    player_70 = Players_70.LocalPlayer
+
+                    character_70 = player_70.Character or player_70.CharacterAdded:Wait()
+
+                    offset_70 = Vector3.new(0, 5, 0)
+
+                    function throwShuriken_70()
+                        direction_70 = character_70.HumanoidRootPart.CFrame.LookVector
+
+                        spawnPosition_70 = character_70.HumanoidRootPart.Position + offset_70
+
+                        args_70 = {
+                            [1] = spawnPosition_70,
+                            [2] = direction_70
+                        }
+
+                        shuriken_70 =
+                            player_70.Backpack:FindFirstChild("Shuriken") or character_70:FindFirstChild("Shuriken")
+
+                        if shuriken_70 then
+                            if shuriken_70.Parent == player_70.Backpack then
+                                shuriken_70.Parent = character_70
+                            end
+
+                            shuriken_70.HitEvent:FireServer(unpack(args_70))
+
+                            if shuriken_70.Parent == character_70 then
+                                shuriken_70.Parent = player_70.Backpack
+                            end
+                        else
+                            warn("Shuriken not found in backpack or character")
+                        end
+                    end
+
+                    function teleportPlayerAbove_70(targetPlayer_70, destinationPlayer_70)
+                        destinationCharacter_70 = destinationPlayer_70.Character
+
+                        targetCharacter_70 = targetPlayer_70.Character
+
+                        if destinationCharacter_70 and targetCharacter_70 then
+                            destinationPosition_70 = destinationCharacter_70.PrimaryPart.Position
+
+                            newPosition_70 = destinationPosition_70 + Vector3.new(0, teleportHeight_70, 0)
+
+                            targetCharacter_70:SetPrimaryPartCFrame(CFrame.new(newPosition_70))
+
+                            wait(0.001)
+
+                            targetCharacter_70:SetPrimaryPartCFrame(CFrame.new(newPosition_70 + Vector3.new(0, 0.1, 0)))
+
+                            head_70 = targetCharacter_70.Head
+
+                            if head_70 then
+                                head_70.Size = Vector3.new(headSize_70, headSize_70, headSize_70)
+                            else
+                                warn("Head not found.")
+                            end
+
+                            throwShuriken_70()
+                        else
+                            warn("One of the players' characters is missing.")
+                        end
+                    end
+
+                    function monitorAndTeleport_70()
+                        while TextButtonEnabled_70 do
+                            for _, playerName_70 in ipairs(targetPlayers_70) do
+                                targetPlayer_70 = Players_70:FindFirstChild(playerName_70)
+
+                                destinationPlayer_70 = Players_70.LocalPlayer
+
+                                if targetPlayer_70 and destinationPlayer_70 then
+                                    teleportPlayerAbove_70(targetPlayer_70, destinationPlayer_70)
+                                else
+                                    warn("One of the players is not in the server.")
+                                end
+                            end
+
+                            wait(0.001)
+                        end
+                    end
+
+                    Players_70.PlayerAdded:Connect(
+                        function(player_70)
+                            for _, playerName_70 in ipairs(targetPlayers_70) do
+                                if player_70.Name == playerName_70 and TextButtonEnabled_70 then
+                                    monitorAndTeleport_70()
+
+                                    break
+                                end
+                            end
+                        end
+                    )
+
+                    Players_70.PlayerRemoving:Connect(
+                        function(player_70)
+                            for _, playerName_70 in ipairs(targetPlayers_70) do
+                                if player_70.Name == playerName_70 then
+                                    warn(playerName_70 .. " has left the game.")
+
+                                    break
+                                end
+                            end
+                        end
+                    )
+
+                    for _, playerName_70 in ipairs(targetPlayers_70) do
+                        if Players_70:FindFirstChild(playerName_70) then
+                            monitorAndTeleport_70()
+
+                            break
+                        end
+                    end
+                end
+            )
+        else
+            TextButton_70.Text = "Off"
+
+            TextButton_70.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            if connection_70 then
+                connection_70:Disconnect()
+            end
+        end
+    end
+)
+
+Frame4_7.Name = "Frame4"
+
+Frame4_7.Parent = ServerTab
+
+Frame4_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Frame4_7.BackgroundTransparency = 1.000
+
+Frame4_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame4_7.BorderSizePixel = 0
+
+Frame4_7.Position = UDim2.new(0, 0, 0.375214309, 0)
+
+Frame4_7.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+
+Frame4_7.ZIndex = 2
+
+TextButton_71.Parent = Frame4_7
+
+TextButton_71.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_71.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_71.Position = UDim2.new(0.349960327, 0, -0.00631929329, 0)
+
+TextButton_71.Size = UDim2.new(0.144039169, 0, 0.600000083, 0)
+
+TextButton_71.ZIndex = 2
+
+TextButton_71.Font = Enum.Font.Fantasy
+
+TextButton_71.Text = "Exct"
+
+TextButton_71.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_71.TextScaled = true
+
+TextButton_71.TextSize = 19.000
+
+TextButton_71.TextWrapped = true
+
+Players = game:GetService("Players")
+
+TeleportService = game:GetService("TeleportService")
+
+LocalPlayer = Players.LocalPlayer
+
+function rejoin()
+    TeleportService:Teleport(game.PlaceId, LocalPlayer)
+end
+
+TextButton_71.MouseButton1Down:Connect(
+    function()
+        rejoin()
+    end
+)
+
+TextLabel_98.Parent = Frame4_7
+
+TextLabel_98.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_98.BackgroundTransparency = 1.000
+
+TextLabel_98.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_98.BorderSizePixel = 0
+
+TextLabel_98.Position = UDim2.new(0.0151766576, 0, 0, 0)
+
+TextLabel_98.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_98.ZIndex = 2
+
+TextLabel_98.Font = Enum.Font.Fantasy
+
+TextLabel_98.Text = "Rejoin:"
+
+TextLabel_98.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_98.TextScaled = true
+
+TextLabel_98.TextSize = 21.000
+
+TextLabel_98.TextWrapped = true
+
+TextLabel_98.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_99.Parent = Frame4_7
+
+TextLabel_99.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_99.BackgroundTransparency = 1.000
+
+TextLabel_99.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextLabel_99.BorderSizePixel = 0
+
+TextLabel_99.Position = UDim2.new(0.507370591, 0, 0, 0)
+
+TextLabel_99.Size = UDim2.new(0.326412737, 0, 0.600000083, 0)
+
+TextLabel_99.ZIndex = 2
+
+TextLabel_99.Font = Enum.Font.Fantasy
+
+TextLabel_99.Text = "ServerHop:"
+
+TextLabel_99.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+TextLabel_99.TextScaled = true
+
+TextLabel_99.TextSize = 21.000
+
+TextLabel_99.TextWrapped = true
+
+TextLabel_99.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_72.Parent = Frame4_7
+
+TextButton_72.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+
+TextButton_72.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+TextButton_72.Position = UDim2.new(0.848274291, 0, -0.0063190558, 0)
+
+TextButton_72.Size = UDim2.new(0.145697922, 0, 0.600000083, 0)
+
+TextButton_72.ZIndex = 2
+
+TextButton_72.Font = Enum.Font.Fantasy
+
+TextButton_72.Text = "Exct"
+
+TextButton_72.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+TextButton_72.TextScaled = true
+
+TextButton_72.TextSize = 19.000
+
+TextButton_72.TextWrapped = true
+
+HttpService = game:GetService("HttpService")
+
+TeleportService = game:GetService("TeleportService")
+
+Players = game:GetService("Players")
+
+LocalPlayer = Players.LocalPlayer
+
+function serverHop()
+    servers = {}
+
+    placeId = game.PlaceId
+
+    function getServerList(cursor)
+        url = "https://games.roblox.com/v1/games/" .. placeId .. "/servers/Public?limit=100"
+
+        if cursor then
+            url = url .. "&cursor=" .. cursor
+        end
+
+        response = HttpService:JSONDecode(game:HttpGet(url))
+
+        for _, server in ipairs(response.data) do
+            if server.playing < server.maxPlayers and server.id ~= game.JobId then
+                table.insert(servers, server.id)
+            end
+        end
+
+        return response.nextPageCursor
+    end
+
+    cursor = nil
+
+    repeat
+        cursor = getServerList(cursor)
+    until not cursor or #servers > 0
+
+    if #servers > 0 then
+        TeleportService:TeleportToPlaceInstance(placeId, servers[math.random(1, #servers)], LocalPlayer)
+    else
+        warn("No other servers found")
+    end
+end
+
+TextButton_72.MouseButton1Click:Connect(
+    function()
+        serverHop()
+    end
+)
+
+ButtonsFrame.Name = "ButtonsFrame"
+
+ButtonsFrame.Parent = MidBar
+
+ButtonsFrame.AnchorPoint = Vector2.new(0, 0.5)
+
+ButtonsFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+ButtonsFrame.BackgroundTransparency = 0.800
+
+ButtonsFrame.BorderColor3 = Color3.fromRGB(40, 40, 40)
+
+ButtonsFrame.BorderSizePixel = 3
+
+ButtonsFrame.Position = UDim2.new(-1.52063876e-07, 0, 0.0277007297, 0)
+
+ButtonsFrame.Size = UDim2.new(0.999999702, 0, 0.0579999983, 0)
+
+ButtonsFrame.ZIndex = 2
+
+Homebtn.Name = "Homebtn"
+
+Homebtn.Parent = ButtonsFrame
+
+Homebtn.BackgroundColor3 = Color3.fromRGB(169, 230, 0)
+
+Homebtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Homebtn.BorderSizePixel = 0
+
+Homebtn.Position = UDim2.new(0.0173761416, 0, 0.131992385, 0)
+
+Homebtn.Size = UDim2.new(0.132982835, 0, 0.688602328, 0)
+
+Homebtn.ZIndex = 2
+
+Homebtn.Font = Enum.Font.Fantasy
+
+Homebtn.Text = "Home"
+
+Homebtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+
+Homebtn.TextScaled = true
+
+Homebtn.TextSize = 14.000
+
+Homebtn.TextWrapped = true
+
+Trainbtn.Name = "Trainbtn"
+
+Trainbtn.Parent = ButtonsFrame
+
+Trainbtn.BackgroundColor3 = Color3.fromRGB(84, 231, 202)
+
+Trainbtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Trainbtn.BorderSizePixel = 0
+
+Trainbtn.Position = UDim2.new(0.18542631, 0, 0.1319924, 0)
+
+Trainbtn.Size = UDim2.new(0.132982835, 0, 0.688602328, 0)
+
+Trainbtn.ZIndex = 2
+
+Trainbtn.Font = Enum.Font.Fantasy
+
+Trainbtn.Text = "Train"
+
+Trainbtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+
+Trainbtn.TextScaled = true
+
+Trainbtn.TextSize = 14.000
+
+Trainbtn.TextWrapped = true
+
+Combatbtn.Name = "Combatbtn"
+
+Combatbtn.Parent = ButtonsFrame
+
+Combatbtn.BackgroundColor3 = Color3.fromRGB(239, 239, 0)
+
+Combatbtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Combatbtn.BorderSizePixel = 0
+
+Combatbtn.Position = UDim2.new(0.347522825, 0, 0.131992385, 0)
+
+Combatbtn.Size = UDim2.new(0.132982835, 0, 0.688602328, 0)
+
+Combatbtn.ZIndex = 2
+
+Combatbtn.Font = Enum.Font.Fantasy
+
+Combatbtn.Text = "Combat"
+
+Combatbtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+
+Combatbtn.TextScaled = true
+
+Combatbtn.TextSize = 14.000
+
+Combatbtn.TextWrapped = true
+
+Playersbtn.Name = "Playersbtn"
+
+Playersbtn.Parent = ButtonsFrame
+
+Playersbtn.BackgroundColor3 = Color3.fromRGB(221, 151, 38)
+
+Playersbtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Playersbtn.BorderSizePixel = 0
+
+Playersbtn.Position = UDim2.new(0.516319633, 0, 0.131992385, 0)
+
+Playersbtn.Size = UDim2.new(0.132982835, 0, 0.688602328, 0)
+
+Playersbtn.ZIndex = 2
+
+Playersbtn.Font = Enum.Font.Fantasy
+
+Playersbtn.Text = "Players"
+
+Playersbtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+
+Playersbtn.TextScaled = true
+
+Playersbtn.TextSize = 14.000
+
+Playersbtn.TextWrapped = true
+
+Serverbtn.Name = "Serverbtn"
+
+Serverbtn.Parent = ButtonsFrame
+
+Serverbtn.BackgroundColor3 = Color3.fromRGB(130, 178, 230)
+
+Serverbtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Serverbtn.BorderSizePixel = 0
+
+Serverbtn.Position = UDim2.new(0.68015182, 0, 0.131992385, 0)
+
+Serverbtn.Size = UDim2.new(0.132982835, 0, 0.688602328, 0)
+
+Serverbtn.ZIndex = 2
+
+Serverbtn.Font = Enum.Font.Fantasy
+
+Serverbtn.Text = "Server"
+
+Serverbtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+
+Serverbtn.TextScaled = true
+
+Serverbtn.TextSize = 14.000
+
+Serverbtn.TextWrapped = true
+
+Miscbtn.Name = "Miscbtn"
+
+Miscbtn.Parent = ButtonsFrame
+
+Miscbtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+Miscbtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+Miscbtn.BorderSizePixel = 0
+
+Miscbtn.Position = UDim2.new(0.846466303, 0, 0.131992385, 0)
+
+Miscbtn.Size = UDim2.new(0.132982835, 0, 0.688602328, 0)
+
+Miscbtn.ZIndex = 2
+
+Miscbtn.Font = Enum.Font.Fantasy
+
+Miscbtn.Text = "Misc"
+
+Miscbtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+
+Miscbtn.TextScaled = true
+
+Miscbtn.TextSize = 14.000
+
+Miscbtn.TextWrapped = true
+
+UIAspectRatioConstraint.Parent = HHFrame
+
+UIAspectRatioConstraint.AspectRatio = 0.870
+
+AdminImgBtn.Name = "AdminImgBtn"
+
+AdminImgBtn.Parent = HunterHub
+
+AdminImgBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+AdminImgBtn.BackgroundTransparency = 1.000
+
+AdminImgBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+
+AdminImgBtn.BorderSizePixel = 0
+
+AdminImgBtn.Position = UDim2.new(0.889729738, 0, 0.612609267, 0)
+
+AdminImgBtn.Size = UDim2.new(0.110000007, 0, 0.0790000036, 0)
+
+AdminImgBtn.Image = "rbxassetid://10563016738"
+
+-- Scripts:
+
+local function CNGGKZ_fake_script() -- TextLabel_18.LocalScript
+    local script = Instance.new("LocalScript", TextLabel_18)
+
+    local function formatNumber(n)
+        if tonumber(n) then
+            local left, num, right = string.match(n, "^([^%d]*%d)(%d*)(.-)$")
+
+            return left .. (num:reverse():gsub("(%d%d%d)", "%1,"):reverse()) .. right
+        else
+            return n
+        end
+    end
+
+    local player = game.Players.LocalPlayer
+
+    local ninjutsuValue = player.leaderstats.Ninjutsu.Value
+
+    script.Parent.Text = formatNumber(ninjutsuValue)
+
+    player.leaderstats.Ninjutsu.Changed:Connect(
+        function(newValue)
+            script.Parent.Text = formatNumber(newValue)
+        end
+    )
+end
+
+coroutine.wrap(CNGGKZ_fake_script)()
+
+local function GCLPHX_fake_script() -- TextLabel_20.LocalScript
+    local script = Instance.new("LocalScript", TextLabel_20)
+
+    local function formatNumberWithCommas(val)
+        local formatted = tostring(val)
+
+        local k
+
+        while true do
+            formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", "%1,%2")
+
+            if k == 0 then
+                break
+            end
+        end
+
+        return formatted
+    end
+
+    local player = game.Players.LocalPlayer
+
+    local textLabel = script.Parent
+
+    local function updateReputation()
+        local reputation = player.leaderstats.Reputation.Value
+
+        textLabel.Text = formatNumberWithCommas(reputation)
+    end
+
+    player.leaderstats.Reputation.Changed:Connect(updateReputation)
+
+    updateReputation()
+end
+
+coroutine.wrap(GCLPHX_fake_script)()
+
+local function DNWTN_fake_script() -- TextLabel_22.LocalScript
+    local script = Instance.new("LocalScript", TextLabel_22)
+
+    local function UpdateTime()
+        local currentTime = os.date("%H:%M:%S")
+
+        script.Parent.Text = currentTime
+    end
+
+    while true do
+        UpdateTime()
+
+        wait(1)
+    end
+end
+
+coroutine.wrap(DNWTN_fake_script)()
+
+local function KQKZJDF_fake_script() -- TextLabel_24.LocalScript
+    local script = Instance.new("LocalScript", TextLabel_24)
+
+    local Players = game:GetService("Players")
+
+    local playerCountLabel = script.Parent
+
+    if playerCountLabel and playerCountLabel:IsA("TextLabel") then
+        local maxPlayers = 20
+
+        local function updatePlayerCount()
+            local playerCount = #Players:GetPlayers()
+
+            playerCountLabel.Text = playerCount .. "/" .. maxPlayers
+        end
+
+        Players.PlayerAdded:Connect(updatePlayerCount)
+
+        Players.PlayerRemoving:Connect(updatePlayerCount)
+
+        updatePlayerCount()
+    else
+        warn("The script's parent is not a TextLabel or is nil.")
+    end
+end
+
+coroutine.wrap(KQKZJDF_fake_script)()
+
+local function TKTL_fake_script() -- TextLabel_26.LocalScript
+    local script = Instance.new("LocalScript", TextLabel_26)
+
+    local player = game.Players.LocalPlayer
+
+    if script.Parent and script.Parent:IsA("TextLabel") then
+        script.Parent.Text = player.Name
+    else
+        warn("The parent of the script is not a TextLabel or is nil.")
+    end
+end
+
+coroutine.wrap(TKTL_fake_script)()
+
+local function YUMLY_fake_script() -- mostnin.LocalScript
+    local script = Instance.new("LocalScript", mostnin)
+
+    local Players = game:GetService("Players")
+
+    local textLabel = script.Parent
+
+    local function comma_value(n)
+        if tonumber(n) then
+            local left, num, right = string.match(n, "^([^%d]*%d)(%d*)(.-)$")
+
+            return left .. (num:reverse():gsub("(%d%d%d)", "%1,"):reverse()) .. right
+        else
+            return n
+        end
+    end
+
+    local function updateNinjutsu()
+        local highestNinjutsu = 0
+
+        local playerWithHighestNinjutsu
+
+        for _, player in ipairs(Players:GetPlayers()) do
+            local ninjutsu =
+                player.leaderstats and player.leaderstats.Ninjutsu and player.leaderstats.Ninjutsu.Value or 0
+
+            if ninjutsu > highestNinjutsu then
+                highestNinjutsu = ninjutsu
+
+                playerWithHighestNinjutsu = player
+            end
+        end
+
+        if playerWithHighestNinjutsu then
+            local formattedNinjutsu = comma_value(highestNinjutsu)
+
+            textLabel.Text = playerWithHighestNinjutsu.Name .. " with " .. formattedNinjutsu
+        else
+            textLabel.Text = "No players in the server"
+        end
+    end
+
+    updateNinjutsu()
+
+    Players.PlayerAdded:Connect(updateNinjutsu)
+
+    Players.PlayerRemoving:Connect(updateNinjutsu)
+end
+
+coroutine.wrap(YUMLY_fake_script)()
+
+local function PIQB_fake_script() -- mostrep.LocalScript
+    local script = Instance.new("LocalScript", mostrep)
+
+    local Players = game:GetService("Players")
+
+    local textLabel = script.Parent
+
+    local function formatNumberWithSuffixes(number)
+        local suffixes = {
+            "",
+            "K+",
+            "M+",
+            "B+",
+            "T+",
+            "qd+",
+            "Qn+",
+            "sx+",
+            "Sp+",
+            "O+",
+            "N+",
+            "de+",
+            "Ud+",
+            "DD+",
+            "tdD+",
+            "qdD+",
+            "QnD+",
+            "sxD+",
+            "SpD+",
+            "OcD+",
+            "NvD+",
+            "Vgn+",
+            "UVg+",
+            "DVg+",
+            "TVg+",
+            "qtV+",
+            "QnV+",
+            "SeV+",
+            "SPG+",
+            "OVG+",
+            "NVG+",
+            "TGN+",
+            "UTG+",
+            "DTG+",
+            "tsTG+",
+            "qtTG+",
+            "QnTG+",
+            "ssTG+",
+            "SpTG+",
+            "OcTG+",
+            "NoAG+",
+            "UnAG+",
+            "DuAG+",
+            "TeAG+",
+            "QdAG+",
+            "QnAG+",
+            "SxAG+",
+            "SpAG+",
+            "OcAG+",
+            "NvAG+",
+            "CT+"
+        }
+
+        for i = 1, #suffixes do
+            if tonumber(number) < 10 ^ (i * 3) then
+                return math.floor(number / ((10 ^ ((i - 1) * 3)) / 100)) / 100 .. suffixes[i]
+            end
+        end
+    end
+
+    local function updateReputation()
+        local highestReputation = 0
+
+        local playerWithHighestReputation
+
+        for _, player in ipairs(Players:GetPlayers()) do
+            local reputation =
+                player.leaderstats and player.leaderstats.Reputation and player.leaderstats.Reputation.Value or 0
+
+            if reputation > highestReputation then
+                highestReputation = reputation
+
+                playerWithHighestReputation = player
+            end
+        end
+
+        if playerWithHighestReputation then
+            local formattedReputation = formatNumberWithSuffixes(highestReputation)
+
+            textLabel.Text = playerWithHighestReputation.Name .. " with " .. formattedReputation
+        else
+            textLabel.Text = "No players in the server"
+        end
+    end
+
+    updateReputation()
+
+    Players.PlayerAdded:Connect(updateReputation)
+
+    Players.PlayerRemoving:Connect(updateReputation)
+end
+
+coroutine.wrap(PIQB_fake_script)()
+
+local function BNZZJ_fake_script() -- fps.LocalScript
+    local script = Instance.new("LocalScript", fps)
+
+    local Players = game:GetService("Players")
+    local player = Players.LocalPlayer
+
+    local textLabel = script.Parent
+
+    local frameCount = 0
+    local elapsedTime = 0
+
+    game:GetService("RunService").RenderStepped:Connect(
+        function(deltaTime)
+            frameCount = frameCount + 1
+            elapsedTime = elapsedTime + deltaTime
+
+            if elapsedTime >= 1 then
+                textLabel.Text = frameCount
+                frameCount = 0
+                elapsedTime = 0
+            end
+        end
+    )
+end
+
+coroutine.wrap(BNZZJ_fake_script)()
+
+local function RAYOUB_fake_script() -- ping.LocalScript
+    local script = Instance.new("LocalScript", ping)
+
+    local pingLabel = script.Parent
+
+    local function calculateMetrics()
+        local pingTimeSec = game.Players.LocalPlayer:GetNetworkPing()
+
+        local pingTimeMs = pingTimeSec * 1000 -- Convert to milliseconds
+
+        pingLabel.Text = tostring(math.floor(pingTimeMs)) .. " ms"
+    end
+
+    while true do
+        calculateMetrics()
+
+        wait(5)
+    end
+end
+
+coroutine.wrap(RAYOUB_fake_script)()
+
+local function VTZEPT_fake_script() -- TextButton_49.LocalScript
+    local script = Instance.new("LocalScript", TextButton_49)
+
+    local textButton = script.Parent
+
+    textButton.Activated:Connect(
+        function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+        end
+    )
+end
+
+coroutine.wrap(VTZEPT_fake_script)()
+
+local function ODTR_fake_script() -- TextButton_50.LocalScript
+    local script = Instance.new("LocalScript", TextButton_50)
+
+    local button = script.Parent
+
+    local autoJumpEnabled = false
+
+    local jumpRequestConnection = nil
+
+    local function enableAutoJump()
+        jumpRequestConnection =
+            game:GetService("UserInputService").JumpRequest:Connect(
+            function()
+                game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(
+                    Enum.HumanoidStateType.Jumping
+                )
+            end
+        )
+    end
+
+    local function disableAutoJump()
+        if jumpRequestConnection then
+            jumpRequestConnection:Disconnect()
+
+            jumpRequestConnection = nil
+        end
+    end
+
+    local function updateButtonText()
+        if autoJumpEnabled then
+            button.Text = "On"
+
+            button.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            button.Text = "Off"
+
+            button.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+
+    button.MouseButton1Down:Connect(
+        function()
+            autoJumpEnabled = not autoJumpEnabled
+
+            if autoJumpEnabled then
+                enableAutoJump()
+            else
+                disableAutoJump()
+            end
+
+            updateButtonText()
+        end
+    )
+
+    updateButtonText()
+end
+
+coroutine.wrap(ODTR_fake_script)()
+
+local function UGFBFKA_fake_script() -- TextButton_51.LocalScript
+    local script = Instance.new("LocalScript", TextButton_51)
+
+    local textButton = script.Parent
+
+    textButton.Activated:Connect(
+        function()
+            --[[ WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk! ]] --
+
+            loadstring(game:HttpGet("https://github.com/Hosvile/DEX-Explorer/releases/latest/download/main.lua", true))(
+
+            )
+        end
+    )
+end
+
+coroutine.wrap(UGFBFKA_fake_script)()
+
+local function YMWN_fake_script() -- TextButton_52.LocalScript
+    local script = Instance.new("LocalScript", TextButton_52)
+
+    local textButton = script.Parent
+
+    textButton.Activated:Connect(
+        function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
+        end
+    )
+end
+
+coroutine.wrap(YMWN_fake_script)()
+
+local function KRYX_fake_script() -- TextBox_3.LocalScript
+    local script = Instance.new("LocalScript", TextBox_3)
+
+    local TextBox = script.Parent
+
+    TextBox.FocusLost:Connect(
+        function()
+            local newJumpPower = tonumber(TextBox.Text)
+
+            if newJumpPower then
+                game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = newJumpPower
+            else
+                TextBox.Text = "Invalid input"
+            end
+        end
+    )
+end
+
+coroutine.wrap(KRYX_fake_script)()
+
+local function ADME_fake_script() -- TextBox_4.LocalScript
+    local script = Instance.new("LocalScript", TextBox_4)
+
+    local TextBox = script.Parent
+
+    TextBox.FocusLost:Connect(
+        function()
+            local newWalkSpeed = tonumber(TextBox.Text)
+
+            if newWalkSpeed then
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = newWalkSpeed
+            else
+                TextBox.Text = "Invalid input"
+            end
+        end
+    )
+end
+
+coroutine.wrap(ADME_fake_script)()
+
+local function XWBPEC_fake_script() -- Homebtn.LocalScript
+    local script = Instance.new("LocalScript", Homebtn)
+
+    local Homebtn = script.Parent
+
+    if not Homebtn then
+        error("Homebtn not found!")
+    end
+
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
+
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = true
+
+                    TrainTab.Visible = false
+
+                    CombatTab.Visible = false
+
+                    PlayersTab.Visible = false
+
+                    ServerTab.Visible = false
+
+                    MiscTab.Visible = false
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
+end
+
+coroutine.wrap(XWBPEC_fake_script)()
+
+local function JLSW_fake_script() -- Trainbtn.LocalScript
+    local script = Instance.new("LocalScript", Trainbtn)
+
+    local Homebtn = script.Parent
+
+    if not Homebtn then
+        error("Homebtn not found!")
+    end
+
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
+
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = false
+
+                    TrainTab.Visible = true
+
+                    CombatTab.Visible = false
+
+                    PlayersTab.Visible = false
+
+                    ServerTab.Visible = false
+
+                    MiscTab.Visible = false
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
+end
+
+coroutine.wrap(JLSW_fake_script)()
+
+local function RGTUT_fake_script() -- Combatbtn.LocalScript
+    local script = Instance.new("LocalScript", Combatbtn)
+
+    local Homebtn = script.Parent
+
+    if not Homebtn then
+        error("Homebtn not found!")
+    end
+
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
+
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = false
+
+                    TrainTab.Visible = false
+
+                    CombatTab.Visible = true
+
+                    PlayersTab.Visible = false
+
+                    ServerTab.Visible = false
+
+                    MiscTab.Visible = false
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
+end
+
+coroutine.wrap(RGTUT_fake_script)()
+
+local function IMJQKW_fake_script() -- Playersbtn.LocalScript
+    local script = Instance.new("LocalScript", Playersbtn)
+
+    local Homebtn = script.Parent
+
+    if not Homebtn then
+        error("Homebtn not found!")
+    end
+
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
+
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = false
+
+                    TrainTab.Visible = false
+
+                    CombatTab.Visible = false
+
+                    PlayersTab.Visible = true
+
+                    ServerTab.Visible = false
+
+                    MiscTab.Visible = false
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
+end
+
+coroutine.wrap(IMJQKW_fake_script)()
+
+local function OEHRV_fake_script() -- Serverbtn.LocalScript
+    local script = Instance.new("LocalScript", Serverbtn)
+
+    local Homebtn = script.Parent
+
+    if not Homebtn then
+        error("Homebtn not found!")
+    end
+
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
+
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = false
+
+                    TrainTab.Visible = false
+
+                    CombatTab.Visible = false
+
+                    PlayersTab.Visible = false
+
+                    ServerTab.Visible = true
+
+                    MiscTab.Visible = false
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
+end
+
+coroutine.wrap(OEHRV_fake_script)()
+
+local function ABKKHJ_fake_script() -- Miscbtn.LocalScript
+    local script = Instance.new("LocalScript", Miscbtn)
+
+    local Homebtn = script.Parent
+
+    if not Homebtn then
+        error("Homebtn not found!")
+    end
+
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
+
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = false
+
+                    TrainTab.Visible = false
+
+                    CombatTab.Visible = false
+
+                    PlayersTab.Visible = false
+
+                    ServerTab.Visible = false
+
+                    MiscTab.Visible = true
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
+end
+
+coroutine.wrap(ABKKHJ_fake_script)()
+
+local function ULBUS_fake_script() -- AdminImgBtn.LocalScript
+    local script = Instance.new("LocalScript", AdminImgBtn)
+
+    local open = false
+
+    local canClick = true
+
+    local lastPos = nil
+
+    local button = script.Parent
+
+    local HHFrame = button.Parent.HHFrame
+
+    button.MouseButton1Down:Connect(
+        function()
+            if not open and canClick then
+                open = true
+
+                canClick = false
+
+                if lastPos then
+                    HHFrame:TweenPosition(
+                        lastPos,
+                        Enum.EasingDirection.Out,
+                        Enum.EasingStyle.Quad,
+                        0.75,
+                        true,
+                        function()
+                            canClick = true
+                        end
+                    )
+                else
+                    HHFrame:TweenPosition(
+                        UDim2.new(0.625, 0, 0.6, 0),
+                        Enum.EasingDirection.Out,
+                        Enum.EasingStyle.Quad,
+                        0.75,
+                        true,
+                        function()
+                            canClick = true
+                        end
+                    )
+                end
+            elseif open and canClick then
+                lastPos = HHFrame.Position
+
+                open = false
+
+                canClick = false
+
+                HHFrame:TweenPosition(
+                    UDim2.new(1, 0, 0.6, 0),
+                    Enum.EasingDirection.Out,
+                    Enum.EasingStyle.Quad,
+                    0.75,
+                    true,
+                    function()
+                        canClick = true
+                    end
+                )
+            end
+        end
+    )
+
+    button.MouseEnter:Connect(
+        function()
+            button.ImageColor3 = Color3.fromRGB(230, 230, 230)
+        end
+    )
+
+    button.MouseLeave:Connect(
+        function()
+            button.ImageColor3 = Color3.fromRGB(255, 255, 255)
+        end
+    )
+
+    local UserInputService = game:GetService("UserInputService")
+
+    local Draggable = false
+
+    local DragMousePosition
+
+    local FramePosition
+
+    HHFrame.TopBar.InputBegan:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                Draggable = false
+
+                DragMousePosition = Vector2.new(input.Position.X, input.Position.Y)
+
+                FramePosition = Vector2.new(HHFrame.Position.X.Scale, HHFrame.Position.Y.Scale)
+            end
+        end
+    )
+
+    HHFrame.TopBar.InputEnded:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                Draggable = false
+            end
+        end
+    )
+
+    UserInputService.InputChanged:Connect(
+        function(input)
+            if Draggable then
+                local NewPosition =
+                    FramePosition +
+                    ((Vector2.new(input.Position.X, input.Position.Y) - DragMousePosition) /
+                        workspace.CurrentCamera.ViewportSize)
+
+                HHFrame.Position = UDim2.new(NewPosition.X, 0, NewPosition.Y, 0)
+            end
+        end
+    )
+end
+
+coroutine.wrap(ULBUS_fake_script)()
+
+local StarterGui = game:GetService("StarterGui")
+
+local function sendNotification(title, text)
+    local notification = {
+        Title = title,
+        Text = text,
+        Duration = 10000000,
+        Button1 = "Close", -- Button text
+        Callback = function(action)
+            if action == "Button1" then
+                print("Close button pressed")
+            end
+        end
+    }
+
+    StarterGui:SetCore("SendNotification", notification)
+end
+
+sendNotification("Hunter Clan Notes!!", "I Degraded the version of this GUI to maintain each functions")
+
+-- NA PC Version script:
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LoneWalker0922/YIN-YANG-NA/main/NAmobilefix.txt"))()
