@@ -392,54 +392,56 @@ local AutoEquipConnection
 local charrespawning = false
 
 local function AutoEquipLoop()
-if Players.LocalPlayer.Character and not charrespawning then
-    if not Players.LocalPlayer.Character:FindFirstChild("Train") then
-        local trainTool = Players.LocalPlayer.Backpack:FindFirstChild("Train")
-        if trainTool then
-            wait(0.6)
-            if trainTool.Parent == Players.LocalPlayer.Backpack then
-                trainTool.Parent = Players.LocalPlayer.Character
+    if Players.LocalPlayer.Character and not charrespawning then
+        if not Players.LocalPlayer.Character:FindFirstChild("Train") then
+            local trainTool = Players.LocalPlayer.Backpack:FindFirstChild("Train")
+            if trainTool then
+                wait(0.6)
+                if trainTool.Parent == Players.LocalPlayer.Backpack then
+                    trainTool.Parent = Players.LocalPlayer.Character
+                end
             end
         end
     end
 end
-end
 
 local function toggleAutoEquipState()
-VariableTable['AutoEquip'] = not VariableTable['AutoEquip']
-if VariableTable['AutoEquip'] then
-    AutoEquipConnection = RunService.Heartbeat:Connect(AutoEquipLoop)
-    TextButton_2.Text = "On"
-    TextButton_2.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    if AutoEquipConnection then
-        AutoEquipConnection:Disconnect()
-        AutoEquipConnection = nil
+    VariableTable["AutoEquip"] = not VariableTable["AutoEquip"]
+    if VariableTable["AutoEquip"] then
+        AutoEquipConnection = RunService.Heartbeat:Connect(AutoEquipLoop)
+        TextButton_2.Text = "On"
+        TextButton_2.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        if AutoEquipConnection then
+            AutoEquipConnection:Disconnect()
+            AutoEquipConnection = nil
+        end
+        TextButton_2.Text = "Off"
+        TextButton_2.TextColor3 = Color3.fromRGB(255, 0, 0)
     end
-    TextButton_2.Text = "Off"
-    TextButton_2.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
 end
 
 TextButton_2.MouseButton1Down:Connect(toggleAutoEquipState)
 
-if VariableTable['AutoEquip'] then
-toggleAutoEquipState()
+if VariableTable["AutoEquip"] then
+    toggleAutoEquipState()
 else
-TextButton_2.Text = "Off"
-TextButton_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+    TextButton_2.Text = "Off"
+    TextButton_2.TextColor3 = Color3.fromRGB(255, 0, 0)
 end
 
-Players.LocalPlayer.CharacterAdded:Connect(function(character)
-charrespawning = true
-if VariableTable['AutoEquip'] then
-    if AutoEquipConnection then
-        AutoEquipConnection:Disconnect()
+Players.LocalPlayer.CharacterAdded:Connect(
+    function(character)
+        charrespawning = true
+        if VariableTable["AutoEquip"] then
+            if AutoEquipConnection then
+                AutoEquipConnection:Disconnect()
+            end
+            AutoEquipConnection = RunService.Heartbeat:Connect(AutoEquipLoop)
+        end
+        charrespawning = false
     end
-    AutoEquipConnection = RunService.Heartbeat:Connect(AutoEquipLoop)
-end
-charrespawning = false
-end)
+)
 
 TextLabel_3.Parent = Frame2
 TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -500,42 +502,42 @@ local VariableTable = {SeatESP = false}
 local RunService = game:GetService("RunService")
 
 local function toggleSeatESP(state)
-if state then
-    for i, v in pairs(workspace:GetDescendants()) do
-        if v:IsA("Seat") and not v:FindFirstChild("SeatESP") then
-            local a = Instance.new("BoxHandleAdornment")
-            a.Name = "SeatESP"
-            a.Parent = v
-            a.Adornee = v
-            a.AlwaysOnTop = true
-            a.ZIndex = 10
-            a.Size = v.Size
-            a.Transparency = 0.4
-            a.Color = BrickColor.new(1001)
+    if state then
+        for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("Seat") and not v:FindFirstChild("SeatESP") then
+                local a = Instance.new("BoxHandleAdornment")
+                a.Name = "SeatESP"
+                a.Parent = v
+                a.Adornee = v
+                a.AlwaysOnTop = true
+                a.ZIndex = 10
+                a.Size = v.Size
+                a.Transparency = 0.4
+                a.Color = BrickColor.new(1001)
+            end
+        end
+    else
+        for i, v in pairs(workspace:GetDescendants()) do
+            if v:IsA("Seat") and v:FindFirstChild("SeatESP") then
+                v:FindFirstChild("SeatESP"):Destroy()
+            end
         end
     end
-else
-    for i, v in pairs(workspace:GetDescendants()) do
-        if v:IsA("Seat") and v:FindFirstChild("SeatESP") then
-            v:FindFirstChild("SeatESP"):Destroy()
-        end
-    end
-end
 end
 
 local function toggleSeatESPState()
-VariableTable['SeatESP'] = not VariableTable['SeatESP']
-toggleSeatESP(VariableTable['SeatESP'])
-if VariableTable['SeatESP'] then
-    TextButton_3.Text = "On"
-    TextButton_3.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_3.Text = "Off"
-    TextButton_3.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+    VariableTable["SeatESP"] = not VariableTable["SeatESP"]
+    toggleSeatESP(VariableTable["SeatESP"])
+    if VariableTable["SeatESP"] then
+        TextButton_3.Text = "On"
+        TextButton_3.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_3.Text = "Off"
+        TextButton_3.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
 end
 
-toggleSeatESP(VariableTable['SeatESP'])
+toggleSeatESP(VariableTable["SeatESP"])
 
 TextButton_3.MouseButton1Down:Connect(toggleSeatESPState)
 
@@ -572,55 +574,59 @@ local player = game.Players.LocalPlayer
 local isEnabled = false
 
 local function respawnCharacter()
-if player.Character then
-    player.Character:Destroy()
-end
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+    if player.Character then
+        player.Character:Destroy()
+    end
+    game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
 end
 
 local function dropTool(tool)
-if tool and tool:IsA("Tool") then
-    tool.Parent = workspace
-    tool.Handle.CFrame = player.Character.PrimaryPart.CFrame * CFrame.new(0, -5, 0)
-end
+    if tool and tool:IsA("Tool") then
+        tool.Parent = workspace
+        tool.Handle.CFrame = player.Character.PrimaryPart.CFrame * CFrame.new(0, -5, 0)
+    end
 end
 
 local function connectDiedEvent()
-if player.Character then
-    local humanoid = player.Character:WaitForChild("Humanoid")
+    if player.Character then
+        local humanoid = player.Character:WaitForChild("Humanoid")
 
-    repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Sword")
-    local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Sword")
-    tool.Parent = game.Players.LocalPlayer.Character
+        repeat
+            task.wait()
+        until game.Players.LocalPlayer.Backpack:WaitForChild("Sword")
+        local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Sword")
+        tool.Parent = game.Players.LocalPlayer.Character
 
-    wait(0.3)
-    tool = game.Players.LocalPlayer.Character:FindFirstChild("Sword")
-    if tool then
-        tool.Parent = game.Players.LocalPlayer.Backpack
+        wait(0.3)
+        tool = game.Players.LocalPlayer.Character:FindFirstChild("Sword")
+        if tool then
+            tool.Parent = game.Players.LocalPlayer.Backpack
+        end
+
+        repeat
+            task.wait()
+        until game.Players.LocalPlayer.Backpack:WaitForChild("Train")
+        local trainTool = game.Players.LocalPlayer.Backpack:FindFirstChild("Train")
+        trainTool.Parent = game.Players.LocalPlayer.Character
+
+        wait(0.2)
+        trainTool = game.Players.LocalPlayer.Character:FindFirstChild("Train")
+        if trainTool then
+            dropTool(trainTool)
+        end
     end
-
-    repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Train")
-    local trainTool = game.Players.LocalPlayer.Backpack:FindFirstChild("Train")
-    trainTool.Parent = game.Players.LocalPlayer.Character
-
-    wait(0.2)
-    trainTool = game.Players.LocalPlayer.Character:FindFirstChild("Train")
-    if trainTool then
-        dropTool(trainTool)
-    end
-end
 end
 
 local function toggleScriptState()
-isEnabled = not isEnabled
-respawnCharacter()
-if isEnabled then
-    TextButton_4.Text = "On"
-    TextButton_4.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_4.Text = "Off"
-    TextButton_4.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+    isEnabled = not isEnabled
+    respawnCharacter()
+    if isEnabled then
+        TextButton_4.Text = "On"
+        TextButton_4.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_4.Text = "Off"
+        TextButton_4.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
 end
 
 TextButton_4.Text = "Off"
@@ -628,14 +634,16 @@ TextButton_4.TextColor3 = Color3.fromRGB(255, 0, 0)
 
 TextButton_4.MouseButton1Down:Connect(toggleScriptState)
 
-player.CharacterAdded:Connect(function(character)
-if isEnabled then
-    connectDiedEvent()
-end
-end)
+player.CharacterAdded:Connect(
+    function(character)
+        if isEnabled then
+            connectDiedEvent()
+        end
+    end
+)
 
 if isEnabled then
-respawnCharacter()
+    respawnCharacter()
 end
 
 Frame4.Name = "Frame4"
@@ -677,37 +685,39 @@ TextButton_5.TextScaled = true
 TextButton_5.TextSize = 19.000
 TextButton_5.TextWrapped = true
 
-local VariableTable = { AntiAfk = false }
+local VariableTable = {AntiAfk = false}
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
 local function toggleAntiAfk(state)
-VariableTable['AntiAfk'] = state
-if VariableTable['AntiAfk'] then
-    TextButton_5.Text = "On"
-    TextButton_5.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_5.Text = "Off"
-    TextButton_5.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+    VariableTable["AntiAfk"] = state
+    if VariableTable["AntiAfk"] then
+        TextButton_5.Text = "On"
+        TextButton_5.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_5.Text = "Off"
+        TextButton_5.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
 end
 
 local function toggleAntiAfkState()
-VariableTable['AntiAfk'] = not VariableTable['AntiAfk']
-toggleAntiAfk(VariableTable['AntiAfk'])
+    VariableTable["AntiAfk"] = not VariableTable["AntiAfk"]
+    toggleAntiAfk(VariableTable["AntiAfk"])
 end
 
 TextButton_5.MouseButton1Down:Connect(toggleAntiAfkState)
 
-Players.LocalPlayer.Idled:Connect(function()
-if VariableTable['AntiAfk'] then
-    local VirtualUser = game:GetService("VirtualUser")
-    VirtualUser:CaptureController()
-    VirtualUser:ClickButton2(Vector2.new())
-end
-end)
+Players.LocalPlayer.Idled:Connect(
+    function()
+        if VariableTable["AntiAfk"] then
+            local VirtualUser = game:GetService("VirtualUser")
+            VirtualUser:CaptureController()
+            VirtualUser:ClickButton2(Vector2.new())
+        end
+    end
+)
 
-toggleAntiAfk(VariableTable['AntiAfk'])
+toggleAntiAfk(VariableTable["AntiAfk"])
 
 TextLabel_7.Parent = Frame4
 TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -745,68 +755,75 @@ local isScriptActive = false
 local connections = {}
 
 local function respawnCharacter()
-if player.Character then
-    lastPosition = player.Character.PrimaryPart.Position
-    player.Character:Destroy()
-end
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+    if player.Character then
+        lastPosition = player.Character.PrimaryPart.Position
+        player.Character:Destroy()
+    end
+    game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
 end
 
 local function connectDiedEvent()
-if player.Character then
-    local humanoid = player.Character:WaitForChild("Humanoid")
-    table.insert(connections, humanoid.Died:Connect(respawnCharacter))
-    table.insert(connections, humanoid.HealthChanged:Connect(function(health)
-        if health <= 0.3 * humanoid.MaxHealth then
-            respawnCharacter()
+    if player.Character then
+        local humanoid = player.Character:WaitForChild("Humanoid")
+        table.insert(connections, humanoid.Died:Connect(respawnCharacter))
+        table.insert(
+            connections,
+            humanoid.HealthChanged:Connect(
+                function(health)
+                    if health <= 0.3 * humanoid.MaxHealth then
+                        respawnCharacter()
+                    end
+                end
+            )
+        )
+
+        repeat
+            task.wait()
+        until game.Players.LocalPlayer.Backpack:WaitForChild("Teleport")
+        local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport")
+        tool.Parent = game.Players.LocalPlayer.Character
+
+        wait(0.2)
+        tool = game.Players.LocalPlayer.Character:FindFirstChild("Teleport")
+        if tool then
+            tool.Parent = game.Players.LocalPlayer.Backpack
         end
-    end))
-
-    repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Teleport")
-    local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport")
-    tool.Parent = game.Players.LocalPlayer.Character
-
-    wait(0.2)
-    tool = game.Players.LocalPlayer.Character:FindFirstChild("Teleport")
-    if tool then
-        tool.Parent = game.Players.LocalPlayer.Backpack
     end
-end
 end
 
 local function onCharacterAdded(character)
-connectDiedEvent()
-character:WaitForChild("HumanoidRootPart")
-if lastPosition then
-    character:SetPrimaryPartCFrame(CFrame.new(lastPosition))
-    lastPosition = nil
-end
+    connectDiedEvent()
+    character:WaitForChild("HumanoidRootPart")
+    if lastPosition then
+        character:SetPrimaryPartCFrame(CFrame.new(lastPosition))
+        lastPosition = nil
+    end
 end
 
 local function updateButton()
-if isScriptActive then
-    TextButton_6.Text = "On"
-    TextButton_6.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_6.Text = "Off"
-    TextButton_6.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+    if isScriptActive then
+        TextButton_6.Text = "On"
+        TextButton_6.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_6.Text = "Off"
+        TextButton_6.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
 end
 
 local function toggleScript()
-isScriptActive = not isScriptActive
-if isScriptActive then
-    table.insert(connections, player.CharacterAdded:Connect(onCharacterAdded))
-    if player.Character then
-        onCharacterAdded(player.Character)
+    isScriptActive = not isScriptActive
+    if isScriptActive then
+        table.insert(connections, player.CharacterAdded:Connect(onCharacterAdded))
+        if player.Character then
+            onCharacterAdded(player.Character)
+        end
+    else
+        for _, connection in ipairs(connections) do
+            connection:Disconnect()
+        end
+        connections = {}
     end
-else
-    for _, connection in ipairs(connections) do
-        connection:Disconnect()
-    end
-    connections = {}
-end
-updateButton()
+    updateButton()
 end
 
 TextButton_6.MouseButton1Down:Connect(toggleScript)
@@ -852,11 +869,11 @@ TextButton_7.TextSize = 19.000
 TextButton_7.TextWrapped = true
 
 local function toggleFreeze(character, freeze)
-for i, v in pairs(character:GetChildren()) do
-    if v:IsA("BasePart") then
-        v.Anchored = freeze
+    for i, v in pairs(character:GetChildren()) do
+        if v:IsA("BasePart") then
+            v.Anchored = freeze
+        end
     end
-end
 end
 
 local player = game.Players.LocalPlayer
@@ -864,23 +881,25 @@ local Character = player.Character or player.CharacterAdded:Wait()
 local VariableTable = {Freeze = false}
 
 local function toggleFreezeState()
-VariableTable['Freeze'] = not VariableTable['Freeze']
-toggleFreeze(Character, VariableTable['Freeze'])
-if VariableTable['Freeze'] then
-    TextButton_7.Text = "On"
-    TextButton_7.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_7.Text = "Off"
-    TextButton_7.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+    VariableTable["Freeze"] = not VariableTable["Freeze"]
+    toggleFreeze(Character, VariableTable["Freeze"])
+    if VariableTable["Freeze"] then
+        TextButton_7.Text = "On"
+        TextButton_7.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_7.Text = "Off"
+        TextButton_7.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
 end
 
-player.CharacterAdded:Connect(function(character)
-Character = character
-toggleFreeze(Character, VariableTable['Freeze'])
-end)
+player.CharacterAdded:Connect(
+    function(character)
+        Character = character
+        toggleFreeze(Character, VariableTable["Freeze"])
+    end
+)
 
-toggleFreeze(Character, VariableTable['Freeze'])
+toggleFreeze(Character, VariableTable["Freeze"])
 
 TextButton_7.MouseButton1Down:Connect(toggleFreezeState)
 
@@ -916,51 +935,53 @@ TextButton_8.TextWrapped = true
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 
-local VariableTable = { Noclip = false }
+local VariableTable = {Noclip = false}
 local NoclipHandler = nil
 
 local function NoclipLoop()
-local character = Players.LocalPlayer.Character
-if character then
-    for _, v in pairs(character:GetDescendants()) do
-        if v:IsA("BasePart") then
-            v.CanCollide = not VariableTable['Noclip']
+    local character = Players.LocalPlayer.Character
+    if character then
+        for _, v in pairs(character:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = not VariableTable["Noclip"]
+            end
         end
     end
 end
-end
 
 local function toggleNoclipState()
-VariableTable['Noclip'] = not VariableTable['Noclip']
-if VariableTable['Noclip'] then
-    NoclipHandler = RunService.Heartbeat:Connect(NoclipLoop)
-    TextButton_8.Text = "On"
-    TextButton_8.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    if NoclipHandler then
-        NoclipHandler:Disconnect()
-        NoclipHandler = nil
+    VariableTable["Noclip"] = not VariableTable["Noclip"]
+    if VariableTable["Noclip"] then
+        NoclipHandler = RunService.Heartbeat:Connect(NoclipLoop)
+        TextButton_8.Text = "On"
+        TextButton_8.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        if NoclipHandler then
+            NoclipHandler:Disconnect()
+            NoclipHandler = nil
+        end
+        NoclipLoop() -- Ensure colliders are reset when turning off
+        TextButton_8.Text = "Off"
+        TextButton_8.TextColor3 = Color3.fromRGB(255, 0, 0)
     end
-    NoclipLoop() -- Ensure colliders are reset when turning off
-    TextButton_8.Text = "Off"
-    TextButton_8.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
 end
 
 TextButton_8.MouseButton1Down:Connect(toggleNoclipState)
 
-if VariableTable['Noclip'] then
-toggleNoclipState()
+if VariableTable["Noclip"] then
+    toggleNoclipState()
 else
-TextButton_8.Text = "Off"
-TextButton_8.TextColor3 = Color3.fromRGB(255, 0, 0)
+    TextButton_8.Text = "Off"
+    TextButton_8.TextColor3 = Color3.fromRGB(255, 0, 0)
 end
 
-Players.LocalPlayer.CharacterAdded:Connect(function(character)
-if VariableTable['Noclip'] then
-    NoclipHandler = RunService.Heartbeat:Connect(NoclipLoop)
-end
-end)
+Players.LocalPlayer.CharacterAdded:Connect(
+    function(character)
+        if VariableTable["Noclip"] then
+            NoclipHandler = RunService.Heartbeat:Connect(NoclipLoop)
+        end
+    end
+)
 
 Frame6.Name = "Frame6"
 Frame6.Parent = TrainTab
@@ -1008,72 +1029,76 @@ local VariableTable = {AutoSword = false}
 local toolConnection
 
 local function equipTool(toolName)
-local tool = Players.LocalPlayer.Backpack:FindFirstChild(toolName)
-if tool then
-    tool.Parent = Players.LocalPlayer.Character
-end
+    local tool = Players.LocalPlayer.Backpack:FindFirstChild(toolName)
+    if tool then
+        tool.Parent = Players.LocalPlayer.Character
+    end
 end
 
 local function unequipTool(toolName)
-local tool = Players.LocalPlayer.Character:FindFirstChild(toolName)
-if tool then
-    tool.Parent = Players.LocalPlayer.Backpack
-end
+    local tool = Players.LocalPlayer.Character:FindFirstChild(toolName)
+    if tool then
+        tool.Parent = Players.LocalPlayer.Backpack
+    end
 end
 
 local function toolLoop()
-if Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("ForceField") then
-    for i = 1, 4 do
-        if not VariableTable['AutoSword'] then return end
-        if i % 2 == 1 then
-            equipTool("Sword")
+    if Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("ForceField") then
+        for i = 1, 4 do
+            if not VariableTable["AutoSword"] then
+                return
+            end
+            if i % 2 == 1 then
+                equipTool("Sword")
+                wait()
+                unequipTool("Sword")
+            else
+                equipTool("Shuriken")
+                wait()
+                unequipTool("Shuriken")
+            end
             wait()
-            unequipTool("Sword")
-        else
-            equipTool("Shuriken")
-            wait()
-            unequipTool("Shuriken")
         end
-        wait()
     end
-end
 end
 
 local function toggleToolState()
-VariableTable['AutoSword'] = not VariableTable['AutoSword']
-if VariableTable['AutoSword'] then
-    toolConnection = RunService.Heartbeat:Connect(toolLoop)
-    TextButton_9.Text = "On"
-    TextButton_9.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    if toolConnection then
-        toolConnection:Disconnect()
-        toolConnection = nil
+    VariableTable["AutoSword"] = not VariableTable["AutoSword"]
+    if VariableTable["AutoSword"] then
+        toolConnection = RunService.Heartbeat:Connect(toolLoop)
+        TextButton_9.Text = "On"
+        TextButton_9.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        if toolConnection then
+            toolConnection:Disconnect()
+            toolConnection = nil
+        end
+        TextButton_9.Text = "Off"
+        TextButton_9.TextColor3 = Color3.fromRGB(255, 0, 0)
     end
-    TextButton_9.Text = "Off"
-    TextButton_9.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
 end
 
 TextButton_9.MouseButton1Down:Connect(toggleToolState)
 
-if VariableTable['AutoSword'] then
-toggleToolState()
+if VariableTable["AutoSword"] then
+    toggleToolState()
 else
-TextButton_9.Text = "Off"
-TextButton_9.TextColor3 = Color3.fromRGB(255, 0, 0)
+    TextButton_9.Text = "Off"
+    TextButton_9.TextColor3 = Color3.fromRGB(255, 0, 0)
 end
 
-Players.LocalPlayer.CharacterAdded:Connect(function(character)
-if VariableTable['AutoSword'] then
-    RunService.Heartbeat:Wait()
-    if toolConnection then
-        toolConnection:Disconnect()
-        toolConnection = nil
+Players.LocalPlayer.CharacterAdded:Connect(
+    function(character)
+        if VariableTable["AutoSword"] then
+            RunService.Heartbeat:Wait()
+            if toolConnection then
+                toolConnection:Disconnect()
+                toolConnection = nil
+            end
+            toolConnection = RunService.Heartbeat:Connect(toolLoop)
+        end
     end
-    toolConnection = RunService.Heartbeat:Connect(toolLoop)
-end
-end)
+)
 
 TextLabel_11.Parent = Frame6
 TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -1109,48 +1134,50 @@ local safeSpotPosition = Vector3.new(124.430862, 999999.652863, 471.85906)
 local lastPosition
 
 function moveToSafeSpot()
-local humanoidRootPart = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-if humanoidRootPart then
-    lastPosition = humanoidRootPart.Position
-    local part = Instance.new("Part")
-    part.Size = Vector3.new(50, 1, 50)
-    part.Anchored = true
-    part.Position = safeSpotPosition
-    part.Parent = game.Workspace
-    humanoidRootPart.CFrame = CFrame.new(part.Position + Vector3.new(0, 1, 0))
-    TextButton_10.Text = "On"
-    TextButton_10.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    warn("HumanoidRootPart not found")
-end
-end
-
-function moveToStoredPosition()
-if lastPosition then
     local humanoidRootPart = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
     if humanoidRootPart then
-        humanoidRootPart.CFrame = CFrame.new(lastPosition)
-        TextButton_10.Text = "Off"
-        TextButton_10.TextColor3 = Color3.fromRGB(255, 0, 0)
+        lastPosition = humanoidRootPart.Position
+        local part = Instance.new("Part")
+        part.Size = Vector3.new(50, 1, 50)
+        part.Anchored = true
+        part.Position = safeSpotPosition
+        part.Parent = game.Workspace
+        humanoidRootPart.CFrame = CFrame.new(part.Position + Vector3.new(0, 1, 0))
+        TextButton_10.Text = "On"
+        TextButton_10.TextColor3 = Color3.fromRGB(0, 255, 0)
     else
         warn("HumanoidRootPart not found")
     end
-else
-    warn("Last position is not set")
 end
+
+function moveToStoredPosition()
+    if lastPosition then
+        local humanoidRootPart = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+        if humanoidRootPart then
+            humanoidRootPart.CFrame = CFrame.new(lastPosition)
+            TextButton_10.Text = "Off"
+            TextButton_10.TextColor3 = Color3.fromRGB(255, 0, 0)
+        else
+            warn("HumanoidRootPart not found")
+        end
+    else
+        warn("Last position is not set")
+    end
 end
 
 function toggleMovement()
-if TextButton_10.Text == "Off" then
-    moveToSafeSpot()
-else
-    moveToStoredPosition()
-end
+    if TextButton_10.Text == "Off" then
+        moveToSafeSpot()
+    else
+        moveToStoredPosition()
+    end
 end
 
-TextButton_10.MouseButton1Click:Connect(function()
-toggleMovement()
-end)
+TextButton_10.MouseButton1Click:Connect(
+    function()
+        toggleMovement()
+    end
+)
 
 Frame7.Name = "Frame7"
 Frame7.Parent = TrainTab
@@ -1198,62 +1225,66 @@ local thirdAnimationId = "rbxassetid://1029863696"
 local AnimationsEnabled = false
 
 function playAnimations()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
 
-local firstAnimation = Instance.new("Animation")
-firstAnimation.AnimationId = firstAnimationId
+    local firstAnimation = Instance.new("Animation")
+    firstAnimation.AnimationId = firstAnimationId
 
-local secondAnimation = Instance.new("Animation")
-secondAnimation.AnimationId = secondAnimationId
+    local secondAnimation = Instance.new("Animation")
+    secondAnimation.AnimationId = secondAnimationId
 
-local thirdAnimation = Instance.new("Animation")
-thirdAnimation.AnimationId = thirdAnimationId
+    local thirdAnimation = Instance.new("Animation")
+    thirdAnimation.AnimationId = thirdAnimationId
 
-local humanoid = character:FindFirstChildOfClass("Humanoid")
-if humanoid then
-    while AnimationsEnabled do
-        local firstAnimationTrack = humanoid:LoadAnimation(firstAnimation)
-        local secondAnimationTrack = humanoid:LoadAnimation(secondAnimation)
-        local thirdAnimationTrack = humanoid:LoadAnimation(thirdAnimation)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        while AnimationsEnabled do
+            local firstAnimationTrack = humanoid:LoadAnimation(firstAnimation)
+            local secondAnimationTrack = humanoid:LoadAnimation(secondAnimation)
+            local thirdAnimationTrack = humanoid:LoadAnimation(thirdAnimation)
 
-        firstAnimationTrack:Play()
-        wait(1)
-        firstAnimationTrack:Stop()
+            firstAnimationTrack:Play()
+            wait(1)
+            firstAnimationTrack:Stop()
 
-        secondAnimationTrack:Play()
-        wait(1)
-        secondAnimationTrack:Stop()
+            secondAnimationTrack:Play()
+            wait(1)
+            secondAnimationTrack:Stop()
 
-        thirdAnimationTrack:Play()
-        wait(1)
-        thirdAnimationTrack:Stop()
+            thirdAnimationTrack:Play()
+            wait(1)
+            thirdAnimationTrack:Stop()
 
-        wait()
+            wait()
+        end
     end
 end
-end
 
-TextButton_11.MouseButton1Down:Connect(function()
-AnimationsEnabled = not AnimationsEnabled
-if AnimationsEnabled then
-    TextButton_11.Text = "On"
-    TextButton_11.TextColor3 = Color3.fromRGB(0, 255, 0)
-    playAnimations()
-else
-    TextButton_11.Text = "Off"
-    TextButton_11.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-end)
+TextButton_11.MouseButton1Down:Connect(
+    function()
+        AnimationsEnabled = not AnimationsEnabled
+        if AnimationsEnabled then
+            TextButton_11.Text = "On"
+            TextButton_11.TextColor3 = Color3.fromRGB(0, 255, 0)
+            playAnimations()
+        else
+            TextButton_11.Text = "Off"
+            TextButton_11.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
 
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
-AnimationsEnabled = false
-TextButton_11.Text = "Off"
-TextButton_11.TextColor3 = Color3.fromRGB(255, 0, 0)
-end)
+game.Players.LocalPlayer.CharacterAdded:Connect(
+    function()
+        AnimationsEnabled = false
+        TextButton_11.Text = "Off"
+        TextButton_11.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+)
 
 if game.Players.LocalPlayer.Character and AnimationsEnabled then
-playAnimations()
+    playAnimations()
 end
 
 TextLabel_13.Parent = Frame7
@@ -1288,68 +1319,72 @@ TextButton_12.TextWrapped = true
 local TeleportEnabled = false
 
 function findPartByName(parent, name)
-for _, child in ipairs(parent:GetDescendants()) do
-    if child.Name == name and child:IsA("BasePart") then
-        return child
+    for _, child in ipairs(parent:GetDescendants()) do
+        if child.Name == name and child:IsA("BasePart") then
+            return child
+        end
     end
-end
-return nil
+    return nil
 end
 
 function teleportToSeat()
-local seat = findPartByName(game.Workspace, "Seat")
+    local seat = findPartByName(game.Workspace, "Seat")
 
-if seat then
-    local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
+    if seat then
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
 
-    if not character.PrimaryPart then
-        character.PrimaryPart = character:FindFirstChild("HumanoidRootPart")
+        if not character.PrimaryPart then
+            character.PrimaryPart = character:FindFirstChild("HumanoidRootPart")
+        end
+
+        character:SetPrimaryPartCFrame(seat.CFrame + Vector3.new(0, 3, 0))
+
+        if character:FindFirstChild("Humanoid") then
+            character.Humanoid.Sit = true
+        end
+    else
+        warn("Seat part not found in the workspace.")
     end
-
-    character:SetPrimaryPartCFrame(seat.CFrame + Vector3.new(0, 3, 0))
-    
-    if character:FindFirstChild("Humanoid") then
-        character.Humanoid.Sit = true
-    end
-else
-    warn("Seat part not found in the workspace.")
-end
 end
 
 function makePlayerJump()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:FindFirstChildOfClass("Humanoid")
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
 
-if humanoid then
-    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-else
-    warn("Humanoid not found in character")
-end
+    if humanoid then
+        humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    else
+        warn("Humanoid not found in character")
+    end
 end
 
-TextButton_12.MouseButton1Down:Connect(function()
-TeleportEnabled = not TeleportEnabled
-if TeleportEnabled then
-    TextButton_12.Text = "On"
-    TextButton_12.TextColor3 = Color3.fromRGB(0, 255, 0)
-    teleportToSeat()
-else
-    TextButton_12.Text = "Off"
-    TextButton_12.TextColor3 = Color3.fromRGB(255, 0, 0)
-    makePlayerJump()
-end
-end)
+TextButton_12.MouseButton1Down:Connect(
+    function()
+        TeleportEnabled = not TeleportEnabled
+        if TeleportEnabled then
+            TextButton_12.Text = "On"
+            TextButton_12.TextColor3 = Color3.fromRGB(0, 255, 0)
+            teleportToSeat()
+        else
+            TextButton_12.Text = "Off"
+            TextButton_12.TextColor3 = Color3.fromRGB(255, 0, 0)
+            makePlayerJump()
+        end
+    end
+)
 
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
-if TeleportEnabled then
-    teleportToSeat()
-end
-end)
+game.Players.LocalPlayer.CharacterAdded:Connect(
+    function()
+        if TeleportEnabled then
+            teleportToSeat()
+        end
+    end
+)
 
 if game.Players.LocalPlayer.Character and TeleportEnabled then
-teleportToSeat()
+    teleportToSeat()
 end
 
 Frame1.Name = "Frame1"
@@ -1458,38 +1493,44 @@ local trainRate = tonumber(TextBox.Text)
 local trainAmount = tonumber(TextBox_2.Text)
 
 local function updateValues()
-trainRate = tonumber(TextBox.Text) or trainRate
-trainAmount = tonumber(TextBox_2.Text) or trainAmount
+    trainRate = tonumber(TextBox.Text) or trainRate
+    trainAmount = tonumber(TextBox_2.Text) or trainAmount
 end
 
 local function autoTrain()
-while isAutoTrainOn do
-    addPowerEvent:FireServer("FromTraining", trainAmount)
-    wait(trainRate)
-    addPowerEvent:FireServer("FromTraining", trainAmount - 0.001)
-    wait(trainRate)
-end
+    while isAutoTrainOn do
+        addPowerEvent:FireServer("FromTraining", trainAmount)
+        wait(trainRate)
+        addPowerEvent:FireServer("FromTraining", trainAmount - 0.001)
+        wait(trainRate)
+    end
 end
 
-TextButton.MouseButton1Down:Connect(function()
-isAutoTrainOn = not isAutoTrainOn
-if isAutoTrainOn then
-    TextButton.Text = "On"
-    TextButton.TextColor3 = Color3.fromRGB(0, 255, 0)
-    spawn(autoTrain)
-else
-    TextButton.Text = "Off"
-    TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-end)
+TextButton.MouseButton1Down:Connect(
+    function()
+        isAutoTrainOn = not isAutoTrainOn
+        if isAutoTrainOn then
+            TextButton.Text = "On"
+            TextButton.TextColor3 = Color3.fromRGB(0, 255, 0)
+            spawn(autoTrain)
+        else
+            TextButton.Text = "Off"
+            TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
 
-TextBox.FocusLost:Connect(function()
-updateValues()
-end)
+TextBox.FocusLost:Connect(
+    function()
+        updateValues()
+    end
+)
 
-TextBox_2.FocusLost:Connect(function()
-updateValues()
-end)
+TextBox_2.FocusLost:Connect(
+    function()
+        updateValues()
+    end
+)
 
 Frame9.Name = "Frame9"
 Frame9.Parent = TrainTab
@@ -1723,7 +1764,7 @@ TextLabel_27.Position = UDim2.new(3.09702415e-07, 0, -0.273736805, 0)
 TextLabel_27.Size = UDim2.new(1.01832914, 0, 1.01060534, 0)
 TextLabel_27.ZIndex = 2
 TextLabel_27.Font = Enum.Font.Fantasy
-TextLabel_27.Text = "Created by: QT_xAlip & philippinesBraxy123"
+TextLabel_27.Text = "Created by Dark_Turns otherwise known as Arkhavis"
 TextLabel_27.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_27.TextScaled = true
 TextLabel_27.TextSize = 14.000
@@ -1871,7 +1912,7 @@ TextLabel_31.Position = UDim2.new(3.09702415e-07, 0, -0.221630007, 0)
 TextLabel_31.Size = UDim2.new(1.01832902, 0, 0.98785454, 0)
 TextLabel_31.ZIndex = 2
 TextLabel_31.Font = Enum.Font.Fantasy
-TextLabel_31.Text = "Hunter Clan is the strongest in NA "
+TextLabel_31.Text = "Hunterhub has been stolen :>"
 TextLabel_31.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_31.TextScaled = true
 TextLabel_31.TextSize = 21.000
@@ -1951,56 +1992,61 @@ TextButton_13.TextWrapped = true
 
 local TextButtonEnabled = false
 
-TextButton_13.MouseButton1Down:Connect(function()
-TextButtonEnabled = not TextButtonEnabled
-if TextButtonEnabled then
-    TextButton_13.Text = "On"
-    TextButton_13.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_13.Text = "Off"
-    TextButton_13.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-
-if TextButtonEnabled then
-    spawn(function()
-        local player = game:GetService("Players").LocalPlayer
-        local character = player.Character or player.CharacterAdded:Wait()
-
-        local offset = Vector3.new(0, 5, 0)
-
-        local function throwShuriken()
-            local direction = character.HumanoidRootPart.CFrame.LookVector
-            local spawnPosition = character.HumanoidRootPart.Position + offset
-
-            local args = {
-                [1] = spawnPosition,
-                [2] = direction
-            }
-
-            local shuriken = player.Backpack:FindFirstChild("Shuriken") or character:FindFirstChild("Shuriken")
-
-            if shuriken then
-                if shuriken.Parent == player.Backpack then
-                    shuriken.Parent = character
-                end
-
-                shuriken.HitEvent:FireServer(unpack(args))
-
-                if shuriken.Parent == character then
-                    shuriken.Parent = player.Backpack
-                end
-            else
-                warn("Shuriken not found in backpack or character")
-            end
+TextButton_13.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled = not TextButtonEnabled
+        if TextButtonEnabled then
+            TextButton_13.Text = "On"
+            TextButton_13.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_13.Text = "Off"
+            TextButton_13.TextColor3 = Color3.fromRGB(255, 0, 0)
         end
 
-        while TextButtonEnabled do
-            throwShuriken()
-            wait()
+        if TextButtonEnabled then
+            spawn(
+                function()
+                    local player = game:GetService("Players").LocalPlayer
+                    local character = player.Character or player.CharacterAdded:Wait()
+
+                    local offset = Vector3.new(0, 5, 0)
+
+                    local function throwShuriken()
+                        local direction = character.HumanoidRootPart.CFrame.LookVector
+                        local spawnPosition = character.HumanoidRootPart.Position + offset
+
+                        local args = {
+                            [1] = spawnPosition,
+                            [2] = direction
+                        }
+
+                        local shuriken =
+                            player.Backpack:FindFirstChild("Shuriken") or character:FindFirstChild("Shuriken")
+
+                        if shuriken then
+                            if shuriken.Parent == player.Backpack then
+                                shuriken.Parent = character
+                            end
+
+                            shuriken.HitEvent:FireServer(unpack(args))
+
+                            if shuriken.Parent == character then
+                                shuriken.Parent = player.Backpack
+                            end
+                        else
+                            warn("Shuriken not found in backpack or character")
+                        end
+                    end
+
+                    while TextButtonEnabled do
+                        throwShuriken()
+                        wait()
+                    end
+                end
+            )
         end
-    end)
-end
-end)
+    end
+)
 
 TextLabel_33.Parent = Frame2_3
 TextLabel_33.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -2054,30 +2100,42 @@ scrollFrame.BackgroundTransparency = 1
 scrollFrame.Parent = frame
 
 local function makeDraggable(element)
-local dragging
-local dragStart
-local startPos
+    local dragging
+    local dragStart
+    local startPos
 
-element.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragging = true
-        dragStart = input.Position
-        startPos = element.Position
+    element.InputBegan:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                dragging = true
+                dragStart = input.Position
+                startPos = element.Position
 
-        input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
+                input.Changed:Connect(
+                    function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            dragging = false
+                        end
+                    end
+                )
             end
-        end)
-    end
-end)
+        end
+    )
 
-element.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
-        local delta = input.Position - dragStart
-        element.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-end)
+    element.InputChanged:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+                local delta = input.Position - dragStart
+                element.Position =
+                    UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            end
+        end
+    )
 end
 
 local label = Instance.new("TextLabel")
@@ -2095,73 +2153,78 @@ makeDraggable(frame)
 local selectedPlayer = nil
 
 local function fireShuriken(targetPlayer)
-if not targetPlayer or not targetPlayer.Character or not targetPlayer.Character:FindFirstChild("HumanoidRootPart") or not targetPlayer.Character:FindFirstChild("Head") then
-    warn("Invalid target player")
-    return
-end
+    if
+        not targetPlayer or not targetPlayer.Character or not targetPlayer.Character:FindFirstChild("HumanoidRootPart") or
+            not targetPlayer.Character:FindFirstChild("Head")
+     then
+        warn("Invalid target player")
+        return
+    end
 
-local targetPosition = targetPlayer.Character.Head.Position
-game.Players.LocalPlayer.Character.Shuriken.Handle.CFrame = CFrame.new(targetPosition)
-game.Players.LocalPlayer.Character.Shuriken.HitEvent:FireServer(targetPosition)
+    local targetPosition = targetPlayer.Character.Head.Position
+    game.Players.LocalPlayer.Character.Shuriken.Handle.CFrame = CFrame.new(targetPosition)
+    game.Players.LocalPlayer.Character.Shuriken.HitEvent:FireServer(targetPosition)
 end
 
 local function continuouslyFireShuriken()
-while selectedPlayer do
-    fireShuriken(selectedPlayer)
-    wait(1 / 700)
-end
+    while selectedPlayer do
+        fireShuriken(selectedPlayer)
+        wait(1 / 700)
+    end
 end
 
 local function addPlayerToList(player)
-local buttonHeight = 20
-local padding = 5
-local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
+    local buttonHeight = 20
+    local padding = 5
+    local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
 
-local button = Instance.new("TextButton")
-button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
-button.Position = UDim2.new(0, padding, 0, offsetY)
-button.Text = player.Name
-button.TextSize = 14
-button.Font = Enum.Font.Fantasy
-button.BackgroundTransparency = 1
-button.TextColor3 = Color3.new(1, 1, 1)
-button.Name = player.Name .. "Button"
-button.Parent = scrollFrame
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
+    button.Position = UDim2.new(0, padding, 0, offsetY)
+    button.Text = player.Name
+    button.TextSize = 14
+    button.Font = Enum.Font.Fantasy
+    button.BackgroundTransparency = 1
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.Name = player.Name .. "Button"
+    button.Parent = scrollFrame
 
-button.MouseButton1Down:Connect(function()
-    selectedPlayer = player
-    continuouslyFireShuriken()
-end)
+    button.MouseButton1Down:Connect(
+        function()
+            selectedPlayer = player
+            continuouslyFireShuriken()
+        end
+    )
 
-scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
 end
 
 local function removePlayerFromList(player)
-local button = scrollFrame:FindFirstChild(player.Name .. "Button")
-if button then
-    button:Destroy()
+    local button = scrollFrame:FindFirstChild(player.Name .. "Button")
+    if button then
+        button:Destroy()
 
-    local buttons = scrollFrame:GetChildren()
-    local buttonHeight = 20
-    local padding = 5
-    local offsetY = 0
+        local buttons = scrollFrame:GetChildren()
+        local buttonHeight = 20
+        local padding = 5
+        local offsetY = 0
 
-    for _, btn in ipairs(buttons) do
-        if btn:IsA("TextButton") then
-            btn.Position = UDim2.new(0, padding, 0, offsetY)
-            offsetY = offsetY + buttonHeight + padding
+        for _, btn in ipairs(buttons) do
+            if btn:IsA("TextButton") then
+                btn.Position = UDim2.new(0, padding, 0, offsetY)
+                offsetY = offsetY + buttonHeight + padding
+            end
         end
-    end
 
-    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
-end
+        scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
+    end
 end
 
 local function populatePlayerList()
-local players = game.Players:GetPlayers()
-for _, player in ipairs(players) do
-    addPlayerToList(player)
-end
+    local players = game.Players:GetPlayers()
+    for _, player in ipairs(players) do
+        addPlayerToList(player)
+    end
 end
 
 game.Players.PlayerAdded:Connect(addPlayerToList)
@@ -2171,23 +2234,25 @@ game.Players.PlayerRemoving:Connect(removePlayerFromList)
 populatePlayerList()
 
 local function reparentGUI()
-gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 end
 
 reparentGUI()
 
 game.Players.LocalPlayer.CharacterAdded:Connect(reparentGUI)
 
-TextButton_14.MouseButton1Down:Connect(function()
-frame.Visible = not frame.Visible
-if frame.Visible then
-    TextButton_14.Text = "Open"
-    TextButton_14.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_14.Text = "Close"
-    TextButton_14.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-end)
+TextButton_14.MouseButton1Down:Connect(
+    function()
+        frame.Visible = not frame.Visible
+        if frame.Visible then
+            TextButton_14.Text = "Open"
+            TextButton_14.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_14.Text = "Close"
+            TextButton_14.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
 
 TextLabel_34.Parent = Frame2_3
 TextLabel_34.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -2272,36 +2337,38 @@ local VariableTable = {AutoEquipShuriken = false}
 local equipShurikenConnection
 
 local function equipShuriken()
-repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Shuriken")
-local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Shuriken")
-if tool then
-    tool.Parent = game.Players.LocalPlayer.Character
-end
+    repeat
+        task.wait()
+    until game.Players.LocalPlayer.Backpack:WaitForChild("Shuriken")
+    local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Shuriken")
+    if tool then
+        tool.Parent = game.Players.LocalPlayer.Character
+    end
 end
 
 local function toggleEquipShuriken()
-VariableTable['AutoEquipShuriken'] = not VariableTable['AutoEquipShuriken']
-if VariableTable['AutoEquipShuriken'] then
-    equipShurikenConnection = game:GetService("RunService").Heartbeat:Connect(equipShuriken)
-    TextButton_15.Text = "On"
-    TextButton_15.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    if equipShurikenConnection then
-        equipShurikenConnection:Disconnect()
-        equipShurikenConnection = nil
+    VariableTable["AutoEquipShuriken"] = not VariableTable["AutoEquipShuriken"]
+    if VariableTable["AutoEquipShuriken"] then
+        equipShurikenConnection = game:GetService("RunService").Heartbeat:Connect(equipShuriken)
+        TextButton_15.Text = "On"
+        TextButton_15.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        if equipShurikenConnection then
+            equipShurikenConnection:Disconnect()
+            equipShurikenConnection = nil
+        end
+        TextButton_15.Text = "Off"
+        TextButton_15.TextColor3 = Color3.fromRGB(255, 0, 0)
     end
-    TextButton_15.Text = "Off"
-    TextButton_15.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
 end
 
 TextButton_15.MouseButton1Down:Connect(toggleEquipShuriken)
 
-if VariableTable['AutoEquipShuriken'] then
-toggleEquipShuriken()
+if VariableTable["AutoEquipShuriken"] then
+    toggleEquipShuriken()
 else
-TextButton_15.Text = "Off"
-TextButton_15.TextColor3 = Color3.fromRGB(255, 0, 0)
+    TextButton_15.Text = "Off"
+    TextButton_15.TextColor3 = Color3.fromRGB(255, 0, 0)
 end
 
 TextButton_16.Parent = Frame10_2
@@ -2320,37 +2387,39 @@ TextButton_16.TextWrapped = true
 local VariableTable = {SwordsEquipped = false}
 
 local function equipAllSwords()
-local player = game.Players.LocalPlayer
-local backpack = player:WaitForChild("Backpack")
-for _, tool in ipairs(backpack:GetChildren()) do
-    if tool:IsA("Tool") and tool.Name == "Sword" then
-        tool.Parent = player.Character
+    local player = game.Players.LocalPlayer
+    local backpack = player:WaitForChild("Backpack")
+    for _, tool in ipairs(backpack:GetChildren()) do
+        if tool:IsA("Tool") and tool.Name == "Sword" then
+            tool.Parent = player.Character
+        end
     end
-end
 end
 
 local function unequipAllSwords()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-for _, tool in ipairs(character:GetChildren()) do
-    if tool:IsA("Tool") and tool.Name == "Sword" then
-        tool.Parent = player.Backpack
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    for _, tool in ipairs(character:GetChildren()) do
+        if tool:IsA("Tool") and tool.Name == "Sword" then
+            tool.Parent = player.Backpack
+        end
     end
 end
-end
 
-TextButton_16.MouseButton1Down:Connect(function()
-VariableTable['SwordsEquipped'] = not VariableTable['SwordsEquipped']
-if VariableTable['SwordsEquipped'] then
-    equipAllSwords()
-    TextButton_16.Text = "On"
-    TextButton_16.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    unequipAllSwords()
-    TextButton_16.Text = "Off"
-    TextButton_16.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-end)
+TextButton_16.MouseButton1Down:Connect(
+    function()
+        VariableTable["SwordsEquipped"] = not VariableTable["SwordsEquipped"]
+        if VariableTable["SwordsEquipped"] then
+            equipAllSwords()
+            TextButton_16.Text = "On"
+            TextButton_16.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            unequipAllSwords()
+            TextButton_16.Text = "Off"
+            TextButton_16.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
 
 TextLabel_37.Parent = Frame10_2
 TextLabel_37.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -2394,77 +2463,82 @@ TextButton_17.TextWrapped = true
 local TextButtonEnabled = false
 local connections = {}
 
-TextButton_17.MouseButton1Down:Connect(function()
-TextButtonEnabled = not TextButtonEnabled
-if TextButtonEnabled then
-    TextButton_17.Text = "On"
-    TextButton_17.TextColor3 = Color3.fromRGB(0, 255, 0)
+TextButton_17.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled = not TextButtonEnabled
+        if TextButtonEnabled then
+            TextButton_17.Text = "On"
+            TextButton_17.TextColor3 = Color3.fromRGB(0, 255, 0)
 
-    local toolName = "Shuriken"
+            local toolName = "Shuriken"
 
-    local function findToolInBackpack(player, toolName)
-        for _, item in pairs(player.Backpack:GetChildren()) do
-            if item:IsA("Tool") and item.Name == toolName then
-                return item
+            local function findToolInBackpack(player, toolName)
+                for _, item in pairs(player.Backpack:GetChildren()) do
+                    if item:IsA("Tool") and item.Name == toolName then
+                        return item
+                    end
+                end
+                return nil
             end
-        end
-        return nil
-    end
 
-    local function findToolInCharacter(player, toolName)
-        local character = player.Character
-        if character then
-            for _, item in pairs(character:GetChildren()) do
-                if item:IsA("Tool") and item.Name == toolName then
-                    return item
+            local function findToolInCharacter(player, toolName)
+                local character = player.Character
+                if character then
+                    for _, item in pairs(character:GetChildren()) do
+                        if item:IsA("Tool") and item.Name == toolName then
+                            return item
+                        end
+                    end
+                end
+                return nil
+            end
+
+            local function equipTool(player, tool)
+                tool.Parent = player.Backpack
+                player.Character.Humanoid:EquipTool(tool)
+            end
+
+            local function unequipTool(player)
+                player.Character.Humanoid:UnequipTools()
+            end
+
+            local function main()
+                local player = game.Players.LocalPlayer
+                local toolInBackpack = findToolInBackpack(player, toolName)
+                local toolInCharacter = findToolInCharacter(player, toolName)
+
+                if toolInCharacter then
+                    unequipTool(player)
+                elseif toolInBackpack then
+                    equipTool(player, toolInBackpack)
                 end
             end
-        end
-        return nil
-    end
 
-    local function equipTool(player, tool)
-        tool.Parent = player.Backpack
-        player.Character.Humanoid:EquipTool(tool)
-    end
-
-    local function unequipTool(player)
-        player.Character.Humanoid:UnequipTools()
-    end
-
-    local function main()
-        local player = game.Players.LocalPlayer
-        local toolInBackpack = findToolInBackpack(player, toolName)
-        local toolInCharacter = findToolInCharacter(player, toolName)
-
-        if toolInCharacter then
-            unequipTool(player)
-        elseif toolInBackpack then
-            equipTool(player, toolInBackpack)
-        end
-    end
-
-    for i = 1, 4 do
-        local connection = spawn(function()
-            while TextButtonEnabled do
-                main()
-                wait()
+            for i = 1, 4 do
+                local connection =
+                    spawn(
+                    function()
+                        while TextButtonEnabled do
+                            main()
+                            wait()
+                        end
+                    end
+                )
+                table.insert(connections, connection)
             end
-        end)
-        table.insert(connections, connection)
-    end
-else
-    TextButton_17.Text = "Off"
-    TextButton_17.TextColor3 = Color3.fromRGB(255, 0, 0)
+        else
+            TextButton_17.Text = "Off"
+            TextButton_17.TextColor3 = Color3.fromRGB(255, 0, 0)
 
-    for _, connection in pairs(connections) do
-        if connection then
-            connection:Disconnect()
+            for _, connection in pairs(connections) do
+                if connection then
+                    connection:Disconnect()
+                end
+            end
+            connections = {}
         end
     end
-    connections = {}
-end
-end)
+)
 
 TextLabel_38.Parent = Frame3_3
 TextLabel_38.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -2498,62 +2572,68 @@ TextButton_18.TextWrapped = true
 local TextButtonEnabled = false
 local connection
 
-TextButton_18.MouseButton1Down:Connect(function()
-TextButtonEnabled = not TextButtonEnabled
-if TextButtonEnabled then
-    TextButton_18.Text = "On"
-    TextButton_18.TextColor3 = Color3.fromRGB(0, 255, 0)
+TextButton_18.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled = not TextButtonEnabled
+        if TextButtonEnabled then
+            TextButton_18.Text = "On"
+            TextButton_18.TextColor3 = Color3.fromRGB(0, 255, 0)
 
-    connection = spawn(function()
-        local players = game:GetService("Players"):GetPlayers()
+            connection =
+                spawn(
+                function()
+                    local players = game:GetService("Players"):GetPlayers()
 
-        local offset = Vector3.new(0, 0, 0)
+                    local offset = Vector3.new(0, 0, 0)
 
-        local function throwShuriken(player)
-            local character = player.Character or player.CharacterAdded:Wait()
-            local head = character:WaitForChild("Head")
+                    local function throwShuriken(player)
+                        local character = player.Character or player.CharacterAdded:Wait()
+                        local head = character:WaitForChild("Head")
 
-            local direction = character.HumanoidRootPart.CFrame.LookVector
-            local spawnPosition = head.Position + offset
+                        local direction = character.HumanoidRootPart.CFrame.LookVector
+                        local spawnPosition = head.Position + offset
 
-            local args = {
-                [1] = spawnPosition,
-                [2] = direction
-            }
+                        local args = {
+                            [1] = spawnPosition,
+                            [2] = direction
+                        }
 
-            local shuriken = player.Backpack:FindFirstChild("Shuriken") or character:FindFirstChild("Shuriken")
+                        local shuriken =
+                            player.Backpack:FindFirstChild("Shuriken") or character:FindFirstChild("Shuriken")
 
-            if shuriken then
-                if shuriken.Parent == player.Backpack then
-                    shuriken.Parent = character
+                        if shuriken then
+                            if shuriken.Parent == player.Backpack then
+                                shuriken.Parent = character
+                            end
+
+                            shuriken.HitEvent:FireServer(unpack(args))
+
+                            if shuriken.Parent == character then
+                                shuriken.Parent = player.Backpack
+                            end
+                        else
+                            warn("Shuriken not found in backpack or character")
+                        end
+                    end
+
+                    while TextButtonEnabled do
+                        for _, player in ipairs(players) do
+                            throwShuriken(player)
+                        end
+                        wait(0.00001)
+                    end
                 end
+            )
+        else
+            TextButton_18.Text = "Off"
+            TextButton_18.TextColor3 = Color3.fromRGB(255, 0, 0)
 
-                shuriken.HitEvent:FireServer(unpack(args))
-
-                if shuriken.Parent == character then
-                    shuriken.Parent = player.Backpack
-                end
-            else
-                warn("Shuriken not found in backpack or character")
+            if connection then
+                connection:Disconnect()
             end
         end
-
-        while TextButtonEnabled do
-            for _, player in ipairs(players) do
-                throwShuriken(player)
-            end
-            wait(0.00001)
-        end
-    end)
-else
-    TextButton_18.Text = "Off"
-    TextButton_18.TextColor3 = Color3.fromRGB(255, 0, 0)
-
-    if connection then
-        connection:Disconnect()
     end
-end
-end)
+)
 
 TextLabel_39.Parent = Frame3_3
 TextLabel_39.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -2597,61 +2677,67 @@ TextButton_19.TextWrapped = true
 local TextButtonEnabled = false
 local connection
 
-TextButton_19.MouseButton1Down:Connect(function()
-TextButtonEnabled = not TextButtonEnabled
-if TextButtonEnabled then
-    TextButton_19.Text = "On"
-    TextButton_19.TextColor3 = Color3.fromRGB(0, 255, 0)
+TextButton_19.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled = not TextButtonEnabled
+        if TextButtonEnabled then
+            TextButton_19.Text = "On"
+            TextButton_19.TextColor3 = Color3.fromRGB(0, 255, 0)
 
-    connection = spawn(function()
-        local Players = game:GetService("Players")
-        local LocalPlayer = Players.LocalPlayer
+            connection =
+                spawn(
+                function()
+                    local Players = game:GetService("Players")
+                    local LocalPlayer = Players.LocalPlayer
 
-        local function throwShuriken(player)
-            local character = player.Character or player.CharacterAdded:Wait()
-            local head = LocalPlayer.Character:WaitForChild("Head")
+                    local function throwShuriken(player)
+                        local character = player.Character or player.CharacterAdded:Wait()
+                        local head = LocalPlayer.Character:WaitForChild("Head")
 
-            local direction = (head.Position - character.HumanoidRootPart.Position).unit
-            local spawnPosition = head.Position
+                        local direction = (head.Position - character.HumanoidRootPart.Position).unit
+                        local spawnPosition = head.Position
 
-            local args = {
-                [1] = spawnPosition,
-                [2] = direction
-            }
+                        local args = {
+                            [1] = spawnPosition,
+                            [2] = direction
+                        }
 
-            local shuriken = player.Backpack:FindFirstChild("Shuriken") or character:FindFirstChild("Shuriken")
+                        local shuriken =
+                            player.Backpack:FindFirstChild("Shuriken") or character:FindFirstChild("Shuriken")
 
-            if shuriken then
-                if shuriken.Parent == player.Backpack then
-                    shuriken.Parent = character
+                        if shuriken then
+                            if shuriken.Parent == player.Backpack then
+                                shuriken.Parent = character
+                            end
+
+                            shuriken.HitEvent:FireServer(unpack(args))
+
+                            if shuriken.Parent == character then
+                                shuriken.Parent = player.Backpack
+                            end
+                        else
+                            warn("Shuriken not found in backpack or character")
+                        end
+                    end
+
+                    while TextButtonEnabled do
+                        for _, player in ipairs(Players:GetPlayers()) do
+                            throwShuriken(player)
+                        end
+                        wait()
+                    end
                 end
+            )
+        else
+            TextButton_19.Text = "Off"
+            TextButton_19.TextColor3 = Color3.fromRGB(255, 0, 0)
 
-                shuriken.HitEvent:FireServer(unpack(args))
-
-                if shuriken.Parent == character then
-                    shuriken.Parent = player.Backpack
-                end
-            else
-                warn("Shuriken not found in backpack or character")
+            if connection then
+                connection:Disconnect()
             end
         end
-
-        while TextButtonEnabled do
-            for _, player in ipairs(Players:GetPlayers()) do
-                throwShuriken(player)
-            end
-            wait()
-        end
-    end)
-else
-    TextButton_19.Text = "Off"
-    TextButton_19.TextColor3 = Color3.fromRGB(255, 0, 0)
-
-    if connection then
-        connection:Disconnect()
     end
-end
-end)
+)
 
 TextLabel_40.Parent = Frame4_3
 TextLabel_40.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -2686,64 +2772,64 @@ local enabled = false
 local runConnection
 
 local function teleportKunaiToPlayerHead(kunai, player)
-if player and player.Character and kunai and kunai:IsA("BasePart") then
-    local character = player.Character
-    local humanoid = character:FindFirstChildOfClass("Humanoid")
-    if humanoid then
-        local head = character:FindFirstChild("Head")
-        if head then
-            kunai.CFrame = head.CFrame
+    if player and player.Character and kunai and kunai:IsA("BasePart") then
+        local character = player.Character
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            local head = character:FindFirstChild("Head")
+            if head then
+                kunai.CFrame = head.CFrame
+            end
         end
     end
 end
-end
 
 local function teleportKunaisToPlayers(kunais)
-local players = game.Players:GetPlayers()
-local localPlayer = game.Players.LocalPlayer
-for i, kunai in ipairs(kunais) do
-    local playerIndex = (i - 1) % #players + 1
-    local player = players[playerIndex]
-    if player ~= localPlayer then
-        teleportKunaiToPlayerHead(kunai, player)
+    local players = game.Players:GetPlayers()
+    local localPlayer = game.Players.LocalPlayer
+    for i, kunai in ipairs(kunais) do
+        local playerIndex = (i - 1) % #players + 1
+        local player = players[playerIndex]
+        if player ~= localPlayer then
+            teleportKunaiToPlayerHead(kunai, player)
+        end
     end
-end
 end
 
 local function checkForThrownKunais()
-local thrownKunais = {}
-for _, kunai in ipairs(workspace:GetChildren()) do
-    if kunai.Name == "ThrownKunai" then
-        table.insert(thrownKunais, kunai)
+    local thrownKunais = {}
+    for _, kunai in ipairs(workspace:GetChildren()) do
+        if kunai.Name == "ThrownKunai" then
+            table.insert(thrownKunais, kunai)
+        end
     end
-end
-if #thrownKunais > 0 then
-    teleportKunaisToPlayers(thrownKunais)
-end
+    if #thrownKunais > 0 then
+        teleportKunaisToPlayers(thrownKunais)
+    end
 end
 
 local function startLoop()
-while enabled do
-    checkForThrownKunais()
-    wait(0.1)
-end
+    while enabled do
+        checkForThrownKunais()
+        wait(0.1)
+    end
 end
 
 local function toggle()
-enabled = not enabled
-if enabled then
-    TextButton_20.Text = "On"
-    TextButton_20.TextColor3 = Color3.fromRGB(0, 255, 0)
-    runConnection = coroutine.create(startLoop)
-    coroutine.resume(runConnection)
-else
-    TextButton_20.Text = "Off"
-    TextButton_20.TextColor3 = Color3.fromRGB(255, 0, 0)
-    if runConnection then
-        coroutine.yield(runConnection)
-        runConnection = nil
+    enabled = not enabled
+    if enabled then
+        TextButton_20.Text = "On"
+        TextButton_20.TextColor3 = Color3.fromRGB(0, 255, 0)
+        runConnection = coroutine.create(startLoop)
+        coroutine.resume(runConnection)
+    else
+        TextButton_20.Text = "Off"
+        TextButton_20.TextColor3 = Color3.fromRGB(255, 0, 0)
+        if runConnection then
+            coroutine.yield(runConnection)
+            runConnection = nil
+        end
     end
-end
 end
 
 TextButton_20.MouseButton1Click:Connect(toggle)
@@ -2792,38 +2878,40 @@ TextButton_21.TextWrapped = true
 
 local TextButtonEnabled = false
 
-TextButton_21.MouseButton1Down:Connect(function()
-TextButtonEnabled = not TextButtonEnabled
-if TextButtonEnabled then
-    TextButton_21.Text = "On"
-    TextButton_21.TextColor3 = Color3.fromRGB(0, 255, 0)
+TextButton_21.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled = not TextButtonEnabled
+        if TextButtonEnabled then
+            TextButton_21.Text = "On"
+            TextButton_21.TextColor3 = Color3.fromRGB(0, 255, 0)
 
-    local character = game.Players.LocalPlayer.Character
-    local backpack = game.Players.LocalPlayer.Backpack
+            local character = game.Players.LocalPlayer.Character
+            local backpack = game.Players.LocalPlayer.Backpack
 
-    if not character:FindFirstChild("Sword") then
-        local tool = backpack:FindFirstChild("Sword")
-        if tool then
-            tool.Parent = character
+            if not character:FindFirstChild("Sword") then
+                local tool = backpack:FindFirstChild("Sword")
+                if tool then
+                    tool.Parent = character
+                end
+            end
+
+            if character:FindFirstChild("Sword") then
+                while TextButtonEnabled do
+                    character.Sword.HitEvent:FireServer()
+                    wait()
+                end
+            end
+        else
+            TextButton_21.Text = "Off"
+            TextButton_21.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            local tool = game.Players.LocalPlayer.Character:FindFirstChild("Sword")
+            if tool then
+                tool.Parent = game.Players.LocalPlayer.Backpack
+            end
         end
     end
-
-    if character:FindFirstChild("Sword") then
-        while TextButtonEnabled do 
-            character.Sword.HitEvent:FireServer()
-            wait()
-        end
-    end
-else
-    TextButton_21.Text = "Off"
-    TextButton_21.TextColor3 = Color3.fromRGB(255, 0, 0)
-
-    local tool = game.Players.LocalPlayer.Character:FindFirstChild("Sword")
-    if tool then
-        tool.Parent = game.Players.LocalPlayer.Backpack
-    end
-end
-end)
+)
 
 TextLabel_42.Parent = Frame5_3
 TextLabel_42.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -2859,34 +2947,34 @@ local player = game:GetService("Players").LocalPlayer
 local running = false
 
 local function startLoop()
-running = true
-while running do
-    local character = player.Character
-    if character then
-        for _, tool in ipairs(character:GetChildren()) do
-            if tool:IsA("Tool") and tool:FindFirstChild("HitEvent") then
-                tool.HitEvent:FireServer()
-                wait(0.000001)
+    running = true
+    while running do
+        local character = player.Character
+        if character then
+            for _, tool in ipairs(character:GetChildren()) do
+                if tool:IsA("Tool") and tool:FindFirstChild("HitEvent") then
+                    tool.HitEvent:FireServer()
+                    wait(0.000001)
+                end
             end
         end
+        wait(0.05)
     end
-    wait(0.05)
-end
 end
 
 local function toggle()
-enabled = not enabled
-if enabled then
-    TextButton_22.Text = "On"
-    TextButton_22.TextColor3 = Color3.fromRGB(0, 255, 0)
-    if not running then
-        spawn(startLoop)
+    enabled = not enabled
+    if enabled then
+        TextButton_22.Text = "On"
+        TextButton_22.TextColor3 = Color3.fromRGB(0, 255, 0)
+        if not running then
+            spawn(startLoop)
+        end
+    else
+        TextButton_22.Text = "Off"
+        TextButton_22.TextColor3 = Color3.fromRGB(255, 0, 0)
+        running = false
     end
-else
-    TextButton_22.Text = "Off"
-    TextButton_22.TextColor3 = Color3.fromRGB(255, 0, 0)
-    running = false
-end
 end
 
 TextButton_22.MouseButton1Click:Connect(toggle)
@@ -2932,9 +3020,364 @@ TextButton_23.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_23.TextScaled = true
 TextButton_23.TextSize = 19.000
 TextButton_23.TextWrapped = true
-TextButton_23.MouseButton1Down:Connect(function()
-local d=string.byte;local r=string.char;local c=string.sub;local u=table.concat;local h=math.ldexp;local W=getfenv or function()return _ENV end;local l=setmetatable;local s=select;local a=unpack;local f=tonumber;local function b(d)local e,n,t="","",{}local a=256;local o={}for l=0,a-1 do o[l]=r(l)end;local l=1;local function i()local e=f(c(d,l,l),36)l=l+1;local n=f(c(d,l,l+e-1),36)l=l+e;return n end;e=r(i())t[1]=e;while l<#d do local l=i()if o[l]then n=o[l]else n=e..c(e,1,1)end;o[a]=e..c(n,1,1)t[#t+1],e,a=n,n,a+1 end;return table.concat(t)end;local f=b('21X21W27527621W27427521Y27921W21121X22727621V22422C21W24T22421W25G21U27625127527P22C25025725127K25G21X22427W24M27N27528524L28527724X27628128328522027624P27727K21W24Z28K28A27621S28524R28521Z27627B27621121Y28G27521821721721B1Y21D21621321C21921721621Y21S27621F21121921C21W27Q27521T27V25724M28K21X22K28322K27522121W27W24U28P22K22S21W24N29W21W21T28225724I28528Q27528S275');local o=bit and bit.bxor or function(l,e)local n,o=1,0 while l>0 and e>0 do local a,c=l%2,e%2 if a~=c then o=o+n end l,e,n=(l-a)/2,(e-c)/2,n*2 end if l<e then l=e end while l>0 do local e=l%2 if e>0 then o=o+n end l,n=(l-e)/2,n*2 end return o end local function l(e,l,n)if n then local l=(e/2^(l-1))%2^((n-1)-(l-1)+1);return l-l%1;else local l=2^(l-1);return(e%(l+l)>=l)and 1 or 0;end;end;local e=1;local function n()local n,c,a,l=d(f,e,e+3);n=o(n,68)c=o(c,68)a=o(a,68)l=o(l,68)e=e+4;return(l*16777216)+(a*65536)+(c*256)+n;end;local function t()local l=o(d(f,e,e),68);e=e+1;return l;end;local function i()local e=n();local o=n();local c=1;local n=(l(o,1,20)*(2^32))+e;local e=l(o,21,31);local l=((-1)^l(o,32));if(e==0)then if(n==0)then return l*0;else e=1;c=0;end;elseif(e==2047)then return(n==0)and(l*(1/0))or(l*(0/0));end;return h(l,e-1023)*(c+(n/(2^52)));end;local h=n;local function b(l)local n;if(not l)then l=h();if(l==0)then return'';end;end;n=c(f,e,e+l-1);e=e+l;local e={}for l=1,#n do e[l]=r(o(d(c(n,l,l)),68))end return u(e);end;local e=n;local function f(...)return{...},s('#',...)end local function u()local d={0,0,0,0,0,0,0,0,0,0,0};local e={0};local c={};local a={d,nil,e,nil,c};for l=1,n()do e[l-1]=u();end;local e=n()local c={0,0,0};for n=1,e do local e=t();local l;if(e==0)then l=(t()~=0);elseif(e==3)then l=i();elseif(e==2)then l=b();end;c[n]=l;end;a[2]=c a[4]=t();for a=1,n()do local c=o(n(),4);local n=o(n(),229);local o=l(c,1,2);local e=l(n,1,11);local e={e,l(c,3,11),nil,nil,n};if(o==0)then e[3]=l(c,12,20);e[5]=l(c,21,29);elseif(o==1)then e[3]=l(n,12,33);elseif(o==2)then e[3]=l(n,12,32)-1048575;elseif(o==3)then e[3]=l(n,12,32)-1048575;e[5]=l(c,21,29);end;d[a]=e;end;return a;end;local function r(l,e,c)local o=l[1];local n=l[2];local e=l[3];local l=l[4];return function(...)local u=o;local t=n;local h=e;local n=l;local l=f local o=1;local d=-1;local W={};local i={...};local f=s('#',...)-1;local l={};local e={};for l=0,f do if(l>=n)then W[l-n]=i[l+1];else e[l]=i[l+1];end;end;local l=f-n+1 local l;local n;while true do l=u[o];n=l[1];if n<=10 then if n<=4 then if n<=1 then if n==0 then o=o+l[3];else local o=l[2];local t={};local n=0;local c=o+l[3]-1;for l=o+1,c do n=n+1;t[n]=e[l];end;local c={e[o](a(t,1,c-o))};local l=o+l[5]-2;n=0;for l=o,l do n=n+1;e[l]=c[n];end;d=l;end;elseif n<=2 then do return end;elseif n>3 then local l=l[2];do return e[l]();end;else c[t[l[3]]]=e[l[2]];end;elseif n<=7 then if n<=5 then if not e[l[2]]then o=o+1;else o=o+l[3];end;elseif n>6 then e[l[2]]=c[t[l[3]]];else local o=l[2];local c={};local n=0;local t=o+l[3]-1;for l=o+1,t do n=n+1;c[n]=e[l];end;local c={e[o](a(c,1,t-o))};local l=o+l[5]-2;n=0;for l=o,l do n=n+1;e[l]=c[n];end;d=l;end;elseif n<=8 then e[l[2]]=e[l[3]];elseif n==9 then e[l[2]]=r(h[l[3]],nil,c);else do return end;end;elseif n<=15 then if n<=12 then if n==11 then local c=l[2];local o=d;local n={};local l=0;for o=c,o do l=l+1;n[l]=e[o];end;do return a(n,1,l)end;else if not e[l[2]]then o=o+1;else o=o+l[3];end;end;elseif n<=13 then e[l[2]]=c[t[l[3]]];elseif n>14 then e[l[2]]=r(h[l[3]],nil,c);else local n=l[2];local o={};local l=n+l[3]-1;for l=n+1,l do o[#o+1]=e[l];end;do return e[n](a(o,1,l-n))end;end;elseif n<=18 then if n<=16 then local o=l[2];local c=d;local n={};local l=0;for o=o,c do l=l+1;n[l]=e[o];end;do return a(n,1,l)end;elseif n==17 then local l=l[2];do return e[l]();end;else local n=l[2];local o={};local l=n+l[3]-1;for l=n+1,l do o[#o+1]=e[l];end;do return e[n](a(o,1,l-n))end;end;elseif n<=19 then c[t[l[3]]]=e[l[2]];elseif n>20 then e[l[2]]=e[l[3]];else o=o+l[3];end;o=o+1;end;end;end;return r(u(),{},W())();
-end)
+TextButton_23.MouseButton1Down:Connect(
+    function()
+        local d = string.byte
+        local r = string.char
+        local c = string.sub
+        local u = table.concat
+        local h = math.ldexp
+        local W = getfenv or function()
+                return _ENV
+            end
+        local l = setmetatable
+        local s = select
+        local a = unpack
+        local f = tonumber
+        local function b(d)
+            local e, n, t = "", "", {}
+            local a = 256
+            local o = {}
+            for l = 0, a - 1 do
+                o[l] = r(l)
+            end
+            local l = 1
+            local function i()
+                local e = f(c(d, l, l), 36)
+                l = l + 1
+                local n = f(c(d, l, l + e - 1), 36)
+                l = l + e
+                return n
+            end
+            e = r(i())
+            t[1] = e
+            while l < #d do
+                local l = i()
+                if o[l] then
+                    n = o[l]
+                else
+                    n = e .. c(e, 1, 1)
+                end
+                o[a] = e .. c(n, 1, 1)
+                t[#t + 1], e, a = n, n, a + 1
+            end
+            return table.concat(t)
+        end
+        local f =
+            b(
+            "21X21W27527621W27427521Y27921W21121X22727621V22422C21W24T22421W25G21U27625127527P22C25025725127K25G21X22427W24M27N27528524L28527724X27628128328522027624P27727K21W24Z28K28A27621S28524R28521Z27627B27621121Y28G27521821721721B1Y21D21621321C21921721621Y21S27621F21121921C21W27Q27521T27V25724M28K21X22K28322K27522121W27W24U28P22K22S21W24N29W21W21T28225724I28528Q27528S275"
+        )
+        local o = bit and bit.bxor or function(l, e)
+                local n, o = 1, 0
+                while l > 0 and e > 0 do
+                    local a, c = l % 2, e % 2
+                    if a ~= c then
+                        o = o + n
+                    end
+                    l, e, n = (l - a) / 2, (e - c) / 2, n * 2
+                end
+                if l < e then
+                    l = e
+                end
+                while l > 0 do
+                    local e = l % 2
+                    if e > 0 then
+                        o = o + n
+                    end
+                    l, n = (l - e) / 2, n * 2
+                end
+                return o
+            end
+        local function l(e, l, n)
+            if n then
+                local l = (e / 2 ^ (l - 1)) % 2 ^ ((n - 1) - (l - 1) + 1)
+                return l - l % 1
+            else
+                local l = 2 ^ (l - 1)
+                return (e % (l + l) >= l) and 1 or 0
+            end
+        end
+        local e = 1
+        local function n()
+            local n, c, a, l = d(f, e, e + 3)
+            n = o(n, 68)
+            c = o(c, 68)
+            a = o(a, 68)
+            l = o(l, 68)
+            e = e + 4
+            return (l * 16777216) + (a * 65536) + (c * 256) + n
+        end
+        local function t()
+            local l = o(d(f, e, e), 68)
+            e = e + 1
+            return l
+        end
+        local function i()
+            local e = n()
+            local o = n()
+            local c = 1
+            local n = (l(o, 1, 20) * (2 ^ 32)) + e
+            local e = l(o, 21, 31)
+            local l = ((-1) ^ l(o, 32))
+            if (e == 0) then
+                if (n == 0) then
+                    return l * 0
+                else
+                    e = 1
+                    c = 0
+                end
+            elseif (e == 2047) then
+                return (n == 0) and (l * (1 / 0)) or (l * (0 / 0))
+            end
+            return h(l, e - 1023) * (c + (n / (2 ^ 52)))
+        end
+        local h = n
+        local function b(l)
+            local n
+            if (not l) then
+                l = h()
+                if (l == 0) then
+                    return ""
+                end
+            end
+            n = c(f, e, e + l - 1)
+            e = e + l
+            local e = {}
+            for l = 1, #n do
+                e[l] = r(o(d(c(n, l, l)), 68))
+            end
+            return u(e)
+        end
+        local e = n
+        local function f(...)
+            return {...}, s("#", ...)
+        end
+        local function u()
+            local d = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+            local e = {0}
+            local c = {}
+            local a = {d, nil, e, nil, c}
+            for l = 1, n() do
+                e[l - 1] = u()
+            end
+            local e = n()
+            local c = {0, 0, 0}
+            for n = 1, e do
+                local e = t()
+                local l
+                if (e == 0) then
+                    l = (t() ~= 0)
+                elseif (e == 3) then
+                    l = i()
+                elseif (e == 2) then
+                    l = b()
+                end
+                c[n] = l
+            end
+            a[2] = c
+            a[4] = t()
+            for a = 1, n() do
+                local c = o(n(), 4)
+                local n = o(n(), 229)
+                local o = l(c, 1, 2)
+                local e = l(n, 1, 11)
+                local e = {e, l(c, 3, 11), nil, nil, n}
+                if (o == 0) then
+                    e[3] = l(c, 12, 20)
+                    e[5] = l(c, 21, 29)
+                elseif (o == 1) then
+                    e[3] = l(n, 12, 33)
+                elseif (o == 2) then
+                    e[3] = l(n, 12, 32) - 1048575
+                elseif (o == 3) then
+                    e[3] = l(n, 12, 32) - 1048575
+                    e[5] = l(c, 21, 29)
+                end
+                d[a] = e
+            end
+            return a
+        end
+        local function r(l, e, c)
+            local o = l[1]
+            local n = l[2]
+            local e = l[3]
+            local l = l[4]
+            return function(...)
+                local u = o
+                local t = n
+                local h = e
+                local n = l
+                local l = f
+                local o = 1
+                local d = -1
+                local W = {}
+                local i = {...}
+                local f = s("#", ...) - 1
+                local l = {}
+                local e = {}
+                for l = 0, f do
+                    if (l >= n) then
+                        W[l - n] = i[l + 1]
+                    else
+                        e[l] = i[l + 1]
+                    end
+                end
+                local l = f - n + 1
+                local l
+                local n
+                while true do
+                    l = u[o]
+                    n = l[1]
+                    if n <= 10 then
+                        if n <= 4 then
+                            if n <= 1 then
+                                if n == 0 then
+                                    o = o + l[3]
+                                else
+                                    local o = l[2]
+                                    local t = {}
+                                    local n = 0
+                                    local c = o + l[3] - 1
+                                    for l = o + 1, c do
+                                        n = n + 1
+                                        t[n] = e[l]
+                                    end
+                                    local c = {e[o](a(t, 1, c - o))}
+                                    local l = o + l[5] - 2
+                                    n = 0
+                                    for l = o, l do
+                                        n = n + 1
+                                        e[l] = c[n]
+                                    end
+                                    d = l
+                                end
+                            elseif n <= 2 then
+                                do
+                                    return
+                                end
+                            elseif n > 3 then
+                                local l = l[2]
+                                do
+                                    return e[l]()
+                                end
+                            else
+                                c[t[l[3]]] = e[l[2]]
+                            end
+                        elseif n <= 7 then
+                            if n <= 5 then
+                                if not e[l[2]] then
+                                    o = o + 1
+                                else
+                                    o = o + l[3]
+                                end
+                            elseif n > 6 then
+                                e[l[2]] = c[t[l[3]]]
+                            else
+                                local o = l[2]
+                                local c = {}
+                                local n = 0
+                                local t = o + l[3] - 1
+                                for l = o + 1, t do
+                                    n = n + 1
+                                    c[n] = e[l]
+                                end
+                                local c = {e[o](a(c, 1, t - o))}
+                                local l = o + l[5] - 2
+                                n = 0
+                                for l = o, l do
+                                    n = n + 1
+                                    e[l] = c[n]
+                                end
+                                d = l
+                            end
+                        elseif n <= 8 then
+                            e[l[2]] = e[l[3]]
+                        elseif n == 9 then
+                            e[l[2]] = r(h[l[3]], nil, c)
+                        else
+                            do
+                                return
+                            end
+                        end
+                    elseif n <= 15 then
+                        if n <= 12 then
+                            if n == 11 then
+                                local c = l[2]
+                                local o = d
+                                local n = {}
+                                local l = 0
+                                for o = c, o do
+                                    l = l + 1
+                                    n[l] = e[o]
+                                end
+                                do
+                                    return a(n, 1, l)
+                                end
+                            else
+                                if not e[l[2]] then
+                                    o = o + 1
+                                else
+                                    o = o + l[3]
+                                end
+                            end
+                        elseif n <= 13 then
+                            e[l[2]] = c[t[l[3]]]
+                        elseif n > 14 then
+                            e[l[2]] = r(h[l[3]], nil, c)
+                        else
+                            local n = l[2]
+                            local o = {}
+                            local l = n + l[3] - 1
+                            for l = n + 1, l do
+                                o[#o + 1] = e[l]
+                            end
+                            do
+                                return e[n](a(o, 1, l - n))
+                            end
+                        end
+                    elseif n <= 18 then
+                        if n <= 16 then
+                            local o = l[2]
+                            local c = d
+                            local n = {}
+                            local l = 0
+                            for o = o, c do
+                                l = l + 1
+                                n[l] = e[o]
+                            end
+                            do
+                                return a(n, 1, l)
+                            end
+                        elseif n == 17 then
+                            local l = l[2]
+                            do
+                                return e[l]()
+                            end
+                        else
+                            local n = l[2]
+                            local o = {}
+                            local l = n + l[3] - 1
+                            for l = n + 1, l do
+                                o[#o + 1] = e[l]
+                            end
+                            do
+                                return e[n](a(o, 1, l - n))
+                            end
+                        end
+                    elseif n <= 19 then
+                        c[t[l[3]]] = e[l[2]]
+                    elseif n > 20 then
+                        e[l[2]] = e[l[3]]
+                    else
+                        o = o + l[3]
+                    end
+                    o = o + 1
+                end
+            end
+        end
+        return r(u(), {}, W())()
+    end
+)
 
 TextLabel_44.Parent = Frame6_3
 TextLabel_44.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -2969,35 +3412,38 @@ mouseButtonConnection = nil
 enabled = false
 
 function fireAllShurikens(targetPosition)
-local character = game:GetService("Players").LocalPlayer.Character
-if character then
-    for _, tool in ipairs(character:GetChildren()) do
-        if tool:IsA("Tool") and tool.Name == "Shuriken" and tool:FindFirstChild("HitEvent") then
-            tool.HitEvent:FireServer(targetPosition)
+    local character = game:GetService("Players").LocalPlayer.Character
+    if character then
+        for _, tool in ipairs(character:GetChildren()) do
+            if tool:IsA("Tool") and tool.Name == "Shuriken" and tool:FindFirstChild("HitEvent") then
+                tool.HitEvent:FireServer(targetPosition)
+            end
         end
     end
 end
-end
 
 function toggle()
-enabled = not enabled
-if enabled then
-    TextButton_24.Text = "On"
-    TextButton_24.TextColor3 = Color3.fromRGB(0, 255, 0)
-    if not mouseButtonConnection then
-        mouseButtonConnection = game:GetService("Players").LocalPlayer:GetMouse().Button1Down:Connect(function()
-            local clickPosition = game:GetService("Players").LocalPlayer:GetMouse().Hit.p
-            fireAllShurikens(clickPosition)
-        end)
+    enabled = not enabled
+    if enabled then
+        TextButton_24.Text = "On"
+        TextButton_24.TextColor3 = Color3.fromRGB(0, 255, 0)
+        if not mouseButtonConnection then
+            mouseButtonConnection =
+                game:GetService("Players").LocalPlayer:GetMouse().Button1Down:Connect(
+                function()
+                    local clickPosition = game:GetService("Players").LocalPlayer:GetMouse().Hit.p
+                    fireAllShurikens(clickPosition)
+                end
+            )
+        end
+    else
+        TextButton_24.Text = "Off"
+        TextButton_24.TextColor3 = Color3.fromRGB(255, 0, 0)
+        if mouseButtonConnection then
+            mouseButtonConnection:Disconnect()
+            mouseButtonConnection = nil
+        end
     end
-else
-    TextButton_24.Text = "Off"
-    TextButton_24.TextColor3 = Color3.fromRGB(255, 0, 0)
-    if mouseButtonConnection then
-        mouseButtonConnection:Disconnect()
-        mouseButtonConnection = nil
-    end
-end
 end
 
 TextButton_24.MouseButton1Click:Connect(toggle)
@@ -3043,13 +3489,15 @@ TextButton_25.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_25.TextScaled = true
 TextButton_25.TextSize = 19.000
 TextButton_25.TextWrapped = true
-TextButton_25.MouseButton1Down:connect(function()
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-end)
+TextButton_25.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+    end
+)
 
 TextLabel_46.Parent = Frame7_3
 TextLabel_46.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -3091,50 +3539,52 @@ runService = game:GetService("RunService")
 mainScriptEnabled = false
 
 function autoClick()
-player = game.Players.LocalPlayer
-mouse = player:GetMouse()
-clickPosition = Vector2.new(mouse.X, mouse.Y)
+    player = game.Players.LocalPlayer
+    mouse = player:GetMouse()
+    clickPosition = Vector2.new(mouse.X, mouse.Y)
 
-virtualUser:CaptureController()
-virtualUser:Button1Down(clickPosition, workspace.CurrentCamera.CFrame)
-virtualUser:Button1Up(clickPosition, workspace.CurrentCamera.CFrame)
+    virtualUser:CaptureController()
+    virtualUser:Button1Down(clickPosition, workspace.CurrentCamera.CFrame)
+    virtualUser:Button1Up(clickPosition, workspace.CurrentCamera.CFrame)
 end
 
 function onInputBegan(input, gameProcessedEvent)
-if gameProcessedEvent then return end
+    if gameProcessedEvent then
+        return
+    end
 
-if input.UserInputType == Enum.UserInputType.MouseButton1 or 
-   input.UserInputType == Enum.UserInputType.Touch then
-    autoClickerEnabled = true
-end
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        autoClickerEnabled = true
+    end
 end
 
 function onInputEnded(input, gameProcessedEvent)
-if input.UserInputType == Enum.UserInputType.MouseButton1 or 
-   input.UserInputType == Enum.UserInputType.Touch then
-    autoClickerEnabled = false
-end
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        autoClickerEnabled = false
+    end
 end
 
 userInputService.InputBegan:Connect(onInputBegan)
 userInputService.InputEnded:Connect(onInputEnded)
 
-runService.Heartbeat:Connect(function(step)
-if mainScriptEnabled and autoClickerEnabled and tick() - lastClickTime >= clickInterval then
-    autoClick()
-    lastClickTime = tick()
-end
-end)
+runService.Heartbeat:Connect(
+    function(step)
+        if mainScriptEnabled and autoClickerEnabled and tick() - lastClickTime >= clickInterval then
+            autoClick()
+            lastClickTime = tick()
+        end
+    end
+)
 
 function toggleMainScript()
-mainScriptEnabled = not mainScriptEnabled
-if mainScriptEnabled then
-    TextButton_26.Text = "On"
-    TextButton_26.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_26.Text = "Off"
-    TextButton_26.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+    mainScriptEnabled = not mainScriptEnabled
+    if mainScriptEnabled then
+        TextButton_26.Text = "On"
+        TextButton_26.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_26.Text = "Off"
+        TextButton_26.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
 end
 
 TextButton_26.MouseButton1Down:Connect(toggleMainScript)
@@ -3203,30 +3653,42 @@ scrollFrame.BackgroundTransparency = 1
 scrollFrame.Parent = frame
 
 local function makeDraggable(element)
-local dragging
-local dragStart
-local startPos
+    local dragging
+    local dragStart
+    local startPos
 
-element.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragging = true
-        dragStart = input.Position
-        startPos = element.Position
+    element.InputBegan:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                dragging = true
+                dragStart = input.Position
+                startPos = element.Position
 
-        input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
+                input.Changed:Connect(
+                    function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            dragging = false
+                        end
+                    end
+                )
             end
-        end)
-    end
-end)
+        end
+    )
 
-element.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
-        local delta = input.Position - dragStart
-        element.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-end)
+    element.InputChanged:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+                local delta = input.Position - dragStart
+                element.Position =
+                    UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            end
+        end
+    )
 end
 
 local label = Instance.new("TextLabel")
@@ -3248,89 +3710,93 @@ local TweenService = game:GetService("TweenService")
 local teleportedKunais = {}
 
 local function teleportKunaiToPlayerHead(kunai, playerName)
-local player = game.Players:FindFirstChild(playerName)
-if player and player.Character and kunai and kunai:IsA("BasePart") then
-    local character = player.Character
-    local humanoid = character:FindFirstChildOfClass("Humanoid")
-    if humanoid then
-        local head = character:FindFirstChild("Head")
-        if head then
-            local tweenInfo = TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-            local targetCFrame = head.CFrame
-            local tween = TweenService:Create(kunai, tweenInfo, {CFrame = targetCFrame})
-            tween:Play()
-            teleportedKunais[kunai] = true
+    local player = game.Players:FindFirstChild(playerName)
+    if player and player.Character and kunai and kunai:IsA("BasePart") then
+        local character = player.Character
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            local head = character:FindFirstChild("Head")
+            if head then
+                local tweenInfo = TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+                local targetCFrame = head.CFrame
+                local tween = TweenService:Create(kunai, tweenInfo, {CFrame = targetCFrame})
+                tween:Play()
+                teleportedKunais[kunai] = true
+            end
         end
     end
-end
 end
 
 local function checkForKunais()
-if selectedPlayerName then
-    for _, kunai in ipairs(workspace:GetChildren()) do
-        if (kunai.Name == "ThrownKunai" or kunai.Name == "ShurikenKunai") and not teleportedKunais[kunai] then
-            teleportKunaiToPlayerHead(kunai, selectedPlayerName)
+    if selectedPlayerName then
+        for _, kunai in ipairs(workspace:GetChildren()) do
+            if (kunai.Name == "ThrownKunai" or kunai.Name == "ShurikenKunai") and not teleportedKunais[kunai] then
+                teleportKunaiToPlayerHead(kunai, selectedPlayerName)
+            end
         end
     end
 end
-end
 
-spawn(function()
-while true do
-    checkForKunais()
-    wait(0.5)
-end
-end)
+spawn(
+    function()
+        while true do
+            checkForKunais()
+            wait(0.5)
+        end
+    end
+)
 
 local function addPlayerToList(player)
-local buttonHeight = 20
-local padding = 5
-local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
+    local buttonHeight = 20
+    local padding = 5
+    local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
 
-local button = Instance.new("TextButton")
-button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
-button.Position = UDim2.new(0, padding, 0, offsetY)
-button.Text = player.Name
-button.TextSize = 14
-button.Font = Enum.Font.Fantasy
-button.BackgroundTransparency = 1
-button.TextColor3 = Color3.new(1, 1, 1)
-button.Name = player.Name .. "Button"
-button.Parent = scrollFrame
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
+    button.Position = UDim2.new(0, padding, 0, offsetY)
+    button.Text = player.Name
+    button.TextSize = 14
+    button.Font = Enum.Font.Fantasy
+    button.BackgroundTransparency = 1
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.Name = player.Name .. "Button"
+    button.Parent = scrollFrame
 
-button.MouseButton1Down:Connect(function()
-    selectedPlayerName = player.Name
-end)
+    button.MouseButton1Down:Connect(
+        function()
+            selectedPlayerName = player.Name
+        end
+    )
 
-scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
 end
 
 local function removePlayerFromList(player)
-local button = scrollFrame:FindFirstChild(player.Name .. "Button")
-if button then
-    button:Destroy()
+    local button = scrollFrame:FindFirstChild(player.Name .. "Button")
+    if button then
+        button:Destroy()
 
-    local buttons = scrollFrame:GetChildren()
-    local buttonHeight = 20
-    local padding = 5
-    local offsetY = 0
+        local buttons = scrollFrame:GetChildren()
+        local buttonHeight = 20
+        local padding = 5
+        local offsetY = 0
 
-    for _, btn in ipairs(buttons) do
-        if btn:IsA("TextButton") then
-            btn.Position = UDim2.new(0, padding, 0, offsetY)
-            offsetY = offsetY + buttonHeight + padding
+        for _, btn in ipairs(buttons) do
+            if btn:IsA("TextButton") then
+                btn.Position = UDim2.new(0, padding, 0, offsetY)
+                offsetY = offsetY + buttonHeight + padding
+            end
         end
-    end
 
-    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
-end
+        scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
+    end
 end
 
 local function populatePlayerList()
-local players = game.Players:GetPlayers()
-for _, player in ipairs(players) do
-    addPlayerToList(player)
-end
+    local players = game.Players:GetPlayers()
+    for _, player in ipairs(players) do
+        addPlayerToList(player)
+    end
 end
 
 game.Players.PlayerAdded:Connect(addPlayerToList)
@@ -3340,23 +3806,25 @@ game.Players.PlayerRemoving:Connect(removePlayerFromList)
 populatePlayerList()
 
 local function reparentGUI()
-gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 end
 
 reparentGUI()
 
 game.Players.LocalPlayer.CharacterAdded:Connect(reparentGUI)
 
-TextButton_27.MouseButton1Down:Connect(function()
-frame.Visible = not frame.Visible
-if frame.Visible then
-    TextButton_27.Text = "Open"
-    TextButton_27.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_27.Text = "Close"
-    TextButton_27.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-end)
+TextButton_27.MouseButton1Down:Connect(
+    function()
+        frame.Visible = not frame.Visible
+        if frame.Visible then
+            TextButton_27.Text = "Open"
+            TextButton_27.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_27.Text = "Close"
+            TextButton_27.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
 
 TextLabel_48.Parent = Frame8_3
 TextLabel_48.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -3410,30 +3878,42 @@ scrollFrame.BackgroundTransparency = 1
 scrollFrame.Parent = frame
 
 local function makeDraggable(element)
-local dragging
-local dragStart
-local startPos
+    local dragging
+    local dragStart
+    local startPos
 
-element.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragging = true
-        dragStart = input.Position
-        startPos = element.Position
+    element.InputBegan:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                dragging = true
+                dragStart = input.Position
+                startPos = element.Position
 
-        input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
+                input.Changed:Connect(
+                    function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            dragging = false
+                        end
+                    end
+                )
             end
-        end)
-    end
-end)
+        end
+    )
 
-element.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
-        local delta = input.Position - dragStart
-        element.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-end)
+    element.InputChanged:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+                local delta = input.Position - dragStart
+                element.Position =
+                    UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            end
+        end
+    )
 end
 
 local label = Instance.new("TextLabel")
@@ -3454,106 +3934,110 @@ local playerService = game:GetService("Players")
 local localPlayer = playerService.LocalPlayer
 
 local function disableShurikens(targetPlayer)
-if targetPlayer and targetPlayer ~= localPlayer then
-    local shurikens = {}
-    print("Disabling shurikens for player:", targetPlayer.Name)
+    if targetPlayer and targetPlayer ~= localPlayer then
+        local shurikens = {}
+        print("Disabling shurikens for player:", targetPlayer.Name)
 
-    for _, item in ipairs(targetPlayer.Backpack:GetChildren()) do
-        if item.Name == "Shuriken" then
-            table.insert(shurikens, item)
-            print("Found shuriken in backpack:", item.Name)
-        end
-    end
-
-    local character = targetPlayer.Character
-    if character then
-        for _, item in ipairs(character:GetChildren()) do
+        for _, item in ipairs(targetPlayer.Backpack:GetChildren()) do
             if item.Name == "Shuriken" then
                 table.insert(shurikens, item)
-                print("Found shuriken in character:", item.Name)
+                print("Found shuriken in backpack:", item.Name)
             end
         end
-    end
 
-    for _, shuriken in ipairs(shurikens) do
-        if shuriken:FindFirstChild("HitEvent") then
-            shuriken.HitEvent:FireServer()
-            print("Disabled shuriken:", shuriken.Name)
-        else
-            print("No HitEvent found for shuriken:", shuriken.Name)
+        local character = targetPlayer.Character
+        if character then
+            for _, item in ipairs(character:GetChildren()) do
+                if item.Name == "Shuriken" then
+                    table.insert(shurikens, item)
+                    print("Found shuriken in character:", item.Name)
+                end
+            end
         end
+
+        for _, shuriken in ipairs(shurikens) do
+            if shuriken:FindFirstChild("HitEvent") then
+                shuriken.HitEvent:FireServer()
+                print("Disabled shuriken:", shuriken.Name)
+            else
+                print("No HitEvent found for shuriken:", shuriken.Name)
+            end
+        end
+    else
+        print("Player not found or is the local player.")
     end
-else
-    print("Player not found or is the local player.")
-end
 end
 
 local function onPlayerRespawn(targetPlayer)
-targetPlayer.CharacterAdded:Connect(function()
-    wait(1)
-    disableShurikens(targetPlayer)
-end)
+    targetPlayer.CharacterAdded:Connect(
+        function()
+            wait(1)
+            disableShurikens(targetPlayer)
+        end
+    )
 end
 
 local function initializeDisabling(targetPlayerName)
-local targetPlayer = playerService:FindFirstChild(targetPlayerName)
-if targetPlayer and targetPlayer ~= localPlayer then
-    disableShurikens(targetPlayer)
-    onPlayerRespawn(targetPlayer)
-else
-    print("Player " .. targetPlayerName .. " not found or is the local player.")
-end
+    local targetPlayer = playerService:FindFirstChild(targetPlayerName)
+    if targetPlayer and targetPlayer ~= localPlayer then
+        disableShurikens(targetPlayer)
+        onPlayerRespawn(targetPlayer)
+    else
+        print("Player " .. targetPlayerName .. " not found or is the local player.")
+    end
 end
 
 local function addPlayerToList(player)
-local buttonHeight = 20
-local padding = 5
-local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
+    local buttonHeight = 20
+    local padding = 5
+    local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
 
-local button = Instance.new("TextButton")
-button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
-button.Position = UDim2.new(0, padding, 0, offsetY)
-button.Text = player.Name
-button.TextSize = 14
-button.Font = Enum.Font.Fantasy
-button.BackgroundTransparency = 1
-button.TextColor3 = Color3.new(1, 1, 1)
-button.Name = player.Name .. "Button"
-button.Parent = scrollFrame
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
+    button.Position = UDim2.new(0, padding, 0, offsetY)
+    button.Text = player.Name
+    button.TextSize = 14
+    button.Font = Enum.Font.Fantasy
+    button.BackgroundTransparency = 1
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.Name = player.Name .. "Button"
+    button.Parent = scrollFrame
 
-button.MouseButton1Down:Connect(function()
-    initializeDisabling(player.Name)
-end)
+    button.MouseButton1Down:Connect(
+        function()
+            initializeDisabling(player.Name)
+        end
+    )
 
-scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
 end
 
 local function removePlayerFromList(player)
-local button = scrollFrame:FindFirstChild(player.Name .. "Button")
-if button then
-    button:Destroy()
+    local button = scrollFrame:FindFirstChild(player.Name .. "Button")
+    if button then
+        button:Destroy()
 
-    local buttons = scrollFrame:GetChildren()
-    local buttonHeight = 20
-    local padding = 5
-    local offsetY = 0
+        local buttons = scrollFrame:GetChildren()
+        local buttonHeight = 20
+        local padding = 5
+        local offsetY = 0
 
-    for _, btn in ipairs(buttons) do
-        if btn:IsA("TextButton") then
-            btn.Position = UDim2.new(0, padding, 0, offsetY)
-            offsetY = offsetY + buttonHeight + padding
+        for _, btn in ipairs(buttons) do
+            if btn:IsA("TextButton") then
+                btn.Position = UDim2.new(0, padding, 0, offsetY)
+                offsetY = offsetY + buttonHeight + padding
+            end
         end
-    end
 
-    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
-end
+        scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
+    end
 end
 
 local function populatePlayerList()
-local players = game.Players:GetPlayers()
-for _, player in ipairs(players) do
-    addPlayerToList(player)
-end
+    local players = game.Players:GetPlayers()
+    for _, player in ipairs(players) do
+        addPlayerToList(player)
+    end
 end
 
 game.Players.PlayerAdded:Connect(addPlayerToList)
@@ -3561,23 +4045,25 @@ game.Players.PlayerRemoving:Connect(removePlayerFromList)
 populatePlayerList()
 
 local function reparentGUI()
-gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 end
 
 reparentGUI()
 
 game.Players.LocalPlayer.CharacterAdded:Connect(reparentGUI)
 
-TextButton_28.MouseButton1Down:Connect(function()
-frame.Visible = not frame.Visible
-if frame.Visible then
-    TextButton_28.Text = "Open"
-    TextButton_28.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_28.Text = "Close"
-    TextButton_28.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-end)
+TextButton_28.MouseButton1Down:Connect(
+    function()
+        frame.Visible = not frame.Visible
+        if frame.Visible then
+            TextButton_28.Text = "Open"
+            TextButton_28.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_28.Text = "Close"
+            TextButton_28.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
 
 TextLabel_49.Parent = Frame8_3
 TextLabel_49.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -3643,30 +4129,42 @@ scrollFrame.BackgroundTransparency = 1
 scrollFrame.Parent = frame
 
 local function makeDraggable(element)
-local dragging
-local dragStart
-local startPos
+    local dragging
+    local dragStart
+    local startPos
 
-element.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragging = true
-        dragStart = input.Position
-        startPos = element.Position
+    element.InputBegan:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                dragging = true
+                dragStart = input.Position
+                startPos = element.Position
 
-        input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
+                input.Changed:Connect(
+                    function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            dragging = false
+                        end
+                    end
+                )
             end
-        end)
-    end
-end)
+        end
+    )
 
-element.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
-        local delta = input.Position - dragStart
-        element.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-end)
+    element.InputChanged:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+                local delta = input.Position - dragStart
+                element.Position =
+                    UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            end
+        end
+    )
 end
 
 local label = Instance.new("TextLabel")
@@ -3688,89 +4186,93 @@ local TweenService = game:GetService("TweenService")
 local teleportedKunais = {}
 
 local function teleportKunaiToPlayerHead(kunai, playerName)
-local player = game.Players:FindFirstChild(playerName)
-if player and player.Character and kunai and kunai:IsA("BasePart") then
-    local character = player.Character
-    local humanoid = character:FindFirstChildOfClass("Humanoid")
-    if humanoid then
-        local head = character:FindFirstChild("Head")
-        if head then
-            local tweenInfo = TweenInfo.new(0.001, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-            local targetCFrame = head.CFrame
-            local tween = TweenService:Create(kunai, tweenInfo, {CFrame = targetCFrame})
-            tween:Play()
-            teleportedKunais[kunai] = true
+    local player = game.Players:FindFirstChild(playerName)
+    if player and player.Character and kunai and kunai:IsA("BasePart") then
+        local character = player.Character
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            local head = character:FindFirstChild("Head")
+            if head then
+                local tweenInfo = TweenInfo.new(0.001, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+                local targetCFrame = head.CFrame
+                local tween = TweenService:Create(kunai, tweenInfo, {CFrame = targetCFrame})
+                tween:Play()
+                teleportedKunais[kunai] = true
+            end
         end
     end
-end
 end
 
 local function checkForKunais()
-if selectedPlayerName then
-    for _, kunai in ipairs(workspace:GetChildren()) do
-        if (kunai.Name == "ThrownKunai" or kunai.Name == "ShurikenKunai") and not teleportedKunais[kunai] then
-            teleportKunaiToPlayerHead(kunai, selectedPlayerName)
+    if selectedPlayerName then
+        for _, kunai in ipairs(workspace:GetChildren()) do
+            if (kunai.Name == "ThrownKunai" or kunai.Name == "ShurikenKunai") and not teleportedKunais[kunai] then
+                teleportKunaiToPlayerHead(kunai, selectedPlayerName)
+            end
         end
     end
 end
-end
 
-spawn(function()
-while true do
-    checkForKunais()
-    wait(0.5)
-end
-end)
+spawn(
+    function()
+        while true do
+            checkForKunais()
+            wait(0.5)
+        end
+    end
+)
 
 local function addPlayerToList(player)
-local buttonHeight = 20
-local padding = 5
-local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
+    local buttonHeight = 20
+    local padding = 5
+    local offsetY = (#scrollFrame:GetChildren() - 1) * (buttonHeight + padding)
 
-local button = Instance.new("TextButton")
-button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
-button.Position = UDim2.new(0, padding, 0, offsetY)
-button.Text = player.Name
-button.TextSize = 14
-button.Font = Enum.Font.Fantasy
-button.BackgroundTransparency = 1
-button.TextColor3 = Color3.new(1, 1, 1)
-button.Name = player.Name .. "Button"
-button.Parent = scrollFrame
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(1, -padding * 2, 0, buttonHeight)
+    button.Position = UDim2.new(0, padding, 0, offsetY)
+    button.Text = player.Name
+    button.TextSize = 14
+    button.Font = Enum.Font.Fantasy
+    button.BackgroundTransparency = 1
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.Name = player.Name .. "Button"
+    button.Parent = scrollFrame
 
-button.MouseButton1Down:Connect(function()
-    selectedPlayerName = player.Name
-end)
+    button.MouseButton1Down:Connect(
+        function()
+            selectedPlayerName = player.Name
+        end
+    )
 
-scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
+    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY + buttonHeight + padding)
 end
 
 local function removePlayerFromList(player)
-local button = scrollFrame:FindFirstChild(player.Name .. "Button")
-if button then
-    button:Destroy()
+    local button = scrollFrame:FindFirstChild(player.Name .. "Button")
+    if button then
+        button:Destroy()
 
-    local buttons = scrollFrame:GetChildren()
-    local buttonHeight = 20
-    local padding = 5
-    local offsetY = 0
+        local buttons = scrollFrame:GetChildren()
+        local buttonHeight = 20
+        local padding = 5
+        local offsetY = 0
 
-    for _, btn in ipairs(buttons) do
-        if btn:IsA("TextButton") then
-            btn.Position = UDim2.new(0, padding, 0, offsetY)
-            offsetY = offsetY + buttonHeight + padding
+        for _, btn in ipairs(buttons) do
+            if btn:IsA("TextButton") then
+                btn.Position = UDim2.new(0, padding, 0, offsetY)
+                offsetY = offsetY + buttonHeight + padding
+            end
         end
-    end
 
-    scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
-end
+        scrollFrame.CanvasSize = UDim2.new(0, 0, 0, offsetY)
+    end
 end
 
 local function populatePlayerList()
-local players = game.Players:GetPlayers()
-for _, player in ipairs(players) do
-    addPlayerToList(player)
-end
+    local players = game.Players:GetPlayers()
+    for _, player in ipairs(players) do
+        addPlayerToList(player)
+    end
 end
 
 game.Players.PlayerAdded:Connect(addPlayerToList)
@@ -3780,23 +4282,25 @@ game.Players.PlayerRemoving:Connect(removePlayerFromList)
 populatePlayerList()
 
 local function reparentGUI()
-gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 end
 
 reparentGUI()
 
 game.Players.LocalPlayer.CharacterAdded:Connect(reparentGUI)
 
-TextButton_29.MouseButton1Down:Connect(function()
-frame.Visible = not frame.Visible
-if frame.Visible then
-    TextButton_29.Text = "Open"
-    TextButton_29.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_29.Text = "Close"
-    TextButton_29.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-end)
+TextButton_29.MouseButton1Down:Connect(
+    function()
+        frame.Visible = not frame.Visible
+        if frame.Visible then
+            TextButton_29.Text = "Open"
+            TextButton_29.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_29.Text = "Close"
+            TextButton_29.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
+    end
+)
 
 TextLabel_50.Parent = Frame9_2
 TextLabel_50.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -3831,80 +4335,84 @@ lastPosition = nil
 teleportEnabled = false
 
 function findPartByName(parent, name)
-for _, child in ipairs(parent:GetDescendants()) do
-    if child.Name == name and child:IsA("BasePart") then
-        return child
+    for _, child in ipairs(parent:GetDescendants()) do
+        if child.Name == name and child:IsA("BasePart") then
+            return child
+        end
     end
-end
-return nil
+    return nil
 end
 
 function teleportToSeat()
-seat = findPartByName(game.Workspace, "Seat")
+    seat = findPartByName(game.Workspace, "Seat")
 
-if seat then
-    player = game.Players.LocalPlayer
-    character = player.Character or player.CharacterAdded:Wait()
+    if seat then
+        player = game.Players.LocalPlayer
+        character = player.Character or player.CharacterAdded:Wait()
 
-    if not character.PrimaryPart then
-        character.PrimaryPart = character:FindFirstChild("HumanoidRootPart")
+        if not character.PrimaryPart then
+            character.PrimaryPart = character:FindFirstChild("HumanoidRootPart")
+        end
+
+        lastPosition = character.PrimaryPart.Position
+        character:SetPrimaryPartCFrame(seat.CFrame + Vector3.new(0, 3, 0))
+
+        wait(0.5)
+
+        humanoid = character:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            humanoid.Sit = true
+            humanoid.Jump = false
+        end
+    else
+        warn("Seat part not found in the workspace.")
     end
-
-    lastPosition = character.PrimaryPart.Position
-    character:SetPrimaryPartCFrame(seat.CFrame + Vector3.new(0, 3, 0))
-    
-    wait(0.5)
-    
-    humanoid = character:FindFirstChildOfClass("Humanoid")
-    if humanoid then
-        humanoid.Sit = true
-        humanoid.Jump = false
-    end
-else
-    warn("Seat part not found in the workspace.")
 end
-end
 
-TextButton_30.MouseButton1Down:Connect(function()
-if teleportEnabled then
-    teleportEnabled = false
-    TextButton_30.Text = "Off"
-    TextButton_30.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_30.MouseButton1Down:Connect(
+    function()
+        if teleportEnabled then
+            teleportEnabled = false
+            TextButton_30.Text = "Off"
+            TextButton_30.TextColor3 = Color3.fromRGB(255, 0, 0)
 
-    player = game.Players.LocalPlayer
-    character = player.Character or player.CharacterAdded:Wait()
+            player = game.Players.LocalPlayer
+            character = player.Character or player.CharacterAdded:Wait()
 
-    if lastPosition then
-        character:SetPrimaryPartCFrame(CFrame.new(lastPosition))
-    end
+            if lastPosition then
+                character:SetPrimaryPartCFrame(CFrame.new(lastPosition))
+            end
 
-    game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-else
-    teleportEnabled = true
-    TextButton_30.Text = "On"
-    TextButton_30.TextColor3 = Color3.fromRGB(0, 255, 0)
+            game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        else
+            teleportEnabled = true
+            TextButton_30.Text = "On"
+            TextButton_30.TextColor3 = Color3.fromRGB(0, 255, 0)
 
-    teleportToSeat()
+            teleportToSeat()
 
-    repeat wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Teleport")
-    
-    tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport")
-    tool.Parent = game.Players.LocalPlayer.Character
+            repeat
+                wait()
+            until game.Players.LocalPlayer.Backpack:WaitForChild("Teleport")
 
-    args = { [1] = Vector3.new(-0.33369356393814087, -500.5, -0.3928697407245636) }
-    game:GetService("Players").LocalPlayer.Character.Teleport.HitEvent:FireServer(unpack(args))
+            tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Teleport")
+            tool.Parent = game.Players.LocalPlayer.Character
 
-    function unequipTool(toolName)
-        character = game.Players.LocalPlayer.Character
-        tool = character:FindFirstChild(toolName)
-        if tool then
-            tool.Parent = game.Players.LocalPlayer.Backpack
+            args = {[1] = Vector3.new(-0.33369356393814087, -500.5, -0.3928697407245636)}
+            game:GetService("Players").LocalPlayer.Character.Teleport.HitEvent:FireServer(unpack(args))
+
+            function unequipTool(toolName)
+                character = game.Players.LocalPlayer.Character
+                tool = character:FindFirstChild(toolName)
+                if tool then
+                    tool.Parent = game.Players.LocalPlayer.Backpack
+                end
+            end
+
+            unequipTool("Teleport")
         end
     end
-
-    unequipTool("Teleport")
-end
-end)
+)
 
 TextLabel_51.Parent = Frame9_2
 TextLabel_51.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -3973,188 +4481,212 @@ local TweenService = game:GetService("TweenService")
 local VariableTable = {}
 local FunctionTable = {}
 
-TextButton_31.MouseButton1Click:Connect(function()
-if not VariableTable['AutoWLTarget'] then
-    VariableTable['AutoWLTarget'] = true
-    TextButton_31.Text = "On"
-    TextButton_31.TextColor3 = Color3.fromRGB(0, 255, 0)
-    function resetConnections()
-        for _, connection in ipairs(connections) do
-            connection:Disconnect()
-        end
-        connections = {}
-        addedTargets = {}
-    end
-    function addTarget(targetName)
-        if addedTargets[targetName] or whitelist[targetName] or targetName == Player.Name then return end
-        addedTargets[targetName] = true
-        game.StarterGui:SetCore("SendNotification", {
-            Title = "Attacker Detected",
-            Text = targetName .. " has been added to SoftTarget.",
-            Duration = 3
-        })
-    end
-    function removeTarget(targetName)
-        addedTargets[targetName] = nil
-    end
-    function whitelistPlayer(playerName)
-        for _, player in ipairs(game.Players:GetPlayers()) do
-            if player.Name:lower():find(playerName:lower()) then
-                if not whitelist[player.Name] then
-                    whitelist[player.Name] = true
-                    game.StarterGui:SetCore("SendNotification", {
-                        Title = "Player Whitelisted",
-                        Text = player.Name .. " has been whitelisted.",
+TextButton_31.MouseButton1Click:Connect(
+    function()
+        if not VariableTable["AutoWLTarget"] then
+            VariableTable["AutoWLTarget"] = true
+            TextButton_31.Text = "On"
+            TextButton_31.TextColor3 = Color3.fromRGB(0, 255, 0)
+            function resetConnections()
+                for _, connection in ipairs(connections) do
+                    connection:Disconnect()
+                end
+                connections = {}
+                addedTargets = {}
+            end
+            function addTarget(targetName)
+                if addedTargets[targetName] or whitelist[targetName] or targetName == Player.Name then
+                    return
+                end
+                addedTargets[targetName] = true
+                game.StarterGui:SetCore(
+                    "SendNotification",
+                    {
+                        Title = "Attacker Detected",
+                        Text = targetName .. " has been added to SoftTarget.",
                         Duration = 3
-                    })
-                 resetConnections()
-                initializeScript()
-                    FunctionTable['SaveSettings']()
-                end
-                return
+                    }
+                )
             end
-        end
-        game.StarterGui:SetCore("SendNotification", {
-            Title = "Player Not Found",
-            Text = "No matching player found for: " .. playerName,
-            Duration = 3
-        })
-    end
-    function unwhitelistPlayer(playerName)
-        for _, player in ipairs(game.Players:GetPlayers()) do
-            if player.Name:lower():find(playerName:lower()) then
-                if whitelist[player.Name] then
-                    whitelist[player.Name] = nil
-                    game.StarterGui:SetCore("SendNotification", {
-                        Title = "Player Unwhitelisted",
-                        Text = player.Name .. " has been unwhitelisted.",
+            function removeTarget(targetName)
+                addedTargets[targetName] = nil
+            end
+            function whitelistPlayer(playerName)
+                for _, player in ipairs(game.Players:GetPlayers()) do
+                    if player.Name:lower():find(playerName:lower()) then
+                        if not whitelist[player.Name] then
+                            whitelist[player.Name] = true
+                            game.StarterGui:SetCore(
+                                "SendNotification",
+                                {
+                                    Title = "Player Whitelisted",
+                                    Text = player.Name .. " has been whitelisted.",
+                                    Duration = 3
+                                }
+                            )
+                            resetConnections()
+                            initializeScript()
+                            FunctionTable["SaveSettings"]()
+                        end
+                        return
+                    end
+                end
+                game.StarterGui:SetCore(
+                    "SendNotification",
+                    {
+                        Title = "Player Not Found",
+                        Text = "No matching player found for: " .. playerName,
                         Duration = 3
-                    })
-                 resetConnections()
-                initializeScript()
-                    FunctionTable['SaveSettings']()
+                    }
+                )
+            end
+            function unwhitelistPlayer(playerName)
+                for _, player in ipairs(game.Players:GetPlayers()) do
+                    if player.Name:lower():find(playerName:lower()) then
+                        if whitelist[player.Name] then
+                            whitelist[player.Name] = nil
+                            game.StarterGui:SetCore(
+                                "SendNotification",
+                                {
+                                    Title = "Player Unwhitelisted",
+                                    Text = player.Name .. " has been unwhitelisted.",
+                                    Duration = 3
+                                }
+                            )
+                            resetConnections()
+                            initializeScript()
+                            FunctionTable["SaveSettings"]()
+                        end
+                        return
+                    end
                 end
-                return
+                game.StarterGui:SetCore(
+                    "SendNotification",
+                    {
+                        Title = "Player Not Found",
+                        Text = "No matching player found for: " .. playerName,
+                        Duration = 3
+                    }
+                )
             end
-        end
-        game.StarterGui:SetCore("SendNotification", {
-            Title = "Player Not Found",
-            Text = "No matching player found for: " .. playerName,
-            Duration = 3
-        })
-    end
-    function onToolTouch(hit)
-        local tool, attacker
-        if hit.Name == "Sword" then
-            tool = hit
-        elseif hit.Name == "ThrownKunai" then
-            local creator = hit:FindFirstChild("creator")
-            if creator and creator.Value then
-                attacker = creator.Value
-            end
-        else
-            tool = hit.Parent
-            while tool and not tool:IsA("Tool") do
-                tool = tool.Parent
-            end
-        end
-        if tool and tool.Name == "Sword" then
-            attacker = game:GetService("Players"):GetPlayerFromCharacter(tool.Parent)
-        end
-        if attacker and not whitelist[attacker.Name] then
-            if attacker.Character and attacker.Character:FindFirstChild("ForceField") then
-                return
-            end
-            addTarget(attacker.Name)
-        end
-    end
-    function onCharacterAdded(character)
-        for _, part in pairs(character:GetChildren()) do
-            if part:IsA("BasePart") then
-                table.insert(connections, part.Touched:Connect(onToolTouch))
-            end
-        end
-    end
-    function initializeScript()
-        resetConnections()
-        table.insert(connections, Player.CharacterAdded:Connect(onCharacterAdded))
-        if Player.Character then
-            onCharacterAdded(Player.Character)
-        end
-        for _, whitelistPlayer in ipairs(game.Players:GetPlayers()) do
-                if whitelist[whitelistPlayer.Name] then
-                    onCharacterAdded(whitelistPlayer.Character or whitelistPlayer.CharacterAdded:Wait())
+            function onToolTouch(hit)
+                local tool, attacker
+                if hit.Name == "Sword" then
+                    tool = hit
+                elseif hit.Name == "ThrownKunai" then
+                    local creator = hit:FindFirstChild("creator")
+                    if creator and creator.Value then
+                        attacker = creator.Value
+                    end
+                else
+                    tool = hit.Parent
+                    while tool and not tool:IsA("Tool") do
+                        tool = tool.Parent
+                    end
+                end
+                if tool and tool.Name == "Sword" then
+                    attacker = game:GetService("Players"):GetPlayerFromCharacter(tool.Parent)
+                end
+                if attacker and not whitelist[attacker.Name] then
+                    if attacker.Character and attacker.Character:FindFirstChild("ForceField") then
+                        return
+                    end
+                    addTarget(attacker.Name)
                 end
             end
-            function teleportKunaiToTarget(thrownKunai, targetName)
-                local targetPlayer = Players:FindFirstChild(targetName)
-                if targetPlayer and targetPlayer.Character then
-                    local targetHead = targetPlayer.Character:FindFirstChild("Head")
-                    if targetHead then
-                        thrownKunai.CanCollide = false
-                        local tweenInfo = TweenInfo.new(0.00001, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-                        local targetCFrame = targetHead.CFrame
-                        local tween = TweenService:Create(thrownKunai, tweenInfo, {CFrame = targetCFrame})
-                        tween:Play()
-                        game.Debris:AddItem(thrownKunai, 1)
+            function onCharacterAdded(character)
+                for _, part in pairs(character:GetChildren()) do
+                    if part:IsA("BasePart") then
+                        table.insert(connections, part.Touched:Connect(onToolTouch))
                     end
                 end
             end
-            function checkKunaiLoop()
-                while VariableTable['AutoWLTarget'] do
-                    wait(0)
-                    for _, kunai in ipairs(workspace:GetChildren()) do
-                        if kunai:IsA("BasePart") and kunai.Name == "ThrownKunai" then
-                            local creator = kunai:FindFirstChild("creator")
-                            if creator and creator.Value == Player then
-                                for targetName in pairs(addedTargets) do
-                                    teleportKunaiToTarget(kunai, targetName)
+            function initializeScript()
+                resetConnections()
+                table.insert(connections, Player.CharacterAdded:Connect(onCharacterAdded))
+                if Player.Character then
+                    onCharacterAdded(Player.Character)
+                end
+                for _, whitelistPlayer in ipairs(game.Players:GetPlayers()) do
+                    if whitelist[whitelistPlayer.Name] then
+                        onCharacterAdded(whitelistPlayer.Character or whitelistPlayer.CharacterAdded:Wait())
+                    end
+                end
+                function teleportKunaiToTarget(thrownKunai, targetName)
+                    local targetPlayer = Players:FindFirstChild(targetName)
+                    if targetPlayer and targetPlayer.Character then
+                        local targetHead = targetPlayer.Character:FindFirstChild("Head")
+                        if targetHead then
+                            thrownKunai.CanCollide = false
+                            local tweenInfo = TweenInfo.new(0.00001, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+                            local targetCFrame = targetHead.CFrame
+                            local tween = TweenService:Create(thrownKunai, tweenInfo, {CFrame = targetCFrame})
+                            tween:Play()
+                            game.Debris:AddItem(thrownKunai, 1)
+                        end
+                    end
+                end
+                function checkKunaiLoop()
+                    while VariableTable["AutoWLTarget"] do
+                        wait(0)
+                        for _, kunai in ipairs(workspace:GetChildren()) do
+                            if kunai:IsA("BasePart") and kunai.Name == "ThrownKunai" then
+                                local creator = kunai:FindFirstChild("creator")
+                                if creator and creator.Value == Player then
+                                    for targetName in pairs(addedTargets) do
+                                        teleportKunaiToTarget(kunai, targetName)
+                                    end
                                 end
                             end
                         end
                     end
                 end
-            end
-            function checkPlayerHealth()
-                while VariableTable['AutoWLTarget'] do
-                    wait(0.25)
-                    for PlayerName in pairs(addedTargets) do
-                        local targetPlayer = Players:FindFirstChild(PlayerName)
-                        if not targetPlayer or not targetPlayer.Character or not targetPlayer.Character:FindFirstChild("Humanoid") then
-                            removeTarget(PlayerName)
-                        else
-                            local humanoid = targetPlayer.Character:FindFirstChild("Humanoid")
-                            if humanoid.Health <= 0 then
+                function checkPlayerHealth()
+                    while VariableTable["AutoWLTarget"] do
+                        wait(0.25)
+                        for PlayerName in pairs(addedTargets) do
+                            local targetPlayer = Players:FindFirstChild(PlayerName)
+                            if
+                                not targetPlayer or not targetPlayer.Character or
+                                    not targetPlayer.Character:FindFirstChild("Humanoid")
+                             then
                                 removeTarget(PlayerName)
+                            else
+                                local humanoid = targetPlayer.Character:FindFirstChild("Humanoid")
+                                if humanoid.Health <= 0 then
+                                    removeTarget(PlayerName)
+                                end
                             end
                         end
                     end
                 end
-            end
-            function fireShurikenLoop()
-                while VariableTable['AutoWLTarget'] do
-                    wait(0.1)
-                    if next(addedTargets) then
-                        local head = Player.Character:WaitForChild("Head")
-                        for _, targetPlayer in ipairs(Players:GetPlayers()) do
-                            local character = targetPlayer.Character or targetPlayer.CharacterAdded:Wait()
-                            if character and character:FindFirstChild("HumanoidRootPart") then
-                                local direction = (head.Position - character.HumanoidRootPart.Position).unit
-                                local spawnPosition = head.Position
-                                for targetName in pairs(addedTargets) do
-                                    if not whitelist[targetName] then
-                                        local args = {
-                                            [1] = spawnPosition,
-                                            [2] = direction
-                                        }
-                                        local shuriken = targetPlayer.Backpack:FindFirstChild("Shuriken") or character:FindFirstChild("Shuriken")
-                                        if shuriken then
-                                            if shuriken.Parent == targetPlayer.Backpack then
-                                                shuriken.Parent = character
-                                            end
-                                            shuriken.HitEvent:FireServer(unpack(args))
-                                            if shuriken.Parent == character then
-                                                shuriken.Parent = targetPlayer.Backpack
+                function fireShurikenLoop()
+                    while VariableTable["AutoWLTarget"] do
+                        wait(0.1)
+                        if next(addedTargets) then
+                            local head = Player.Character:WaitForChild("Head")
+                            for _, targetPlayer in ipairs(Players:GetPlayers()) do
+                                local character = targetPlayer.Character or targetPlayer.CharacterAdded:Wait()
+                                if character and character:FindFirstChild("HumanoidRootPart") then
+                                    local direction = (head.Position - character.HumanoidRootPart.Position).unit
+                                    local spawnPosition = head.Position
+                                    for targetName in pairs(addedTargets) do
+                                        if not whitelist[targetName] then
+                                            local args = {
+                                                [1] = spawnPosition,
+                                                [2] = direction
+                                            }
+                                            local shuriken =
+                                                targetPlayer.Backpack:FindFirstChild("Shuriken") or
+                                                character:FindFirstChild("Shuriken")
+                                            if shuriken then
+                                                if shuriken.Parent == targetPlayer.Backpack then
+                                                    shuriken.Parent = character
+                                                end
+                                                shuriken.HitEvent:FireServer(unpack(args))
+                                                if shuriken.Parent == character then
+                                                    shuriken.Parent = targetPlayer.Backpack
+                                                end
                                             end
                                         end
                                     end
@@ -4163,95 +4695,101 @@ if not VariableTable['AutoWLTarget'] then
                         end
                     end
                 end
+                coroutine.wrap(checkKunaiLoop)()
+                coroutine.wrap(checkPlayerHealth)()
+                coroutine.wrap(fireShurikenLoop)()
             end
-        coroutine.wrap(checkKunaiLoop)()
-        coroutine.wrap(checkPlayerHealth)()
-        coroutine.wrap(fireShurikenLoop)()
-    end
-    FunctionTable['SaveSettings'] = function()
-        local httpservice = game:GetService("HttpService")
-        if writefile then
-            local Settings = {}
-            Settings.whitelist = {}
-            for playerName in pairs(whitelist) do
-                table.insert(Settings.whitelist, playerName)
-            end
-            writefile(filename, httpservice:JSONEncode(Settings))
-        end
-    end
-    FunctionTable['MasterFunc'] = function(Text,UIElement,Save,Loading)
-        if Save == nil then
-            Save = true
-        end
-        if Loading == nil then
-            Loading = false
-        end
-        if UIElement:IsA("TextButton") then
-            if VariableTable[Text] ~= nil and Loading ~= true then
-                VariableTable[Text] = not VariableTable[Text]
-            end
-            local ButtonTable = FunctionTable['SetButton'](VariableTable[Text])
-            UIElement.TextColor3 = ButtonTable[1]
-            UIElement.Text = ButtonTable[2]
-        elseif UIElement:IsA("TextBox") then
-            if tonumber(UIElement.Text) then
-                VariableTable[Text] = tonumber(UIElement.Text)
-            else
-                VariableTable[Text] = UIElement.Text
-            end
-        end
-        if Save then
-            FunctionTable['SaveSettings']()
-        end
-        if FunctionTable.VariableFunctions[Text] then
-            FunctionTable.VariableFunctions[Text]()
-        end
-    end
-    FunctionTable['LoadSettings'] = function()
-        local httpservice = game:GetService("HttpService")
-        if isfile and readfile then
-            local fileExist = isfile(filename)
-            if fileExist then
-                local Settings = httpservice:JSONDecode(readfile(filename))
-                for _, playerName in ipairs(Settings.whitelist) do
-                    whitelist[playerName] = true 
+            FunctionTable["SaveSettings"] = function()
+                local httpservice = game:GetService("HttpService")
+                if writefile then
+                    local Settings = {}
+                    Settings.whitelist = {}
+                    for playerName in pairs(whitelist) do
+                        table.insert(Settings.whitelist, playerName)
+                    end
+                    writefile(filename, httpservice:JSONEncode(Settings))
                 end
             end
+            FunctionTable["MasterFunc"] = function(Text, UIElement, Save, Loading)
+                if Save == nil then
+                    Save = true
+                end
+                if Loading == nil then
+                    Loading = false
+                end
+                if UIElement:IsA("TextButton") then
+                    if VariableTable[Text] ~= nil and Loading ~= true then
+                        VariableTable[Text] = not VariableTable[Text]
+                    end
+                    local ButtonTable = FunctionTable["SetButton"](VariableTable[Text])
+                    UIElement.TextColor3 = ButtonTable[1]
+                    UIElement.Text = ButtonTable[2]
+                elseif UIElement:IsA("TextBox") then
+                    if tonumber(UIElement.Text) then
+                        VariableTable[Text] = tonumber(UIElement.Text)
+                    else
+                        VariableTable[Text] = UIElement.Text
+                    end
+                end
+                if Save then
+                    FunctionTable["SaveSettings"]()
+                end
+                if FunctionTable.VariableFunctions[Text] then
+                    FunctionTable.VariableFunctions[Text]()
+                end
+            end
+            FunctionTable["LoadSettings"] = function()
+                local httpservice = game:GetService("HttpService")
+                if isfile and readfile then
+                    local fileExist = isfile(filename)
+                    if fileExist then
+                        local Settings = httpservice:JSONDecode(readfile(filename))
+                        for _, playerName in ipairs(Settings.whitelist) do
+                            whitelist[playerName] = true
+                        end
+                    end
+                end
+            end
+            FunctionTable["LoadSettings"]()
+            Players.PlayerRemoving:Connect(
+                function(removedPlr)
+                    if removedPlr == Players.LocalPlayer then
+                        FunctionTable["SaveSettings"]()
+                    end
+                end
+            )
+            function handleCommands(newPlayer)
+                newPlayer.Chatted:Connect(
+                    function(msg)
+                        local command, playerName = msg:match("^(%S+)%s*(.*)")
+                        if command == ">rsoft" and playerName then
+                            unwhitelistPlayer(playerName)
+                        elseif command == ">wsoft" and playerName then
+                            whitelistPlayer(playerName)
+                        end
+                    end
+                )
+            end
+            for _, p in pairs(game.Players:GetPlayers()) do
+                handleCommands(p)
+            end
+            game.Players.PlayerAdded:Connect(handleCommands)
+            initializeScript()
+            Player.CharacterAdded:Connect(
+                function()
+                    wait(0.5)
+                    resetConnections()
+                    initializeScript()
+                end
+            )
+        else
+            VariableTable["AutoWLTarget"] = false
+            TextButton_31.Text = "Off"
+            TextButton_31.TextColor3 = Color3.fromRGB(255, 0, 0)
+            resetConnections()
         end
     end
-    FunctionTable['LoadSettings']()
-    Players.PlayerRemoving:Connect(function(removedPlr)
-        if removedPlr == Players.LocalPlayer then
-            FunctionTable['SaveSettings']()
-        end
-    end)
-    function handleCommands(newPlayer)
-            newPlayer.Chatted:Connect(function(msg)
-                local command, playerName = msg:match("^(%S+)%s*(.*)")
-                if command == ">rsoft" and playerName then
-                    unwhitelistPlayer(playerName)
-                elseif command == ">wsoft" and playerName then
-                    whitelistPlayer(playerName)
-                end
-            end)
-        end
-        for _, p in pairs(game.Players:GetPlayers()) do
-            handleCommands(p)
-        end
-        game.Players.PlayerAdded:Connect(handleCommands)
-    initializeScript()
-    Player.CharacterAdded:Connect(function()
-        wait(0.5)
-        resetConnections()
-        initializeScript()
-    end)
-else
-    VariableTable['AutoWLTarget'] = false
-    TextButton_31.Text = "Off"
-    TextButton_31.TextColor3 = Color3.fromRGB(255, 0, 0)
-    resetConnections()
-end
-end)
+)
 
 TextButton_32.Parent = Frame11_2
 TextButton_32.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
@@ -4271,76 +4809,90 @@ local connections_32 = {}
 local player = game.Players.LocalPlayer
 
 local function onDeath(character)
-for _, part in ipairs(character:GetDescendants()) do
-    if part:IsA("BasePart") then
-        part.Anchored = true
-    end
-end
-
-local player = game.Players:GetPlayerFromCharacter(character)
-if player then
-    local toolsContainer = Instance.new("Folder")
-    toolsContainer.Name = "ToolsContainer"
-    toolsContainer.Parent = workspace
-
-    for _, tool in ipairs(player.Backpack:GetChildren()) do
-        if tool:IsA("Tool") then
-            tool.Parent = toolsContainer
+    for _, part in ipairs(character:GetDescendants()) do
+        if part:IsA("BasePart") then
+            part.Anchored = true
         end
     end
 
-    local humanoid = character:FindFirstChildOfClass("Humanoid")
-    if humanoid and humanoid:IsDescendantOf(game.Workspace) then
-        local equippedTool = humanoid:FindFirstChildOfClass("Tool")
-        if equippedTool then
-            equippedTool.Parent = toolsContainer
-        end
-    end
+    local player = game.Players:GetPlayerFromCharacter(character)
+    if player then
+        local toolsContainer = Instance.new("Folder")
+        toolsContainer.Name = "ToolsContainer"
+        toolsContainer.Parent = workspace
 
-    toolsContainer.Parent = player.Backpack
-end
+        for _, tool in ipairs(player.Backpack:GetChildren()) do
+            if tool:IsA("Tool") then
+                tool.Parent = toolsContainer
+            end
+        end
+
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        if humanoid and humanoid:IsDescendantOf(game.Workspace) then
+            local equippedTool = humanoid:FindFirstChildOfClass("Tool")
+            if equippedTool then
+                equippedTool.Parent = toolsContainer
+            end
+        end
+
+        toolsContainer.Parent = player.Backpack
+    end
 end
 
 local function onCharacterAdded_32(character)
-local humanoid = character:FindFirstChildOfClass("Humanoid")
-if humanoid then
-    table.insert(connections_32, humanoid.Died:Connect(function()
-        onDeath(character)
-    end))
-end
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        table.insert(
+            connections_32,
+            humanoid.Died:Connect(
+                function()
+                    onDeath(character)
+                end
+            )
+        )
+    end
 end
 
 local function toggleScript_32()
-isScriptActive_32 = not isScriptActive_32
-if isScriptActive_32 then
-    TextButton_32.Text = "On"
-    TextButton_32.TextColor3 = Color3.fromRGB(0, 255, 0)
-    
-    table.insert(connections_32, game.Players.PlayerAdded:Connect(function(player)
-        table.insert(connections_32, player.CharacterAdded:Connect(onCharacterAdded_32))
-    end))
+    isScriptActive_32 = not isScriptActive_32
+    if isScriptActive_32 then
+        TextButton_32.Text = "On"
+        TextButton_32.TextColor3 = Color3.fromRGB(0, 255, 0)
 
-    for _, player in ipairs(game.Players:GetPlayers()) do
-        if player.Character then
-            onCharacterAdded_32(player.Character)
+        table.insert(
+            connections_32,
+            game.Players.PlayerAdded:Connect(
+                function(player)
+                    table.insert(connections_32, player.CharacterAdded:Connect(onCharacterAdded_32))
+                end
+            )
+        )
+
+        for _, player in ipairs(game.Players:GetPlayers()) do
+            if player.Character then
+                onCharacterAdded_32(player.Character)
+            end
         end
-    end
 
-    table.insert(connections_32, player.CharacterAdded:Connect(function()
-        if isScriptActive_32 then
-            toggleScript_32()
+        table.insert(
+            connections_32,
+            player.CharacterAdded:Connect(
+                function()
+                    if isScriptActive_32 then
+                        toggleScript_32()
+                    end
+                end
+            )
+        )
+    else
+        TextButton_32.Text = "Off"
+        TextButton_32.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+        for _, connection in ipairs(connections_32) do
+            connection:Disconnect()
         end
-    end))
-
-else
-    TextButton_32.Text = "Off"
-    TextButton_32.TextColor3 = Color3.fromRGB(255, 0, 0)
-    
-    for _, connection in ipairs(connections_32) do
-        connection:Disconnect()
+        connections_32 = {}
     end
-    connections_32 = {}
-end
 end
 
 TextButton_32.MouseButton1Down:Connect(toggleScript_32)
@@ -4415,9 +4967,11 @@ TextButton_33.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_33.TextScaled = true
 TextButton_33.TextSize = 19.000
 TextButton_33.TextWrapped = true
-TextButton_33.MouseButton1Down:connect(function()
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-end)
+TextButton_33.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+    end
+)
 
 TextLabel_55.Parent = Frame2_4
 TextLabel_55.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -4453,42 +5007,44 @@ isOn_34 = false
 TextButton_34.Text = "Off"
 TextButton_34.TextColor3 = Color3.fromRGB(255, 0, 0)
 
-TextButton_34.MouseButton1Click:Connect(function()
-isOn_34 = not isOn_34
-if isOn_34 then
-    TextButton_34.Text = "On"
-    TextButton_34.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_34.Text = "Off"
-    TextButton_34.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+TextButton_34.MouseButton1Click:Connect(
+    function()
+        isOn_34 = not isOn_34
+        if isOn_34 then
+            TextButton_34.Text = "On"
+            TextButton_34.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_34.Text = "Off"
+            TextButton_34.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
 
-while isOn_34 do
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying12")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying13")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying14")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying15")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying16")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying17")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying18")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying19")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying20")
-    wait(0.01)
+        while isOn_34 do
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying12")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying13")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying14")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying15")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying16")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying17")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying18")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying19")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying20")
+            wait(0.01)
 
-    if not isOn_34 then
-        break
+            if not isOn_34 then
+                break
+            end
+        end
     end
-end
-end)
+)
 
 TextLabel_56.Parent = Frame2_4
 TextLabel_56.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -4528,58 +5084,60 @@ TextButton_35.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_35.TextScaled = true
 TextButton_35.TextSize = 19.000
 TextButton_35.TextWrapped = true
-TextButton_35.MouseButton1Down:connect(function()
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-end)
+TextButton_35.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+    end
+)
 
 TextLabel_57.Parent = Frame3_4
 TextLabel_57.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -4615,42 +5173,44 @@ isOn_36 = false
 TextButton_36.Text = "Off"
 TextButton_36.TextColor3 = Color3.fromRGB(255, 0, 0)
 
-TextButton_36.MouseButton1Click:Connect(function()
-isOn_36 = not isOn_36
-if isOn_36 then
-    TextButton_36.Text = "On"
-    TextButton_36.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_36.Text = "Off"
-    TextButton_36.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+TextButton_36.MouseButton1Click:Connect(
+    function()
+        isOn_36 = not isOn_36
+        if isOn_36 then
+            TextButton_36.Text = "On"
+            TextButton_36.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_36.Text = "Off"
+            TextButton_36.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
 
-while isOn_36 do
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang12")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang13")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang14")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang15")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang16")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang17")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang18")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang19")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang20")
-    wait(0.01)
+        while isOn_36 do
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang12")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang13")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang14")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang15")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang16")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang17")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang18")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang19")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang20")
+            wait(0.01)
 
-    if not isOn_36 then
-        break
+            if not isOn_36 then
+                break
+            end
+        end
     end
-end
-end)
+)
 
 TextLabel_58.Parent = Frame3_4
 TextLabel_58.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -4690,108 +5250,110 @@ TextButton_37.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_37.TextScaled = true
 TextButton_37.TextSize = 19.000
 TextButton_37.TextWrapped = true
-TextButton_37.MouseButton1Down:connect(function()
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-end)
+TextButton_37.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+    end
+)
 
 TextLabel_59.Parent = Frame4_4
 TextLabel_59.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -4830,93 +5392,97 @@ local localPlayer = Players.LocalPlayer
 local isOn = false
 
 local function updateButton()
-if isOn then
-    TextButton_38.Text = "On"
-    TextButton_38.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_38.Text = "Off"
-    TextButton_38.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+    if isOn then
+        TextButton_38.Text = "On"
+        TextButton_38.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        TextButton_38.Text = "Off"
+        TextButton_38.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
 end
 
-TextButton_38.MouseButton1Click:Connect(function()
-isOn = not isOn
-updateButton()
-end)
+TextButton_38.MouseButton1Click:Connect(
+    function()
+        isOn = not isOn
+        updateButton()
+    end
+)
 
 local function getCharacterHeadPosition()
-if localPlayer.Character and localPlayer.Character:FindFirstChild("Head") then
-    return localPlayer.Character.Head.Position
-end
-return Vector3.new(0, 0, 0)
+    if localPlayer.Character and localPlayer.Character:FindFirstChild("Head") then
+        return localPlayer.Character.Head.Position
+    end
+    return Vector3.new(0, 0, 0)
 end
 
 local heartPoints = {
-Vector3.new(0, 50, 0),
-Vector3.new(5, 55, 0),
-Vector3.new(10, 60, 0),
-Vector3.new(15, 62, 0),
-Vector3.new(20, 63, 0),
-Vector3.new(25, 62, 0),
-Vector3.new(30, 60, 0),
-Vector3.new(35, 55, 0),
-Vector3.new(40, 50, 0),
-Vector3.new(35, 45, 0),
-Vector3.new(30, 40, 0),
-Vector3.new(25, 35, 0),
-Vector3.new(20, 30, 0),
-Vector3.new(15, 25, 0),
-Vector3.new(10, 20, 0),
-Vector3.new(5, 15, 0),
-Vector3.new(0, 10, 0),
-Vector3.new(-5, 15, 0),
-Vector3.new(-10, 20, 0),
-Vector3.new(-15, 25, 0),
-Vector3.new(-20, 30, 0),
-Vector3.new(-25, 35, 0),
-Vector3.new(-30, 40, 0),
-Vector3.new(-35, 45, 0),
-Vector3.new(-40, 50, 0),
-Vector3.new(-35, 55, 0),
-Vector3.new(-30, 60, 0),
-Vector3.new(-25, 62, 0),
-Vector3.new(-20, 63, 0),
-Vector3.new(-15, 62, 0),
-Vector3.new(-10, 60, 0),
-Vector3.new(-5, 55, 0),
-Vector3.new(0, 50, 0)
+    Vector3.new(0, 50, 0),
+    Vector3.new(5, 55, 0),
+    Vector3.new(10, 60, 0),
+    Vector3.new(15, 62, 0),
+    Vector3.new(20, 63, 0),
+    Vector3.new(25, 62, 0),
+    Vector3.new(30, 60, 0),
+    Vector3.new(35, 55, 0),
+    Vector3.new(40, 50, 0),
+    Vector3.new(35, 45, 0),
+    Vector3.new(30, 40, 0),
+    Vector3.new(25, 35, 0),
+    Vector3.new(20, 30, 0),
+    Vector3.new(15, 25, 0),
+    Vector3.new(10, 20, 0),
+    Vector3.new(5, 15, 0),
+    Vector3.new(0, 10, 0),
+    Vector3.new(-5, 15, 0),
+    Vector3.new(-10, 20, 0),
+    Vector3.new(-15, 25, 0),
+    Vector3.new(-20, 30, 0),
+    Vector3.new(-25, 35, 0),
+    Vector3.new(-30, 40, 0),
+    Vector3.new(-35, 45, 0),
+    Vector3.new(-40, 50, 0),
+    Vector3.new(-35, 55, 0),
+    Vector3.new(-30, 60, 0),
+    Vector3.new(-25, 62, 0),
+    Vector3.new(-20, 63, 0),
+    Vector3.new(-15, 62, 0),
+    Vector3.new(-10, 60, 0),
+    Vector3.new(-5, 55, 0),
+    Vector3.new(0, 50, 0)
 }
 
 local function tweenKunaiToPoints(kunai, points, basePosition)
-for i, point in ipairs(points) do
-    local goal = {Position = basePosition + point}
-    local tweenInfo = TweenInfo.new(0.01, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
-    local tween = TweenService:Create(kunai, tweenInfo, goal)
-    
-    tween:Play()
-    tween.Completed:Wait()
-end
+    for i, point in ipairs(points) do
+        local goal = {Position = basePosition + point}
+        local tweenInfo = TweenInfo.new(0.01, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+        local tween = TweenService:Create(kunai, tweenInfo, goal)
+
+        tween:Play()
+        tween.Completed:Wait()
+    end
 end
 
 local function onThrownKunaiAdded(kunai)
-if kunai:IsA("BasePart") and isOn then
-    local headPosition = getCharacterHeadPosition()
-    local basePosition = headPosition + Vector3.new(0, 20, -10)
-    tweenKunaiToPoints(kunai, heartPoints, basePosition)
-end
+    if kunai:IsA("BasePart") and isOn then
+        local headPosition = getCharacterHeadPosition()
+        local basePosition = headPosition + Vector3.new(0, 20, -10)
+        tweenKunaiToPoints(kunai, heartPoints, basePosition)
+    end
 end
 
 for _, kunai in ipairs(Workspace:GetChildren()) do
-if kunai.Name == "ThrownKunai" then
-    onThrownKunaiAdded(kunai)
-end
+    if kunai.Name == "ThrownKunai" then
+        onThrownKunaiAdded(kunai)
+    end
 end
 
-Workspace.ChildAdded:Connect(function(child)
-if child.Name == "ThrownKunai" then
-    onThrownKunaiAdded(child)
-end
-end)
+Workspace.ChildAdded:Connect(
+    function(child)
+        if child.Name == "ThrownKunai" then
+            onThrownKunaiAdded(child)
+        end
+    end
+)
 
 updateButton()
 
@@ -4958,18 +5524,22 @@ TextButton_39.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_39.TextScaled = true
 TextButton_39.TextSize = 19.000
 TextButton_39.TextWrapped = true
-TextButton_39.MouseButton1Down:connect(function()
-repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Train")
-local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Train")
-tool.Parent = game.Players.LocalPlayer.Character
+TextButton_39.MouseButton1Down:connect(
+    function()
+        repeat
+            task.wait()
+        until game.Players.LocalPlayer.Backpack:WaitForChild("Train")
+        local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Train")
+        tool.Parent = game.Players.LocalPlayer.Character
 
-local rs = game:GetService("ReplicatedStorage")
-while wait(0.72) do
-    rs.RemoteEvent.AddPowerEvent:FireServer("FromTraining", -2000000000000000000000000000000000000000000000000)
-    wait(0.72)
-    rs.RemoteEvent.AddPowerEvent:FireServer("FromTraining", -19916241294912496129491248999999.99) 
-end
-end)
+        local rs = game:GetService("ReplicatedStorage")
+        while wait(0.72) do
+            rs.RemoteEvent.AddPowerEvent:FireServer("FromTraining", -2000000000000000000000000000000000000000000000000)
+            wait(0.72)
+            rs.RemoteEvent.AddPowerEvent:FireServer("FromTraining", -19916241294912496129491248999999.99)
+        end
+    end
+)
 
 TextLabel_61.Parent = Frame5_4
 TextLabel_61.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5005,65 +5575,67 @@ isOn = false
 TextButton_40.Text = "Off"
 TextButton_40.TextColor3 = Color3.fromRGB(255, 0, 0)
 
-TextButton_40.MouseButton1Click:Connect(function()
-isOn = not isOn
-if isOn then
-    TextButton_40.Text = "On"
-    TextButton_40.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_40.Text = "Off"
-    TextButton_40.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+TextButton_40.MouseButton1Click:Connect(
+    function()
+        isOn = not isOn
+        if isOn then
+            TextButton_40.Text = "On"
+            TextButton_40.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_40.Text = "Off"
+            TextButton_40.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
 
-if isOn then
-    Players = game:GetService("Players")
-    LocalPlayer = Players.LocalPlayer
+        if isOn then
+            Players = game:GetService("Players")
+            LocalPlayer = Players.LocalPlayer
 
-    function changeLightningAuraProperties(character)
-        bodyParts = {
-            "UpperTorso",
-            "RightLowerLeg",
-            "LeftLowerLeg",
-            "RightUpperArm",
-            "LeftUpperArm"
-        }
+            function changeLightningAuraProperties(character)
+                bodyParts = {
+                    "UpperTorso",
+                    "RightLowerLeg",
+                    "LeftLowerLeg",
+                    "RightUpperArm",
+                    "LeftUpperArm"
+                }
 
-        colorKeypoints = {
-            ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),
-            ColorSequenceKeypoint.new(0.5, Color3.new(0, 0, 0)),
-            ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
-        }
-        colorSequence = ColorSequence.new(colorKeypoints)
+                colorKeypoints = {
+                    ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),
+                    ColorSequenceKeypoint.new(0.5, Color3.new(0, 0, 0)),
+                    ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
+                }
+                colorSequence = ColorSequence.new(colorKeypoints)
 
-        for _, partName in ipairs(bodyParts) do
-            bodyPart = character:FindFirstChild(partName)
-            
-            if bodyPart then
-                lightningAuraEff = bodyPart:FindFirstChild("LightingAuraEff")
-                
-                if lightningAuraEff then
-                    lightningAuraEff.Color = colorSequence
-                    lightningAuraEff.LightEmission = 0
-                else
-                    warn("LightingAuraEff not found on " .. partName)
+                for _, partName in ipairs(bodyParts) do
+                    bodyPart = character:FindFirstChild(partName)
+
+                    if bodyPart then
+                        lightningAuraEff = bodyPart:FindFirstChild("LightingAuraEff")
+
+                        if lightningAuraEff then
+                            lightningAuraEff.Color = colorSequence
+                            lightningAuraEff.LightEmission = 0
+                        else
+                            warn("LightingAuraEff not found on " .. partName)
+                        end
+                    else
+                        warn(partName .. " not found in character")
+                    end
                 end
-            else
-                warn(partName .. " not found in character")
+            end
+
+            function onCharacterAdded(character)
+                changeLightningAuraProperties(character)
+            end
+
+            LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+
+            if LocalPlayer.Character then
+                onCharacterAdded(LocalPlayer.Character)
             end
         end
     end
-
-    function onCharacterAdded(character)
-        changeLightningAuraProperties(character)
-    end
-
-    LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
-
-    if LocalPlayer.Character then
-        onCharacterAdded(LocalPlayer.Character)
-    end
-end
-end)
+)
 
 TextLabel_62.Parent = Frame5_4
 TextLabel_62.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5109,72 +5681,74 @@ isOn = false
 TextButton_41.Text = "Off"
 TextButton_41.TextColor3 = Color3.fromRGB(255, 0, 0)
 
-TextButton_41.MouseButton1Click:Connect(function()
-isOn = not isOn
-if isOn then
-    TextButton_41.Text = "On"
-    TextButton_41.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_41.Text = "Off"
-    TextButton_41.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
+TextButton_41.MouseButton1Click:Connect(
+    function()
+        isOn = not isOn
+        if isOn then
+            TextButton_41.Text = "On"
+            TextButton_41.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_41.Text = "Off"
+            TextButton_41.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
 
-while isOn do
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken1")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken2")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken3")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken4")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken5")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken6")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken7")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken8Ying")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken8Yang")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken9Ying")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken9Yang")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("VipPass", "Chakra")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("RainbowPass", "MetallicThrowingKnives")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("PizzaPass", "PizzaKunai")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "BoomerangDagger")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "DarkageKunai")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "GhostDagger")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "GrabBag")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "OctopusCannon")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "StarfishShuriken")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "ThrowingDonuts")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "WarRock")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "FlowerStar1")
-    wait(0.01)
-    game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "FlowerStar3")
-    wait(0.01)
+        while isOn do
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken1")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken2")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken3")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken4")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken5")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken6")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken7")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken8Ying")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken8Yang")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken9Ying")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Shuriken", "Shuriken9Yang")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("VipPass", "Chakra")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("RainbowPass", "MetallicThrowingKnives")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("PizzaPass", "PizzaKunai")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "BoomerangDagger")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "DarkageKunai")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "GhostDagger")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "GrabBag")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "OctopusCannon")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "StarfishShuriken")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "ThrowingDonuts")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "WarRock")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "FlowerStar1")
+            wait(0.01)
+            game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "FlowerStar3")
+            wait(0.01)
 
-    if not isOn then
-        break
+            if not isOn then
+                break
+            end
+        end
     end
-end
-end)
+)
 
 TextLabel_63.Parent = Frame5_5
 TextLabel_63.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5226,42 +5800,45 @@ isOn = false
 TextButton_42.Text = "Off"
 TextButton_42.TextColor3 = Color3.fromRGB(255, 0, 0)
 
-TextButton_42.MouseButton1Click:Connect(function()
-isOn = not isOn
-if isOn then
-    TextButton_42.Text = "On"
-    TextButton_42.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_42.Text = "Off"
-    TextButton_42.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-
-if isOn then
-    player = game.Players.LocalPlayer
-    sword = player.Character and player.Character:FindFirstChild("Sword")
-
-    if sword then
-        swordEff1 = sword.Handle and sword.Handle:FindFirstChild("SwordEff1")
-
-        if swordEff1 then
-            swordEff1.Color = ColorSequence.new(
-                {
-                    ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),
-                    ColorSequenceKeypoint.new(0.5, Color3.new(0, 0, 0)),
-                    ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
-                }
-            )
-
-            swordEff1.Rate = 25
-            swordEff1.LightEmission = 0
+TextButton_42.MouseButton1Click:Connect(
+    function()
+        isOn = not isOn
+        if isOn then
+            TextButton_42.Text = "On"
+            TextButton_42.TextColor3 = Color3.fromRGB(0, 255, 0)
         else
-            print("SwordEff1 not found in Sword handle")
+            TextButton_42.Text = "Off"
+            TextButton_42.TextColor3 = Color3.fromRGB(255, 0, 0)
         end
-    else
-        print("Sword not found in LocalPlayer's character")
+
+        if isOn then
+            player = game.Players.LocalPlayer
+            sword = player.Character and player.Character:FindFirstChild("Sword")
+
+            if sword then
+                swordEff1 = sword.Handle and sword.Handle:FindFirstChild("SwordEff1")
+
+                if swordEff1 then
+                    swordEff1.Color =
+                        ColorSequence.new(
+                        {
+                            ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),
+                            ColorSequenceKeypoint.new(0.5, Color3.new(0, 0, 0)),
+                            ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
+                        }
+                    )
+
+                    swordEff1.Rate = 25
+                    swordEff1.LightEmission = 0
+                else
+                    print("SwordEff1 not found in Sword handle")
+                end
+            else
+                print("Sword not found in LocalPlayer's character")
+            end
+        end
     end
-end
-end)
+)
 
 Frame6_4.Name = "Frame6"
 Frame6_4.Parent = PlayersTab
@@ -5301,16 +5878,16 @@ TextButton_43.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_43.TextScaled = true
 TextButton_43.TextSize = 19.000
 TextButton_43.TextWrapped = true
-TextButton_43.MouseButton1Down:connect(function()
+TextButton_43.MouseButton1Down:connect(
+    function()
+        local args = {
+            [1] = "Shuriken",
+            [2] = "Shuriken9Yang"
+        }
 
-local args = {
-    [1] = "Shuriken",
-    [2] = "Shuriken9Yang"
-}
-
-game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer(unpack(args))
-
-end)
+        game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer(unpack(args))
+    end
+)
 
 TextLabel_66.Parent = Frame6_4
 TextLabel_66.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5340,16 +5917,16 @@ TextButton_44.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_44.TextScaled = true
 TextButton_44.TextSize = 19.000
 TextButton_44.TextWrapped = true
-TextButton_44.MouseButton1Down:connect(function()
+TextButton_44.MouseButton1Down:connect(
+    function()
+        local args = {
+            [1] = "Shuriken",
+            [2] = "Shuriken9Ying"
+        }
 
-local args = {
-    [1] = "Shuriken",
-    [2] = "Shuriken9Ying"
-}
-
-game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer(unpack(args))
-
-end)
+        game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer(unpack(args))
+    end
+)
 
 Frame6_5.Name = "Frame6"
 Frame6_5.Parent = PlayersTab
@@ -5389,9 +5966,11 @@ TextButton_45.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_45.TextScaled = true
 TextButton_45.TextSize = 19.000
 TextButton_45.TextWrapped = true
-TextButton_45.MouseButton1Down:connect(function()
-game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer("Sword", "BlackAndWhiteWingedSword")
-end)
+TextButton_45.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer("Sword", "BlackAndWhiteWingedSword")
+    end
+)
 
 TextLabel_68.Parent = Frame6_5
 TextLabel_68.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5421,9 +6000,11 @@ TextButton_46.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_46.TextScaled = true
 TextButton_46.TextSize = 19.000
 TextButton_46.TextWrapped = true
-TextButton_46.MouseButton1Down:connect(function()
-game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer("Sword", "UltraKatana")
-end)
+TextButton_46.MouseButton1Down:connect(
+    function()
+        game:GetService("ReplicatedStorage").RemoteEvent.GiveItemEvent:FireServer("Sword", "UltraKatana")
+    end
+)
 
 Frame6_6.Name = "Frame6"
 Frame6_6.Parent = PlayersTab
@@ -5463,9 +6044,11 @@ TextButton_47.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_47.TextScaled = true
 TextButton_47.TextSize = 19.000
 TextButton_47.TextWrapped = true
-TextButton_47.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang26")
-end)
+TextButton_47.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Yang26")
+    end
+)
 
 TextLabel_70.Parent = Frame6_6
 TextLabel_70.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5495,9 +6078,11 @@ TextButton_48.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_48.TextScaled = true
 TextButton_48.TextSize = 19.000
 TextButton_48.TextWrapped = true
-TextButton_48.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying26")
-end)
+TextButton_48.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("Cloth", "Ying26")
+    end
+)
 
 MiscTab.Name = "MiscTab"
 MiscTab.Parent = MainFrame
@@ -5704,9 +6289,11 @@ TextButton_53.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_53.TextScaled = true
 TextButton_53.TextSize = 19.000
 TextButton_53.TextWrapped = true
-TextButton_53.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("RainbowPass", "UnicornSword")
-end)
+TextButton_53.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("RainbowPass", "UnicornSword")
+    end
+)
 
 TextLabel_77.Parent = Frame5_6
 TextLabel_77.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5736,9 +6323,11 @@ TextButton_54.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_54.TextScaled = true
 TextButton_54.TextSize = 19.000
 TextButton_54.TextWrapped = true
-TextButton_54.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("RainbowPass", "MetallicThrowingKnives")
-end)
+TextButton_54.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("RainbowPass", "MetallicThrowingKnives")
+    end
+)
 
 TextLabel_78.Parent = Frame5_6
 TextLabel_78.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5872,9 +6461,11 @@ TextButton_55.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_55.TextScaled = true
 TextButton_55.TextSize = 19.000
 TextButton_55.TextWrapped = true
-TextButton_55.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("VipPass", "ScytheOfSingularity")
-end)
+TextButton_55.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("VipPass", "ScytheOfSingularity")
+    end
+)
 
 TextLabel_81.Parent = Frame6_7
 TextLabel_81.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5904,9 +6495,11 @@ TextButton_56.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_56.TextScaled = true
 TextButton_56.TextSize = 19.000
 TextButton_56.TextWrapped = true
-TextButton_56.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("VipPass", "Chakra")
-end)
+TextButton_56.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("VipPass", "Chakra")
+    end
+)
 
 TextLabel_82.Parent = Frame6_7
 TextLabel_82.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5946,9 +6539,11 @@ TextButton_57.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_57.TextScaled = true
 TextButton_57.TextSize = 19.000
 TextButton_57.TextWrapped = true
-TextButton_57.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("PizzaPass", "PizzaSword")
-end)
+TextButton_57.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("PizzaPass", "PizzaSword")
+    end
+)
 
 TextLabel_83.Parent = Frame7_4
 TextLabel_83.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -5978,9 +6573,11 @@ TextButton_58.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_58.TextScaled = true
 TextButton_58.TextSize = 19.000
 TextButton_58.TextWrapped = true
-TextButton_58.MouseButton1Down:connect(function()		
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("PizzaPass", "PizzaKunai")
-end)
+TextButton_58.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("PizzaPass", "PizzaKunai")
+    end
+)
 
 TextLabel_84.Parent = Frame7_4
 TextLabel_84.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6020,9 +6617,11 @@ TextButton_59.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_59.TextScaled = true
 TextButton_59.TextSize = 19.000
 TextButton_59.TextWrapped = true
-TextButton_59.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnySwordPass", "StopSignAxe")
-end)
+TextButton_59.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnySwordPass", "StopSignAxe")
+    end
+)
 
 TextLabel_85.Parent = Frame7_5
 TextLabel_85.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6052,9 +6651,11 @@ TextButton_60.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_60.TextScaled = true
 TextButton_60.TextSize = 19.000
 TextButton_60.TextWrapped = true
-TextButton_60.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "GhostDagger")
-end)
+TextButton_60.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "GhostDagger")
+    end
+)
 
 TextLabel_86.Parent = Frame7_5
 TextLabel_86.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6094,9 +6695,11 @@ TextButton_61.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_61.TextScaled = true
 TextButton_61.TextSize = 19.000
 TextButton_61.TextWrapped = true
-TextButton_61.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnySwordPass", "Mackerel")
-end)
+TextButton_61.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnySwordPass", "Mackerel")
+    end
+)
 
 TextLabel_87.Parent = Frame7_6
 TextLabel_87.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6126,9 +6729,11 @@ TextButton_62.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_62.TextScaled = true
 TextButton_62.TextSize = 19.000
 TextButton_62.TextWrapped = true
-TextButton_62.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "OctopusCannon")
-end)
+TextButton_62.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "OctopusCannon")
+    end
+)
 
 TextLabel_88.Parent = Frame7_6
 TextLabel_88.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6168,9 +6773,11 @@ TextButton_63.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_63.TextScaled = true
 TextButton_63.TextSize = 19.000
 TextButton_63.TextWrapped = true
-TextButton_63.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnySwordPass", "Frying Pan")
-end)
+TextButton_63.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnySwordPass", "Frying Pan")
+    end
+)
 
 TextLabel_89.Parent = Frame7_7
 TextLabel_89.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6200,9 +6807,11 @@ TextButton_64.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextButton_64.TextScaled = true
 TextButton_64.TextSize = 19.000
 TextButton_64.TextWrapped = true
-TextButton_64.MouseButton1Down:connect(function()
-game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "ThrowingDonuts")
-end)
+TextButton_64.MouseButton1Down:connect(
+    function()
+        game.ReplicatedStorage.RemoteEvent.GiveItemEvent:FireServer("FunnyThrowPass", "ThrowingDonuts")
+    end
+)
 
 TextLabel_90.Parent = Frame7_7
 TextLabel_90.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6279,126 +6888,144 @@ local ESPEnabled = false
 local playerConnections = {}
 local playerAddedConnection
 
-TextButton_65.MouseButton1Down:Connect(function()
-ESPEnabled = not ESPEnabled
-if ESPEnabled then
-    TextButton_65.Text = "On"
-    TextButton_65.TextColor3 = Color3.fromRGB(0, 255, 0)
-else
-    TextButton_65.Text = "Off"
-    TextButton_65.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-
-local Players = game:GetService("Players")
-
-if ESPEnabled then
-
-    local function HighLightPlayer(Player)
-        local Character = Player.Character or Player.CharacterAdded:Wait()
-        local Humanoid = Character:WaitForChild("Humanoid")
-
-        local Highlighter = Instance.new("Highlight", Character)
-        Highlighter.FillColor = Player.TeamColor and Player.TeamColor.Color or Color3.fromRGB(255, 48, 51)
-
-        local Billboard = Instance.new("BillboardGui", Character)
-        Billboard.Adornee = Character:WaitForChild("Head")
-        Billboard.Size = UDim2.new(0, 150, 0, 30)
-        Billboard.StudsOffset = Vector3.new(0, 3, 0)
-        Billboard.AlwaysOnTop = true
-        Billboard.MaxDistance = 1000000000000
-
-        local NameLabel = Instance.new("TextLabel", Billboard)
-        NameLabel.Size = UDim2.new(1, 0, 1, 0)
-        NameLabel.BackgroundTransparency = 1
-        NameLabel.Text = Player.Name .. " (" .. math.floor(Humanoid.Health) .. " HP)"
-        NameLabel.TextColor3 = Color3.new(1, 1, 1)
-        NameLabel.TextStrokeTransparency = 0.5
-        NameLabel.Font = Enum.Font.SourceSansBold
-        NameLabel.TextScaled = true
-        NameLabel.TextSize = 14
-        NameLabel.TextWrapped = true
-
-        local function UpdateSize()
-            local camera = game.Workspace.CurrentCamera
-            local distance = (Character.Head.Position - camera.CFrame.Position).Magnitude
-            local newSize = math.clamp(150 - distance, 50, 150)
-            Billboard.Size = UDim2.new(0, newSize, 0, newSize / 3)
-
-            NameLabel.Text = string.format("%s (%d HP)", Player.Name, math.floor(Humanoid.Health))
+TextButton_65.MouseButton1Down:Connect(
+    function()
+        ESPEnabled = not ESPEnabled
+        if ESPEnabled then
+            TextButton_65.Text = "On"
+            TextButton_65.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            TextButton_65.Text = "Off"
+            TextButton_65.TextColor3 = Color3.fromRGB(255, 0, 0)
         end
 
-        UpdateSize()
-        local updateConnection = game:GetService("RunService").Stepped:Connect(UpdateSize)
+        local Players = game:GetService("Players")
 
-        table.insert(playerConnections, {
-            Player = Player,
-            Connections = {updateConnection}
-        })
+        if ESPEnabled then
+            local function HighLightPlayer(Player)
+                local Character = Player.Character or Player.CharacterAdded:Wait()
+                local Humanoid = Character:WaitForChild("Humanoid")
 
-        local healthConnection = Humanoid.Changed:Connect(function()
-            if Humanoid.Health <= 0 then
-                Highlighter:Destroy()
-                Billboard:Destroy()
-                updateConnection:Disconnect()
+                local Highlighter = Instance.new("Highlight", Character)
+                Highlighter.FillColor = Player.TeamColor and Player.TeamColor.Color or Color3.fromRGB(255, 48, 51)
+
+                local Billboard = Instance.new("BillboardGui", Character)
+                Billboard.Adornee = Character:WaitForChild("Head")
+                Billboard.Size = UDim2.new(0, 150, 0, 30)
+                Billboard.StudsOffset = Vector3.new(0, 3, 0)
+                Billboard.AlwaysOnTop = true
+                Billboard.MaxDistance = 1000000000000
+
+                local NameLabel = Instance.new("TextLabel", Billboard)
+                NameLabel.Size = UDim2.new(1, 0, 1, 0)
+                NameLabel.BackgroundTransparency = 1
+                NameLabel.Text = Player.Name .. " (" .. math.floor(Humanoid.Health) .. " HP)"
+                NameLabel.TextColor3 = Color3.new(1, 1, 1)
+                NameLabel.TextStrokeTransparency = 0.5
+                NameLabel.Font = Enum.Font.SourceSansBold
+                NameLabel.TextScaled = true
+                NameLabel.TextSize = 14
+                NameLabel.TextWrapped = true
+
+                local function UpdateSize()
+                    local camera = game.Workspace.CurrentCamera
+                    local distance = (Character.Head.Position - camera.CFrame.Position).Magnitude
+                    local newSize = math.clamp(150 - distance, 50, 150)
+                    Billboard.Size = UDim2.new(0, newSize, 0, newSize / 3)
+
+                    NameLabel.Text = string.format("%s (%d HP)", Player.Name, math.floor(Humanoid.Health))
+                end
+
+                UpdateSize()
+                local updateConnection = game:GetService("RunService").Stepped:Connect(UpdateSize)
+
+                table.insert(
+                    playerConnections,
+                    {
+                        Player = Player,
+                        Connections = {updateConnection}
+                    }
+                )
+
+                local healthConnection =
+                    Humanoid.Changed:Connect(
+                    function()
+                        if Humanoid.Health <= 0 then
+                            Highlighter:Destroy()
+                            Billboard:Destroy()
+                            updateConnection:Disconnect()
+                        end
+                    end
+                )
+
+                table.insert(
+                    playerConnections,
+                    {
+                        Player = Player,
+                        Connections = {healthConnection}
+                    }
+                )
             end
-        end)
 
-        table.insert(playerConnections, {
-            Player = Player,
-            Connections = {healthConnection}
-        })
-    end
-
-    local function HighLightFunc(Player)
-        if Player.Character then
-            HighLightPlayer(Player)
-        end
-        local charAddedConnection = Player.CharacterAdded:Connect(function()
-            HighLightPlayer(Player)
-        end)
-        table.insert(playerConnections, {
-            Player = Player,
-            Connections = {charAddedConnection}
-        })
-    end
-
-    for _, Player in ipairs(Players:GetPlayers()) do
-        HighLightFunc(Player)
-    end
-
-    playerAddedConnection = Players.PlayerAdded:Connect(function(Player)
-        HighLightFunc(Player)
-    end)
-else
-
-    for _, playerData in ipairs(playerConnections) do
-        local Player = playerData.Player
-        if Player.Character then
-            local Character = Player.Character
-            local Highlighter = Character:FindFirstChildOfClass("Highlight")
-            local Billboard = Character:FindFirstChildOfClass("BillboardGui")
-
-            if Highlighter then
-                Highlighter:Destroy()
+            local function HighLightFunc(Player)
+                if Player.Character then
+                    HighLightPlayer(Player)
+                end
+                local charAddedConnection =
+                    Player.CharacterAdded:Connect(
+                    function()
+                        HighLightPlayer(Player)
+                    end
+                )
+                table.insert(
+                    playerConnections,
+                    {
+                        Player = Player,
+                        Connections = {charAddedConnection}
+                    }
+                )
             end
-            if Billboard then
-                Billboard:Destroy()
+
+            for _, Player in ipairs(Players:GetPlayers()) do
+                HighLightFunc(Player)
+            end
+
+            playerAddedConnection =
+                Players.PlayerAdded:Connect(
+                function(Player)
+                    HighLightFunc(Player)
+                end
+            )
+        else
+            for _, playerData in ipairs(playerConnections) do
+                local Player = playerData.Player
+                if Player.Character then
+                    local Character = Player.Character
+                    local Highlighter = Character:FindFirstChildOfClass("Highlight")
+                    local Billboard = Character:FindFirstChildOfClass("BillboardGui")
+
+                    if Highlighter then
+                        Highlighter:Destroy()
+                    end
+                    if Billboard then
+                        Billboard:Destroy()
+                    end
+                end
+
+                for _, connection in ipairs(playerData.Connections) do
+                    connection:Disconnect()
+                end
+            end
+
+            playerConnections = {}
+
+            if playerAddedConnection then
+                playerAddedConnection:Disconnect()
+                playerAddedConnection = nil
             end
         end
-
-        for _, connection in ipairs(playerData.Connections) do
-            connection:Disconnect()
-        end
     end
-
-    playerConnections = {}
-
-    if playerAddedConnection then
-        playerAddedConnection:Disconnect()
-        playerAddedConnection = nil
-    end
-end
-end)
+)
 
 TextLabel_92.Parent = Frame2_6
 TextLabel_92.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6431,36 +7058,38 @@ TextButton_66.TextWrapped = true
 
 local isPlaying = false
 
-TextButton_66.MouseButton1Down:connect(function()
-isPlaying = not isPlaying
+TextButton_66.MouseButton1Down:connect(
+    function()
+        isPlaying = not isPlaying
 
-if isPlaying then
-    TextButton_66.Text = "On"
-    TextButton_66.TextColor3 = Color3.fromRGB(0, 255, 0)
-    
-    function playSounds(interval)
-        local function findAndPlaySounds()
-            for _, sound in ipairs(game:GetDescendants()) do
-                if sound:IsA("Sound") then
-                    sound.Volume = 10
-                    sound:Play()
+        if isPlaying then
+            TextButton_66.Text = "On"
+            TextButton_66.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+            function playSounds(interval)
+                local function findAndPlaySounds()
+                    for _, sound in ipairs(game:GetDescendants()) do
+                        if sound:IsA("Sound") then
+                            sound.Volume = 10
+                            sound:Play()
+                        end
+                    end
+                end
+
+                while isPlaying do
+                    findAndPlaySounds()
+                    wait(interval)
                 end
             end
-        end
-        
-        while isPlaying do
-            findAndPlaySounds()
-            wait(interval)
+
+            local intervalInSeconds = 0.100
+            playSounds(intervalInSeconds)
+        else
+            TextButton_66.Text = "Off"
+            TextButton_66.TextColor3 = Color3.fromRGB(255, 0, 0)
         end
     end
-
-    local intervalInSeconds = 0.100
-    playSounds(intervalInSeconds)
-else
-    TextButton_66.Text = "Off"
-    TextButton_66.TextColor3 = Color3.fromRGB(255, 0, 0)
-end
-end)
+)
 
 TextLabel_93.Parent = Frame2_6
 TextLabel_93.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6504,25 +7133,30 @@ TextButton_67.TextWrapped = true
 isActive_67 = false
 connection_67 = nil
 
-TextButton_67.MouseButton1Down:Connect(function()
-RunService_67 = game:GetService("RunService")
-isActive_67 = not isActive_67
+TextButton_67.MouseButton1Down:Connect(
+    function()
+        RunService_67 = game:GetService("RunService")
+        isActive_67 = not isActive_67
 
-if isActive_67 then
-    TextButton_67.Text = "On"
-    TextButton_67.TextColor3 = Color3.fromRGB(0, 255, 0)
-    connection_67 = RunService_67.Heartbeat:Connect(function(step)
-        game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
-    end)
-else
-    TextButton_67.Text = "Off"
-    TextButton_67.TextColor3 = Color3.fromRGB(255, 0, 0)
-    if connection_67 then
-        connection_67:Disconnect()
-        connection_67 = nil
+        if isActive_67 then
+            TextButton_67.Text = "On"
+            TextButton_67.TextColor3 = Color3.fromRGB(0, 255, 0)
+            connection_67 =
+                RunService_67.Heartbeat:Connect(
+                function(step)
+                    game:GetService("ReplicatedStorage").RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+                end
+            )
+        else
+            TextButton_67.Text = "Off"
+            TextButton_67.TextColor3 = Color3.fromRGB(255, 0, 0)
+            if connection_67 then
+                connection_67:Disconnect()
+                connection_67 = nil
+            end
+        end
     end
-end
-end)
+)
 
 TextLabel_94.Parent = Frame3_6
 TextLabel_94.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6557,81 +7191,115 @@ isEnabled_68 = false
 connection_68 = nil
 
 function start_68()
-isEnabled_68 = not isEnabled_68
-if isEnabled_68 then
-    TextButton_68.Text = "On"
-    TextButton_68.TextColor3 = Color3.fromRGB(0, 255, 0)
+    isEnabled_68 = not isEnabled_68
+    if isEnabled_68 then
+        TextButton_68.Text = "On"
+        TextButton_68.TextColor3 = Color3.fromRGB(0, 255, 0)
 
-    spyOnMyself = true
-    public = false
-    publicItalics = true
-    privateProperties = {
-        Color = Color3.fromRGB(0, 255, 255),
-        Font = Enum.Font.SourceSansBold,
-        TextSize = 15,
-    }
+        spyOnMyself = true
+        public = false
+        publicItalics = true
+        privateProperties = {
+            Color = Color3.fromRGB(0, 255, 255),
+            Font = Enum.Font.SourceSansBold,
+            TextSize = 15
+        }
 
-    StarterGui = game:GetService("StarterGui")
-    Players = game:GetService("Players")
-    player = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
-    saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
-    getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
-    instance = (_G.chatSpyInstance or 0) + 1
-    _G.chatSpyInstance = instance
+        StarterGui = game:GetService("StarterGui")
+        Players = game:GetService("Players")
+        player = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
+        saymsg =
+            game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild(
+            "SayMessageRequest"
+        )
+        getmsg =
+            game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild(
+            "OnMessageDoneFiltering"
+        )
+        instance = (_G.chatSpyInstance or 0) + 1
+        _G.chatSpyInstance = instance
 
-    function onChatted(p, msg)
-        if _G.chatSpyInstance == instance then
-            if p == player and msg:lower():sub(1, 4) == "/spy" then
-                isEnabled_68 = not isEnabled_68
-                wait(0.3)
-                privateProperties.Text = "{SPY "..(isEnabled_68 and "EN" or "DIS").."ABLED}"
-                StarterGui:SetCore("ChatMakeSystemMessage", privateProperties)
-            elseif isEnabled_68 and (spyOnMyself or p ~= player) then
-                msg = msg:gsub("[\n\r]", ''):gsub("\t", ' '):gsub("[ ]+", ' ')
-                hidden = true
-                conn = getmsg.OnClientEvent:Connect(function(packet, channel)
-                    if packet.SpeakerUserId == p.UserId and packet.Message == msg:sub(#msg - #packet.Message + 1) and (channel == "All" or (channel == "Team" and not public and Players[packet.FromSpeaker].Team == player.Team)) then
-                        hidden = false
-                    end
-                end)
-                wait(1)
-                conn:Disconnect()
-                if hidden and isEnabled_68 then
-                    if public then
-                        saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg, "All")
-                    else
-                        privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
-                        StarterGui:SetCore("ChatMakeSystemMessage", privateProperties)
+        function onChatted(p, msg)
+            if _G.chatSpyInstance == instance then
+                if p == player and msg:lower():sub(1, 4) == "/spy" then
+                    isEnabled_68 = not isEnabled_68
+                    wait(0.3)
+                    privateProperties.Text = "{SPY " .. (isEnabled_68 and "EN" or "DIS") .. "ABLED}"
+                    StarterGui:SetCore("ChatMakeSystemMessage", privateProperties)
+                elseif isEnabled_68 and (spyOnMyself or p ~= player) then
+                    msg = msg:gsub("[\n\r]", ""):gsub("\t", " "):gsub("[ ]+", " ")
+                    hidden = true
+                    conn =
+                        getmsg.OnClientEvent:Connect(
+                        function(packet, channel)
+                            if
+                                packet.SpeakerUserId == p.UserId and
+                                    packet.Message == msg:sub(#msg - #packet.Message + 1) and
+                                    (channel == "All" or
+                                        (channel == "Team" and not public and
+                                            Players[packet.FromSpeaker].Team == player.Team))
+                             then
+                                hidden = false
+                            end
+                        end
+                    )
+                    wait(1)
+                    conn:Disconnect()
+                    if hidden and isEnabled_68 then
+                        if public then
+                            saymsg:FireServer(
+                                (publicItalics and "/me " or "") .. "{SPY} [" .. p.Name .. "]: " .. msg,
+                                "All"
+                            )
+                        else
+                            privateProperties.Text = "{SPY} [" .. p.Name .. "]: " .. msg
+                            StarterGui:SetCore("ChatMakeSystemMessage", privateProperties)
+                        end
                     end
                 end
             end
         end
-    end
 
-    for _, p in ipairs(Players:GetPlayers()) do
-        p.Chatted:Connect(function(msg) onChatted(p, msg) end)
-    end
-    connection_68 = Players.PlayerAdded:Connect(function(p)
-        p.Chatted:Connect(function(msg) onChatted(p, msg) end)
-    end)
-    privateProperties.Text = "{SPY "..(isEnabled_68 and "EN" or "DIS").."ABLED}"
-    StarterGui:SetCore("ChatMakeSystemMessage", privateProperties)
-    if not player.PlayerGui:FindFirstChild("Chat") then wait(3) end
-    chatFrame = player.PlayerGui.Chat.Frame
-    chatFrame.ChatChannelParentFrame.Visible = true
-    chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), chatFrame.ChatChannelParentFrame.Size.Y)
-else
-    TextButton_68.Text = "Off"
-    TextButton_68.TextColor3 = Color3.fromRGB(255, 0, 0)
-    if connection_68 then
-        connection_68:Disconnect()
+        for _, p in ipairs(Players:GetPlayers()) do
+            p.Chatted:Connect(
+                function(msg)
+                    onChatted(p, msg)
+                end
+            )
+        end
+        connection_68 =
+            Players.PlayerAdded:Connect(
+            function(p)
+                p.Chatted:Connect(
+                    function(msg)
+                        onChatted(p, msg)
+                    end
+                )
+            end
+        )
+        privateProperties.Text = "{SPY " .. (isEnabled_68 and "EN" or "DIS") .. "ABLED}"
+        StarterGui:SetCore("ChatMakeSystemMessage", privateProperties)
+        if not player.PlayerGui:FindFirstChild("Chat") then
+            wait(3)
+        end
+        chatFrame = player.PlayerGui.Chat.Frame
+        chatFrame.ChatChannelParentFrame.Visible = true
+        chatFrame.ChatBarParentFrame.Position =
+            chatFrame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), chatFrame.ChatChannelParentFrame.Size.Y)
+    else
+        TextButton_68.Text = "Off"
+        TextButton_68.TextColor3 = Color3.fromRGB(255, 0, 0)
+        if connection_68 then
+            connection_68:Disconnect()
+        end
     end
 end
-end
 
-TextButton_68.MouseButton1Down:Connect(function()
-start_68()
-end)
+TextButton_68.MouseButton1Down:Connect(
+    function()
+        start_68()
+    end
+)
 
 TextLabel_95.Parent = Frame3_6
 TextLabel_95.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6676,35 +7344,53 @@ isEnabled_69 = false
 connection_69 = nil
 
 function start_69()
-isEnabled_69 = not isEnabled_69
-if isEnabled_69 then
-    TextButton_69.Text = "On"
-    TextButton_69.TextColor3 = Color3.fromRGB(0, 255, 0)
-    connection_69 = game.Players.PlayerAdded:Connect(function(player)
-        for _, enemyName in ipairs({"Naliza27", "Naliza28", "ImJxnnyyy", "caongochaidang1", "Haidang072023", "Haidang072024", "mangbaba12"}) do
-            if player.Name == enemyName then
-                game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                    Text = "[WARNING] One of the enemies has joined the game!!!",
-                    Color = Color3.fromRGB(255, 255, 0),
-                    Font = Enum.Font.ArialBold,
-                    FontSize = Enum.FontSize.Size24
-                })
-                break
+    isEnabled_69 = not isEnabled_69
+    if isEnabled_69 then
+        TextButton_69.Text = "On"
+        TextButton_69.TextColor3 = Color3.fromRGB(0, 255, 0)
+        connection_69 =
+            game.Players.PlayerAdded:Connect(
+            function(player)
+                for _, enemyName in ipairs(
+                    {
+                        "Naliza27",
+                        "Naliza28",
+                        "ImJxnnyyy",
+                        "caongochaidang1",
+                        "Haidang072023",
+                        "Haidang072024",
+                        "mangbaba12"
+                    }
+                ) do
+                    if player.Name == enemyName then
+                        game.StarterGui:SetCore(
+                            "ChatMakeSystemMessage",
+                            {
+                                Text = "[WARNING] One of the enemies has joined the game!!!",
+                                Color = Color3.fromRGB(255, 255, 0),
+                                Font = Enum.Font.ArialBold,
+                                FontSize = Enum.FontSize.Size24
+                            }
+                        )
+                        break
+                    end
+                end
             end
+        )
+    else
+        TextButton_69.Text = "Off"
+        TextButton_69.TextColor3 = Color3.fromRGB(255, 0, 0)
+        if connection_69 then
+            connection_69:Disconnect()
         end
-    end)
-else
-    TextButton_69.Text = "Off"
-    TextButton_69.TextColor3 = Color3.fromRGB(255, 0, 0)
-    if connection_69 then
-        connection_69:Disconnect()
     end
 end
-end
 
-TextButton_69.MouseButton1Down:Connect(function()
-start_69()
-end)
+TextButton_69.MouseButton1Down:Connect(
+    function()
+        start_69()
+    end
+)
 
 TextLabel_96.Parent = Frame4_6
 TextLabel_96.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6754,124 +7440,147 @@ TextButton_70.TextWrapped = true
 TextButtonEnabled_70 = false
 connection_70 = nil
 
-TextButton_70.MouseButton1Down:Connect(function()
-TextButtonEnabled_70 = not TextButtonEnabled_70
-if TextButtonEnabled_70 then
-    TextButton_70.Text = "On"
-    TextButton_70.TextColor3 = Color3.fromRGB(0, 255, 0)
+TextButton_70.MouseButton1Down:Connect(
+    function()
+        TextButtonEnabled_70 = not TextButtonEnabled_70
+        if TextButtonEnabled_70 then
+            TextButton_70.Text = "On"
+            TextButton_70.TextColor3 = Color3.fromRGB(0, 255, 0)
 
-    connection_70 = spawn(function()
-        Players_70 = game:GetService("Players")
-        targetPlayers_70 = {"AhronZokAlt", "Naliza27", "Naliza28", "ImJxnnyyy", "ItsMeAron9815", "guyasumi", "coolkidakrt91", "RoundAhmet7777777", "stxdix", "breezyjazzy9", "breezyAlt_Altt", "mangbaba12"}
-        teleportHeight_70 = 20
-        headSize_70 = 5
-        player_70 = Players_70.LocalPlayer
-        character_70 = player_70.Character or player_70.CharacterAdded:Wait()
+            connection_70 =
+                spawn(
+                function()
+                    Players_70 = game:GetService("Players")
+                    targetPlayers_70 = {
+                        "AhronZokAlt",
+                        "Naliza27",
+                        "Naliza28",
+                        "ImJxnnyyy",
+                        "ItsMeAron9815",
+                        "guyasumi",
+                        "coolkidakrt91",
+                        "RoundAhmet7777777",
+                        "stxdix",
+                        "breezyjazzy9",
+                        "breezyAlt_Altt",
+                        "mangbaba12"
+                    }
+                    teleportHeight_70 = 20
+                    headSize_70 = 5
+                    player_70 = Players_70.LocalPlayer
+                    character_70 = player_70.Character or player_70.CharacterAdded:Wait()
 
-        offset_70 = Vector3.new(0, 5, 0)
+                    offset_70 = Vector3.new(0, 5, 0)
 
-        function throwShuriken_70()
-            direction_70 = character_70.HumanoidRootPart.CFrame.LookVector
-            spawnPosition_70 = character_70.HumanoidRootPart.Position + offset_70
+                    function throwShuriken_70()
+                        direction_70 = character_70.HumanoidRootPart.CFrame.LookVector
+                        spawnPosition_70 = character_70.HumanoidRootPart.Position + offset_70
 
-            args_70 = {
-                [1] = spawnPosition_70,
-                [2] = direction_70
-            }
+                        args_70 = {
+                            [1] = spawnPosition_70,
+                            [2] = direction_70
+                        }
 
-            shuriken_70 = player_70.Backpack:FindFirstChild("Shuriken") or character_70:FindFirstChild("Shuriken")
+                        shuriken_70 =
+                            player_70.Backpack:FindFirstChild("Shuriken") or character_70:FindFirstChild("Shuriken")
 
-            if shuriken_70 then
-                if shuriken_70.Parent == player_70.Backpack then
-                    shuriken_70.Parent = character_70
-                end
+                        if shuriken_70 then
+                            if shuriken_70.Parent == player_70.Backpack then
+                                shuriken_70.Parent = character_70
+                            end
 
-                shuriken_70.HitEvent:FireServer(unpack(args_70))
+                            shuriken_70.HitEvent:FireServer(unpack(args_70))
 
-                if shuriken_70.Parent == character_70 then
-                    shuriken_70.Parent = player_70.Backpack
-                end
-            else
-                warn("Shuriken not found in backpack or character")
-            end
-        end
+                            if shuriken_70.Parent == character_70 then
+                                shuriken_70.Parent = player_70.Backpack
+                            end
+                        else
+                            warn("Shuriken not found in backpack or character")
+                        end
+                    end
 
-        function teleportPlayerAbove_70(targetPlayer_70, destinationPlayer_70)
-            destinationCharacter_70 = destinationPlayer_70.Character
-            targetCharacter_70 = targetPlayer_70.Character
+                    function teleportPlayerAbove_70(targetPlayer_70, destinationPlayer_70)
+                        destinationCharacter_70 = destinationPlayer_70.Character
+                        targetCharacter_70 = targetPlayer_70.Character
 
-            if destinationCharacter_70 and targetCharacter_70 then
-                destinationPosition_70 = destinationCharacter_70.PrimaryPart.Position
-                newPosition_70 = destinationPosition_70 + Vector3.new(0, teleportHeight_70, 0)
+                        if destinationCharacter_70 and targetCharacter_70 then
+                            destinationPosition_70 = destinationCharacter_70.PrimaryPart.Position
+                            newPosition_70 = destinationPosition_70 + Vector3.new(0, teleportHeight_70, 0)
 
-                targetCharacter_70:SetPrimaryPartCFrame(CFrame.new(newPosition_70))
+                            targetCharacter_70:SetPrimaryPartCFrame(CFrame.new(newPosition_70))
 
-                wait(0.001)
-                targetCharacter_70:SetPrimaryPartCFrame(CFrame.new(newPosition_70 + Vector3.new(0, 0.1, 0)))
+                            wait(0.001)
+                            targetCharacter_70:SetPrimaryPartCFrame(CFrame.new(newPosition_70 + Vector3.new(0, 0.1, 0)))
 
-                head_70 = targetCharacter_70.Head
-                if head_70 then
-                    head_70.Size = Vector3.new(headSize_70, headSize_70, headSize_70)
-                else
-                    warn("Head not found.")
-                end
+                            head_70 = targetCharacter_70.Head
+                            if head_70 then
+                                head_70.Size = Vector3.new(headSize_70, headSize_70, headSize_70)
+                            else
+                                warn("Head not found.")
+                            end
 
-                throwShuriken_70()
-            else
-                warn("One of the players' characters is missing.")
-            end
-        end
+                            throwShuriken_70()
+                        else
+                            warn("One of the players' characters is missing.")
+                        end
+                    end
 
-        function monitorAndTeleport_70()
-            while TextButtonEnabled_70 do
-                for _, playerName_70 in ipairs(targetPlayers_70) do
-                    targetPlayer_70 = Players_70:FindFirstChild(playerName_70)
-                    destinationPlayer_70 = Players_70.LocalPlayer
+                    function monitorAndTeleport_70()
+                        while TextButtonEnabled_70 do
+                            for _, playerName_70 in ipairs(targetPlayers_70) do
+                                targetPlayer_70 = Players_70:FindFirstChild(playerName_70)
+                                destinationPlayer_70 = Players_70.LocalPlayer
 
-                    if targetPlayer_70 and destinationPlayer_70 then
-                        teleportPlayerAbove_70(targetPlayer_70, destinationPlayer_70)
-                    else
-                        warn("One of the players is not in the server.")
+                                if targetPlayer_70 and destinationPlayer_70 then
+                                    teleportPlayerAbove_70(targetPlayer_70, destinationPlayer_70)
+                                else
+                                    warn("One of the players is not in the server.")
+                                end
+                            end
+                            wait(0.001)
+                        end
+                    end
+
+                    Players_70.PlayerAdded:Connect(
+                        function(player_70)
+                            for _, playerName_70 in ipairs(targetPlayers_70) do
+                                if player_70.Name == playerName_70 and TextButtonEnabled_70 then
+                                    monitorAndTeleport_70()
+                                    break
+                                end
+                            end
+                        end
+                    )
+
+                    Players_70.PlayerRemoving:Connect(
+                        function(player_70)
+                            for _, playerName_70 in ipairs(targetPlayers_70) do
+                                if player_70.Name == playerName_70 then
+                                    warn(playerName_70 .. " has left the game.")
+                                    break
+                                end
+                            end
+                        end
+                    )
+
+                    for _, playerName_70 in ipairs(targetPlayers_70) do
+                        if Players_70:FindFirstChild(playerName_70) then
+                            monitorAndTeleport_70()
+                            break
+                        end
                     end
                 end
-                wait(0.001)
+            )
+        else
+            TextButton_70.Text = "Off"
+            TextButton_70.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+            if connection_70 then
+                connection_70:Disconnect()
             end
         end
-
-        Players_70.PlayerAdded:Connect(function(player_70)
-            for _, playerName_70 in ipairs(targetPlayers_70) do
-                if player_70.Name == playerName_70 and TextButtonEnabled_70 then
-                    monitorAndTeleport_70()
-                    break
-                end
-            end
-        end)
-
-        Players_70.PlayerRemoving:Connect(function(player_70)
-            for _, playerName_70 in ipairs(targetPlayers_70) do
-                if player_70.Name == playerName_70 then
-                    warn(playerName_70 .. " has left the game.")
-                    break
-                end
-            end
-        end)
-
-        for _, playerName_70 in ipairs(targetPlayers_70) do
-            if Players_70:FindFirstChild(playerName_70) then
-                monitorAndTeleport_70()
-                break
-            end
-        end
-    end)
-else
-    TextButton_70.Text = "Off"
-    TextButton_70.TextColor3 = Color3.fromRGB(255, 0, 0)
-
-    if connection_70 then
-        connection_70:Disconnect()
     end
-end
-end)
+)
 
 Frame4_7.Name = "Frame4"
 Frame4_7.Parent = ServerTab
@@ -6901,12 +7610,14 @@ TeleportService = game:GetService("TeleportService")
 LocalPlayer = Players.LocalPlayer
 
 function rejoin()
-TeleportService:Teleport(game.PlaceId, LocalPlayer)
+    TeleportService:Teleport(game.PlaceId, LocalPlayer)
 end
 
-TextButton_71.MouseButton1Down:Connect(function()
-rejoin()
-end)
+TextButton_71.MouseButton1Down:Connect(
+    function()
+        rejoin()
+    end
+)
 
 TextLabel_98.Parent = Frame4_7
 TextLabel_98.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -6959,38 +7670,40 @@ Players = game:GetService("Players")
 LocalPlayer = Players.LocalPlayer
 
 function serverHop()
-servers = {}
-placeId = game.PlaceId
+    servers = {}
+    placeId = game.PlaceId
 
-function getServerList(cursor)
-    url = "https://games.roblox.com/v1/games/" .. placeId .. "/servers/Public?limit=100"
-    if cursor then
-        url = url .. "&cursor=" .. cursor
-    end
-    response = HttpService:JSONDecode(game:HttpGet(url))
-    for _, server in ipairs(response.data) do
-        if server.playing < server.maxPlayers and server.id ~= game.JobId then
-            table.insert(servers, server.id)
+    function getServerList(cursor)
+        url = "https://games.roblox.com/v1/games/" .. placeId .. "/servers/Public?limit=100"
+        if cursor then
+            url = url .. "&cursor=" .. cursor
         end
+        response = HttpService:JSONDecode(game:HttpGet(url))
+        for _, server in ipairs(response.data) do
+            if server.playing < server.maxPlayers and server.id ~= game.JobId then
+                table.insert(servers, server.id)
+            end
+        end
+        return response.nextPageCursor
     end
-    return response.nextPageCursor
+
+    cursor = nil
+    repeat
+        cursor = getServerList(cursor)
+    until not cursor or #servers > 0
+
+    if #servers > 0 then
+        TeleportService:TeleportToPlaceInstance(placeId, servers[math.random(1, #servers)], LocalPlayer)
+    else
+        warn("No other servers found")
+    end
 end
 
-cursor = nil
-repeat
-    cursor = getServerList(cursor)
-until not cursor or #servers > 0
-
-if #servers > 0 then
-    TeleportService:TeleportToPlaceInstance(placeId, servers[math.random(1, #servers)], LocalPlayer)
-else
-    warn("No other servers found")
-end
-end
-
-TextButton_72.MouseButton1Click:Connect(function()
-serverHop()
-end)
+TextButton_72.MouseButton1Click:Connect(
+    function()
+        serverHop()
+    end
+)
 
 ButtonsFrame.Name = "ButtonsFrame"
 ButtonsFrame.Parent = MidBar
@@ -7108,647 +7821,764 @@ AdminImgBtn.Image = "rbxassetid://10563016738"
 
 -- Scripts:
 
-local function CNGGKZ_fake_script() -- TextLabel_18.LocalScript 
-local script = Instance.new('LocalScript', TextLabel_18)
+local function CNGGKZ_fake_script() -- TextLabel_18.LocalScript
+    local script = Instance.new("LocalScript", TextLabel_18)
 
-local function formatNumber(n)
-    if tonumber(n) then
-        local left, num, right = string.match(n, '^([^%d]*%d)(%d*)(.-)$')
-        return left .. (num:reverse():gsub('(%d%d%d)', '%1,'):reverse()) .. right
-    else
-        return n
+    local function formatNumber(n)
+        if tonumber(n) then
+            local left, num, right = string.match(n, "^([^%d]*%d)(%d*)(.-)$")
+            return left .. (num:reverse():gsub("(%d%d%d)", "%1,"):reverse()) .. right
+        else
+            return n
+        end
     end
-end
 
-local player = game.Players.LocalPlayer
-local ninjutsuValue = player.leaderstats.Ninjutsu.Value
-script.Parent.Text = formatNumber(ninjutsuValue)
+    local player = game.Players.LocalPlayer
+    local ninjutsuValue = player.leaderstats.Ninjutsu.Value
+    script.Parent.Text = formatNumber(ninjutsuValue)
 
-player.leaderstats.Ninjutsu.Changed:Connect(function(newValue)
-    script.Parent.Text = formatNumber(newValue)
-end)
+    player.leaderstats.Ninjutsu.Changed:Connect(
+        function(newValue)
+            script.Parent.Text = formatNumber(newValue)
+        end
+    )
 end
 coroutine.wrap(CNGGKZ_fake_script)()
-local function GCLPHX_fake_script() -- TextLabel_20.LocalScript 
-local script = Instance.new('LocalScript', TextLabel_20)
+local function GCLPHX_fake_script() -- TextLabel_20.LocalScript
+    local script = Instance.new("LocalScript", TextLabel_20)
 
-local function formatNumberWithCommas(val)
-local formatted = tostring(val)
-local k
-while true do
-    formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
-    if k == 0 then
-        break
+    local function formatNumberWithCommas(val)
+        local formatted = tostring(val)
+        local k
+        while true do
+            formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", "%1,%2")
+            if k == 0 then
+                break
+            end
+        end
+        return formatted
     end
-end
-return formatted
-end
 
-local player = game.Players.LocalPlayer
-local textLabel = script.Parent
+    local player = game.Players.LocalPlayer
+    local textLabel = script.Parent
 
-local function updateReputation()
-local reputation = player.leaderstats.Reputation.Value
-textLabel.Text = formatNumberWithCommas(reputation)
-end
+    local function updateReputation()
+        local reputation = player.leaderstats.Reputation.Value
+        textLabel.Text = formatNumberWithCommas(reputation)
+    end
 
-player.leaderstats.Reputation.Changed:Connect(updateReputation)
-updateReputation()
+    player.leaderstats.Reputation.Changed:Connect(updateReputation)
+    updateReputation()
 end
 coroutine.wrap(GCLPHX_fake_script)()
-local function DNWTN_fake_script() -- TextLabel_22.LocalScript 
-local script = Instance.new('LocalScript', TextLabel_22)
+local function DNWTN_fake_script() -- TextLabel_22.LocalScript
+    local script = Instance.new("LocalScript", TextLabel_22)
 
-local function UpdateTime()
-    local currentTime = os.date("%H:%M:%S")
-    script.Parent.Text = currentTime
-end
+    local function UpdateTime()
+        local currentTime = os.date("%H:%M:%S")
+        script.Parent.Text = currentTime
+    end
 
-while true do
-    UpdateTime()
-    wait(1)
-end
+    while true do
+        UpdateTime()
+        wait(1)
+    end
 end
 coroutine.wrap(DNWTN_fake_script)()
-local function KQKZJDF_fake_script() -- TextLabel_24.LocalScript 
-local script = Instance.new('LocalScript', TextLabel_24)
+local function KQKZJDF_fake_script() -- TextLabel_24.LocalScript
+    local script = Instance.new("LocalScript", TextLabel_24)
 
-local Players = game:GetService("Players")
-local playerCountLabel = script.Parent
+    local Players = game:GetService("Players")
+    local playerCountLabel = script.Parent
 
-if playerCountLabel and playerCountLabel:IsA("TextLabel") then
-    local maxPlayers = 20
+    if playerCountLabel and playerCountLabel:IsA("TextLabel") then
+        local maxPlayers = 20
 
-    local function updatePlayerCount()
-        local playerCount = #Players:GetPlayers()
-        playerCountLabel.Text = playerCount .. "/" .. maxPlayers
+        local function updatePlayerCount()
+            local playerCount = #Players:GetPlayers()
+            playerCountLabel.Text = playerCount .. "/" .. maxPlayers
+        end
+
+        Players.PlayerAdded:Connect(updatePlayerCount)
+        Players.PlayerRemoving:Connect(updatePlayerCount)
+
+        updatePlayerCount()
+    else
+        warn("The script's parent is not a TextLabel or is nil.")
     end
-
-    Players.PlayerAdded:Connect(updatePlayerCount)
-    Players.PlayerRemoving:Connect(updatePlayerCount)
-
-    updatePlayerCount()
-else
-    warn("The script's parent is not a TextLabel or is nil.")
-end
 end
 coroutine.wrap(KQKZJDF_fake_script)()
-local function TKTL_fake_script() -- TextLabel_26.LocalScript 
-local script = Instance.new('LocalScript', TextLabel_26)
+local function TKTL_fake_script() -- TextLabel_26.LocalScript
+    local script = Instance.new("LocalScript", TextLabel_26)
 
-local player = game.Players.LocalPlayer
+    local player = game.Players.LocalPlayer
 
-if script.Parent and script.Parent:IsA("TextLabel") then
-    script.Parent.Text = player.Name
-else
-    warn("The parent of the script is not a TextLabel or is nil.")
-end
+    if script.Parent and script.Parent:IsA("TextLabel") then
+        script.Parent.Text = player.Name
+    else
+        warn("The parent of the script is not a TextLabel or is nil.")
+    end
 end
 coroutine.wrap(TKTL_fake_script)()
-local function YUMLY_fake_script() -- mostnin.LocalScript 
-local script = Instance.new('LocalScript', mostnin)
+local function YUMLY_fake_script() -- mostnin.LocalScript
+    local script = Instance.new("LocalScript", mostnin)
 
-local Players = game:GetService("Players")
-local textLabel = script.Parent
+    local Players = game:GetService("Players")
+    local textLabel = script.Parent
 
-local function comma_value(n)
-if tonumber(n) then
-    local left, num, right = string.match(n, '^([^%d]*%d)(%d*)(.-)$')
-    return left .. (num:reverse():gsub('(%d%d%d)', '%1,'):reverse()) .. right
-else
-    return n
-end
-end
-
-local function updateNinjutsu()
-local highestNinjutsu = 0
-local playerWithHighestNinjutsu
-
-for _, player in ipairs(Players:GetPlayers()) do
-    local ninjutsu = player.leaderstats and player.leaderstats.Ninjutsu and player.leaderstats.Ninjutsu.Value or 0
-    if ninjutsu > highestNinjutsu then
-        highestNinjutsu = ninjutsu
-        playerWithHighestNinjutsu = player
+    local function comma_value(n)
+        if tonumber(n) then
+            local left, num, right = string.match(n, "^([^%d]*%d)(%d*)(.-)$")
+            return left .. (num:reverse():gsub("(%d%d%d)", "%1,"):reverse()) .. right
+        else
+            return n
+        end
     end
-end
 
-if playerWithHighestNinjutsu then
-    local formattedNinjutsu = comma_value(highestNinjutsu)
-    textLabel.Text = playerWithHighestNinjutsu.Name .. " with " .. formattedNinjutsu
-else
-    textLabel.Text = "No players in the server"
-end
-end
+    local function updateNinjutsu()
+        local highestNinjutsu = 0
+        local playerWithHighestNinjutsu
 
-updateNinjutsu()
-Players.PlayerAdded:Connect(updateNinjutsu)
-Players.PlayerRemoving:Connect(updateNinjutsu)
+        for _, player in ipairs(Players:GetPlayers()) do
+            local ninjutsu =
+                player.leaderstats and player.leaderstats.Ninjutsu and player.leaderstats.Ninjutsu.Value or 0
+            if ninjutsu > highestNinjutsu then
+                highestNinjutsu = ninjutsu
+                playerWithHighestNinjutsu = player
+            end
+        end
+
+        if playerWithHighestNinjutsu then
+            local formattedNinjutsu = comma_value(highestNinjutsu)
+            textLabel.Text = playerWithHighestNinjutsu.Name .. " with " .. formattedNinjutsu
+        else
+            textLabel.Text = "No players in the server"
+        end
+    end
+
+    updateNinjutsu()
+    Players.PlayerAdded:Connect(updateNinjutsu)
+    Players.PlayerRemoving:Connect(updateNinjutsu)
 end
 coroutine.wrap(YUMLY_fake_script)()
-local function PIQB_fake_script() -- mostrep.LocalScript 
-local script = Instance.new('LocalScript', mostrep)
+local function PIQB_fake_script() -- mostrep.LocalScript
+    local script = Instance.new("LocalScript", mostrep)
 
-local Players = game:GetService("Players")
-local textLabel = script.Parent
+    local Players = game:GetService("Players")
+    local textLabel = script.Parent
 
-local function formatNumberWithSuffixes(number)
-local suffixes = {'', 'K+', 'M+', 'B+', 'T+', 'qd+', 'Qn+', 'sx+', 'Sp+', 'O+', 'N+', 'de+', 'Ud+', 'DD+', 'tdD+', 'qdD+', 'QnD+', 'sxD+', 'SpD+', 'OcD+', 'NvD+', 'Vgn+', 'UVg+', 'DVg+', 'TVg+', 'qtV+', 'QnV+', 'SeV+', 'SPG+', 'OVG+', 'NVG+', 'TGN+', 'UTG+', 'DTG+', 'tsTG+', 'qtTG+', 'QnTG+', 'ssTG+', 'SpTG+', 'OcTG+', 'NoAG+', 'UnAG+', 'DuAG+', 'TeAG+', 'QdAG+', 'QnAG+', 'SxAG+', 'SpAG+', 'OcAG+', 'NvAG+', 'CT+'}
+    local function formatNumberWithSuffixes(number)
+        local suffixes = {
+            "",
+            "K+",
+            "M+",
+            "B+",
+            "T+",
+            "qd+",
+            "Qn+",
+            "sx+",
+            "Sp+",
+            "O+",
+            "N+",
+            "de+",
+            "Ud+",
+            "DD+",
+            "tdD+",
+            "qdD+",
+            "QnD+",
+            "sxD+",
+            "SpD+",
+            "OcD+",
+            "NvD+",
+            "Vgn+",
+            "UVg+",
+            "DVg+",
+            "TVg+",
+            "qtV+",
+            "QnV+",
+            "SeV+",
+            "SPG+",
+            "OVG+",
+            "NVG+",
+            "TGN+",
+            "UTG+",
+            "DTG+",
+            "tsTG+",
+            "qtTG+",
+            "QnTG+",
+            "ssTG+",
+            "SpTG+",
+            "OcTG+",
+            "NoAG+",
+            "UnAG+",
+            "DuAG+",
+            "TeAG+",
+            "QdAG+",
+            "QnAG+",
+            "SxAG+",
+            "SpAG+",
+            "OcAG+",
+            "NvAG+",
+            "CT+"
+        }
 
-for i = 1, #suffixes do
-    if tonumber(number) < 10^(i*3) then
-        return math.floor(number / ((10^((i-1)*3)) / 100)) / 100 .. suffixes[i]
+        for i = 1, #suffixes do
+            if tonumber(number) < 10 ^ (i * 3) then
+                return math.floor(number / ((10 ^ ((i - 1) * 3)) / 100)) / 100 .. suffixes[i]
+            end
+        end
     end
-end
-end
 
-local function updateReputation()
-local highestReputation = 0
-local playerWithHighestReputation
+    local function updateReputation()
+        local highestReputation = 0
+        local playerWithHighestReputation
 
-for _, player in ipairs(Players:GetPlayers()) do
-    local reputation = player.leaderstats and player.leaderstats.Reputation and player.leaderstats.Reputation.Value or 0
-    if reputation > highestReputation then
-        highestReputation = reputation
-        playerWithHighestReputation = player
+        for _, player in ipairs(Players:GetPlayers()) do
+            local reputation =
+                player.leaderstats and player.leaderstats.Reputation and player.leaderstats.Reputation.Value or 0
+            if reputation > highestReputation then
+                highestReputation = reputation
+                playerWithHighestReputation = player
+            end
+        end
+
+        if playerWithHighestReputation then
+            local formattedReputation = formatNumberWithSuffixes(highestReputation)
+            textLabel.Text = playerWithHighestReputation.Name .. " with " .. formattedReputation
+        else
+            textLabel.Text = "No players in the server"
+        end
     end
-end
 
-if playerWithHighestReputation then
-    local formattedReputation = formatNumberWithSuffixes(highestReputation)
-    textLabel.Text = playerWithHighestReputation.Name .. " with " .. formattedReputation
-else
-    textLabel.Text = "No players in the server"
-end
-end
-
-updateReputation()
-Players.PlayerAdded:Connect(updateReputation)
-Players.PlayerRemoving:Connect(updateReputation)
+    updateReputation()
+    Players.PlayerAdded:Connect(updateReputation)
+    Players.PlayerRemoving:Connect(updateReputation)
 end
 coroutine.wrap(PIQB_fake_script)()
-local function BNZZJ_fake_script() -- fps.LocalScript 
-local script = Instance.new('LocalScript', fps)
+local function BNZZJ_fake_script() -- fps.LocalScript
+    local script = Instance.new("LocalScript", fps)
 
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
+    local Players = game:GetService("Players")
+    local player = Players.LocalPlayer
 
-local textLabel = script.Parent
+    local textLabel = script.Parent
 
-local frameCount = 0
-local elapsedTime = 0
+    local frameCount = 0
+    local elapsedTime = 0
 
-game:GetService("RunService").RenderStepped:Connect(function(deltaTime)
-    frameCount = frameCount + 1
-    elapsedTime = elapsedTime + deltaTime
+    game:GetService("RunService").RenderStepped:Connect(
+        function(deltaTime)
+            frameCount = frameCount + 1
+            elapsedTime = elapsedTime + deltaTime
 
-    if elapsedTime >= 1 then
-        textLabel.Text = frameCount
-        frameCount = 0
-        elapsedTime = 0
-    end
-end)
+            if elapsedTime >= 1 then
+                textLabel.Text = frameCount
+                frameCount = 0
+                elapsedTime = 0
+            end
+        end
+    )
 end
 coroutine.wrap(BNZZJ_fake_script)()
-local function RAYOUB_fake_script() -- ping.LocalScript 
-local script = Instance.new('LocalScript', ping)
+local function RAYOUB_fake_script() -- ping.LocalScript
+    local script = Instance.new("LocalScript", ping)
 
-local pingLabel = script.Parent
+    local pingLabel = script.Parent
 
-local function calculateMetrics()
-    local pingTimeSec = game.Players.LocalPlayer:GetNetworkPing()
-    local pingTimeMs = pingTimeSec * 1000 -- Convert to milliseconds
-    pingLabel.Text = tostring(math.floor(pingTimeMs)) .. " ms"
-end
+    local function calculateMetrics()
+        local pingTimeSec = game.Players.LocalPlayer:GetNetworkPing()
+        local pingTimeMs = pingTimeSec * 1000 -- Convert to milliseconds
+        pingLabel.Text = tostring(math.floor(pingTimeMs)) .. " ms"
+    end
 
-while true do
-    calculateMetrics()
-    wait(5)
-end
-
+    while true do
+        calculateMetrics()
+        wait(5)
+    end
 end
 coroutine.wrap(RAYOUB_fake_script)()
-local function VTZEPT_fake_script() -- TextButton_49.LocalScript 
-local script = Instance.new('LocalScript', TextButton_49)
+local function VTZEPT_fake_script() -- TextButton_49.LocalScript
+    local script = Instance.new("LocalScript", TextButton_49)
 
-local textButton = script.Parent
+    local textButton = script.Parent
 
-textButton.Activated:Connect(function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-end)
+    textButton.Activated:Connect(
+        function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+        end
+    )
 end
 coroutine.wrap(VTZEPT_fake_script)()
-local function ODTR_fake_script() -- TextButton_50.LocalScript 
-local script = Instance.new('LocalScript', TextButton_50)
+local function ODTR_fake_script() -- TextButton_50.LocalScript
+    local script = Instance.new("LocalScript", TextButton_50)
 
-local button = script.Parent
+    local button = script.Parent
 
-local autoJumpEnabled = false
-local jumpRequestConnection = nil
+    local autoJumpEnabled = false
+    local jumpRequestConnection = nil
 
-local function enableAutoJump()
-    jumpRequestConnection = game:GetService("UserInputService").JumpRequest:Connect(function()
-        game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
-    end)
-end
-
-local function disableAutoJump()
-    if jumpRequestConnection then
-        jumpRequestConnection:Disconnect()
-        jumpRequestConnection = nil
+    local function enableAutoJump()
+        jumpRequestConnection =
+            game:GetService("UserInputService").JumpRequest:Connect(
+            function()
+                game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(
+                    Enum.HumanoidStateType.Jumping
+                )
+            end
+        )
     end
-end
 
-local function updateButtonText()
-    if autoJumpEnabled then
-        button.Text = "On"
-        button.TextColor3 = Color3.fromRGB(0, 255, 0)
-    else
-        button.Text = "Off"
-        button.TextColor3 = Color3.fromRGB(255, 0, 0)
+    local function disableAutoJump()
+        if jumpRequestConnection then
+            jumpRequestConnection:Disconnect()
+            jumpRequestConnection = nil
+        end
     end
-end
 
-button.MouseButton1Down:Connect(function()
-    autoJumpEnabled = not autoJumpEnabled
-
-    if autoJumpEnabled then
-        enableAutoJump()
-    else
-        disableAutoJump()
+    local function updateButtonText()
+        if autoJumpEnabled then
+            button.Text = "On"
+            button.TextColor3 = Color3.fromRGB(0, 255, 0)
+        else
+            button.Text = "Off"
+            button.TextColor3 = Color3.fromRGB(255, 0, 0)
+        end
     end
+
+    button.MouseButton1Down:Connect(
+        function()
+            autoJumpEnabled = not autoJumpEnabled
+
+            if autoJumpEnabled then
+                enableAutoJump()
+            else
+                disableAutoJump()
+            end
+
+            updateButtonText()
+        end
+    )
 
     updateButtonText()
-end)
-
-updateButtonText()
 end
 coroutine.wrap(ODTR_fake_script)()
-local function UGFBFKA_fake_script() -- TextButton_51.LocalScript 
-local script = Instance.new('LocalScript', TextButton_51)
+local function UGFBFKA_fake_script() -- TextButton_51.LocalScript
+    local script = Instance.new("LocalScript", TextButton_51)
 
-local textButton = script.Parent
+    local textButton = script.Parent
 
-textButton.Activated:Connect(function()
-    --[[ WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk! ]]--
-loadstring(game:HttpGet("https://github.com/Hosvile/DEX-Explorer/releases/latest/download/main.lua", true))()
-end)
+    textButton.Activated:Connect(
+        function()
+            --[[ WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk! ]] --
+            loadstring(game:HttpGet("https://github.com/Hosvile/DEX-Explorer/releases/latest/download/main.lua", true))(
+
+            )
+        end
+    )
 end
 coroutine.wrap(UGFBFKA_fake_script)()
-local function YMWN_fake_script() -- TextButton_52.LocalScript 
-local script = Instance.new('LocalScript', TextButton_52)
+local function YMWN_fake_script() -- TextButton_52.LocalScript
+    local script = Instance.new("LocalScript", TextButton_52)
 
-local textButton = script.Parent
+    local textButton = script.Parent
 
-textButton.Activated:Connect(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
-end)
+    textButton.Activated:Connect(
+        function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
+        end
+    )
 end
 coroutine.wrap(YMWN_fake_script)()
-local function KRYX_fake_script() -- TextBox_3.LocalScript 
-local script = Instance.new('LocalScript', TextBox_3)
+local function KRYX_fake_script() -- TextBox_3.LocalScript
+    local script = Instance.new("LocalScript", TextBox_3)
 
+    local TextBox = script.Parent
 
-local TextBox = script.Parent
-
-TextBox.FocusLost:Connect(function()
-    local newJumpPower = tonumber(TextBox.Text)
-    if newJumpPower then
-        game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = newJumpPower
-    else
-        TextBox.Text = "Invalid input"
-    end
-end)
+    TextBox.FocusLost:Connect(
+        function()
+            local newJumpPower = tonumber(TextBox.Text)
+            if newJumpPower then
+                game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = newJumpPower
+            else
+                TextBox.Text = "Invalid input"
+            end
+        end
+    )
 end
 coroutine.wrap(KRYX_fake_script)()
-local function ADME_fake_script() -- TextBox_4.LocalScript 
-local script = Instance.new('LocalScript', TextBox_4)
+local function ADME_fake_script() -- TextBox_4.LocalScript
+    local script = Instance.new("LocalScript", TextBox_4)
 
-local TextBox = script.Parent
+    local TextBox = script.Parent
 
-TextBox.FocusLost:Connect(function()
-    local newWalkSpeed = tonumber(TextBox.Text)
-    if newWalkSpeed then
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = newWalkSpeed
-    else
-        TextBox.Text = "Invalid input"
-    end
-end)
+    TextBox.FocusLost:Connect(
+        function()
+            local newWalkSpeed = tonumber(TextBox.Text)
+            if newWalkSpeed then
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = newWalkSpeed
+            else
+                TextBox.Text = "Invalid input"
+            end
+        end
+    )
 end
 coroutine.wrap(ADME_fake_script)()
-local function XWBPEC_fake_script() -- Homebtn.LocalScript 
-local script = Instance.new('LocalScript', Homebtn)
+local function XWBPEC_fake_script() -- Homebtn.LocalScript
+    local script = Instance.new("LocalScript", Homebtn)
 
-local Homebtn = script.Parent
+    local Homebtn = script.Parent
 
-if not Homebtn then
-    error("Homebtn not found!")
-end
-
-Homebtn.MouseButton1Down:Connect(function()
-    local HHFrame = script.Parent.Parent.Parent
-
-    local MainFrame = HHFrame:FindFirstChild("MainFrame")
-
-    if MainFrame then
-        local HomeTab = MainFrame:FindFirstChild("HomeTab")
-        local TrainTab = MainFrame:FindFirstChild("TrainTab")
-        local CombatTab = MainFrame:FindFirstChild("CombatTab")
-        local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
-        local ServerTab = MainFrame:FindFirstChild("ServerTab")
-        local MiscTab = MainFrame:FindFirstChild("MiscTab")
-
-        if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
-            HomeTab.Visible = true
-            TrainTab.Visible = false
-            CombatTab.Visible = false
-            PlayersTab.Visible = false
-            ServerTab.Visible = false
-            MiscTab.Visible = false
-        else
-            warn("HomeTab or TrainTab not found")
-        end
-    else
-        warn("MainFrame not found")
+    if not Homebtn then
+        error("Homebtn not found!")
     end
 
-    wait(0.1)
-end)
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
 
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = true
+                    TrainTab.Visible = false
+                    CombatTab.Visible = false
+                    PlayersTab.Visible = false
+                    ServerTab.Visible = false
+                    MiscTab.Visible = false
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
 end
 coroutine.wrap(XWBPEC_fake_script)()
-local function JLSW_fake_script() -- Trainbtn.LocalScript 
-local script = Instance.new('LocalScript', Trainbtn)
+local function JLSW_fake_script() -- Trainbtn.LocalScript
+    local script = Instance.new("LocalScript", Trainbtn)
 
-local Homebtn = script.Parent
+    local Homebtn = script.Parent
 
-if not Homebtn then
-    error("Homebtn not found!")
-end
-
-Homebtn.MouseButton1Down:Connect(function()
-    local HHFrame = script.Parent.Parent.Parent
-
-    local MainFrame = HHFrame:FindFirstChild("MainFrame")
-
-    if MainFrame then
-        local HomeTab = MainFrame:FindFirstChild("HomeTab")
-        local TrainTab = MainFrame:FindFirstChild("TrainTab")
-        local CombatTab = MainFrame:FindFirstChild("CombatTab")
-        local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
-        local ServerTab = MainFrame:FindFirstChild("ServerTab")
-        local MiscTab = MainFrame:FindFirstChild("MiscTab")
-
-        if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
-            HomeTab.Visible = false
-            TrainTab.Visible = true
-            CombatTab.Visible = false
-            PlayersTab.Visible = false
-            ServerTab.Visible = false
-            MiscTab.Visible = false
-        else
-            warn("HomeTab or TrainTab not found")
-        end
-    else
-        warn("MainFrame not found")
+    if not Homebtn then
+        error("Homebtn not found!")
     end
 
-    wait(0.1)
-end)
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
 
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = false
+                    TrainTab.Visible = true
+                    CombatTab.Visible = false
+                    PlayersTab.Visible = false
+                    ServerTab.Visible = false
+                    MiscTab.Visible = false
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
 end
 coroutine.wrap(JLSW_fake_script)()
-local function RGTUT_fake_script() -- Combatbtn.LocalScript 
-local script = Instance.new('LocalScript', Combatbtn)
+local function RGTUT_fake_script() -- Combatbtn.LocalScript
+    local script = Instance.new("LocalScript", Combatbtn)
 
-local Homebtn = script.Parent
+    local Homebtn = script.Parent
 
-if not Homebtn then
-    error("Homebtn not found!")
-end
-
-Homebtn.MouseButton1Down:Connect(function()
-    local HHFrame = script.Parent.Parent.Parent
-
-    local MainFrame = HHFrame:FindFirstChild("MainFrame")
-
-    if MainFrame then
-        local HomeTab = MainFrame:FindFirstChild("HomeTab")
-        local TrainTab = MainFrame:FindFirstChild("TrainTab")
-        local CombatTab = MainFrame:FindFirstChild("CombatTab")
-        local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
-        local ServerTab = MainFrame:FindFirstChild("ServerTab")
-        local MiscTab = MainFrame:FindFirstChild("MiscTab")
-
-        if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
-            HomeTab.Visible = false
-            TrainTab.Visible = false
-            CombatTab.Visible = true
-            PlayersTab.Visible = false
-            ServerTab.Visible = false
-            MiscTab.Visible = false
-        else
-            warn("HomeTab or TrainTab not found")
-        end
-    else
-        warn("MainFrame not found")
+    if not Homebtn then
+        error("Homebtn not found!")
     end
 
-    wait(0.1)
-end)
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
 
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = false
+                    TrainTab.Visible = false
+                    CombatTab.Visible = true
+                    PlayersTab.Visible = false
+                    ServerTab.Visible = false
+                    MiscTab.Visible = false
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
 end
 coroutine.wrap(RGTUT_fake_script)()
-local function IMJQKW_fake_script() -- Playersbtn.LocalScript 
-local script = Instance.new('LocalScript', Playersbtn)
+local function IMJQKW_fake_script() -- Playersbtn.LocalScript
+    local script = Instance.new("LocalScript", Playersbtn)
 
-local Homebtn = script.Parent
+    local Homebtn = script.Parent
 
-if not Homebtn then
-    error("Homebtn not found!")
-end
-
-Homebtn.MouseButton1Down:Connect(function()
-    local HHFrame = script.Parent.Parent.Parent
-
-    local MainFrame = HHFrame:FindFirstChild("MainFrame")
-
-    if MainFrame then
-        local HomeTab = MainFrame:FindFirstChild("HomeTab")
-        local TrainTab = MainFrame:FindFirstChild("TrainTab")
-        local CombatTab = MainFrame:FindFirstChild("CombatTab")
-        local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
-        local ServerTab = MainFrame:FindFirstChild("ServerTab")
-        local MiscTab = MainFrame:FindFirstChild("MiscTab")
-
-        if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
-            HomeTab.Visible = false
-            TrainTab.Visible = false
-            CombatTab.Visible = false
-            PlayersTab.Visible = true
-            ServerTab.Visible = false
-            MiscTab.Visible = false
-        else
-            warn("HomeTab or TrainTab not found")
-        end
-    else
-        warn("MainFrame not found")
+    if not Homebtn then
+        error("Homebtn not found!")
     end
 
-    wait(0.1)
-end)
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
 
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = false
+                    TrainTab.Visible = false
+                    CombatTab.Visible = false
+                    PlayersTab.Visible = true
+                    ServerTab.Visible = false
+                    MiscTab.Visible = false
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
 end
 coroutine.wrap(IMJQKW_fake_script)()
-local function OEHRV_fake_script() -- Serverbtn.LocalScript 
-local script = Instance.new('LocalScript', Serverbtn)
+local function OEHRV_fake_script() -- Serverbtn.LocalScript
+    local script = Instance.new("LocalScript", Serverbtn)
 
-local Homebtn = script.Parent
+    local Homebtn = script.Parent
 
-if not Homebtn then
-    error("Homebtn not found!")
-end
-
-Homebtn.MouseButton1Down:Connect(function()
-    local HHFrame = script.Parent.Parent.Parent
-
-    local MainFrame = HHFrame:FindFirstChild("MainFrame")
-
-    if MainFrame then
-        local HomeTab = MainFrame:FindFirstChild("HomeTab")
-        local TrainTab = MainFrame:FindFirstChild("TrainTab")
-        local CombatTab = MainFrame:FindFirstChild("CombatTab")
-        local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
-        local ServerTab = MainFrame:FindFirstChild("ServerTab")
-        local MiscTab = MainFrame:FindFirstChild("MiscTab")
-
-        if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
-            HomeTab.Visible = false
-            TrainTab.Visible = false
-            CombatTab.Visible = false
-            PlayersTab.Visible = false
-            ServerTab.Visible = true
-            MiscTab.Visible = false
-        else
-            warn("HomeTab or TrainTab not found")
-        end
-    else
-        warn("MainFrame not found")
+    if not Homebtn then
+        error("Homebtn not found!")
     end
 
-    wait(0.1)
-end)
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
 
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = false
+                    TrainTab.Visible = false
+                    CombatTab.Visible = false
+                    PlayersTab.Visible = false
+                    ServerTab.Visible = true
+                    MiscTab.Visible = false
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
 end
 coroutine.wrap(OEHRV_fake_script)()
-local function ABKKHJ_fake_script() -- Miscbtn.LocalScript 
-local script = Instance.new('LocalScript', Miscbtn)
+local function ABKKHJ_fake_script() -- Miscbtn.LocalScript
+    local script = Instance.new("LocalScript", Miscbtn)
 
-local Homebtn = script.Parent
+    local Homebtn = script.Parent
 
-if not Homebtn then
-    error("Homebtn not found!")
-end
-
-Homebtn.MouseButton1Down:Connect(function()
-    local HHFrame = script.Parent.Parent.Parent
-
-    local MainFrame = HHFrame:FindFirstChild("MainFrame")
-
-    if MainFrame then
-        local HomeTab = MainFrame:FindFirstChild("HomeTab")
-        local TrainTab = MainFrame:FindFirstChild("TrainTab")
-        local CombatTab = MainFrame:FindFirstChild("CombatTab")
-        local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
-        local ServerTab = MainFrame:FindFirstChild("ServerTab")
-        local MiscTab = MainFrame:FindFirstChild("MiscTab")
-
-        if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
-            HomeTab.Visible = false
-            TrainTab.Visible = false
-            CombatTab.Visible = false
-            PlayersTab.Visible = false
-            ServerTab.Visible = false
-            MiscTab.Visible = true
-        else
-            warn("HomeTab or TrainTab not found")
-        end
-    else
-        warn("MainFrame not found")
+    if not Homebtn then
+        error("Homebtn not found!")
     end
 
-    wait(0.1)
-end)
+    Homebtn.MouseButton1Down:Connect(
+        function()
+            local HHFrame = script.Parent.Parent.Parent
 
+            local MainFrame = HHFrame:FindFirstChild("MainFrame")
+
+            if MainFrame then
+                local HomeTab = MainFrame:FindFirstChild("HomeTab")
+                local TrainTab = MainFrame:FindFirstChild("TrainTab")
+                local CombatTab = MainFrame:FindFirstChild("CombatTab")
+                local PlayersTab = MainFrame:FindFirstChild("PlayersTab")
+                local ServerTab = MainFrame:FindFirstChild("ServerTab")
+                local MiscTab = MainFrame:FindFirstChild("MiscTab")
+
+                if HomeTab and TrainTab and CombatTab and PlayersTab and ServerTab and MiscTab then
+                    HomeTab.Visible = false
+                    TrainTab.Visible = false
+                    CombatTab.Visible = false
+                    PlayersTab.Visible = false
+                    ServerTab.Visible = false
+                    MiscTab.Visible = true
+                else
+                    warn("HomeTab or TrainTab not found")
+                end
+            else
+                warn("MainFrame not found")
+            end
+
+            wait(0.1)
+        end
+    )
 end
 coroutine.wrap(ABKKHJ_fake_script)()
-local function ULBUS_fake_script() -- AdminImgBtn.LocalScript 
-local script = Instance.new('LocalScript', AdminImgBtn)
+local function ULBUS_fake_script() -- AdminImgBtn.LocalScript
+    local script = Instance.new("LocalScript", AdminImgBtn)
 
-local open = false
-local canClick = true
-local lastPos = nil
-local button = script.Parent
-local HHFrame = button.Parent.HHFrame
+    local open = false
+    local canClick = true
+    local lastPos = nil
+    local button = script.Parent
+    local HHFrame = button.Parent.HHFrame
 
-button.MouseButton1Down:Connect(function()
-if not open and canClick then
-    open = true
-    canClick = false
-    if lastPos then
-        HHFrame:TweenPosition(lastPos, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.75, true, function()
-            canClick = true
-        end)
-    else
-        HHFrame:TweenPosition(UDim2.new(0.625, 0, 0.6, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.75, true, function()
-            canClick = true
-        end)
-    end
-elseif open and canClick then
-    lastPos = HHFrame.Position
-    open = false
-    canClick = false
-    HHFrame:TweenPosition(UDim2.new(1, 0, 0.6, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.75, true, function()
-        canClick = true
-    end)
-end
-end)
+    button.MouseButton1Down:Connect(
+        function()
+            if not open and canClick then
+                open = true
+                canClick = false
+                if lastPos then
+                    HHFrame:TweenPosition(
+                        lastPos,
+                        Enum.EasingDirection.Out,
+                        Enum.EasingStyle.Quad,
+                        0.75,
+                        true,
+                        function()
+                            canClick = true
+                        end
+                    )
+                else
+                    HHFrame:TweenPosition(
+                        UDim2.new(0.625, 0, 0.6, 0),
+                        Enum.EasingDirection.Out,
+                        Enum.EasingStyle.Quad,
+                        0.75,
+                        true,
+                        function()
+                            canClick = true
+                        end
+                    )
+                end
+            elseif open and canClick then
+                lastPos = HHFrame.Position
+                open = false
+                canClick = false
+                HHFrame:TweenPosition(
+                    UDim2.new(1, 0, 0.6, 0),
+                    Enum.EasingDirection.Out,
+                    Enum.EasingStyle.Quad,
+                    0.75,
+                    true,
+                    function()
+                        canClick = true
+                    end
+                )
+            end
+        end
+    )
 
-button.MouseEnter:Connect(function()
-button.ImageColor3 = Color3.fromRGB(230, 230, 230)
-end)
+    button.MouseEnter:Connect(
+        function()
+            button.ImageColor3 = Color3.fromRGB(230, 230, 230)
+        end
+    )
 
-button.MouseLeave:Connect(function()
-button.ImageColor3 = Color3.fromRGB(255, 255, 255)
-end)
+    button.MouseLeave:Connect(
+        function()
+            button.ImageColor3 = Color3.fromRGB(255, 255, 255)
+        end
+    )
 
-local UserInputService = game:GetService("UserInputService")
-local Draggable = false
-local DragMousePosition
-local FramePosition
+    local UserInputService = game:GetService("UserInputService")
+    local Draggable = false
+    local DragMousePosition
+    local FramePosition
 
-HHFrame.TopBar.InputBegan:Connect(function(input)
-if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-    Draggable = false
-    DragMousePosition = Vector2.new(input.Position.X, input.Position.Y)
-    FramePosition = Vector2.new(HHFrame.Position.X.Scale, HHFrame.Position.Y.Scale)
-end
-end)
+    HHFrame.TopBar.InputBegan:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                Draggable = false
+                DragMousePosition = Vector2.new(input.Position.X, input.Position.Y)
+                FramePosition = Vector2.new(HHFrame.Position.X.Scale, HHFrame.Position.Y.Scale)
+            end
+        end
+    )
 
-HHFrame.TopBar.InputEnded:Connect(function(input)
-if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-    Draggable = false
-end
-end)
+    HHFrame.TopBar.InputEnded:Connect(
+        function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                Draggable = false
+            end
+        end
+    )
 
-UserInputService.InputChanged:Connect(function(input)
-if Draggable then
-    local NewPosition = FramePosition + ((Vector2.new(input.Position.X, input.Position.Y) - DragMousePosition) / workspace.CurrentCamera.ViewportSize)
-    HHFrame.Position = UDim2.new(NewPosition.X, 0, NewPosition.Y, 0)
-end
-end)
+    UserInputService.InputChanged:Connect(
+        function(input)
+            if Draggable then
+                local NewPosition =
+                    FramePosition +
+                    ((Vector2.new(input.Position.X, input.Position.Y) - DragMousePosition) /
+                        workspace.CurrentCamera.ViewportSize)
+                HHFrame.Position = UDim2.new(NewPosition.X, 0, NewPosition.Y, 0)
+            end
+        end
+    )
 end
 coroutine.wrap(ULBUS_fake_script)()
 
 -- NA PC Version script:
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/LoneWalker0922/YIN-YANG-NA/main/NAmobilefix.txt'))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LoneWalker0922/YIN-YANG-NA/main/NAmobilefix.txt"))()
